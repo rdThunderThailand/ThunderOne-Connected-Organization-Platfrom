@@ -1,0 +1,161 @@
+{
+  "metaTitle": "Asset Intelligence | ThunderOne",
+  "metaDescription": "See every asset, extend every value — manage the entire asset lifecycle with ThunderOne Asset Intelligence.",
+  "breadcrumb": {
+    "home": "Home",
+    "solutions": "Solutions",
+    "current": "Asset Intelligence"
+  },
+  "hero": {
+    "badge": "SOLUTION",
+    "title": "Asset Intelligence",
+    "subtitle": "See every asset. Extend every value.",
+    "description": "ThunderOne Asset Intelligence helps organizations manage the entire asset lifecycle with accuracy and insight. From planning, tracking, maintenance to disposal—make smarter decisions and maximize the value of every asset.",
+    "ctaPrimary": "Talk to us",
+    "ctaSecondary": "See it in action",
+    "dashboard": {
+      "productLabel": "T1 asset",
+      "panelTitle": "Asset Overview",
+      "dateRange": "May 1 - May 31, 2025",
+      "departmentFilter": "All Departments",
+      "nav": ["Overview", "Assets", "Work Orders", "Maintenance", "Inspections", "Locations", "Suppliers", "Reports", "Analytics", "Settings"],
+      "stats": {
+        "totalAssets": { "value": "12,458", "label": "Total Assets", "delta": "+12% vs last month" },
+        "activeAssets": { "value": "10,842", "label": "Active Assets", "delta": "+8% vs last month" },
+        "assetsInMaintenance": { "value": "236", "label": "Assets in Maintenance", "delta": "-6% vs last month" },
+        "assetValue": { "value": "1,245,890,000", "label": "Asset Value (THB)", "delta": "+9% vs last month" }
+      },
+      "assetsByStatusTitle": "Assets by Status",
+      "assetsByStatus": [
+        { "label": "Active", "percent": 69 },
+        { "label": "Maintenance", "percent": 15 },
+        { "label": "Planned", "percent": 8 },
+        { "label": "Inactive", "percent": 5 },
+        { "label": "Disposed", "percent": 3 }
+      ],
+      "myWorkOrdersTitle": "My Work Orders",
+      "myWorkOrders": [
+        { "title": "WO-2025-0512", "meta": "AC System - Building 3", "status": "In Progress" },
+        { "title": "WO-2025-0511", "meta": "Elevator - Building A", "status": "Assigned" },
+        { "title": "WO-2025-0510", "meta": "LED Display - Lobby", "status": "Resolved" }
+      ],
+      "recentInspectionsTitle": "Recent Inspections",
+      "recentInspections": [
+        { "title": "AC-001", "meta": "Main Office", "date": "10 May 2025" },
+        { "title": "PUMP-02", "meta": "Water Pump", "date": "12 May 2025" },
+        { "title": "GEN-01", "meta": "Generator", "date": "15 May 2025" }
+      ],
+      "viewFullReport": "View full report",
+      "goToWorkOrders": "Go to work orders",
+      "viewAll": "View all"
+    }
+  },
+  "challenge": {
+    "title": "The challenge",
+    "subtitle": "Without visibility and control, assets lose value and reliability.",
+    "items": [
+      "Lack of visibility on assets and locations",
+      "Maintenance is reactive and unplanned",
+      "High cost and inefficient resource utilization",
+      "Scattered data and inconsistent records",
+      "Slow response and downtime impact"
+    ]
+  },
+  "whatYouCanDo": {
+    "label": "What you can do",
+    "title": "Manage assets smarter, all in one platform.",
+    "checklist": [
+      "Register and track assets with QR Code / RFID",
+      "Monitor asset lifecycle and real-time status",
+      "Plan and manage preventive maintenance",
+      "Create and manage work orders",
+      "Track inspections and ensure compliance",
+      "Analyze data and generate actionable insights",
+      "Integrate IoT devices for intelligent monitoring"
+    ],
+    "assetCard": {
+      "name": "AC-001 – Meeting Room 3",
+      "statusLabel": "Active",
+      "subtitle": "AC System · Building 3 · 3rd Floor",
+      "purchaseDateLabel": "Purchase Date",
+      "purchaseDateValue": "Jan 15, 2023",
+      "assetValueLabel": "Asset Value",
+      "assetValueValue": "THB 45,000",
+      "expectedLifeLabel": "Expected Life",
+      "expectedLifeValue": "2 years",
+      "warrantyUntilLabel": "Warranty Until",
+      "warrantyUntilValue": "Jan 15, 2026",
+      "scanLabel": "Scan for details",
+      "tabs": ["Overview", "Maintenance", "Documents", "Location", "History"],
+      "overview": {
+        "assetIdLabel": "Asset ID",
+        "assetIdValue": "AC-001",
+        "categoryLabel": "Category",
+        "categoryValue": "HVAC System",
+        "brandModelLabel": "Brand / Model",
+        "brandModelValue": "Daikin / FTKC25QVM",
+        "serialNumberLabel": "Serial Number",
+        "serialNumberValue": "FTKC25QVM123456",
+        "locationLabel": "Location",
+        "locationValue": "3rd Floor, Meeting Room 3"
+      }
+    },
+    "mobileCard": {
+      "name": "AC-001 Meeting Room 3",
+      "statusLabel": "Active",
+      "purchaseDateLabel": "Purchase Date",
+      "purchaseDateValue": "Jan 15, 2023",
+      "assetValueLabel": "Asset Value",
+      "assetValueValue": "THB 45,000",
+      "nextMaintenanceLabel": "Next Maintenance",
+      "nextMaintenanceValue": "May 20, 2025",
+      "createWorkOrderButton": "Create Work Order"
+    }
+  },
+  "howItWorks": {
+    "title": "How it works",
+    "steps": [
+      { "title": "Register", "description": "Add assets with details, QR Code or RFID" },
+      { "title": "Plan", "description": "Set maintenance plans and schedules" },
+      { "title": "Operate", "description": "Track usage, conditions and performance" },
+      { "title": "Maintain", "description": "Execute maintenance and work orders" },
+      { "title": "Analyze", "description": "Visualize data and identify issues" },
+      { "title": "Improve", "description": "Optimize performance and extend asset life" }
+    ]
+  },
+  "capabilities": {
+    "title": "Key capabilities",
+    "items": [
+      { "title": "Asset Registry", "description": "Centralized asset data and lifecycle" },
+      { "title": "Work Order Management", "description": "Create, assign and track work orders" },
+      { "title": "Preventive Maintenance", "description": "Schedule and automate maintenance tasks" },
+      { "title": "Inspection & Compliance", "description": "Checklists, inspections and compliance" },
+      { "title": "Reporting & Analytics", "description": "Dashboards and reports for decision making" },
+      { "title": "IoT Integration", "description": "Connect IoT devices for real-time insights" }
+    ]
+  },
+  "industries": {
+    "title": "Ideal for these industries",
+    "items": ["Government & Municipalities", "Facilities & Real Estate", "Manufacturing & Industrial", "Education", "Healthcare"]
+  },
+  "platform": {
+    "title": "Seamlessly works with ThunderOne Platform",
+    "centerLabel": "ThunderOne Platform",
+    "items": [
+      { "key": "work", "label": "Work Management" },
+      { "key": "assets", "label": "Assets" },
+      { "key": "people", "label": "People & Organization" },
+      { "key": "reports", "label": "Reports & Analytics" }
+    ]
+  },
+  "cta": {
+    "title": "Ready to maximize the value of your assets?",
+    "description": "Let's talk about how ThunderOne Asset Intelligence can drive efficiency and performance for your organization.",
+    "ctaPrimary": "Talk to us",
+    "ctaNote": "Takes about 1 minute • No long forms"
+  },
+  "tools": {
+    "title": "Works with the tools you use",
+    "logosNote": "and more"
+  }
+}

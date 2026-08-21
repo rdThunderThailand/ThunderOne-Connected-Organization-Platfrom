@@ -1,0 +1,293 @@
+{
+  "metaTitle": "Use Cases | ThunderOne",
+  "metaDescription": "Explore ThunderOne use cases by role, need, and industry to find the right way to use ThunderOne in your organization.",
+  "breadcrumb": {
+    "home": "Home",
+    "current": "Use Cases"
+  },
+  "hero": {
+    "titleLine1": "Use cases made",
+    "titleHighlight": "for the way you work.",
+    "description": "Explore real scenarios across roles, needs, and industries. Find the right way to use ThunderOne in your organization.",
+    "searchPlaceholder": "Search use cases, e.g., digital signage, asset management",
+    "filterButtonLabel": "Filters"
+  },
+  "categories": {
+    "role": {
+      "title": "By Role",
+      "subtitle": "Solutions for every role",
+      "countLabel": "+6 roles",
+      "viewAllLabel": "View all roles"
+    },
+    "need": {
+      "title": "By Need",
+      "subtitle": "Solutions for every need",
+      "countLabel": "+10 needs",
+      "viewAllLabel": "View all needs"
+    },
+    "industry": {
+      "title": "By Industry",
+      "subtitle": "Solutions for every industry",
+      "countLabel": "+8 industries",
+      "viewAllLabel": "View all industries"
+    }
+  },
+  "filter": {
+    "title": "Filter",
+    "clearAll": "Clear all",
+    "more": "+ More",
+    "less": "Show less",
+    "reset": "Reset filters",
+    "groups": {
+      "role": {
+        "title": "By Role",
+        "options": {
+          "executive-leadership": "Executive / Leadership",
+          "manager": "Manager",
+          "operator-staff": "Operator / Staff",
+          "it-admin": "IT / Admin",
+          "sales-marketing": "Sales & Marketing",
+          "hr-people": "HR & People"
+        }
+      },
+      "need": {
+        "title": "By Need",
+        "options": {
+          "communicate-engage": "Communicate & Engage",
+          "operate-efficiently": "Operate Efficiently",
+          "manage-assets": "Manage Assets",
+          "provide-services": "Provide Services",
+          "ensure-compliance": "Ensure Compliance",
+          "analyze-decide": "Analyze & Decide",
+          "automate-workflows": "Automate Workflows",
+          "collaborate-teams": "Collaborate Across Teams",
+          "monitor-performance": "Monitor Performance",
+          "secure-information": "Secure Information"
+        }
+      },
+      "industry": {
+        "title": "By Industry",
+        "options": {
+          "government-public-sector": "Government & Public Sector",
+          "healthcare": "Healthcare",
+          "education": "Education",
+          "manufacturing": "Manufacturing",
+          "retail-services": "Retail & Services",
+          "real-estate-facilities": "Real Estate & Facilities",
+          "hospitality-tourism": "Hospitality & Tourism",
+          "transportation-logistics": "Transportation & Logistics"
+        }
+      }
+    }
+  },
+  "toolbar": {
+    "showingTemplate": "Showing %count% of %total% use cases",
+    "sortByLabel": "Sort by",
+    "sortOptions": {
+      "relevant": "Most Relevant",
+      "featured": "Featured First",
+      "az": "A-Z"
+    },
+    "viewGridLabel": "Grid view",
+    "viewListLabel": "List view"
+  },
+  "card": {
+    "featured": "Featured",
+    "seeDetails": "See details"
+  },
+  "tags": {
+    "communication": "Communication",
+    "engagement": "Engagement",
+    "digital-signage": "Digital Signage",
+    "operations": "Operations",
+    "thunder-care": "Thunder Care",
+    "it-service": "IT Service",
+    "asset-intelligence": "Asset Intelligence",
+    "maintenance": "Maintenance",
+    "work-order": "Work Order",
+    "campaign": "Campaign",
+    "analytics": "Analytics",
+    "decision-making": "Decision Making",
+    "governance": "Governance",
+    "compliance": "Compliance",
+    "government": "Government",
+    "healthcare": "Healthcare",
+    "education": "Education",
+    "manufacturing": "Manufacturing",
+    "hr": "HR",
+    "onboarding": "Onboarding",
+    "survey": "Survey",
+    "facilities": "Facilities",
+    "scheduling": "Scheduling",
+    "training": "Training",
+    "safety": "Safety",
+    "monitoring": "Monitoring",
+    "automation": "Automation",
+    "executive": "Executive",
+    "knowledge-base": "Knowledge Base",
+    "collaboration": "Collaboration",
+    "lifecycle": "Lifecycle",
+    "security": "Security",
+    "finance": "Finance",
+    "mobile": "Mobile",
+    "retail-services": "Retail & Services",
+    "real-estate-facilities": "Real Estate & Facilities",
+    "transportation-logistics": "Transportation & Logistics",
+    "hospitality-tourism": "Hospitality & Tourism"
+  },
+  "items": {
+    "announce-all-employees": {
+      "title": "Announce to All Employees",
+      "description": "Send important announcements to the right people across multiple channels instantly."
+    },
+    "manage-digital-signage": {
+      "title": "Manage Digital Signage Content",
+      "description": "Publish and manage content across multiple screens and locations from one place."
+    },
+    "report-resolve-it-issues": {
+      "title": "Report & Resolve IT Issues",
+      "description": "Employees report issues, IT resolves faster with tracking, SLA, and knowledge base."
+    },
+    "track-maintain-assets": {
+      "title": "Track and Maintain Assets",
+      "description": "Track asset lifecycle, maintenance, history, and cost to maximize asset value."
+    },
+    "manage-work-orders-field": {
+      "title": "Manage Work Orders in the Field",
+      "description": "Create, assign, and track work orders for field teams in real time."
+    },
+    "plan-run-campaigns": {
+      "title": "Plan and Run Campaigns",
+      "description": "Plan, create, approve, and publish campaigns across channels."
+    },
+    "analyze-performance-decisions": {
+      "title": "Analyze Performance & Make Decisions",
+      "description": "Get real-time insights and dashboards to monitor performance and KPIs."
+    },
+    "ensure-compliance-auditability": {
+      "title": "Ensure Compliance & Auditability",
+      "description": "Maintain audit trails, approvals, and documentation for compliance requirements."
+    },
+    "smart-city-operations": {
+      "title": "Smart City Operations",
+      "description": "Improve city services and operations with centralized communication and real-time insights."
+    },
+    "hospital-communication": {
+      "title": "Hospital Communication",
+      "description": "Deliver timely information to patients and staff across multiple touchpoints."
+    },
+    "campus-engagement": {
+      "title": "Campus Engagement",
+      "description": "Engage students and staff with announcements, activities, and emergency alerts."
+    },
+    "factory-operations": {
+      "title": "Factory Operations",
+      "description": "Streamline shop floor communication and track equipment & maintenance."
+    },
+    "onboard-new-employees": {
+      "title": "Onboard New Employees",
+      "description": "Guide new hires through every onboarding step from day one."
+    },
+    "collect-employee-feedback": {
+      "title": "Collect Employee Feedback",
+      "description": "Run surveys and gather feedback to continuously improve the workplace."
+    },
+    "manage-visitor-checkin": {
+      "title": "Manage Visitor Check-in",
+      "description": "Register and track visitors securely and efficiently at every location."
+    },
+    "schedule-shift-rosters": {
+      "title": "Schedule Shift Rosters",
+      "description": "Plan and assign employee shifts quickly and accurately."
+    },
+    "track-employee-training": {
+      "title": "Track Employee Training",
+      "description": "Manage courses, monitor progress, and ensure regulatory compliance."
+    },
+    "manage-emergency-alerts": {
+      "title": "Manage Emergency Alerts",
+      "description": "Instantly reach every employee with critical safety alerts across all channels."
+    },
+    "monitor-facility-conditions": {
+      "title": "Monitor Facility Conditions",
+      "description": "Track temperature, humidity, and equipment status in real time."
+    },
+    "automate-approval-workflows": {
+      "title": "Automate Approval Workflows",
+      "description": "Cut manual steps with automated, rule-based approval workflows."
+    },
+    "build-executive-dashboards": {
+      "title": "Build Executive Dashboards",
+      "description": "Bring key metrics into one view to support executive decision-making."
+    },
+    "manage-knowledge-base": {
+      "title": "Manage Knowledge Base",
+      "description": "Centralize guides and articles so employees can self-serve answers."
+    },
+    "coordinate-cross-team-projects": {
+      "title": "Coordinate Cross-Team Projects",
+      "description": "Track progress and assign tasks clearly across every involved team."
+    },
+    "publish-policy-updates": {
+      "title": "Publish Policy Updates",
+      "description": "Distribute new policies to staff and track acknowledgment."
+    },
+    "manage-asset-lifecycle": {
+      "title": "Manage Asset Lifecycle",
+      "description": "Track assets from procurement through retirement in one place."
+    },
+    "track-maintenance-requests": {
+      "title": "Track Maintenance Requests",
+      "description": "Log, assign, and follow maintenance requests through to completion."
+    },
+    "run-employee-surveys": {
+      "title": "Run Employee Surveys",
+      "description": "Create surveys and analyze results to better understand your people."
+    },
+    "manage-retail-store-comms": {
+      "title": "Manage Retail Store Communications",
+      "description": "Keep every store on-brand with synced promotions and staff updates."
+    },
+    "coordinate-real-estate-ops": {
+      "title": "Coordinate Real Estate Operations",
+      "description": "Manage properties and facilities across every site from one place."
+    },
+    "manage-transportation-logistics": {
+      "title": "Manage Transportation & Logistics",
+      "description": "Track fleets and deliveries for smoother, more efficient operations."
+    },
+    "streamline-hospitality-service": {
+      "title": "Streamline Hospitality Service",
+      "description": "Respond to guest requests and coordinate service teams faster."
+    },
+    "secure-sensitive-information": {
+      "title": "Secure Sensitive Information",
+      "description": "Control access permissions and protect your organization's sensitive data."
+    },
+    "manage-vendor-contracts": {
+      "title": "Manage Vendor Contracts",
+      "description": "Track contracts, renewal dates, and approvals with vendors in one place."
+    },
+    "track-budget-and-costs": {
+      "title": "Track Budget and Costs",
+      "description": "Monitor spending against budget in real time for better planning."
+    },
+    "deliver-mobile-workforce-updates": {
+      "title": "Deliver Mobile Workforce Updates",
+      "description": "Reach employees on the go through a mobile app, anytime, anywhere."
+    },
+    "manage-meeting-rooms": {
+      "title": "Manage Meeting Rooms",
+      "description": "Book and manage meeting rooms and shared workspaces efficiently."
+    }
+  },
+  "noResults": {
+    "title": "No use cases found",
+    "description": "Try adjusting your filters or search term."
+  },
+  "helpCta": {
+    "title": "Can't find what you're looking for?",
+    "description": "Talk to our experts and we'll help you find the right way to use ThunderOne for your organization.",
+    "button": "Talk to our experts"
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "metaTitle": "Communication | ThunderOne",
+  "metaDescription": "ThunderOne Communication helps you deliver the right message to the right people, at the right time, on the right channel.",
+  "breadcrumb": {
+    "home": "Home",
+    "solutions": "Solutions",
+    "current": "Communication"
+  },
+  "hero": {
+    "badge": "SOLUTION",
+    "title": "Communication",
+    "subtitle": "Connect. Align. Engage. Everywhere.",
+    "description": "ThunderOne Communication helps you deliver the right message to the right people, at the right time, on the right channel. From internal announcements to critical alerts—keep everyone informed, aligned, and engaged.",
+    "ctaPrimary": "Talk to us",
+    "ctaSecondary": "See it in action",
+    "dashboard": {
+      "productLabel": "T1 comms",
+      "panelTitle": "Mission Control",
+      "nav": ["Home", "Messages", "Campaigns", "Channels", "Approvals", "Calendar", "Audience", "Reports", "Settings"],
+      "stats": {
+        "messagesSent": { "value": "1,245", "label": "Messages Sent", "delta": "+18% vs last month" },
+        "deliveryRate": { "value": "98%", "label": "Delivery Rate", "delta": "+6%" },
+        "engagementRate": { "value": "68%", "label": "Engagement Rate", "delta": "+15%" },
+        "activeChannels": { "value": "12", "label": "Active Channels" }
+      },
+      "recentMessagesTitle": "Recent Messages",
+      "recentMessages": [
+        { "title": "Company Townhall", "meta": "Today · 09:00", "status": "Delivered" },
+        { "title": "New Policy Update", "meta": "May 10 · 14:30", "status": "Delivered" },
+        { "title": "Emergency Drill Notice", "meta": "May 8 · 10:15", "status": "Scheduled" }
+      ],
+      "channelDistributionTitle": "Channel Distribution",
+      "channelDistribution": [
+        { "label": "Intranet", "percent": 35 },
+        { "label": "Email", "percent": 25 },
+        { "label": "Digital Signage", "percent": 20 },
+        { "label": "LINE OA", "percent": 10 },
+        { "label": "Mobile App", "percent": 10 }
+      ],
+      "viewFullReport": "View full report"
+    }
+  },
+  "challenge": {
+    "title": "The challenge",
+    "subtitle": "Important messages don't always reach people effectively.",
+    "items": [
+      "Information is scattered across many channels",
+      "Messages are missed or seen too late",
+      "No visibility on who received or engaged",
+      "Hard to manage approvals and consistency",
+      "Difficult to respond in critical situations"
+    ]
+  },
+  "whatYouCanDo": {
+    "label": "What you can do",
+    "title": "Communicate with impact, across every channel.",
+    "description": "ThunderOne Communication helps you deliver the right message to the right people, at the right time, on the right channel.",
+    "checklist": [
+      "Create and schedule messages with ease",
+      "Deliver across multiple channels instantly",
+      "Target the right audience and locations",
+      "Manage approvals and governance",
+      "Track delivery, engagement, and feedback",
+      "Respond faster with alerts and notifications"
+    ],
+    "createMessageCard": {
+      "title": "Create message",
+      "titleFieldLabel": "Title",
+      "titleFieldValue": "Company Townhall",
+      "channelLabel": "Channel",
+      "audienceLabel": "Audience",
+      "audienceValue": "All Employees",
+      "dateValue": "May 15, 2025",
+      "timeValue": "09:00",
+      "nextButton": "Next"
+    },
+    "previewCard": {
+      "label": "Company Townhall",
+      "headline": "Q2 Update & Priorities",
+      "subheadline": "Join us for our company townhall and hear the latest updates.",
+      "meta": "May 15, 2025 | 09:00 | Auditorium",
+      "viewDetails": "View details"
+    },
+    "lineChat": {
+      "productLabel": "LINE OA",
+      "title": "Company Townhall",
+      "meta": "May 15, 2025 | 09:00",
+      "ctaLabel": "View details",
+      "dontMissIt": "Don't miss it!"
+    }
+  },
+  "howItWorks": {
+    "title": "How it works",
+    "steps": [
+      { "title": "Plan & Create", "description": "Create your message with templates or from scratch" },
+      { "title": "Target & Approve", "description": "Choose your audience and get approval with ease" },
+      { "title": "Deliver", "description": "Send across the right channels at the right time" },
+      { "title": "Engage", "description": "People receive, read, and take action" },
+      { "title": "Measure & Improve", "description": "Track performance and improve your communication" }
+    ]
+  },
+  "capabilities": {
+    "title": "Key capabilities",
+    "items": [
+      { "title": "Multi-Channel Delivery", "description": "Email, Intranet, Digital Signage, LINE OA, Mobile App and more" },
+      { "title": "Message Templates", "description": "Ready-to-use templates for announcements, alerts, and campaigns" },
+      { "title": "Audience Targeting", "description": "Target by role, department, location, or custom segments" },
+      { "title": "Approval Workflow", "description": "Built-in approval flow to ensure quality and compliance" },
+      { "title": "Real-time Alerts", "description": "Send urgent alerts and notifications instantly" },
+      { "title": "Analytics & Reports", "description": "Measure delivery, engagement, and action taken" }
+    ]
+  },
+  "teams": {
+    "title": "Ideal for these teams",
+    "items": [
+      "Executive Communications",
+      "HR & People Operations",
+      "Corporate Communications",
+      "Operations & Field Teams",
+      "IT & Infrastructure",
+      "Safety & Emergency"
+    ]
+  },
+  "platform": {
+    "title": "Works seamlessly with ThunderOne Platform",
+    "description": "Communication connects with work, asset, people, and service modules to create one connected experience.",
+    "items": [
+      { "key": "work", "label": "Work" },
+      { "key": "assetIntelligence", "label": "Asset Intelligence" },
+      { "key": "peopleOrganization", "label": "People & Organization" },
+      { "key": "thunderCare", "label": "Thunder Care" }
+    ]
+  },
+  "tools": {
+    "title": "Connects with the tools you use",
+    "logosNote": "and more"
+  },
+  "cta": {
+    "title": "Ready to communicate better?",
+    "description": "Let's talk about how ThunderOne Communication can help your organization.",
+    "ctaPrimary": "Talk to us",
+    "ctaNote": "Takes about 1 minute • No long forms"
+  }
+}

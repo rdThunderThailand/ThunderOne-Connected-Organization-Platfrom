@@ -1,5 +1,6 @@
-import Link from "next/link";
 import type { SVGProps } from "react";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 
 function LinkedInIcon(props: SVGProps<SVGSVGElement>) {
   return (
@@ -27,55 +28,58 @@ function FacebookIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-const footerNav = [
-  {
-    title: "SOLUTIONS",
-    links: [
-      { label: "Digital Signage & Media", href: "/solutions/digital-signage-media" },
-      { label: "Communication", href: "/solutions/communication" },
-      { label: "Thunder Care", href: "/solutions/thunder-care" },
-      { label: "Asset Intelligence", href: "/solutions/asset-intelligence" },
-    ],
-  },
-  {
-    title: "PLATFORM",
-    links: [
-      { label: "Overview", href: "/platform" },
-      { label: "Experience", href: "/platform/experience" },
-      { label: "Intelligence & Automation", href: "/platform/intelligence-automation" },
-      { label: "Integrations", href: "/platform/integrations" },
-      { label: "Security", href: "/platform/security" },
-    ],
-  },
-  {
-    title: "RESOURCES",
-    links: [
-      { label: "Knowledge", href: "/resources/knowledge" },
-      { label: "Customer Stories", href: "/resources/customer-stories" },
-      { label: "Documentation", href: "/resources/documentation" },
-      { label: "Support", href: "/resources/support" },
-    ],
-  },
-  {
-    title: "PARTNERS",
-    links: [{ label: "Partner with ThunderOne", href: "/partners" }],
-  },
-  {
-    title: "ABOUT",
-    links: [
-      { label: "About ThunderOne", href: "/about" },
-      { label: "Contact", href: "/contact" },
-    ],
-  },
-];
-
 const socialLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/company/thunderone", icon: LinkedInIcon },
   { label: "YouTube", href: "https://www.youtube.com/@thunderone", icon: YouTubeIcon },
   { label: "Facebook", href: "https://www.facebook.com/thunderone", icon: FacebookIcon },
 ];
 
-export function Footer() {
+export async function Footer() {
+  const t = await getTranslations("Footer");
+  const tCommon = await getTranslations("Common");
+
+  const footerNav = [
+    {
+      title: t("solutions"),
+      links: [
+        { label: t("solutionsDigitalSignageMedia"), href: "/solutions/digital-signage-media" },
+        { label: t("solutionsCommunication"), href: "/solutions/communication" },
+        { label: tCommon("thunderCare"), href: "/solutions/thunder-care" },
+        { label: t("solutionsAssetIntelligence"), href: "/solutions/asset-intelligence" },
+      ],
+    },
+    {
+      title: t("platform"),
+      links: [
+        { label: t("platformOverview"), href: "/platform" },
+        { label: t("platformExperience"), href: "/platform/experience" },
+        { label: t("platformIntelligenceAutomation"), href: "/platform/intelligence-automation" },
+        { label: t("platformIntegrations"), href: "/platform/integrations" },
+        { label: t("platformSecurity"), href: "/platform/security" },
+      ],
+    },
+    {
+      title: t("resources"),
+      links: [
+        { label: t("resourcesKnowledge"), href: "/resources/knowledge" },
+        { label: t("resourcesCustomerStories"), href: "/resources/customer-stories" },
+        { label: t("resourcesDocumentation"), href: "/resources/documentation" },
+        { label: t("resourcesSupport"), href: "/resources/support" },
+      ],
+    },
+    {
+      title: t("partners"),
+      links: [{ label: t("partnersLink"), href: "/partners" }],
+    },
+    {
+      title: t("about"),
+      links: [
+        { label: t("aboutLink"), href: "/about" },
+        { label: t("contact"), href: "/contact" },
+      ],
+    },
+  ];
+
   return (
     <footer className="bg-brand-navy text-slate-300">
       <div className="px-10 py-6">
@@ -90,9 +94,9 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">
-              Empowered People.
+              {t("taglineLine1")}
               <br />
-              Connected Organization.
+              {t("taglineLine2")}
             </p>
           </div>
 
@@ -112,7 +116,7 @@ export function Footer() {
           ))}
 
           <div className="w-1/2 sm:w-1/3 lg:w-auto lg:flex-1">
-            <h3 className="text-xs font-semibold tracking-wider text-slate-400">FOLLOW US</h3>
+            <h3 className="text-xs font-semibold tracking-wider text-slate-400">{t("followUs")}</h3>
             <div className="mt-4 flex gap-3">
               {socialLinks.map(({ label, href, icon: Icon }) => (
                 <Link
@@ -136,25 +140,23 @@ export function Footer() {
               docs.thunderone.asia
             </Link>
           </div>
-
-
         </div>
       </div>
 
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-6 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} ThunderOne. All rights reserved.</p>
+          <p>{t("copyright", { year: new Date().getFullYear() })}</p>
           <div className="flex items-center gap-4">
             <Link href="/privacy" className="hover:text-white">
-              Privacy
+              {t("privacy")}
             </Link>
             <span aria-hidden="true">·</span>
             <Link href="/terms" className="hover:text-white">
-              Terms of Service
+              {t("terms")}
             </Link>
             <span aria-hidden="true">·</span>
             <Link href="/pdpa" className="hover:text-white">
-              PDPA
+              {t("pdpa")}
             </Link>
           </div>
         </div>

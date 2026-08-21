@@ -1,0 +1,107 @@
+{
+  "metaTitle": "โซลูชัน | ThunderOne",
+  "metaDescription": "โซลูชันที่ออกแบบมา เพื่อองค์กรของคุณ ตั้งแต่ดิจิทัลไซเนจไปจนถึงการจัดการทรัพย์สินอัจฉริยะ",
+  "breadcrumb": {
+    "home": "หน้าแรก",
+    "current": "โซลูชัน"
+  },
+  "hero": {
+    "title1": "โซลูชันที่ออกแบบมา",
+    "title2": "เพื่อองค์กรของคุณ",
+    "description": "แพลตฟอร์มเดียวที่ครอบคลุมทุกความต้องการขององค์กร ตั้งแต่การสื่อสาร การดูแลเทคโนโลยี ไปจนถึงการจัดการทรัพย์สิน ช่วยให้คุณเริ่มต้นและขยายผลได้อย่างเป็นธรรมชาติ",
+    "ctaPrimary": "พูดคุยกับเรา",
+    "ctaSecondary": "ดูทุกโซลูชัน",
+    "diagramLabels": {
+      "people": "คน",
+      "work": "งาน",
+      "communication": "การสื่อสาร",
+      "service": "บริการ",
+      "device": "อุปกรณ์",
+      "asset": "ทรัพย์สิน",
+      "space": "พื้นที่"
+    },
+    "diagramBadge": "Intelligence + AI",
+    "diagramTagline": "ลดงานที่ไม่จำเป็น • เพิ่มคุณค่าให้คน"
+  },
+  "grid": {
+    "title": "เริ่มจากสิ่งที่สำคัญกับองค์กรของคุณ",
+    "subtitle": "ไม่ว่าคุณจะเริ่มจากเรื่องใด เราช่วยคุณเริ่มต้นและขยายผลได้อย่างเป็นธรรมชาติ",
+    "items": [
+      {
+        "key": "digitalSignage",
+        "title": "Digital Signage & Media",
+        "description": "บริหารจอและสื่อจากส่วนกลาง ได้หลายจอ หลายพื้นที่ หลายสาขา",
+        "checklist": [
+          "Media Library",
+          "Playlist & Schedule",
+          "Channels",
+          "Devices & Displays",
+          "Analytics"
+        ],
+        "link": "สำรวจโซลูชันนี้"
+      },
+      {
+        "key": "communication",
+        "title": "Communication",
+        "description": "สื่อสารให้ทั้งองค์กรรู้ตรงกัน เข้าใจตรงกัน",
+        "checklist": [
+          "Publication",
+          "Audience",
+          "Channels",
+          "Response & Feedback",
+          "Analytics"
+        ],
+        "link": "สำรวจโซลูชันนี้"
+      },
+      {
+        "key": "thunderCare",
+        "title": "Thunder Care",
+        "description": "ดูแลเทคโนโลยีและการทำงานให้พร้อมใช้งานเสมอ",
+        "checklist": [
+          "IT Care / Service Request",
+          "Device Management",
+          "Field Service",
+          "SLA & Support",
+          "Knowledge & FAQ"
+        ],
+        "link": "สำรวจโซลูชันนี้"
+      },
+      {
+        "key": "assetIntelligence",
+        "title": "Asset Intelligence",
+        "description": "รู้ว่าองค์กรมีอะไร อยู่ที่ไหน และต้องดูแลอย่างไร",
+        "checklist": [
+          "Asset Registry",
+          "Location & QR Code",
+          "Lifecycle Management",
+          "Maintenance & Service",
+          "Dashboards"
+        ],
+        "link": "สำรวจโซลูชันนี้"
+      }
+    ]
+  },
+  "platform": {
+    "title": "ทำงานร่วมกันบนบริบทเดียวกัน",
+    "subtitle": "โซลูชันทั้งหมดเชื่อมต่อและทำงานร่วมกันบน ThunderOne Platform",
+    "items": [
+      "เชื่อมโยงข้อมูลทั้งหมดเข้าด้วยกัน",
+      "ปลอดภัยและควบคุมสิทธิ์ได้ตามองค์กร",
+      "ขับเคลื่อนด้วย Intelligence + AI",
+      "ทำงานอัตโนมัติตามกระบวนการของคุณ",
+      "วิเคราะห์และช่วยให้คุณตัดสินใจได้ดีขึ้น"
+    ]
+  },
+  "comingSoon": {
+    "description": "หน้ารายละเอียดโซลูชันนี้กำลังอยู่ระหว่างการพัฒนา เร็วๆ นี้จะมีข้อมูลเพิ่มเติม",
+    "back": "← กลับไปหน้าโซลูชันทั้งหมด"
+  },
+  "trustCta": {
+    "trustedTitle": "องค์กรที่ไว้วางใจ ThunderOne",
+    "logosMore": "และอีกมากมาย",
+    "cardTitle": "ยังไม่แน่ใจว่าจะเริ่มจากตรงไหน?",
+    "cardDescription": "บอกความต้องการของคุณกับเราได้เลย เราจะช่วยคุณหาจุดเริ่มต้นที่เหมาะสมที่สุด",
+    "cardCta": "พูดคุยกับเรา",
+    "cardNote": "ใช้เวลาประมาณ 1 นาที • ไม่ต้องกรอกแบบฟอร์มยาว"
+  }
+}

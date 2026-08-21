@@ -1,0 +1,130 @@
+{
+  "metaTitle": "Digital Signage & Media | ThunderOne",
+  "metaDescription": "Manage all your screens and content from one place. Publish in real-time and schedule with ease.",
+  "breadcrumb": {
+    "home": "Home",
+    "solutions": "Solutions",
+    "current": "Digital Signage & Media"
+  },
+  "hero": {
+    "badge": "SOLUTION",
+    "title": "Digital Signage & Media",
+    "subtitle": "Deliver the right message, everywhere.",
+    "description": "Manage all your screens, content, and playlists in one place. Publish in real-time, schedule with ease, and engage your audiences across every location and channel.",
+    "ctaPrimary": "Talk to us",
+    "ctaSecondary": "See it in action",
+    "dashboard": {
+      "nav": ["Dashboard", "Screens", "Media Library", "Playlists", "Schedules", "Channels", "Reports", "Settings"],
+      "stats": {
+        "screensOnline": { "value": "128/153", "label": "Screens Online", "delta": "+6%" },
+        "activePlaylists": { "value": "46", "label": "Active Playlists", "delta": "+12%" },
+        "scheduledToday": { "value": "23", "label": "Scheduled Today", "delta": "See all" },
+        "audienceReach": { "value": "245,890", "label": "Audience Reach", "delta": "+18%" }
+      },
+      "recentScreensTitle": "Recent Screens",
+      "recentScreens": [
+        { "name": "Bangkok - Lobby · Central World Tower", "status": "Online" },
+        { "name": "Chiang Mai - Branch · Maya Lifestyle", "status": "Online" },
+        { "name": "Phuket - Branch · Patong Office", "status": "Online" }
+      ],
+      "nowPlayingTitle": "Now Playing",
+      "nowPlayingHeadline": "SUMMER SALE",
+      "nowPlayingSubheadline": "UP TO 50% OFF · LIMITED TIME ONLY"
+    }
+  },
+  "challenge": {
+    "title": "The challenge",
+    "subtitle": "Managing screens and content across locations is complex, time-consuming, and often fails to engage the audience.",
+    "items": [
+      "Content updates are slow and manual",
+      "Screens are scattered and hard to monitor",
+      "Messages are not relevant to audience",
+      "No insights on performance",
+      "High cost and complexity to manage"
+    ]
+  },
+  "whatYouCanDo": {
+    "label": "What you can do",
+    "title": "Simplify. Publish. Engage. All from one platform.",
+    "description": "ThunderOne Digital Signage & Media helps you manage every screen and message with speed, control, and insight.",
+    "checklist": [
+      "Centralized media library and templates",
+      "Create and schedule playlists with drag-and-drop",
+      "Publish in real-time to any screen or channel",
+      "Monitor device health and content status",
+      "Measure performance and audience engagement"
+    ],
+    "screenHeadline": "WORLD TRAVEL EXPO",
+    "screenTagline": "EXPLORE THE WORLD",
+    "screenDate": "10-12 MAY 2025",
+    "screenLocation": "QSNCC, BANGKOK",
+    "screenCta": "BOOK NOW",
+    "publishCard": {
+      "title": "Publish to",
+      "options": [
+        { "label": "All Screens (128)" },
+        { "label": "Bangkok (45)" },
+        { "label": "Chiang Mai (18)" },
+        { "label": "Phuket (12)" }
+      ]
+    },
+    "scheduleCard": {
+      "title": "Schedule",
+      "dateValue": "10 May 2025",
+      "timeValue": "09:00",
+      "repeatLabel": "Repeat",
+      "repeatValue": "Everyday",
+      "saveButton": "Save"
+    }
+  },
+  "howItWorks": {
+    "title": "How it works",
+    "steps": [
+      { "title": "Upload", "description": "Upload media or use templates" },
+      { "title": "Create", "description": "Build playlists and set your schedule" },
+      { "title": "Publish", "description": "Send to screens or channels instantly" },
+      { "title": "Display", "description": "Content is shown on all devices" },
+      { "title": "Analyze", "description": "Track performance and optimize" }
+    ]
+  },
+  "capabilities": {
+    "title": "Key capabilities",
+    "items": [
+      { "title": "Media Library", "description": "Organize all your assets in one secure place." },
+      { "title": "Playlists & Schedule", "description": "Create dynamic playlists and schedule easily." },
+      { "title": "Channels & Groups", "description": "Target by location, department, or audience." },
+      { "title": "Devices & Health", "description": "Monitor devices, status, and content health." },
+      { "title": "Analytics", "description": "Measure impact and improve performance." }
+    ]
+  },
+  "perfectFor": {
+    "title": "Perfect for every space and purpose",
+    "items": [
+      { "title": "Corporate Communication", "description": "Share news and updates" },
+      { "title": "Retail & Shopping", "description": "Promote offers and boost sales" },
+      { "title": "Hospitality", "description": "Enhance guest experience" },
+      { "title": "Education", "description": "Inform and engage students" },
+      { "title": "Public Information", "description": "Deliver important announcements" }
+    ]
+  },
+  "seamless": {
+    "title": "Works seamlessly with ThunderOne",
+    "description": "Digital Signage & Media is part of the ThunderOne platform that connects people, work, and assets with Intelligence + AI.",
+    "link": "Explore the platform",
+    "centerLabel": "ThunderOne",
+    "connectedItems": [
+      { "key": "communication", "label": "Communication" },
+      { "key": "work", "label": "Work" },
+      { "key": "assetIntelligence", "label": "Asset Intelligence" },
+      { "key": "thunderCare", "label": "Thunder Care" }
+    ]
+  },
+  "cta": {
+    "title": "Ready to transform how you communicate visually?",
+    "description": "Let's talk about how ThunderOne Digital Signage & Media can help your organization.",
+    "ctaPrimary": "Talk to us",
+    "ctaNote": "Takes about 1 minute • No long forms",
+    "lineLabel": "Or talk to us on LINE",
+    "lineHandle": "@thunderone"
+  }
+}
