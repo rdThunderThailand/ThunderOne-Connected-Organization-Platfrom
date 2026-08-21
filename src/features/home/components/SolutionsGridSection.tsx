@@ -91,8 +91,8 @@ function SolutionMockup({ variant }: { variant: MockupVariant }) {
 
 export function SolutionsGridSection({ content }: SolutionsGridSectionProps) {
   return (
-    <section className="bg-slate-50 px-4 py-16 sm:px-6 lg:py-20">
-      <div className="mx-auto max-w-7xl rounded-3xl border border-slate-100 bg-white px-6 py-12 shadow-lg sm:px-10 sm:py-16">
+    <section className="bg-slate-50 py-16 sm:px-4 lg:py-20">
+      <div className="mx-auto max-w-7xl rounded-3xl border border-slate-100 bg-white px-4 py-12 shadow-lg sm:px-6 sm:py-16">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,300px)_1fr] lg:items-start">
           <div className="min-w-0">
             <span className="text-sm font-semibold uppercase tracking-wide text-brand-blue">

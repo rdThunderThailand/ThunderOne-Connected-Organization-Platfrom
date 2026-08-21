@@ -34,22 +34,22 @@ const CONTEXT_ITEMS: { key: keyof ProblemContent["contextItems"]; icon: LucideIc
 
 export function ProblemStatementSection({ content }: ProblemStatementSectionProps) {
   return (
-    <section className="bg-slate-50 py-16 sm:px-4 lg:py-14">
-      <div className="mx-auto max-w-7xl rounded-3xl border border-slate-100 bg-white px-3 py-6 shadow-lg sm:px-10 sm:py-8">
+    <section className="bg-slate-50 py-16 sm:px-2 lg:py-10">
+      <div className="mx-auto max-w-7xl rounded-3xl border border-slate-100 bg-white px-3 py-6 shadow-lg sm:px-6 sm:py-8">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,500px)_1fr] lg:items-center">
-          <div className="mt-2">
+          <div className="w-xl ">
             <span className="text-sm font-semibold tracking-wide text-brand-blue">
               {content.badge}
             </span>
-            <h3 className="mt-8 text-3xl font-bold leading-snug text-brand-navy sm:text-3xl">
+            <h3 className="mt-8 text-3xl font-bold leading-snug text-brand-navy sm:text-3xl w-full">
               <span className="block">{content.titleLine1}</span>
-              <span className="block">{content.titleLine2}</span>
+              <span className=" min-w-0">{content.titleLine2}</span>
             </h3>
           </div>
 
           <div className="min-w-0">
             <div className="overflow-x-auto">
-              <div className="min-w-140">
+              <div className="min-w-120">
                 <div className="flex justify-between gap-2 sm:gap-4">
                   {CONTEXT_ITEMS.map(({ key, icon: Icon }) => (
                     <div key={key} className="flex flex-col items-center gap-3">
@@ -64,7 +64,7 @@ export function ProblemStatementSection({ content }: ProblemStatementSectionProp
                   ))}
                 </div>
 
-                <div className="relative border-t border-dashed border-slate-300 pb-8">
+                <div className="relative border-t border-dashed border-slate-300 pb-5">
                   <span className="absolute left-1/2 top-0 inline-flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 whitespace-nowrap rounded-full bg-brand-navy px-5 py-2.5 text-sm font-semibold text-white shadow-md">
                     <Sparkles className="h-4 w-4 text-brand-blue" />
                     {content.connectorLabel}
@@ -73,7 +73,7 @@ export function ProblemStatementSection({ content }: ProblemStatementSectionProp
               </div>
             </div>
 
-            <p className="mt-3 wrap-break-word text-center text-lg font-bold text-brand-blue sm:text-xl">
+            <p className="mt-3  wrap-break-word text-center text-lg font-bold text-brand-blue sm:text-xl">
               {content.tagline}
             </p>
 

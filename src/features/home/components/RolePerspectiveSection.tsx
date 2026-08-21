@@ -51,8 +51,8 @@ function RoleCard({ role, photoSrc }: { role: PerspectiveRole; photoSrc: string 
 
 export function RolePerspectiveSection({ content }: RolePerspectiveSectionProps) {
   return (
-    <section className="bg-slate-50 sm:px-6 lg:py-8">
-      <div className="mx-auto max-w-7xl rounded-3xl border border-slate-100 bg-white px-6 py-10 shadow-lg sm:px-10 sm:py-8">
+    <section className="bg-slate-50 sm:px-4 lg:py-8">
+      <div className="mx-auto max-w-7xl rounded-3xl border border-slate-100 bg-white px-4 py-10 shadow-lg sm:px-6 sm:py-8">
         <h2 className="text-sm font-semibold uppercase tracking-wide text-brand-blue">{content.title}</h2>
         <div className="mt-6 grid gap-6 sm:grid-cols-3">
           {ROLE_PHOTOS.map(({ key, src }) => (

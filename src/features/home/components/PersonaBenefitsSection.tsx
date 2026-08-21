@@ -4,7 +4,7 @@
 // Connect us — each with an icon, label badge, title, and checklist ===
 
 import type { LucideIcon } from "lucide-react";
-import { Check, Clock, Sparkles, Users } from "lucide-react";
+import { Brain, Check, Clock, Sparkles, Users } from "lucide-react";
 import type { PersonaContent, PersonaGroup } from "../types";
 
 type PersonaBenefitsSectionProps = {
@@ -25,7 +25,7 @@ const CARD_STYLES: {
   },
   {
     key: "helpMe",
-    icon: Sparkles,
+    icon: Brain,
     iconClassName: "bg-brand-blue/10 text-brand-blue",
     accentClassName: "text-brand-blue",
   },
@@ -50,20 +50,26 @@ function PersonaCard({
 }) {
   return (
 
-    <div className="rounded-2xl p-6 text-center bg-amber-100">
-      <span className={`inline-flex h-11 w-11 items-center justify-center rounded-xl ${iconClassName}`}>
-        <Icon className="h-10 w-10 rounded-2xl" />
+    <div className=" flex gap-10 rounded-2xl p-5 text-center">
+
+      <span className={`inline-flex h-22 w-22 shrink-0 items-center justify-center rounded-full ${iconClassName}`}>
+        <Icon className="h-18 w-18 shrink-0 text-2xl" />
       </span>
-      <p className={`mt-4 text-xs font-semibold uppercase tracking-wider ${accentClassName}`}>{group.label}</p>
-      <h3 className="mt-1 text-xs font-semibold text-brand-navy">{group.title}</h3>
-      <ul className="mt-4 space-y-2">
+
+      <div className="justify-between">
+      <p className={`mt-4 text-xm font-semibold text-left uppercase tracking-wider ${accentClassName}`}>{group.label}</p>
+      <h3 className="mt-1 text-xm font-semibold text-left text-brand-navy">{group.title}</h3>
+      <ul className="mt-4 space-y-2">                             
         {group.items.map((item) => (
           <li key={item} className="flex items-start gap-2 text-sm text-slate-600">
             <Check className={`mt-0.5 h-4 w-4 shrink-0 ${accentClassName}`} />
             <span>{item}</span>
           </li>
-        ))}
-      </ul>
+        ))}   
+      </ul>    
+
+      </div>
+
     </div>
 
   );
@@ -71,10 +77,10 @@ function PersonaCard({
 
 export function PersonaBenefitsSection({ content }: PersonaBenefitsSectionProps) {
   return (
-    <section className="bg-slate-50 sm:px-6 lg:py-8">
-      <div className="mx-auto max-w-7xl rounded-3xl border border-slate-100 bg-white px-6 py-10 shadow-lg sm:px-10 sm:py-8">
-        <span className="text-sm font-semibold uppercase tracking-wide text-brand-blue">{content.badge}</span>
-        <div className="mt-4 grid gap-6 sm:grid-cols-3">
+    <section className="bg-slate-50 lg:py-1">
+      <div className="mx-auto max-w-7xl rounded-3xl border border-slate-100 bg-white py-5 shadow-lg sm:px-6 sm:py-8">
+        <span className="text-xl font-semibold uppercase tracking-wide text-brand-blue">{content.badge}</span>
+        <div className="flex sm:grid-cols-3 justify-around">
           {CARD_STYLES.map(({ key, icon, iconClassName, accentClassName }) => (
             <PersonaCard
               key={key}

@@ -197,8 +197,8 @@ export function ProductShowcaseSection({ content }: ProductShowcaseSectionProps)
   const dashboard = content.dashboards[activeTab];
 
   return (
-    <section className="bg-slate-50 sm:px-6 lg:py-8">
-      <div className="mx-auto max-w-7xl rounded-3xl border border-slate-100 bg-white px-6 py-10 shadow-lg sm:px-10 sm:py-8">
+    <section className="bg-slate-50 sm:px-4 lg:py-8">
+      <div className="mx-auto max-w-7xl rounded-3xl border border-slate-100 bg-white px-4 py-10 shadow-lg sm:px-6 sm:py-8">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,380px)_1fr] lg:items-start">
           <div className="min-w-0">
             <span className="text-sm font-semibold uppercase tracking-wide text-brand-blue">{content.badge}</span>

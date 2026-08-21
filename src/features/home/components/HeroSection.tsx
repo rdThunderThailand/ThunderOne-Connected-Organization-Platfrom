@@ -33,9 +33,10 @@ export function HeroSection({ content }: HeroSectionProps) {
   }));
 
   return (
-    <section className="overflow-hidden bg-white">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-2 lg:items-center lg:py-28">
-        <div>
+    <section className="overflow-hidden">
+      <div className="mx-auto grid max-w-7xl px-6 py-20 lg:grid-cols-2 lg:items-center lg:py-28">
+        <div className="w-fit">
+
           <p className="text-sm font-semibold text-slate-500">{content.trustedBy}</p>
           <h1 className="mt-4 text-4xl font-bold leading-tight text-brand-navy sm:text-5xl">
             <span className="block">{content.titleLine1}</span>
