@@ -4,6 +4,7 @@ const namespaces = [
   ["Common", "common"],
   ["Navbar", "navbar"],
   ["Footer", "footer"],
+  ["TalkToUsPanel", "talk-to-us"],
   ["HomePage", "home"],
   ["AboutPage", "about"],
   ["PartnersPage", "partners"],

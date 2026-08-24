@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { ChevronDown, Globe, Menu, MessageCircle, X } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import { useTalkToUsStore } from "@/store/talkToUsStore";
 import thunderOneLogo from "@/components/logo/Horizontal TextBlack.svg";
 
 type NavItem = {
@@ -128,6 +129,7 @@ export function Navbar() {
   const [langOpen, setLangOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
+  const openTalkToUs = useTalkToUsStore((s) => s.open);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -228,13 +230,14 @@ export function Navbar() {
           >
             {t("login")}
           </Link>
-          <Link
-            href="/contact"
+          <button
+            type="button"
+            onClick={openTalkToUs}
             className="flex items-center gap-2 rounded-full bg-brand-blue px-5 py-2 text-sm font-semibold text-white hover:bg-blue-700"
           >
             {t("contact")}
             <MessageCircle className="h-4 w-4" />
-          </Link>
+          </button>
         </div>
 
         <button
@@ -284,13 +287,17 @@ export function Navbar() {
             >
               {t("login")}
             </Link>
-            <Link
-              href="/contact"
+            <button
+              type="button"
+              onClick={() => {
+                setMobileOpen(false);
+                openTalkToUs();
+              }}
               className="flex items-center justify-center gap-2 rounded-full bg-brand-blue px-5 py-2 text-sm font-semibold text-white"
             >
               {t("contact")}
               <MessageCircle className="h-4 w-4" />
-            </Link>
+            </button>
           </div>
         </div>
       )}

@@ -1,0 +1,183 @@
+{
+  "close": "Close",
+  "back": "Back",
+  "topic": {
+    "title": "Talk to us",
+    "subtitle": "Tell us what you're interested in",
+    "items": {
+      "digital-signage": {
+        "label": "Digital Signage & Media",
+        "description": "Manage screens and media centrally"
+      },
+      "thunder-care": {
+        "label": "Thunder Care",
+        "description": "Keep your technology and operations always ready"
+      },
+      "communication": {
+        "label": "Communication",
+        "description": "Keep the whole organization informed and aligned"
+      },
+      "asset-intelligence": {
+        "label": "Asset Intelligence",
+        "description": "Know what your organization has, where it is, and how to maintain it"
+      },
+      "not-sure": {
+        "label": "Not sure yet",
+        "description": "I'd like to talk it through first"
+      }
+    }
+  },
+  "questions": {
+    "confidentialNote": "Your information is kept confidential",
+    "next": "Next",
+    "sets": {
+      "digital-signage": {
+        "branchCount": {
+          "label": "How many branches/locations do you manage?",
+          "options": {
+            "1-5": "1 - 5 branches",
+            "6-20": "6 - 20 branches",
+            "21-50": "21 - 50 branches",
+            "50-plus": "50+ branches"
+          }
+        },
+        "usageType": {
+          "label": "What's your main use case?",
+          "options": {
+            "office": "Office / internal use",
+            "multi-branch": "Multiple branches/locations",
+            "public": "Public space / government",
+            "advertising": "Advertising network"
+          }
+        }
+      },
+      "thunder-care": {
+        "orgSize": {
+          "label": "How many branches/locations do you manage?",
+          "options": {
+            "1-5": "1 - 5 branches",
+            "6-20": "6 - 20 branches",
+            "21-50": "21 - 50 branches",
+            "50-plus": "50+ branches"
+          }
+        },
+        "primaryGoal": {
+          "label": "What would you like help with most?",
+          "options": {
+            "assessment": "An initial needs assessment",
+            "quote": "A price quote",
+            "demo": "A product demo",
+            "other": "Something else"
+          }
+        }
+      },
+      "communication": {
+        "orgSize": {
+          "label": "How many branches/locations do you manage?",
+          "options": {
+            "1-5": "1 - 5 branches",
+            "6-20": "6 - 20 branches",
+            "21-50": "21 - 50 branches",
+            "50-plus": "50+ branches"
+          }
+        },
+        "primaryGoal": {
+          "label": "What would you like help with most?",
+          "options": {
+            "assessment": "An initial needs assessment",
+            "quote": "A price quote",
+            "demo": "A product demo",
+            "other": "Something else"
+          }
+        }
+      },
+      "asset-intelligence": {
+        "orgSize": {
+          "label": "How many branches/locations do you manage?",
+          "options": {
+            "1-5": "1 - 5 branches",
+            "6-20": "6 - 20 branches",
+            "21-50": "21 - 50 branches",
+            "50-plus": "50+ branches"
+          }
+        },
+        "primaryGoal": {
+          "label": "What would you like help with most?",
+          "options": {
+            "assessment": "An initial needs assessment",
+            "quote": "A price quote",
+            "demo": "A product demo",
+            "other": "Something else"
+          }
+        }
+      },
+      "not-sure": {
+        "orgSize": {
+          "label": "How many branches/locations do you manage?",
+          "options": {
+            "1-5": "1 - 5 branches",
+            "6-20": "6 - 20 branches",
+            "21-50": "21 - 50 branches",
+            "50-plus": "50+ branches"
+          }
+        },
+        "primaryGoal": {
+          "label": "What would you like help with most?",
+          "options": {
+            "assessment": "An initial needs assessment",
+            "quote": "A price quote",
+            "demo": "A product demo",
+            "other": "Something else"
+          }
+        }
+      }
+    }
+  },
+  "channel": {
+    "title": "Talk to us",
+    "subtitle": "How would you like to connect?",
+    "or": "or",
+    "confidentialNote": "Your information is kept confidential",
+    "line": {
+      "title": "LINE",
+      "badge": "Recommended",
+      "checklist1": "Fastest response",
+      "checklist2": "Send files/images",
+      "checklist3": "Schedule a meeting",
+      "cta": "Chat on LINE"
+    },
+    "callback": {
+      "title": "Have us call you back",
+      "checklist1": "Our team will call within 1 business day",
+      "checklist2": "Choose a time that works for you",
+      "cta": "Leave your number"
+    }
+  },
+  "callbackForm": {
+    "title": "Leave your number",
+    "phoneLabel": "Phone number",
+    "phonePlaceholder": "0812345678",
+    "preferredTimeLabel": "Preferred time (optional)",
+    "preferredTimeOptions": {
+      "any": "Any time",
+      "morning": "Morning (9:00 - 12:00)",
+      "afternoon": "Afternoon (13:00 - 16:00)",
+      "evening": "Evening (16:00 - 18:00)"
+    },
+    "confidentialNote": "Your information is kept confidential",
+    "submit": "Confirm"
+  },
+  "confirmation": {
+    "title": "We've got your details!",
+    "description": "Our team will be in touch soon with recommendations tailored to your needs.",
+    "summaryTitle": "Your summary",
+    "topicLabel": "Interested in",
+    "channelLabel": "Contact channel",
+    "channelValues": {
+      "line": "LINE",
+      "callback": "Call back"
+    },
+    "phoneLabel": "Phone number",
+    "backHome": "Back to home"
+  }
+}

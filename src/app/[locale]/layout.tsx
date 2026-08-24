@@ -4,6 +4,7 @@ import { getMessages, getTranslations, setRequestLocale } from "next-intl/server
 import { notFound } from "next/navigation";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { TalkToUsPanel } from "@/components/talk-to-us/TalkToUsPanel";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 import { Prompt } from 'next/font/google'
@@ -47,15 +48,17 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale);
 
-  // Navbar is the only Client Component that needs translations in the
-  // browser — Footer and every page use next-intl/server's getTranslations,
-  // which reads from the request-scoped store, not from this client
-  // context. Scoping the provider's messages keeps the rest of the
-  // dictionary out of the client bundle.
+  // Navbar and TalkToUsPanel are the only Client Components that need
+  // translations in the browser — Footer and every page use
+  // next-intl/server's getTranslations, which reads from the
+  // request-scoped store, not from this client context. Scoping the
+  // provider's messages keeps the rest of the dictionary out of the
+  // client bundle.
   const messages = await getMessages();
   const clientMessages = {
     Navbar: messages.Navbar,
     Common: messages.Common,
+    TalkToUsPanel: messages.TalkToUsPanel,
   };
 
   return (
@@ -65,6 +68,7 @@ export default async function LocaleLayout({
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
+          <TalkToUsPanel />
         </NextIntlClientProvider>
       </body>
     </html>
