@@ -1,0 +1,154 @@
+{
+  "endTour": "End tour",
+  "asset": {
+    "id": "AC-001",
+    "name": "Meeting Room 3 AC Unit",
+    "statusActive": "Active",
+    "location": { "label": "Location", "value": "3rd Floor, Meeting Room 3" },
+    "category": { "label": "Category", "value": "HVAC System" },
+    "assetId": { "label": "Asset ID", "value": "AC-001" },
+    "age": { "label": "Age", "value": "1 year 4 months" },
+    "value": { "label": "Asset Value", "value": "THB 45,000" }
+  },
+  "sidebar": {
+    "title": "Asset Intelligence Product Tour",
+    "subtitle": "Experience smart, complete, ready-to-use asset management.",
+    "progressLabel": "Tour progress",
+    "stepOfLabel": "Step {current} of {total}",
+    "steps": [
+      { "title": "Scan QR Code", "description": "Scan the QR code attached to the asset" },
+      { "title": "View Asset Info", "description": "View asset details and history" },
+      { "title": "Report Issue", "description": "Report the issue and attach photos for clarity" },
+      { "title": "Assign Work", "description": "Assign the work to the relevant team" },
+      { "title": "Execute and Close", "description": "Resolve the issue and close the work order" },
+      { "title": "History and Reports", "description": "View past history and related reports" }
+    ],
+    "realDataPrompt": {
+      "title": "Want to see the tour with real data?",
+      "description": "Let our team show you how it works with your real organization.",
+      "ctaButton": "Talk to us"
+    }
+  },
+  "stepHeader": {
+    "scenarioBadge": "Scenario",
+    "scenarioQuote": "The meeting room AC isn't cooling, needs a repair report.",
+    "stepOfLabel": "Step {current} of {total}",
+    "titles": [
+      "Scan QR Code",
+      "View Asset Info",
+      "Report Issue",
+      "Assign Work",
+      "Execute and Close",
+      "History and Reports"
+    ],
+    "descriptions": [
+      "Scan the QR code attached to the asset to pull up its record instantly — no manual lookup needed.",
+      "Review the asset's details and maintenance history before deciding what to do next.",
+      "Select the issue type and fill in the details — the system will automatically create a work order for the right team to act on.",
+      "Assign the work order to the right team or person and set a due date so nothing falls through the cracks.",
+      "Update the work order as the team resolves the issue, attach after-repair photos, and close it out.",
+      "Review the asset's full maintenance history and the reports generated along the way."
+    ]
+  },
+  "steps": {
+    "step1": {
+      "phoneTitle": "Scan Asset QR Code",
+      "phoneDescription": "Point your camera at the QR code on the asset label.",
+      "cardTitle": "Scan QR Code",
+      "cardDescription": "Every ThunderOne asset carries a QR code. Scanning it opens the asset's record instantly, so field staff never have to search for it manually.",
+      "fields": [
+        { "label": "Scan method", "value": "Mobile app camera" },
+        { "label": "Fallback", "value": "Manual asset ID search" }
+      ],
+      "actionButton": "Open scanner"
+    },
+    "step2": {
+      "phoneTitle": "Asset Details",
+      "phoneDescription": "Read-only view of the scanned asset's record.",
+      "cardTitle": "View Asset Info",
+      "cardDescription": "See everything about this asset in one place — location, category, age, value, and its full maintenance history — before deciding what action to take.",
+      "fields": [],
+      "actionButton": "View full history"
+    },
+    "step3": {
+      "phone": {
+        "headerTitle": "Asset Details",
+        "reportButton": "Report Issue"
+      },
+      "form": {
+        "title": "Report Issue",
+        "issueTypeLabel": "Issue Type *",
+        "issueTypePlaceholder": "Air conditioner malfunction",
+        "urgencyLabel": "Urgency Level *",
+        "urgencyHigh": "High",
+        "detailsLabel": "Issue Details *",
+        "detailsPlaceholder": "AC turns on but doesn't cool",
+        "photosLabel": "Attached Photos",
+        "addPhotoButton": "+ Add photo",
+        "infoNote": "The system will automatically create a work order once submitted, and notify the relevant team.",
+        "successTitle": "Work order created: WO-2025-0512",
+        "successDescription": "The work order has been created and relevant parties have been notified.",
+        "successLink": "View work order details →",
+        "cancelButton": "Cancel",
+        "submitButton": "Save and create work order"
+      }
+    },
+    "step4": {
+      "phoneTitle": "Work Order WO-2025-0512",
+      "phoneDescription": "Assign this work order to the right team.",
+      "cardTitle": "Assign Work",
+      "cardDescription": "Route the work order to the team or technician responsible for HVAC systems, and set a due date so the request doesn't stall.",
+      "fields": [
+        { "label": "Assigned to", "value": "Facilities Team – HVAC" },
+        { "label": "Due date", "value": "2 days from now" }
+      ],
+      "actionButton": "Assign work order"
+    },
+    "step5": {
+      "phoneTitle": "Work Order WO-2025-0512",
+      "phoneDescription": "Update progress and close the work order once resolved.",
+      "cardTitle": "Execute and Close",
+      "cardDescription": "The assigned technician updates status as they work, attaches after-repair photos, and closes the work order once the AC is cooling again.",
+      "fields": [
+        { "label": "Status", "value": "Resolved" },
+        { "label": "After-repair photo", "value": "1 photo attached" }
+      ],
+      "actionButton": "Close work order"
+    },
+    "step6": {
+      "phoneTitle": "Maintenance History",
+      "phoneDescription": "Every past work order and inspection for this asset.",
+      "cardTitle": "History and Reports",
+      "cardDescription": "Review everything that's happened to this asset over time, and generate reports for planning and compliance.",
+      "fields": [
+        { "label": "12 May 2025", "value": "WO-2025-0512 – AC repair, resolved" },
+        { "label": "18 Feb 2025", "value": "Routine inspection, passed" },
+        { "label": "3 Nov 2024", "value": "Filter replacement" }
+      ],
+      "actionButton": "View full report"
+    }
+  },
+  "summaryPanel": {
+    "title": "Situation Summary",
+    "whatYouWillSeeTitle": "What you'll see in this tour",
+    "items": [
+      "AC status",
+      "Data and history",
+      "Report issue and create work order",
+      "Assign work",
+      "Execute and close",
+      "Latest history and reports"
+    ]
+  },
+  "bottomBar": {
+    "tip": "You can always go back to a previous step to see more details.",
+    "backButton": "← Back",
+    "nextButton": "Next →",
+    "finishButton": "Finish"
+  },
+  "mobileTabs": {
+    "stepsTab": "Steps",
+    "contentTab": "Content",
+    "summaryTab": "Summary"
+  }
+}

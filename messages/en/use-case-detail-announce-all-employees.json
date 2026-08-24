@@ -1,0 +1,198 @@
+{
+  "metaTitle": "Announce to All Employees | ThunderOne Use Cases",
+  "metaDescription": "Deliver important announcements to the right people, through the right channels, at the right time.",
+  "breadcrumb": {
+    "home": "Home",
+    "useCases": "Use Cases",
+    "category": "Communicate & Engage",
+    "current": "Announce to All Employees"
+  },
+  "hero": {
+    "eyebrow": "USE CASE",
+    "title": "Announce to All Employees",
+    "description": "Deliver important announcements to the right people, through the right channels, at the right time.",
+    "forLabel": "For:",
+    "audienceTags": ["Executive", "HR", "Manager", "Internal Communication"],
+    "ctaPrimary": "See it in action",
+    "ctaSecondary": "Talk to us",
+    "mockup": {
+      "panelTitle": "Company Announcement",
+      "statusLabel": "Published",
+      "author": "By HR Team",
+      "timestamp": "15 Aug 2024, 10:00",
+      "bodyPreview": "Please be informed that the company town hall meeting will be held on 15 August 2024 at 10:00 AM. All employees are invited to join via the channels below.",
+      "stats": [
+        { "value": "12,458", "label": "Sent" },
+        { "value": "10,236", "label": "Read", "percent": "82.2%" },
+        { "value": "1,245", "label": "Engaged", "percent": "12.3%" },
+        { "value": "856", "label": "Responses", "percent": "6.4%" }
+      ],
+      "lineNotification": {
+        "appName": "ThunderOne",
+        "title": "Company Announcement",
+        "timestamp": "15 Aug 2024, 10:00 AM",
+        "cta": "View details"
+      }
+    }
+  },
+  "benefits": {
+    "items": [
+      {
+        "title": "Reach Everyone",
+        "description": "Deliver messages to all employees instantly across all channels."
+      },
+      {
+        "title": "Increase Engagement",
+        "description": "Drive awareness and action with relevant, timely content."
+      },
+      {
+        "title": "One Place to Manage",
+        "description": "Manage LINE, Mobile, Email, Digital Signage and Intranet in one place."
+      },
+      {
+        "title": "Governed & Secure",
+        "description": "Use workflows and approvals to ensure the right message."
+      },
+      {
+        "title": "Measure & Improve",
+        "description": "Track performance and optimize your communication."
+      }
+    ]
+  },
+  "situationOutcome": {
+    "situation": {
+      "number": "01",
+      "title": "The Situation",
+      "subtitle": "(The Situation)",
+      "description": "Important announcements need to reach everyone, but today communication is often:",
+      "points": [
+        "Sent across multiple channels with no coordination",
+        "Information gets missed or delayed",
+        "Messages are forwarded manually",
+        "No visibility on who has read",
+        "Hard to track responses and feedback"
+      ]
+    },
+    "outcome": {
+      "number": "02",
+      "title": "The Outcome",
+      "subtitle": "(The Outcome)",
+      "points": [
+        "The right message reaches the right people",
+        "Employees are informed and aligned",
+        "Higher awareness and faster action",
+        "Measurable engagement and responses",
+        "Better communication across the organization"
+      ]
+    }
+  },
+  "howItWorks": {
+    "number": "03",
+    "title": "How it Works",
+    "steps": [
+      { "title": "Create", "description": "Create and draft your announcement" },
+      { "title": "Select Audience", "description": "Choose people, teams, or locations" },
+      { "title": "Choose Channels", "description": "LINE, Mobile, Email, Digital Signage, Intranet" },
+      { "title": "Approve", "description": "Review and approve content with workflow" },
+      { "title": "Publish", "description": "Publish to selected channels" },
+      { "title": "Understand", "description": "Track delivery, reads and engagement" }
+    ]
+  },
+  "inContext": {
+    "number": "04",
+    "title": "In Context",
+    "teamViewLabel": "Communication Team View",
+    "employeeViewLabel": "Employee View",
+    "panelTitle": "Company Announcement",
+    "statusLabel": "Published",
+    "chartLabel": "Engagement over time",
+    "teamView": {
+      "stats": [
+        { "value": "12,458", "label": "Sent" },
+        { "value": "10,236", "label": "Read", "percent": "82.2%" },
+        { "value": "1,245", "label": "Engaged", "percent": "12.3%" },
+        { "value": "856", "label": "Responses", "percent": "6.4%" }
+      ]
+    },
+    "employeeView": {
+      "stats": [
+        { "value": "Read", "label": "Status" },
+        { "value": "10:15", "label": "Read at" },
+        { "value": "LINE", "label": "Channel" },
+        { "value": "Replied", "label": "Response" }
+      ]
+    }
+  },
+  "stakeholders": {
+    "number": "05",
+    "title": "Who's Involved",
+    "items": [
+      { "role": "Executive", "description": "Sets direction and approves" },
+      { "role": "Communication / HR", "description": "Creates and publishes" },
+      { "role": "Manager", "description": "Amplifies and follows up" },
+      { "role": "Employees", "description": "Receive and respond" }
+    ]
+  },
+  "connects": {
+    "number": "06",
+    "title": "What ThunderOne Connects",
+    "centerLabel": "ThunderOne Communication",
+    "items": [
+      { "label": "People", "description": "Employees" },
+      { "label": "Content", "description": "Media & Docs" },
+      { "label": "Channels", "description": "Multi-channel" },
+      { "label": "Workflow", "description": "Approvals" },
+      { "label": "Intelligence", "description": "Insights & Data" }
+    ]
+  },
+  "capabilities": {
+    "number": "07",
+    "title": "Capabilities Used",
+    "items": [
+      "Publication",
+      "Audience & Segmentation",
+      "Channels (Multi-channel)",
+      "Approval Workflow",
+      "Response & Feedback",
+      "Analytics & Reporting"
+    ]
+  },
+  "beforeAfter": {
+    "number": "08",
+    "title": "Before vs. With ThunderOne",
+    "beforeTitle": "Before ThunderOne",
+    "afterTitle": "With ThunderOne",
+    "before": [
+      "Manual & scattered",
+      "Messages get missed",
+      "No visibility",
+      "Slow follow up",
+      "Hard to measure"
+    ],
+    "after": [
+      "One platform",
+      "Targeted & timely",
+      "Full visibility",
+      "Faster responses",
+      "Actionable insights"
+    ]
+  },
+  "related": {
+    "number": "09",
+    "title": "Related Use Cases",
+    "seeAllLabel": "See all use cases",
+    "items": [
+      { "title": "Manage Emergency Alerts" },
+      { "title": "Plan and Run Campaigns" },
+      { "title": "Deliver Mobile Workforce Updates" },
+      { "title": "Manage Digital Signage Content" }
+    ]
+  },
+  "readyToStart": {
+    "title": "Ready to get started?",
+    "description": "Let our experts show you how ThunderOne can transform the way your organization communicates.",
+    "cta": "Talk to our experts",
+    "point1": "Get a demo in 1 minute",
+    "point2": "No commitment, just a conversation"
+  }
+}

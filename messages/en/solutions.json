@@ -1,0 +1,107 @@
+{
+  "metaTitle": "Solutions | ThunderOne",
+  "metaDescription": "Solutions designed for your organization, from digital signage to asset intelligence.",
+  "breadcrumb": {
+    "home": "Home",
+    "current": "Solutions"
+  },
+  "hero": {
+    "title1": "Solutions designed",
+    "title2": "for your organization",
+    "description": "One platform that covers everything your organization needs, from communication and technology care to asset management, helping you start simple and expand naturally.",
+    "ctaPrimary": "Talk to us",
+    "ctaSecondary": "See all solutions",
+    "diagramLabels": {
+      "people": "People",
+      "work": "Work",
+      "communication": "Communication",
+      "service": "Service",
+      "device": "Device",
+      "asset": "Asset",
+      "space": "Space"
+    },
+    "diagramBadge": "Intelligence + AI",
+    "diagramTagline": "Reduce unnecessary work • Surface what matters"
+  },
+  "grid": {
+    "title": "Start with what matters most to your organization",
+    "subtitle": "You don't need to change everything at once. We help you start simple and expand naturally.",
+    "items": [
+      {
+        "key": "digitalSignage",
+        "title": "Digital Signage & Media",
+        "description": "Manage every screen and content from one place.",
+        "checklist": [
+          "Media Library",
+          "Playlist & Schedule",
+          "Channels",
+          "Devices & Displays",
+          "Analytics"
+        ],
+        "link": "Explore solution"
+      },
+      {
+        "key": "communication",
+        "title": "Communication",
+        "description": "Keep your organization informed, aligned, and connected.",
+        "checklist": [
+          "Publication",
+          "Audience",
+          "Channels",
+          "Response & Feedback",
+          "Analytics"
+        ],
+        "link": "Explore solution"
+      },
+      {
+        "key": "thunderCare",
+        "title": "Thunder Care",
+        "description": "Keep your technology and workplace ready to work.",
+        "checklist": [
+          "IT Care / Service Request",
+          "Device Management",
+          "Field Service",
+          "SLA & Support",
+          "Knowledge & FAQ"
+        ],
+        "link": "Explore solution"
+      },
+      {
+        "key": "assetIntelligence",
+        "title": "Asset Intelligence",
+        "description": "Know what you have, where it is, and what it needs.",
+        "checklist": [
+          "Asset Registry",
+          "Location & QR Code",
+          "Lifecycle Management",
+          "Maintenance & Service",
+          "Dashboards"
+        ],
+        "link": "Explore solution"
+      }
+    ]
+  },
+  "platform": {
+    "title": "Built to work together on one platform",
+    "subtitle": "All solutions share the same context and work seamlessly across the ThunderOne platform.",
+    "items": [
+      "Connect data and context",
+      "Secure and control access across your organization",
+      "AI-powered intelligence",
+      "Automate and simplify your processes",
+      "Analyze and help you make better decisions"
+    ]
+  },
+  "comingSoon": {
+    "description": "This solution's detail page is coming soon.",
+    "back": "← Back to all solutions"
+  },
+  "trustCta": {
+    "trustedTitle": "Trusted by forward-thinking organizations",
+    "logosMore": "and more",
+    "cardTitle": "Not sure where to start?",
+    "cardDescription": "Talk to our team and we'll help you find the right place to begin.",
+    "cardCta": "Talk to us",
+    "cardNote": "Takes about 1 minute • No long forms"
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "metaTitle": "Thunder Care | ThunderOne",
+  "metaDescription": "IT & device care that keeps your organization running smoothly.",
+  "breadcrumb": {
+    "home": "Home",
+    "solutions": "Solutions",
+    "current": "Thunder Care"
+  },
+  "hero": {
+    "badge": "SOLUTION",
+    "title": "Thunder Care",
+    "subtitle": "IT & Device care that keeps your organization running smoothly.",
+    "description": "A complete IT service and equipment care system that helps your teams work uninterrupted. Resolve issues faster, reduce downtime, and improve the employee experience.",
+    "ctaPrimary": "Talk to us",
+    "ctaSecondary": "See it in action",
+    "dashboard": {
+      "productLabel": "T1 care",
+      "panelTitle": "Service Overview",
+      "dateRange": "May 10 - May 16, 2025",
+      "nav": ["Dashboard", "Incidents", "Service Requests", "Problems", "Assets", "SLA & Reports", "Knowledge Base", "Users", "Reports", "Settings"],
+      "stats": {
+        "openTickets": { "value": "128", "label": "Open Tickets", "delta": "+24% vs last week" },
+        "requestsToday": { "value": "45", "label": "Requests Today", "delta": "+12%" },
+        "resolvedToday": { "value": "83", "label": "Resolved Today", "delta": "+18%" },
+        "slaAchievement": { "value": "98%", "label": "SLA Achievement", "delta": "+5%" }
+      },
+      "recentTicketsTitle": "Recent Tickets",
+      "recentTickets": [
+        { "title": "INC-2025-0512", "meta": "Network not stable", "status": "In Progress" },
+        { "title": "SR-2025-0511", "meta": "Install Microsoft 365", "status": "Assigned" },
+        { "title": "INC-2025-0510", "meta": "Printer not working", "status": "Resolved" }
+      ],
+      "ticketByCategoryTitle": "Ticket by Category",
+      "ticketByCategory": [
+        { "label": "IT Support", "percent": 35 },
+        { "label": "Hardware", "percent": 25 },
+        { "label": "Software", "percent": 18 },
+        { "label": "Network", "percent": 12 },
+        { "label": "Other", "percent": 10 }
+      ],
+      "viewAllTickets": "View all tickets",
+      "viewReport": "View report"
+    }
+  },
+  "challenge": {
+    "title": "The challenge",
+    "subtitle": "IT and device issues happen every day and impact productivity. Without a streamlined process, it's hard to respond and deliver a great experience.",
+    "items": [
+      "Slow response and manual processes",
+      "Scattered data and limited visibility",
+      "Inconsistent service and user experience",
+      "No SLA visibility and performance insight",
+      "High cost and complexity to manage"
+    ]
+  },
+  "whatYouCanDo": {
+    "label": "What Thunder Care can do",
+    "title": "Manage IT & devices in one place. Fast. Reliable. Simple.",
+    "description": "Thunder Care gives your team the tools to deliver fast support, manage assets, and keep operations running without disruption.",
+    "checklist": [
+      "Omnichannel ticketing (Web, Mobile, Line OA)",
+      "Automated workflows and smart routing",
+      "SLA management and real-time tracking",
+      "Asset & device management",
+      "Knowledge base and self-service portal",
+      "Reports & analytics for continuous improvement"
+    ],
+    "createTicketCard": {
+      "title": "Create a new ticket",
+      "requestTypeLabel": "Request type",
+      "requestTypeValue": "IT Support",
+      "categoryLabel": "Category",
+      "categoryValue": "Network & Internet",
+      "detailsValue": "Cannot connect to Wi-Fi in the office",
+      "submitButton": "Submit"
+    },
+    "trackingCard": {
+      "title": "Ticket #INC-2025-0512",
+      "steps": [
+        { "label": "Created", "time": "10:15" },
+        { "label": "Assigned", "time": "10:25" },
+        { "label": "In Progress", "time": "10:40" },
+        { "label": "Resolved", "time": "11:30" }
+      ],
+      "assignedToLabel": "Assigned to",
+      "assignedToValue": "David Lee (Network Engineer)",
+      "dueDateLabel": "Due date",
+      "dueDateValue": "May 16, 2025 · 12:00",
+      "slaPerformanceTitle": "SLA Performance (This month)",
+      "slaPercent": 98,
+      "slaAchievedLabel": "SLA Achieved 125 / 128 tickets",
+      "viewSlaReport": "View SLA report"
+    }
+  },
+  "howItWorks": {
+    "title": "How it works",
+    "steps": [
+      { "title": "Submit", "description": "Users submit tickets via web, mobile, or Line OA" },
+      { "title": "Route", "description": "Tickets are automatically routed to the right team" },
+      { "title": "Resolve", "description": "Technicians work and update in real time" },
+      { "title": "Resolve & Close", "description": "Issue is resolved and ticket is closed" },
+      { "title": "Monitor", "description": "SLA and performance are monitored" },
+      { "title": "Analyze & Improve", "description": "Reports & analytics drive better service" }
+    ]
+  },
+  "capabilities": {
+    "title": "Key capabilities",
+    "items": [
+      { "title": "Ticketing & Workflow", "description": "Smart ticket management and automation" },
+      { "title": "SLA Management", "description": "Define SLAs, track, and measure compliance" },
+      { "title": "Asset & Device Mgmt.", "description": "Track and manage IT assets and devices" },
+      { "title": "Preventive Maintenance", "description": "Plan and manage preventive maintenance" },
+      { "title": "Knowledge Base", "description": "Self-service articles and how-to guides" },
+      { "title": "Reports & Analytics", "description": "Insightful dashboards and custom reports" }
+    ]
+  },
+  "idealFor": {
+    "title": "Ideal for every organization",
+    "items": [
+      { "title": "Corporate", "description": "Improve employee productivity" },
+      { "title": "Retail & Branch", "description": "Fast support across multiple locations" },
+      { "title": "Manufacturing", "description": "Keep operations continuous" },
+      { "title": "Education", "description": "Support staff and students" },
+      { "title": "Healthcare", "description": "Reliable IT for critical services" },
+      { "title": "Government", "description": "Deliver better public services" }
+    ]
+  },
+  "platform": {
+    "title": "Works seamlessly with ThunderOne Platform",
+    "description": "Thunder Care connects with communication, asset intelligence, and other modules to deliver complete operational excellence.",
+    "exploreLink": "Explore the platform",
+    "centerLabel": "ThunderOne Platform",
+    "connectedItems": [
+      { "key": "communication", "label": "Communication" },
+      { "key": "work", "label": "Work" },
+      { "key": "assetIntelligence", "label": "Asset Intelligence" },
+      { "key": "thunderCare", "label": "Thunder Care" }
+    ]
+  },
+  "cta": {
+    "title": "Ready to take better care of your IT & devices?",
+    "description": "Let's talk about how Thunder Care can work for your organization.",
+    "ctaPrimary": "Talk to us",
+    "ctaNote": "Takes about 1 minute • No long forms"
+  },
+  "tools": {
+    "title": "Works with the tools you already use",
+    "logosNote": "and more"
+  }
+}
