@@ -4,9 +4,6 @@
 // Manager / People), each with the question that role asks, the items that
 // matter to them, and a photo panel with a decorative arrow badge ===
 
-// Photos are free-license stock placeholders (Unsplash), not real ThunderOne
-// staff — swap for real headshots once design assets are available.
-
 import Image from "next/image";
 import { ArrowRight, Check } from "lucide-react";
 import type { PerspectiveContent, PerspectiveRole } from "../types";
@@ -40,7 +37,7 @@ function RoleCard({ role, photoSrc }: { role: PerspectiveRole; photoSrc: string 
         </ul>
       </div>
       <div className="relative w-28 shrink-0 sm:w-32">
-        <Image src={photoSrc} alt="" fill className="object-cover" sizes="(min-width: 640px) 8rem, 7rem" />
+        <Image src={photoSrc} alt="" fill className="object-cover" sizes="20rem" />
       </div>
       <span className="absolute bottom-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-brand-blue text-white shadow-md">
         <ArrowRight className="h-4 w-4" />

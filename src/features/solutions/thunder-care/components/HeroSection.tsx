@@ -27,7 +27,7 @@ type HeroSectionProps = {
   content: HeroContent;
 };
 
-const SLICE_COLORS = ["#9333ea", "#2f5fe0", "#0d9488", "#f59e0b", "#94a3b8"];
+const SLICE_COLORS = ["#2f5fe0", "#0d9488", "#f59e0b", "#94a3b8", "#ef4444"];
 
 function TicketDonut({ slices }: { slices: HeroContent["dashboard"]["ticketByCategory"] }) {
   const stops = slices.reduce<{ text: string[]; cumulative: number }>(
@@ -77,7 +77,7 @@ function DashboardMockup({ dashboard }: { dashboard: HeroContent["dashboard"] })
     <div className="flex overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg">
       <div className="hidden w-36 shrink-0 flex-col gap-1 border-r border-slate-100 bg-brand-navy p-3 sm:flex">
         <div className="mb-2 flex items-center gap-1.5 px-2 text-xs font-bold text-white">
-          <span className="flex h-5 w-5 items-center justify-center rounded-md bg-purple-600 text-[9px]">
+          <span className="flex h-5 w-5 items-center justify-center rounded-md bg-brand-blue text-[9px]">
             T1
           </span>
           {dashboard.productLabel}
@@ -132,7 +132,7 @@ function DashboardMockup({ dashboard }: { dashboard: HeroContent["dashboard"] })
                           ? "bg-emerald-100 text-emerald-600"
                           : ticket.status.toLowerCase().includes("progress") || ticket.status.includes("ดำเนินการ")
                             ? "bg-amber-100 text-amber-600"
-                            : "bg-purple-100 text-purple-600"
+                            : "bg-blue-100 text-brand-blue"
                       }`}
                     >
                       {ticket.status}
@@ -142,7 +142,7 @@ function DashboardMockup({ dashboard }: { dashboard: HeroContent["dashboard"] })
                 </li>
               ))}
             </ul>
-            <a href="#" className="mt-2 inline-flex items-center gap-1 text-[10px] font-semibold text-purple-600 hover:underline">
+            <a href="#" className="mt-2 inline-flex items-center gap-1 text-[10px] font-semibold text-brand-blue hover:underline">
               {dashboard.viewAllTickets}
               <span aria-hidden="true">&rarr;</span>
             </a>
@@ -167,7 +167,7 @@ function DashboardMockup({ dashboard }: { dashboard: HeroContent["dashboard"] })
             </div>
             <a
               href="#"
-              className="mt-3 inline-flex items-center gap-1 text-[10px] font-semibold text-purple-600 hover:underline"
+              className="mt-3 inline-flex items-center gap-1 text-[10px] font-semibold text-brand-blue hover:underline"
             >
               {dashboard.viewReport}
               <span aria-hidden="true">&rarr;</span>
@@ -184,19 +184,19 @@ export function HeroSection({ content }: HeroSectionProps) {
     <section className="overflow-hidden bg-white">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 pb-20 pt-6 lg:grid-cols-2 lg:items-center lg:pb-28">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-lg bg-purple-600/10 px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-purple-600">
+          <span className="inline-flex items-center gap-2 rounded-lg bg-brand-blue/10 px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-brand-blue">
             <Headset className="h-4 w-4" />
             {content.badge}
           </span>
           <h1 className="mt-4 text-4xl font-bold leading-tight text-brand-navy sm:text-5xl">
             {content.title}
           </h1>
-          <p className="mt-2 text-2xl font-bold leading-snug text-purple-600">{content.subtitle}</p>
+          <p className="mt-2 text-2xl font-bold leading-snug text-brand-blue">{content.subtitle}</p>
           <p className="mt-4 max-w-xl text-lg text-slate-600">{content.description}</p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/contact"
-              className="rounded-full bg-purple-600 px-6 py-3 text-sm font-semibold text-white hover:bg-purple-700"
+              className="rounded-full bg-brand-blue px-6 py-3 text-sm font-semibold text-white hover:bg-blue-700"
             >
               {content.ctaPrimary}
             </Link>

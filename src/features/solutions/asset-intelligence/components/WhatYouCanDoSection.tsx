@@ -48,7 +48,7 @@ export function WhatYouCanDoSection({ content }: WhatYouCanDoSectionProps) {
       <div className="mx-auto flex justify-between max-w-7xl gap-12 lg:grid-cols-[minmax(0,380px)_1fr] lg:items-center">
         <div>
           <p className="text-sm bg font-semibold uppercase tracking-wide text-brand-blue">{content.label}</p>
-          <h2 className="mt-3 text-3xl font-bold bg-amber-200 leading-snug text-brand-blue sm:text-4xl">{content.title}</h2>
+          <h2 className="mt-3 text-3xl font-bold leading-snug text-brand-blue sm:text-4xl">{content.title}</h2>
 
           <ul className="mt-6 space-y-3">
             {content.checklist.map((item) => (

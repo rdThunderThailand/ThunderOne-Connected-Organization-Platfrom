@@ -25,7 +25,7 @@ export function IdealForOrganizationSection({ content }: IdealForOrganizationSec
             const Icon = ICONS[index % ICONS.length];
             return (
               <div key={item.title} className="flex flex-col items-center gap-3 text-center">
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-100 text-purple-600">
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-brand-blue">
                   <Icon className="h-5 w-5" />
                 </span>
                 <p className="text-sm font-bold text-brand-navy">{item.title}</p>

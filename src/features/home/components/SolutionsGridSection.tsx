@@ -130,10 +130,11 @@ export function SolutionsGridSection({ content }: SolutionsGridSectionProps) {
                     <h3 className="mt-4 text-xs font-bold tracking-wide text-brand-navy">
                       {item.title}
                     </h3>
-                    <p className="mt-2 wrap-break-word text-sm font-semibold text-brand-navy">
+                    <p className="mt-2 line-clamp-2 h-10 wrap-break-word text-sm font-semibold text-brand-navy">
                       {item.tagline}
                     </p>
-                    <p className="mt-2 wrap-break-word text-sm text-slate-500">{item.description}</p>
+
+                    <p className="mt-2 wrap-break-word text-sm line-clamp-2 text-slate-500">{item.description}</p>
 
                     <div className="mt-4">
                       <SolutionMockup variant={style.mockup} />

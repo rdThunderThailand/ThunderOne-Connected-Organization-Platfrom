@@ -15,7 +15,7 @@ const NODE_STYLES: Record<string, { icon: LucideIcon; badgeClassName: string }> 
   communication: { icon: Megaphone, badgeClassName: "bg-red-500" },
   work: { icon: ClipboardCheck, badgeClassName: "bg-emerald-500" },
   assetIntelligence: { icon: Boxes, badgeClassName: "bg-blue-600" },
-  thunderCare: { icon: Headset, badgeClassName: "bg-purple-600" },
+  thunderCare: { icon: Headset, badgeClassName: "bg-brand-blue" },
 };
 
 type PlatformAndCtaSectionProps = {
@@ -36,7 +36,7 @@ export function PlatformAndCtaSection({ content }: PlatformAndCtaSectionProps) {
           <p className="mt-4 text-slate-600">{content.platformDescription}</p>
           <Link
             href="/platform"
-            className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-purple-600 hover:underline"
+            className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-blue hover:underline"
           >
             {content.exploreLink}
             <span aria-hidden="true">&rarr;</span>
@@ -93,7 +93,7 @@ export function PlatformAndCtaSection({ content }: PlatformAndCtaSectionProps) {
           <p className="mt-3 text-slate-600">{content.ctaDescription}</p>
           <Link
             href="/contact"
-            className="mt-6 inline-flex rounded-full bg-purple-600 px-6 py-3 text-sm font-semibold text-white hover:bg-purple-700"
+            className="mt-6 inline-flex rounded-full bg-brand-blue px-6 py-3 text-sm font-semibold text-white hover:bg-blue-700"
           >
             {content.ctaPrimary}
           </Link>

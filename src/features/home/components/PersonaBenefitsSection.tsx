@@ -79,7 +79,7 @@ export function PersonaBenefitsSection({ content }: PersonaBenefitsSectionProps)
   return (
     <section className="bg-slate-50 lg:py-1">
       <div className="mx-auto max-w-7xl rounded-3xl border border-slate-100 bg-white py-5 shadow-lg sm:px-6 sm:py-8">
-        <span className="text-xl font-semibold uppercase tracking-wide text-brand-blue">{content.badge}</span>
+        <span className="text-sm font-semibold uppercase tracking-wide text-brand-blue">{content.badge}</span>
         <div className="flex sm:grid-cols-3 justify-around">
           {CARD_STYLES.map(({ key, icon, iconClassName, accentClassName }) => (
             <PersonaCard

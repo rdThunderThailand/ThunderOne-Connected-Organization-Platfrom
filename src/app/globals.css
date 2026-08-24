@@ -5,3 +5,18 @@
   --color-brand-blue: #2f5fe0;
   --container-7xl: 90rem;
 }
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

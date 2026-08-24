@@ -26,8 +26,8 @@ export function ChallengeSection({ content }: ChallengeSectionProps) {
             const Icon = ICONS[index % ICONS.length];
             return (
               <div key={label} className="flex w-36 flex-col items-center gap-3">
-                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-purple-100">
-                  <Icon className="h-6 w-6 text-purple-600" />
+                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-100">
+                  <Icon className="h-6 w-6 text-brand-blue" />
                 </span>
                 <span className="text-sm font-semibold text-brand-navy">{label}</span>
               </div>

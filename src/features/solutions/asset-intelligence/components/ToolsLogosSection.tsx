@@ -99,7 +99,7 @@ type ToolsLogosSectionProps = {
 export function ToolsLogosSection({ content }: ToolsLogosSectionProps) {
   return (
     <section className="bg-white px-4 pb-16 sm:px-6 lg:pb-20">
-      <div className="mx-auto max-w-7xl text-center">
+      <div className="mx-auto max-w-7xl text-center ">
         <h2 className="text-lg font-semibold text-brand-navy">{content.title}</h2>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-5">
           {TOOL_LOGOS.map((tool) => (

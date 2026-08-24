@@ -2,7 +2,7 @@
 
 // === Key Capabilities Section: heading ตามด้วย FeatureCardGrid (shared)
 // การ์ด 6 อัน (icon + title + คำอธิบายสั้น 1 บรรทัด) — icon badge ทั้งหมด
-// ใช้โทนม่วงเดียวกัน (ต่างจากหน้าอื่นที่สลับหลายสี) ===
+// ใช้โทนน้ำเงินเดียวกัน (ต่างจากหน้าอื่นที่สลับหลายสี) ===
 
 import type { LucideIcon } from "lucide-react";
 import { BarChart3, BookOpen, Boxes, Gauge, Ticket, Wrench } from "lucide-react";
@@ -10,7 +10,7 @@ import { FeatureCardGrid, type FeatureCardItem } from "@/components/ui/FeatureCa
 import type { KeyCapabilitiesContent } from "../types";
 
 const ICONS: LucideIcon[] = [Ticket, Gauge, Boxes, Wrench, BookOpen, BarChart3];
-const BADGE_CLASS = "bg-purple-100 text-purple-600";
+const BADGE_CLASS = "bg-blue-100 text-brand-blue";
 
 type KeyCapabilitiesSectionProps = {
   content: KeyCapabilitiesContent;

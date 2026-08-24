@@ -15,7 +15,7 @@ function SlaGauge({ percent }: { percent: number }) {
   return (
     <span
       className="relative flex h-16 w-16 shrink-0 items-center justify-center rounded-full"
-      style={{ background: `conic-gradient(#9333ea ${percent}%, #e2e8f0 0)` }}
+      style={{ background: `conic-gradient(#2f5fe0 ${percent}%, #e2e8f0 0)` }}
       role="img"
       aria-label={`SLA achieved ${percent}%`}
     >
@@ -33,8 +33,8 @@ export function WhatYouCanDoSection({ content }: WhatYouCanDoSectionProps) {
     <section id="what-you-can-do" className="bg-white px-4 py-16 sm:px-6 lg:py-20">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[minmax(0,380px)_1fr] lg:items-center">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-wide text-purple-600">{content.label}</p>
-          <h2 className="mt-3 text-3xl font-bold leading-snug text-purple-600 sm:text-4xl">
+          <p className="text-sm font-semibold uppercase tracking-wide text-brand-blue">{content.label}</p>
+          <h2 className="mt-3 text-3xl font-bold leading-snug text-brand-blue sm:text-4xl">
             {content.title}
           </h2>
           <p className="mt-4 text-slate-600">{content.description}</p>
@@ -71,7 +71,7 @@ export function WhatYouCanDoSection({ content }: WhatYouCanDoSectionProps) {
                 {createTicketCard.detailsValue}
               </p>
 
-              <span className="mt-3 block rounded-md bg-purple-600 py-1.5 text-center text-[11px] font-semibold text-white">
+              <span className="mt-3 block rounded-md bg-brand-blue py-1.5 text-center text-[11px] font-semibold text-white">
                 {createTicketCard.submitButton}
               </span>
             </div>
@@ -80,7 +80,7 @@ export function WhatYouCanDoSection({ content }: WhatYouCanDoSectionProps) {
             <div
               role="img"
               aria-label="Support agent wearing a headset placeholder"
-              className="h-72 w-56 shrink-0 rounded-2xl bg-gradient-to-br from-purple-200 to-slate-400"
+              className="h-72 w-56 shrink-0 rounded-2xl bg-gradient-to-br from-blue-200 to-slate-400"
             />
 
             <div className="w-64 shrink-0 rounded-2xl border border-slate-200 bg-white p-4 shadow-lg">
@@ -92,14 +92,14 @@ export function WhatYouCanDoSection({ content }: WhatYouCanDoSectionProps) {
                   return (
                     <div key={step.label} className="flex flex-1 items-start">
                       <div className="flex flex-col items-center gap-1 text-center">
-                        <span className="flex h-4 w-4 items-center justify-center rounded-full bg-purple-600 text-white">
+                        <span className="flex h-4 w-4 items-center justify-center rounded-full bg-brand-blue text-white">
                           <Check className="h-2.5 w-2.5" />
                         </span>
                         <span className="text-[9px] font-semibold text-brand-navy">{step.label}</span>
                         <span className="text-[8px] text-slate-400">{step.time}</span>
                       </div>
                       {!isLast && (
-                        <span aria-hidden="true" className="mt-2 h-px flex-1 border-t border-purple-300" />
+                        <span aria-hidden="true" className="mt-2 h-px flex-1 border-t border-blue-300" />
                       )}
                     </div>
                   );
@@ -125,7 +125,7 @@ export function WhatYouCanDoSection({ content }: WhatYouCanDoSectionProps) {
                 </div>
                 <a
                   href="#"
-                  className="mt-2 inline-flex items-center gap-1 text-[10px] font-semibold text-purple-600 hover:underline"
+                  className="mt-2 inline-flex items-center gap-1 text-[10px] font-semibold text-brand-blue hover:underline"
                 >
                   {trackingCard.viewSlaReport}
                   <span aria-hidden="true">&rarr;</span>
