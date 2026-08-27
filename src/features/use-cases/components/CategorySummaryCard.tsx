@@ -26,7 +26,7 @@ export function CategorySummaryCard({ content }: CategorySummaryCardProps) {
         </div>
       </div>
 
-      <div className="mt-5 flex items-center gap-1.5">
+      <div className="mt-5 flex items-center gap-5">
         {content.avatarIcons.map((iconKey, index) => {
           const AvatarIcon = ICONS[iconKey];
           return (
@@ -35,18 +35,18 @@ export function CategorySummaryCard({ content }: CategorySummaryCardProps) {
               className={`flex h-8 w-8 items-center justify-center rounded-full border-2 border-white ${ICON_BADGE_CLASSES[content.color]}`}
               style={{ marginLeft: index === 0 ? 0 : -10 }}
             >
-              <AvatarIcon className="h-3.5 w-3.5" aria-hidden="true" />
+              <AvatarIcon className="h-5 w-5" aria-hidden="true" />
             </span>
           );
         })}
-        <span className="ml-2 text-xs font-medium text-slate-500">{content.countLabel}</span>
+
       </div>
 
       <Link
         href={content.href}
-        className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand-blue hover:underline"
+        className="mt-5 flex items-center justify-between text-sm font-semibold text-brand-blue hover:underline"
       >
-        {content.viewAllLabel}
+        <span>{content.viewAllLabel}</span>
         <span aria-hidden="true">&rarr;</span>
       </Link>
     </div>

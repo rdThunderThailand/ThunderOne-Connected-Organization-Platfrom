@@ -1,10 +1,10 @@
 "use client";
 
 // === Integration Section: badge + heading + description + "learn more"
-// link on the left, a row of partner logos on the right whose dashed
-// spokes converge onto a shared dashed line carrying the ThunderOne
-// "shared context + AI" pill — same connector pattern as
-// ProblemStatementSection's context-icon row ===
+// link on the left, a row of partner logos on the right whose blue
+// dashed spokes (dot + dashed line) converge onto a shared dashed line,
+// with the ThunderOne "shared context + AI" pill sitting below that line
+// — same spoke connector as ProblemStatementSection's context-icon row ===
 
 // Partner names/wordmarks are third-party trademarks, rendered here as
 // simple text/color approximations (not official logo assets) purely to
@@ -82,6 +82,17 @@ function GoogleWorkspaceMark() {
   );
 }
 
+// Blue dot + dashed line dropping from a logo card down to the shared
+// connector line — mirrors ProblemStatementSection's spoke.
+function SpokeConnector() {
+  return (
+    <span className="flex flex-col items-center">
+      <span className="h-2 w-2 shrink-0 rounded-full bg-blue-600" />
+      <span className="h-6 border-l border-dashed border-blue-600" />
+    </span>
+  );
+}
+
 const PARTNERS: { key: string; mark: ReactNode }[] = [
   { key: "sap", mark: <SapMark /> },
   { key: "oracle", mark: <OracleMark /> },
@@ -93,19 +104,20 @@ const PARTNERS: { key: string; mark: ReactNode }[] = [
 
 export function IntegrationSection({ content }: IntegrationSectionProps) {
   return (
-    <section className="bg-slate-50 py-16 sm:px-4 lg:py-20">
+    <section className="py-8 sm:px-4">
       <div className="mx-auto max-w-7xl rounded-3xl border border-slate-100 bg-white px-4 py-12 shadow-lg sm:px-6 sm:py-16">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,300px)_1fr] lg:items-center">
           <div className="min-w-0">
             <span className="text-sm font-semibold uppercase tracking-wide text-brand-blue">
               {content.badge}
             </span>
-            <h2 className="mt-4 text-3xl font-bold leading-snug text-brand-navy sm:text-4xl">
-              {content.title}
+            <h2 className="mt-4 text-2xl font-bold leading-snug text-brand-navy sm:text-2xl">
+              <span className="block">{content.titleLine1}</span>
+              <span className="block">{content.titleLine2}</span>
             </h2>
             <p className="mt-4 wrap-break-word text-slate-600">{content.description}</p>
             <Link
-              href="/platform"
+              href="#/platform"
               className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-blue hover:underline"
             >
               {content.cta}
@@ -122,7 +134,7 @@ export function IntegrationSection({ content }: IntegrationSectionProps) {
                       <span className="flex h-14 items-center justify-center rounded-2xl border border-slate-200 bg-white px-3.5 shadow-sm">
                         {partner.mark}
                       </span>
-                      <span className="h-8 w-px border-l border-dashed border-slate-300" />
+                      <SpokeConnector />
                     </div>
                   ))}
 
@@ -130,18 +142,20 @@ export function IntegrationSection({ content }: IntegrationSectionProps) {
                     <span className="flex h-14 items-center justify-center whitespace-nowrap px-3.5 text-sm font-semibold text-brand-navy">
                       {content.otherSystemsLabel}
                     </span>
-                    <span className="h-8 w-px border-l border-dashed border-slate-300" />
+                    <SpokeConnector />
                   </div>
                 </div>
 
-                <div className="relative border-t border-dashed border-slate-300 pb-8">
-                  <span className="absolute left-1/2 top-0 inline-flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 whitespace-nowrap rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-bold text-brand-navy shadow-md">
-                    <Image src={thunderOneLogo} alt="ThunderOne" className="h-4 w-auto" />
-                    <span className="text-slate-300">&bull;</span>
-                    <Sparkles className="h-4 w-4 text-brand-blue" />
-                    {content.pillLabel}
-                  </span>
-                </div>
+                {/* Shared connector line, inset by ~half the first/last
+                    column width so it runs dot-to-dot, not edge-to-edge */}
+                <div className="ml-11 mr-14 border-t border-dashed border-slate-300" />
+
+                <span className="mx-auto mt-8 flex w-fit items-center gap-2 whitespace-nowrap rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-bold text-brand-navy shadow-md">
+                  <Image src={thunderOneLogo} alt="ThunderOne" className="h-8 w-auto" />
+                  <span className="text-slate-300">&bull;</span>
+                  <Sparkles className="h-4 w-4 text-brand-blue" />
+                  {content.pillLabel}
+                </span>
               </div>
             </div>
           </div>

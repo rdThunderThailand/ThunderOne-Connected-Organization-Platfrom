@@ -37,8 +37,10 @@ export function FilterSidebar({
       )}
 
       <aside
-        className={`z-50 h-fit rounded-2xl border border-slate-200 bg-white p-5 shadow-sm lg:sticky lg:top-6 lg:block ${
-          isMobileOpen ? "fixed inset-x-4 top-6 block" : "hidden"
+        className={`z-50 h-fit rounded-2xl border border-slate-200 bg-white p-5 shadow-sm lg:sticky lg:top-24 lg:block ${
+          isMobileOpen
+            ? "fixed inset-x-4 top-24 block max-h-[calc(100vh-7rem)] overflow-y-auto"
+            : "hidden"
         }`}
       >
         <div className="flex items-center justify-between">
@@ -78,7 +80,7 @@ export function FilterSidebar({
         <button
           type="button"
           onClick={onReset}
-          className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-50"
+          className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 py-2.5 text-sm font-semibold text-blue-700 hover:bg-slate-50"
         >
           <RefreshCw className="h-4 w-4" aria-hidden="true" />
           {copy.reset}

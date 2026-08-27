@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import type { BreadcrumbItem } from "@/components/ui/Breadcrumb";
 
 export type SolutionsHeroContent = {
@@ -29,7 +30,7 @@ export type SolutionGridItem = {
 
 export type SolutionsGridContent = {
   title: string;
-  subtitle: string;
+  subtitle: ReactNode;
   items: SolutionGridItem[];
 };
 

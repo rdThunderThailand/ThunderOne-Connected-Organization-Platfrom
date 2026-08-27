@@ -63,22 +63,22 @@ export function Navbar() {
         {
           key: "corporate-enterprise",
           label: t("useCasesCorporateEnterprise"),
-          href: "/use-cases/corporate-enterprise",
+          href: "#/use-cases/corporate-enterprise",
         },
         {
           key: "retail-hospitality",
           label: t("useCasesRetailHospitality"),
-          href: "/use-cases/retail-hospitality",
+          href: "#/use-cases/retail-hospitality",
         },
         {
           key: "manufacturing-industrial",
           label: t("useCasesManufacturingIndustrial"),
-          href: "/use-cases/manufacturing-industrial",
+          href: "#/use-cases/manufacturing-industrial",
         },
         {
           key: "healthcare",
           label: t("useCasesHealthcare"),
-          href: "/use-cases/healthcare",
+          href: "#/use-cases/healthcare",
         },
       ],
     },
@@ -87,19 +87,19 @@ export function Navbar() {
       label: t("platform"),
       href: "/platform",
       children: [
-        { key: "overview", label: t("platformOverview"), href: "/platform" },
-        { key: "experience", label: t("platformExperience"), href: "/platform/experience" },
+        { key: "overview", label: t("platformOverview"), href: "#/platform" },
+        { key: "experience", label: t("platformExperience"), href: "#/platform/experience" },
         {
           key: "intelligence-automation",
           label: t("platformIntelligenceAutomation"),
-          href: "/platform/intelligence-automation",
+          href: "#/platform/intelligence-automation",
         },
         {
           key: "integrations",
           label: t("platformIntegrations"),
-          href: "/platform/integrations",
+          href: "#/platform/integrations",
         },
-        { key: "security", label: t("platformSecurity"), href: "/platform/security" },
+        { key: "security", label: t("platformSecurity"), href: "#/platform/security" },
       ],
     },
     {
@@ -107,22 +107,22 @@ export function Navbar() {
       label: t("resources"),
       href: "/resources",
       children: [
-        { key: "knowledge", label: t("resourcesKnowledge"), href: "/resources/knowledge" },
+        { key: "knowledge", label: t("resourcesKnowledge"), href: "#/resources/knowledge" },
         {
           key: "customer-stories",
           label: t("resourcesCustomerStories"),
-          href: "/resources/customer-stories",
+          href: "#/resources/customer-stories",
         },
         {
           key: "documentation",
           label: t("resourcesDocumentation"),
-          href: "/resources/documentation",
+          href: "#/resources/documentation",
         },
-        { key: "support", label: t("resourcesSupport"), href: "/resources/support" },
+        { key: "support", label: t("resourcesSupport"), href: "#/resources/support" },
       ],
     },
-    { key: "partners", label: t("partners"), href: "/partners" },
-    { key: "about", label: t("about"), href: "/about" },
+    { key: "partners", label: t("partners"), href: "#/partners" },
+    { key: "about", label: t("about"), href: "#/about" },
   ];
 
   const [openMenu, setOpenMenu] = useState<string | null>(null);
@@ -225,7 +225,7 @@ export function Navbar() {
           </div>
 
           <Link
-            href="/login"
+            href="#/login"
             className="rounded-full border border-brand-navy px-5 py-2 text-sm font-semibold text-brand-navy hover:bg-slate-50"
           >
             {t("login")}
@@ -233,7 +233,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={openTalkToUs}
-            className="flex items-center gap-2 rounded-full bg-brand-blue px-5 py-2 text-sm font-semibold text-white hover:bg-blue-700"
+            className="flex items-center gap-2 rounded-full bg-blue-700 px-5 py-2 text-sm font-semibold text-white hover:bg-brand-blue"
           >
             {t("contact")}
             <MessageCircle className="h-4 w-4" />
@@ -282,7 +282,7 @@ export function Navbar() {
           </div>
           <div className="mt-4 flex flex-col gap-3 border-t border-slate-100 pt-4">
             <Link
-              href="/login"
+              href="#/login"
               className="rounded-full border border-brand-navy px-5 py-2 text-center text-sm font-semibold text-brand-navy"
             >
               {t("login")}
@@ -293,7 +293,7 @@ export function Navbar() {
                 setMobileOpen(false);
                 openTalkToUs();
               }}
-              className="flex items-center justify-center gap-2 rounded-full bg-brand-blue px-5 py-2 text-sm font-semibold text-white"
+              className="flex items-center justify-center gap-2 rounded-full bg-blue-700 px-5 py-2 text-sm font-semibold text-white hover:bg-brand-blue"
             >
               {t("contact")}
               <MessageCircle className="h-4 w-4" />

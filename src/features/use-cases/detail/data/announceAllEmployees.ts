@@ -22,12 +22,12 @@ export const ANNOUNCE_ALL_EMPLOYEES_DATA: UseCaseDetailData = {
     { icon: "bar-chart-3" },
   ],
   steps: [
-    { icon: "pen-line" },
-    { icon: "users" },
-    { icon: "smartphone" },
-    { icon: "clipboard-check" },
-    { icon: "send" },
-    { icon: "bar-chart-3" },
+    { icon: "pen-line", accent: "blue" },
+    { icon: "users", accent: "emerald" },
+    { icon: "megaphone", accent: "purple" },
+    { icon: "shield-check", accent: "orange" },
+    { icon: "send", accent: "blue" },
+    { icon: "bar-chart-3", accent: "emerald" },
   ],
   stakeholders: [{ icon: "briefcase" }, { icon: "user-cog" }, { icon: "user-round" }, { icon: "users" }],
   connections: [

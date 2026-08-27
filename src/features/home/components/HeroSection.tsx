@@ -5,9 +5,20 @@
 // Communication/Work around the ThunderOne mark) on the right ===
 
 import type { LucideIcon } from "lucide-react";
-import { Box, Building2, ClipboardCheck, Headset, Megaphone, Package, Users } from "lucide-react";
+import {
+  ArrowRight,
+  Box,
+  Building2,
+  ClipboardCheck,
+  Headset,
+  MessageCircle,
+  Megaphone,
+  Package,
+  Users,
+} from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { HeroOrbitDiagram, type OrbitNode } from "@/components/diagrams/HeroOrbitDiagram";
+import { PersonAvatar } from "@/features/use-cases/detail/components/illustrations/PersonAvatar";
 import type { HeroContent } from "../types";
 
 type HeroSectionProps = {
@@ -33,29 +44,49 @@ export function HeroSection({ content }: HeroSectionProps) {
   }));
 
   return (
-    <section className="overflow-hidden">
+    <section className="overflow-hidden  bg-slate-50">
       <div className="mx-auto grid max-w-7xl px-6 py-20 lg:grid-cols-2 lg:items-center lg:py-28">
         <div className="w-fit">
-
-          <p className="text-sm font-semibold text-slate-500">{content.trustedBy}</p>
-          <h1 className="mt-4 text-4xl font-bold leading-tight text-brand-navy sm:text-5xl">
+          <h1 className="mt-4 text-4xl font-bold leading-tight sm:text-5xl">
             <span className="block">{content.titleLine1}</span>
             <span className="block">{content.titleLine2}</span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg text-slate-600">{content.description}</p>
+          <div className="w-fit">
+          <p className="mt-6 max-w-xl text-lg text-slate-600">{content.descriptionLine1}</p>
+          <p className="max-w-xl text-lg text-slate-600">{content.descriptionLine2}</p>
+          <p className="max-w-xl text-lg text-slate-600">{content.descriptionLine3}</p>
+          <p className="max-w-xl text-lg text-slate-600">{content.descriptionLine4}</p>
+          </div>
+
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/platform"
-              className="rounded-full bg-brand-blue px-6 py-3 text-sm font-semibold text-white hover:bg-blue-700"
+              className="inline-flex items-center gap-2 rounded-xl bg-brand-blue px-6 py-3 text-sm font-semibold text-white hover:bg-blue-700"
             >
               {content.ctaPrimary}
+              <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/contact"
-              className="rounded-full border border-brand-navy px-6 py-3 text-sm font-semibold text-brand-navy hover:bg-slate-50"
+              className="inline-flex items-center gap-2 rounded-xl border border-brand-blue border-2 px-6 py-3 text-sm font-semibold text-blue-700 hover:bg-slate-50"
             >
-              {content.ctaSecondary}
+              {content.ctaSecondary} 
+              <MessageCircle className="h-4 w-4" />
             </Link>
+          </div> 
+          <div className="mt-8 flex items-center gap-4">
+            <div className="flex shrink-0 space-x-4">
+              {[0, 1, 2, 3].map((variant) => (
+                <PersonAvatar
+                  key={variant}
+                  variant={variant}
+                  className="h-11 w-11 rounded-full ring-2 ring-white"
+                />
+              ))}
+            </div>
+            <p className="max-w-[16rem] whitespace-pre-line text-sm font-semibold leading-snug text-slate-500">
+              {content.trustedBy}
+            </p>
           </div>
         </div>
 

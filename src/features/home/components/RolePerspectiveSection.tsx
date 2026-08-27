@@ -27,7 +27,7 @@ function RoleCard({ role, photoSrc }: { role: PerspectiveRole; photoSrc: string 
       <div className="flex-1 p-6">
         <p className="text-sm font-semibold uppercase tracking-wider text-brand-blue">{role.role}</p>
         <p className="mt-1 text-base font-semibold text-brand-navy">{role.question}</p>
-        <ul className="mt-4 space-y-2">
+        <ul className="mt-2 space-y-2">
           {role.items.map((item) => (
             <li key={item} className="flex items-start gap-2 text-sm text-slate-600">
               <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-blue" />
@@ -48,7 +48,7 @@ function RoleCard({ role, photoSrc }: { role: PerspectiveRole; photoSrc: string 
 
 export function RolePerspectiveSection({ content }: RolePerspectiveSectionProps) {
   return (
-    <section className="bg-slate-50 sm:px-4 lg:py-8">
+    <section className="sm:px-4 lg:py-8">
       <div className="mx-auto max-w-7xl rounded-3xl border border-slate-100 bg-white px-4 py-10 shadow-lg sm:px-6 sm:py-8">
         <h2 className="text-sm font-semibold uppercase tracking-wide text-brand-blue">{content.title}</h2>
         <div className="mt-6 grid gap-6 sm:grid-cols-3">
@@ -56,7 +56,7 @@ export function RolePerspectiveSection({ content }: RolePerspectiveSectionProps)
             <RoleCard key={key} role={content[key]} photoSrc={src} />
           ))}
         </div>
-        <p className="mt-10 text-center text-lg font-bold text-brand-blue sm:text-xl">{content.tagline}</p>
+        <p className="mt-10 text-center text-lg font-bold sm:text-xl">{content.tagline}</p>
       </div>
     </section>
   );

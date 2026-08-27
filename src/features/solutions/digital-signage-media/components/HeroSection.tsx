@@ -113,13 +113,15 @@ function DashboardMockup({ dashboard }: { dashboard: HeroContent["dashboard"] })
 
 export function HeroSection({ content }: HeroSectionProps) {
   return (
-    <section className="overflow-hidden bg-white">
+    <section className="overflow-hidden">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 pb-20 pt-6 lg:grid-cols-2 lg:items-center lg:pb-28">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-lg bg-brand-blue/10 px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-brand-blue">
-            <Monitor className="h-4 w-4" />
-            {content.badge}
-          </span>
+          <div className="flex items-center gap-3">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-blue text-white">
+              <Monitor className="h-5 w-5" />
+            </span>
+            <span className="text-sm font-bold text-brand-navy">{content.badge}</span>
+          </div>
           <h1 className="mt-4 text-4xl font-bold leading-tight text-brand-navy sm:text-5xl">
             {content.title}
           </h1>
@@ -128,7 +130,7 @@ export function HeroSection({ content }: HeroSectionProps) {
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/contact"
-              className="rounded-full bg-brand-blue px-6 py-3 text-sm font-semibold text-white hover:bg-blue-700"
+              className="rounded-full bg-blue-700 px-6 py-3 text-sm font-semibold text-white hover:bg-brand-blue"
             >
               {content.ctaPrimary}
             </Link>

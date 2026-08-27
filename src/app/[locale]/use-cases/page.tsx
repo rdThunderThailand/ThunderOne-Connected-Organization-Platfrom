@@ -12,6 +12,7 @@ import type {
   HelpCtaContent,
   HeroContent,
   NoResultsCopy,
+  PaginationCopy,
   SortOption,
   ToolbarContent,
   UseCaseContent,
@@ -124,6 +125,11 @@ export default async function UseCasesPage({
     description: t("noResults.description"),
   };
 
+  const pagination: PaginationCopy = {
+    previous: t("pagination.previous"),
+    next: t("pagination.next"),
+  };
+
   const helpCta: HelpCtaContent = {
     title: t("helpCta.title"),
     description: t("helpCta.description"),
@@ -141,6 +147,7 @@ export default async function UseCasesPage({
       cardCopy={cardCopy}
       filterCopy={filterCopy}
       noResults={noResults}
+      pagination={pagination}
       helpCta={helpCta}
       useCases={useCases}
     />

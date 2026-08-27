@@ -20,6 +20,7 @@ export function TopicStep() {
           label={t(`items.${topic.key}.label`)}
           description={t(`items.${topic.key}.description`)}
           selected={selectedTopic === topic.key}
+          disabled={!topic.enabled}
           onClick={() => selectTopic(topic.key)}
         />
       ))}

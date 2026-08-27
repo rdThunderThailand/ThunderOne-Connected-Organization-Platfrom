@@ -44,11 +44,11 @@ export function WhatYouCanDoSection({ content }: WhatYouCanDoSectionProps) {
   ];
 
   return (
-    <section id="what-you-can-do" className="bg-white px-4 py-16 sm:px-6 lg:py-10">
-      <div className="mx-auto flex justify-between max-w-7xl gap-12 lg:grid-cols-[minmax(0,380px)_1fr] lg:items-center">
+    <section id="what-you-can-do" className="px-4 py-16 sm:px-6 lg:py-10">
+      <div className="mx-auto flex max-w-7xl justify-start gap-12 lg:grid-cols-[minmax(0,380px)_1fr] lg:items-center">
         <div>
           <p className="text-sm bg font-semibold uppercase tracking-wide text-brand-blue">{content.label}</p>
-          <h2 className="mt-3 text-3xl font-bold leading-snug text-brand-blue sm:text-4xl">{content.title}</h2>
+          <h2 className="mt-3 whitespace-pre-line text-3xl font-bold leading-snug text-brand-blue sm:text-4xl">{content.title}</h2>
 
           <ul className="mt-6 space-y-3">
             {content.checklist.map((item) => (
@@ -60,10 +60,10 @@ export function WhatYouCanDoSection({ content }: WhatYouCanDoSectionProps) {
           </ul>
         </div>
 
-        <div className="w-fit"> 
+        <div className="w-fit translate-x-[20%]">
         <div className="min-w-0">
-          <div className="flex items-start gap-4 lg:min-w-0">
-            <div className="w-96 shrink-0 rounded-2xl border border-slate-200 bg-white p-4 shadow-lg">
+          <div className="flex items-start gap-8 lg:min-w-0">
+            <div className="w-[500px] shrink-0 rounded-2xl border border-slate-200 bg-white p-4 shadow-lg">
               <div className="flex gap-3">
                 {/* TODO: replace with real asset photo */}
                 <div
@@ -126,7 +126,7 @@ export function WhatYouCanDoSection({ content }: WhatYouCanDoSectionProps) {
             </div>
 
             {/* TODO: replace with real asset — smartphone mockup screenshot */}
-            <div className="w-52 shrink-0 rounded-[2rem] border-[6px] border-brand-navy bg-white p-3 shadow-xl">
+            <div className="w-[229px] shrink-0 rounded-[2rem] border-[6px] border-brand-navy bg-white p-3 shadow-xl">
               <div className="mx-auto mb-2 h-1 w-10 rounded-full bg-slate-200" />
               <div className="flex items-center gap-2">
                 <div

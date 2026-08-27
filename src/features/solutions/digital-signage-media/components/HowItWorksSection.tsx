@@ -16,7 +16,7 @@ type HowItWorksSectionProps = {
 
 export function HowItWorksSection({ content }: HowItWorksSectionProps) {
   return (
-    <section className="bg-slate-50 px-4 py-16 sm:px-6 lg:py-20">
+    <section className="px-4 py-16 sm:px-6 lg:py-20">
       <div className="mx-auto max-w-7xl">
         <h2 className="text-center text-3xl font-bold text-brand-navy sm:text-4xl">{content.title}</h2>
 

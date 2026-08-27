@@ -9,8 +9,8 @@
   "hero": {
     "badge": "SOLUTION",
     "title": "Asset Intelligence",
-    "subtitle": "See every asset. Extend every value.",
-    "description": "ThunderOne Asset Intelligence helps organizations manage the entire asset lifecycle with accuracy and insight. From planning, tracking, maintenance to disposal—make smarter decisions and maximize the value of every asset.",
+    "subtitle": "See every asset.\nExtend every value.",
+    "description": "ThunderOne Asset Intelligence helps organizations\nmanage the entire asset lifecycle with accuracy and\ninsight. From planning, tracking, maintenance to\ndisposal—make smarter decisions and maximize\nthe value of every asset.",
     "ctaPrimary": "Talk to us",
     "ctaSecondary": "See it in action",
     "dashboard": {
@@ -63,7 +63,7 @@
   },
   "whatYouCanDo": {
     "label": "What you can do",
-    "title": "Manage assets smarter, all in one platform.",
+    "title": "Manage assets smarter,\nall in one platform.",
     "checklist": [
       "Register and track assets with QR Code / RFID",
       "Monitor asset lifecycle and real-time status",

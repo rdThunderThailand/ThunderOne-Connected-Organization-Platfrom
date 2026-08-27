@@ -18,14 +18,15 @@ export function HowItWorksSection({ content }: HowItWorksSectionProps) {
     title: step.title,
     description: step.description,
     icon: ICONS[step.icon],
+    accent: step.accent,
   }));
 
   return (
-    <section className="bg-slate-50 px-4 py-16 sm:px-6 lg:py-20">
+    <section className="px-4 py-8 sm:px-6 lg:py-10">
       <div className="mx-auto max-w-7xl">
         <SectionHeader number={content.number} title={content.title} />
         <div className="mt-10 overflow-x-auto pb-2">
-          <StepFlowRow steps={steps} />
+          <StepFlowRow steps={steps} numberStyle="inline" />
         </div>
       </div>
     </section>

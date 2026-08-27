@@ -30,14 +30,14 @@ export function WhatYouCanDoSection({ content }: WhatYouCanDoSectionProps) {
   const { createTicketCard, trackingCard } = content;
 
   return (
-    <section id="what-you-can-do" className="bg-white px-4 py-16 sm:px-6 lg:py-20">
-      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[minmax(0,380px)_1fr] lg:items-center">
+    <section id="what-you-can-do" className="px-4 py-10 sm:px-6 lg:py-20">
+      <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[minmax(0,510px)_1fr] lg:items-center lg:gap-20">
         <div>
           <p className="text-sm font-semibold uppercase tracking-wide text-brand-blue">{content.label}</p>
-          <h2 className="mt-3 text-3xl font-bold leading-snug text-brand-blue sm:text-4xl">
+          <h2 className="mt-3 whitespace-pre-line text-3xl font-bold leading-snug text-brand-blue sm:text-4xl">
             {content.title}
           </h2>
-          <p className="mt-4 text-slate-600">{content.description}</p>
+          <p className="mt-4 whitespace-pre-line text-slate-600">{content.description}</p>
 
           <ul className="mt-6 space-y-3">
             {content.checklist.map((item) => (
@@ -50,7 +50,7 @@ export function WhatYouCanDoSection({ content }: WhatYouCanDoSectionProps) {
         </div>
 
         <div className="min-w-0 overflow-x-auto">
-          <div className="flex min-w-180 items-start gap-4 lg:min-w-0">
+          <div className="flex min-w-120 items-start justify-center gap-4 lg:min-w-0">
             {/* TODO: replace with real asset */}
             <div className="w-56 shrink-0 rounded-2xl border border-slate-200 bg-white p-4 shadow-lg">
               <p className="text-xs font-bold text-brand-navy">{createTicketCard.title}</p>

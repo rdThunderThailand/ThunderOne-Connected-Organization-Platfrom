@@ -1,4 +1,5 @@
 import type { BreadcrumbItem } from "@/components/ui/Breadcrumb";
+import type { StepAccent } from "@/components/ui/StepFlowRow";
 
 // --- Structural (non-translated) data shapes, defined in data/*.ts. Each
 // use case detail page contributes one entry keyed by slug in
@@ -16,6 +17,11 @@ export type InContextViewDefinition = {
 
 export type IconItemDefinition = {
   icon: string;
+};
+
+export type StepItemDefinition = {
+  icon: string;
+  accent: StepAccent;
 };
 
 export type ConnectionDefinition = {
@@ -37,7 +43,7 @@ export type UseCaseDetailData = {
     employeeView: InContextViewDefinition;
   };
   benefits: IconItemDefinition[];
-  steps: IconItemDefinition[];
+  steps: StepItemDefinition[];
   stakeholders: IconItemDefinition[];
   connections: ConnectionDefinition[];
   relatedUseCases: RelatedUseCaseDefinition[];
@@ -52,13 +58,19 @@ export type StatContent = {
   percent?: string;
 };
 
+export type ChannelContent = {
+  icon: string;
+  label: string;
+};
+
 export type MockupContent = {
   panelTitle: string;
   statusLabel: string;
   author: string;
   timestamp: string;
   bodyPreview: string;
-  channelIcons: string[];
+  channelsLabel: string;
+  channels: ChannelContent[];
   stats: StatContent[];
   lineNotification: {
     appName: string;
@@ -111,6 +123,7 @@ export type SituationOutcomeContent = {
 
 export type StepContent = {
   icon: string;
+  accent: StepAccent;
   title: string;
   description: string;
 };
@@ -193,6 +206,7 @@ export type RelatedContent = {
 };
 
 export type ReadyToStartContent = {
+  number: string;
   title: string;
   description: string;
   cta: string;
@@ -215,4 +229,4 @@ export type UseCaseDetailContent = {
   readyToStart: ReadyToStartContent;
 };
 
-export type { BreadcrumbItem };
+export type { BreadcrumbItem, StepAccent };

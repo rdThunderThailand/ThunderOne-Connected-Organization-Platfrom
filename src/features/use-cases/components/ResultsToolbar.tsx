@@ -23,7 +23,7 @@ export function ResultsToolbar({
   onViewModeChange,
 }: ResultsToolbarProps) {
   return (
-    <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <div className="sticky top-20 z-40 flex flex-col gap-4 bg-white/95 py-4 backdrop-blur sm:flex-row sm:items-center sm:justify-between">
       <p className="text-sm text-slate-500">{showingText}</p>
 
       <div className="flex items-center gap-3">

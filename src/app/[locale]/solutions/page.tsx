@@ -53,7 +53,9 @@ export default async function SolutionsPage({
       }}
       grid={{
         title: t("grid.title"),
-        subtitle: t("grid.subtitle"),
+        subtitle: t.rich("grid.subtitle", {
+          blue: (chunks) => <span className="text-brand-blue">{chunks}</span>,
+        }),
         items: t.raw("grid.items") as SolutionGridItem[],
       }}
       platform={{

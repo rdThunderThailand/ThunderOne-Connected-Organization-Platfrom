@@ -13,7 +13,7 @@ type WhatYouCanDoSectionProps = {
 
 export function WhatYouCanDoSection({ content }: WhatYouCanDoSectionProps) {
   return (
-    <section id="what-you-can-do" className="bg-white px-4 py-16 sm:px-6 lg:py-20">
+    <section id="what-you-can-do" className="px-4 py-16 sm:px-6 lg:py-20">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center">
         <div>
           <p className="text-sm font-semibold uppercase tracking-wide text-brand-blue">{content.label}</p>

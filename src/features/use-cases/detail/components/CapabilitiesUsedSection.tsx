@@ -15,20 +15,18 @@ type CapabilitiesUsedSectionProps = {
 
 export function CapabilitiesUsedSection({ content }: CapabilitiesUsedSectionProps) {
   return (
-    <section className="bg-white px-4 py-16 sm:px-6 lg:py-20">
-      <div className="mx-auto max-w-3xl">
-        <SectionHeader number={content.number} title={content.title} />
-        <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-          {content.items.map((item) => (
-            <li key={item} className="flex items-start gap-3 text-sm text-slate-700">
-              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-                <Check className="h-3.5 w-3.5" />
-              </span>
-              {item}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
+    <div className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6">
+      <SectionHeader number={content.number} title={content.title} />
+      <ul className="mt-6 space-y-3">
+        {content.items.map((item) => (
+          <li key={item} className="flex items-start gap-2.5 text-xs text-slate-700">
+            <span className="mt-px flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+              <Check className="h-2.5 w-2.5" />
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

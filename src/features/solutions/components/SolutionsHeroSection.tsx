@@ -37,18 +37,18 @@ export function SolutionsHeroSection({ content }: SolutionsHeroSectionProps) {
   }));
 
   return (
-    <section className="overflow-hidden bg-white">
+    <section className="overflow-hidden">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 pb-20 pt-8 lg:grid-cols-2 lg:items-center lg:pb-28 lg:pt-12">
         <div>
           <h1 className="text-4xl font-bold leading-tight text-brand-navy sm:text-5xl">
             <span className="block">{content.title1}</span>
             <span className="block text-brand-blue">{content.title2}</span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg text-slate-600">{content.description}</p>
+          <p className="mt-6 max-w-xl whitespace-pre-line text-lg text-slate-600">{content.description}</p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/contact"
-              className="rounded-full bg-brand-blue px-6 py-3 text-sm font-semibold text-white hover:bg-blue-700"
+              className="rounded-full bg-blue-700 px-6 py-3 text-sm font-semibold text-white hover:bg-brand-blue"
             >
               {content.ctaPrimary}
             </Link>

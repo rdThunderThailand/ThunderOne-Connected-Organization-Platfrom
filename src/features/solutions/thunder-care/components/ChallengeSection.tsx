@@ -16,10 +16,10 @@ type ChallengeSectionProps = {
 
 export function ChallengeSection({ content }: ChallengeSectionProps) {
   return (
-    <section className="bg-slate-50 px-4 py-16 sm:px-6 lg:py-20">
+    <section className="px-4 py-16 sm:px-6 lg:py-20">
       <div className="mx-auto max-w-5xl text-center">
         <h2 className="text-3xl font-bold text-brand-navy sm:text-4xl">{content.title}</h2>
-        <p className="mt-4 text-slate-600">{content.subtitle}</p>
+        <p className="mt-4 whitespace-pre-line text-slate-600">{content.subtitle}</p>
 
         <div className="mt-12 flex flex-wrap justify-center gap-x-8 gap-y-10">
           {content.items.map((label, index) => {
@@ -29,7 +29,7 @@ export function ChallengeSection({ content }: ChallengeSectionProps) {
                 <span className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-100">
                   <Icon className="h-6 w-6 text-brand-blue" />
                 </span>
-                <span className="text-sm font-semibold text-brand-navy">{label}</span>
+                <span className="whitespace-pre-line text-sm font-semibold text-brand-navy">{label}</span>
               </div>
             );
           })}

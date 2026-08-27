@@ -58,6 +58,7 @@ export default async function UseCaseDetailPage({
   const stepsText = t.raw("howItWorks.steps") as { title: string; description: string }[];
   const steps: StepContent[] = data.steps.map((step, index) => ({
     icon: step.icon,
+    accent: step.accent,
     title: stepsText[index].title,
     description: stepsText[index].description,
   }));
@@ -105,7 +106,11 @@ export default async function UseCaseDetailPage({
         author: t("hero.mockup.author"),
         timestamp: t("hero.mockup.timestamp"),
         bodyPreview: t("hero.mockup.bodyPreview"),
-        channelIcons: data.mockup.channelIcons,
+        channelsLabel: t("hero.mockup.channelsLabel"),
+        channels: data.mockup.channelIcons.map((icon, index) => ({
+          icon,
+          label: (t.raw("hero.mockup.channelLabels") as string[])[index],
+        })),
         stats: t.raw("hero.mockup.stats"),
         lineNotification: {
           appName: t("hero.mockup.lineNotification.appName"),
@@ -184,6 +189,7 @@ export default async function UseCaseDetailPage({
       items: related,
     },
     readyToStart: {
+      number: t("readyToStart.number"),
       title: t("readyToStart.title"),
       description: t("readyToStart.description"),
       cta: t("readyToStart.cta"),

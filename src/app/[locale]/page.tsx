@@ -1,11 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { HomeClient } from "@/features/home/HomeClient";
-// PROTOTYPE — throwaway, not production. Remove this import and the
-// variant branch below once the home page redesign prototype is resolved.
-import { PrototypeHomeClient } from "@/features/home/prototype/PrototypeHomeClient";
-
-const PROTOTYPE_VARIANTS = ["A", "B", "C"];
 
 export async function generateMetadata({
   params,
@@ -23,17 +18,11 @@ export async function generateMetadata({
 
 export default async function Home({
   params,
-  searchParams,
 }: {
   params: Promise<{ locale: string }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-
-  const sp = await searchParams;
-  const variantParam = typeof sp.variant === "string" ? sp.variant : undefined;
-  const prototypeVariant = variantParam && PROTOTYPE_VARIANTS.includes(variantParam) ? variantParam : undefined;
 
   const t = await getTranslations("HomePage");
 
@@ -46,7 +35,10 @@ export default async function Home({
       titleLine2: t.rich("hero.titleLine2", {
         blue: (chunks) => <span className="text-brand-blue">{chunks}</span>,
       }),
-      description: t("hero.description"),
+      descriptionLine1: t("hero.descriptionLine1"),
+      descriptionLine2: t("hero.descriptionLine2"),
+      descriptionLine3: t("hero.descriptionLine3"),
+      descriptionLine4: t("hero.descriptionLine4"),
       ctaPrimary: t("hero.ctaPrimary"),
       ctaSecondary: t("hero.ctaSecondary"),
       diagramCaption: {
@@ -121,14 +113,17 @@ export default async function Home({
     solutions: {
       badge: t("solutions.badge"),
       title: t("solutions.title"),
-      description: t("solutions.description"),
+      descriptionLine1: t("solutions.descriptionLine1"),
+      descriptionLine2: t("solutions.descriptionLine2"),
+      descriptionLine3: t("solutions.descriptionLine3"),
       items: t.raw("solutions.items"),
       cta: t("solutions.cta"),
     },
     showcase: t.raw("showcase"),
     integration: {
       badge: t("integration.badge"),
-      title: t("integration.title"),
+      titleLine1: t("integration.titleLine1"),
+      titleLine2: t("integration.titleLine2"),
       description: t("integration.description"),
       cta: t("integration.cta"),
       otherSystemsLabel: t("integration.otherSystemsLabel"),
@@ -138,13 +133,11 @@ export default async function Home({
       title: t("cta.title"),
       description: t("cta.description"),
       ctaPrimary: t("cta.ctaPrimary"),
-      ctaLine: t("cta.ctaLine"),
+      ctaCaption: t("cta.ctaCaption"),
+      lineLabel: t("cta.lineLabel"),
+      lineHandle: t("cta.lineHandle"),
     },
   };
-
-  if (prototypeVariant) {
-    return <PrototypeHomeClient variant={prototypeVariant} {...homeContent} />;
-  }
 
   return <HomeClient {...homeContent} />;
 }

@@ -3,10 +3,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { Breadcrumb, type BreadcrumbItem } from "@/components/ui/Breadcrumb";
 import { HeroHeader } from "./components/HeroHeader";
-import { CategorySummaryCards } from "./components/CategorySummaryCards";
 import { FilterSidebar } from "./components/FilterSidebar";
 import { ResultsToolbar } from "./components/ResultsToolbar";
 import { UseCaseGrid } from "./components/UseCaseGrid";
+import { Pagination } from "./components/Pagination";
 import { HelpCta } from "./components/HelpCta";
 import type {
   CardCopy,
@@ -17,6 +17,7 @@ import type {
   HelpCtaContent,
   HeroContent,
   NoResultsCopy,
+  PaginationCopy,
   SortOption,
   ToolbarContent,
   UseCaseContent,
@@ -25,6 +26,7 @@ import type {
 type SelectedFilters = Record<FilterGroupKey, string[]>;
 
 const EMPTY_FILTERS: SelectedFilters = { role: [], need: [], industry: [] };
+const PAGE_SIZE = 12;
 
 type UseCasesClientProps = {
   locale: string;
@@ -36,6 +38,7 @@ type UseCasesClientProps = {
   cardCopy: CardCopy;
   filterCopy: FilterCopy;
   noResults: NoResultsCopy;
+  pagination: PaginationCopy;
   helpCta: HelpCtaContent;
   useCases: UseCaseContent[];
 };
@@ -50,6 +53,7 @@ export function UseCasesClient({
   cardCopy,
   filterCopy,
   noResults,
+  pagination,
   helpCta,
   useCases,
 }: UseCasesClientProps) {
@@ -59,6 +63,7 @@ export function UseCasesClient({
   const [sortOption, setSortOption] = useState<SortOption>("relevant");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const timeout = setTimeout(() => setDebouncedQuery(searchInput.trim().toLowerCase()), 300);
@@ -111,9 +116,24 @@ export function UseCasesClient({
     return items;
   }, [filteredUseCases, sortOption, locale]);
 
+  const totalPages = Math.max(1, Math.ceil(sortedUseCases.length / PAGE_SIZE));
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [debouncedQuery, selectedFilters, sortOption]);
+
+  const paginatedUseCases = useMemo(
+    () => sortedUseCases.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE),
+    [sortedUseCases, currentPage],
+  );
+
+  const rangeFrom = sortedUseCases.length === 0 ? 0 : (currentPage - 1) * PAGE_SIZE + 1;
+  const rangeTo = (currentPage - 1) * PAGE_SIZE + paginatedUseCases.length;
+
   const showingText = toolbar.showingTemplate
-    .replace("%count%", String(sortedUseCases.length))
-    .replace("%total%", String(useCases.length));
+    .replace("%from%", String(rangeFrom))
+    .replace("%to%", String(rangeTo))
+    .replace("%total%", String(sortedUseCases.length));
 
   return (
     <div className="bg-white">
@@ -126,12 +146,11 @@ export function UseCasesClient({
         searchValue={searchInput}
         onSearchChange={setSearchInput}
         onToggleMobileFilters={() => setIsMobileFilterOpen((open) => !open)}
+        categorySummaries={categorySummaries}
       />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <CategorySummaryCards items={categorySummaries} />
-
-        <div className="mt-10 grid gap-8 pb-20 lg:grid-cols-[280px_minmax(0,1fr)]">
+        <div className="grid gap-8 pb-20 lg:grid-cols-[300px_minmax(0,1fr)]">
           <FilterSidebar
             groups={filterGroups}
             selected={selectedFilters}
@@ -154,10 +173,17 @@ export function UseCasesClient({
             />
 
             <UseCaseGrid
-              items={sortedUseCases}
+              items={paginatedUseCases}
               viewMode={viewMode}
               cardCopy={cardCopy}
               noResults={noResults}
+            />
+
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={setCurrentPage}
+              copy={pagination}
             />
           </div>
         </div>

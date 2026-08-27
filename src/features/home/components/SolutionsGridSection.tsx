@@ -28,80 +28,86 @@ const ITEM_STYLES: { icon: LucideIcon; iconClassName: string; mockup: MockupVari
 
 function SolutionMockup({ variant }: { variant: MockupVariant }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-slate-200 bg-white">
+    <div className="flex h-32 flex-col overflow-hidden rounded-xl border border-slate-200 bg-white">
       <div className="flex items-center gap-1 border-b border-slate-100 bg-slate-50 px-3 py-2">
         <span className="h-1.5 w-1.5 rounded-full bg-red-300" />
         <span className="h-1.5 w-1.5 rounded-full bg-amber-300" />
         <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
       </div>
 
-      {variant === "signage" && (
-        <div className="grid grid-cols-2 gap-1.5 p-3">
-          <span className="col-span-2 h-10 rounded-md bg-gradient-to-br from-brand-blue to-blue-400" />
-          <span className="h-6 rounded-md bg-slate-100" />
-          <span className="h-6 rounded-md bg-slate-100" />
-        </div>
-      )}
+      <div className="flex flex-1 items-center justify-center p-3">
+        {variant === "signage" && (
+          <div className="grid w-full grid-cols-2 gap-1.5">
+            <span className="col-span-2 h-10 rounded-md bg-gradient-to-br from-brand-blue to-blue-400" />
+            <span className="h-6 rounded-md bg-slate-100" />
+            <span className="h-6 rounded-md bg-slate-100" />
+          </div>
+        )}
 
-      {variant === "communication" && (
-        <div className="flex flex-col gap-2 p-3">
-          {[0, 1, 2].map((i) => (
-            <div key={i} className="flex items-center gap-2">
-              <span className="h-5 w-5 shrink-0 rounded-full bg-blue-100" />
-              <span className="h-2 flex-1 rounded-full bg-slate-100" />
-            </div>
-          ))}
-        </div>
-      )}
-
-      {variant === "care" && (
-        <div className="flex flex-col gap-2 p-3">
-          {["bg-red-400", "bg-slate-300", "bg-brand-blue"].map((dot, i) => (
-            <div key={i} className="flex items-center gap-2">
-              <span className={`h-2 w-2 shrink-0 rounded-full ${dot}`} />
-              <span className="h-2 flex-1 rounded-full bg-slate-100" />
-            </div>
-          ))}
-        </div>
-      )}
-
-      {variant === "asset" && (
-        <div className="flex items-center gap-3 p-3">
-          <div className="flex-1 space-y-1.5">
+        {variant === "communication" && (
+          <div className="flex w-full flex-col gap-2">
             {[0, 1, 2].map((i) => (
-              <span
-                key={i}
-                className="block h-2 rounded-full bg-slate-100"
-                style={{ width: `${70 - i * 15}%` }}
-              />
+              <div key={i} className="flex items-center gap-2">
+                <span className="h-5 w-5 shrink-0 rounded-full bg-blue-100" />
+                <span className="h-2 flex-1 rounded-full bg-slate-100" />
+              </div>
             ))}
           </div>
-          <span
-            className="h-10 w-10 shrink-0 rounded-full"
-            style={{
-              background:
-                "conic-gradient(#2563eb 0% 30%, #0d9488 30% 55%, #f59e0b 55% 75%, #9333ea 75% 100%)",
-            }}
-          />
-        </div>
-      )}
+        )}
+
+        {variant === "care" && (
+          <div className="flex w-full flex-col gap-2">
+            {["bg-red-400", "bg-slate-300", "bg-brand-blue"].map((dot, i) => (
+              <div key={i} className="flex items-center gap-2">
+                <span className={`h-2 w-2 shrink-0 rounded-full ${dot}`} />
+                <span className="h-2 flex-1 rounded-full bg-slate-100" />
+              </div>
+            ))}
+          </div>
+        )}
+
+        {variant === "asset" && (
+          <div className="flex w-full items-center gap-3">
+            <div className="flex-1 space-y-1.5">
+              {[0, 1, 2].map((i) => (
+                <span
+                  key={i}
+                  className="block h-2 rounded-full bg-slate-100"
+                  style={{ width: `${70 - i * 15}%` }}
+                />
+              ))}
+            </div>
+            <span
+              className="h-10 w-10 shrink-0 rounded-full"
+              style={{
+                background:
+                  "conic-gradient(#2563eb 0% 30%, #0d9488 30% 55%, #f59e0b 55% 75%, #9333ea 75% 100%)",
+              }}
+            />
+          </div>
+        )}
+      </div>
     </div>
   );
 }
 
 export function SolutionsGridSection({ content }: SolutionsGridSectionProps) {
   return (
-    <section className="bg-slate-50 py-16 sm:px-4 lg:py-20">
+    <section className=" sm:px-4 lg:py-4">
       <div className="mx-auto max-w-7xl rounded-3xl border border-slate-100 bg-white px-4 py-12 shadow-lg sm:px-6 sm:py-16">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,300px)_1fr] lg:items-start">
           <div className="min-w-0">
             <span className="text-sm font-semibold uppercase tracking-wide text-brand-blue">
               {content.badge}
             </span>
-            <h2 className="mt-4 text-3xl font-bold leading-snug text-brand-navy sm:text-4xl">
+            <h2 className="mt-4 text-2xl font-bold leading-snug text-brand-navy sm:text-2xl">
               {content.title}
             </h2>
-            <p className="mt-4 wrap-break-word text-slate-600">{content.description}</p>
+            <p className="mt-4 wrap-break-word text-slate-600">{content.descriptionLine1}</p>
+            <p className="wrap-break-word text-slate-600">{content.descriptionLine2}</p>
+            <p className="wrap-break-word text-slate-600">{content.descriptionLine3}</p>
+
+
             <Link
               href="/solutions"
               className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-blue hover:underline"
@@ -134,7 +140,11 @@ export function SolutionsGridSection({ content }: SolutionsGridSectionProps) {
                       {item.tagline}
                     </p>
 
-                    <p className="mt-2 wrap-break-word text-sm line-clamp-2 text-slate-500">{item.description}</p>
+                    <div className="h-20 overflow-hidden">
+                    <p className="mt-3 wrap-break-word text-sm line-clamp-2 text-slate-500">{item.descriptionLine1}</p>
+                    <p className="wrap-break-word text-sm line-clamp-2 text-slate-500">{item.descriptionLine2}</p>
+                    </div>
+
 
                     <div className="mt-4">
                       <SolutionMockup variant={style.mockup} />

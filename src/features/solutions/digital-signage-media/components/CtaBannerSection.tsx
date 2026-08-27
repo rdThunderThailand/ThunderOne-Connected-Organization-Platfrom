@@ -25,7 +25,7 @@ export function CtaBannerSection({ content }: CtaBannerSectionProps) {
           <div className="mt-6 flex flex-wrap items-center gap-4">
             <Link
               href="/contact"
-              className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-brand-navy hover:bg-slate-100"
+              className="rounded-full bg-blue-700 px-6 py-3 text-sm font-semibold text-white hover:bg-brand-blue"
             >
               {content.ctaPrimary}
             </Link>

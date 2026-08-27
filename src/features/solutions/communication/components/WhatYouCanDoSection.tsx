@@ -17,16 +17,16 @@ export function WhatYouCanDoSection({ content }: WhatYouCanDoSectionProps) {
   const { createMessageCard, previewCard, lineChat } = content;
 
   return (
-    <section id="what-you-can-do" className="bg-white px-4 py-16 sm:px-6 lg:py-20">
+    <section id="what-you-can-do" className="px-4 py-16 sm:px-6 lg:py-20">
       <div className="mx-auto flex justify-between max-w-7xl gap-12 lg:grid-cols-[minmax(0,380px)_1fr] lg:items-center">
        
        <div >
        <div >
           <p className="text-sm font-semibold uppercase tracking-wide text-brand-blue">{content.label}</p>
-          <h2 className="mt-3 text-3xl font-bold leading-snug text-brand-blue sm:text-4xl">
+          <h2 className="mt-3 whitespace-pre-line text-3xl font-bold leading-snug text-brand-blue sm:text-4xl">
             {content.title}
           </h2>
-          <p className="mt-4 text-slate-600">{content.description}</p>
+          <p className="mt-4 whitespace-pre-line text-slate-600">{content.description}</p>
 
           <ul className="mt-6 space-y-3">
             {content.checklist.map((item) => (

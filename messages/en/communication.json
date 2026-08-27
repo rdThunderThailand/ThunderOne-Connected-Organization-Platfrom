@@ -9,8 +9,8 @@
   "hero": {
     "badge": "SOLUTION",
     "title": "Communication",
-    "subtitle": "Connect. Align. Engage. Everywhere.",
-    "description": "ThunderOne Communication helps you deliver the right message to the right people, at the right time, on the right channel. From internal announcements to critical alerts—keep everyone informed, aligned, and engaged.",
+    "subtitle": "Connect. Align. Engage.\nEverywhere.",
+    "description": "ThunderOne Communication helps you deliver the right message\nto the right people, at the right time, on the right channel.\nFrom internal announcements to critical alerts—keep everyone\ninformed, aligned, and engaged.",
     "ctaPrimary": "Talk to us",
     "ctaSecondary": "See it in action",
     "dashboard": {
@@ -53,8 +53,8 @@
   },
   "whatYouCanDo": {
     "label": "What you can do",
-    "title": "Communicate with impact, across every channel.",
-    "description": "ThunderOne Communication helps you deliver the right message to the right people, at the right time, on the right channel.",
+    "title": "Communicate with impact,\nacross every channel.",
+    "description": "Plan, create, approve, and deliver communications\nthat reach your people and drive action.",
     "checklist": [
       "Create and schedule messages with ease",
       "Deliver across multiple channels instantly",
@@ -122,8 +122,8 @@
     ]
   },
   "platform": {
-    "title": "Works seamlessly with ThunderOne Platform",
-    "description": "Communication connects with work, asset, people, and service modules to create one connected experience.",
+    "title": "Works seamlessly with ThunderOne",
+    "description": "Communication connects with work, asset, people,\nand service modules to create one connected\nexperience.",
     "items": [
       { "key": "work", "label": "Work" },
       { "key": "assetIntelligence", "label": "Asset Intelligence" },

@@ -1,11 +1,10 @@
 "use client";
 
-// === Shared product mockup: desktop panel (title + status badge, author/
-// timestamp, optional body preview, channel icon row, 4-stat grid) with an
-// optional floating LINE notification phone bubble. Used by HeroSection
-// (with lineNotification) and InContextSection (panel only, no phone) —
-// content/icons are supplied by the caller so it stays generic across
-// future use case detail pages. ===
+// === Product mockup panel: title + status badge, optional author/timestamp,
+// optional body preview, optional channel icon row, and a 2-column stat grid.
+// Used by InContextSection inside the narrow 3-column detail row (the hero
+// has its own richer HeroMockup). Content/icons are supplied by the caller.
+// An optional floating LINE notification bubble is still supported. ===
 
 import { MessageCircle } from "lucide-react";
 import { ICONS } from "../../iconRegistry";
@@ -64,7 +63,7 @@ export function ProductMockup({
           </p>
         )}
 
-        {bodyPreview && <p className="mt-3 text-xs leading-relaxed text-slate-600">{bodyPreview}</p>}
+        {bodyPreview && <p className="text-xs leading-relaxed text-slate-600">{bodyPreview}</p>}
 
         {channelIcons && channelIcons.length > 0 && (
           <div className="mt-4 flex gap-3">
@@ -82,12 +81,12 @@ export function ProductMockup({
           </div>
         )}
 
-        <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <div className="mt-3 flex gap-5">
           {stats.map((stat, index) => (
-            <div key={index} className="rounded-xl bg-slate-50 p-3">
-              <p className="text-lg font-bold text-brand-navy">{stat.value}</p>
-              <p className="mt-1 text-[11px] font-medium text-slate-500">{stat.label}</p>
-              {stat.percent && <p className="text-[10px] font-semibold text-emerald-500">{stat.percent}</p>}
+            <div key={index} className="rounded-xl bg-slate-50 px-3 py-2">
+              <p className="text-base font-bold text-[8px]  text-brand-navy">{stat.value}</p>
+              <p className="text-[8px] font-medium text-slate-500">{stat.label}</p>
+              {stat.percent && <p className="text-[6px] font-semibold text-emerald-500">{stat.percent}</p>}
             </div>
           ))}
         </div>
