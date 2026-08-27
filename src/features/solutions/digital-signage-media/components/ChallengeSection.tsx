@@ -8,7 +8,7 @@ import { BarChart3, Clock, Monitor, Settings, Users } from "lucide-react";
 import type { ChallengeContent } from "../types";
 
 const ICON_ORDER: { icon: LucideIcon; badgeClassName: string; iconClassName: string }[] = [
-  { icon: Clock, badgeClassName: "bg-blue-100", iconClassName: "text-blue-600" },
+  { icon: Clock, badgeClassName: "bg-violet-100", iconClassName: "text-violet-600" },
   { icon: Monitor, badgeClassName: "bg-sky-100", iconClassName: "text-sky-600" },
   { icon: Users, badgeClassName: "bg-purple-100", iconClassName: "text-purple-600" },
   { icon: BarChart3, badgeClassName: "bg-orange-100", iconClassName: "text-orange-600" },
@@ -34,7 +34,7 @@ export function ChallengeSection({ content }: ChallengeSectionProps) {
                 <span
                   className={`flex h-14 w-14 items-center justify-center rounded-full ${badgeClassName}`}
                 >
-                  <Icon className={`h-6 w-6 ${iconClassName}`} />
+                  <Icon className={`h-8 w-8 ${iconClassName}`} />
                 </span>
                 <span className="text-sm font-semibold text-brand-navy">{label}</span>
               </div>

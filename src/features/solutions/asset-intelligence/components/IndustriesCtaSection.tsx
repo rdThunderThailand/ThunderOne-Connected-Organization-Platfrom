@@ -9,7 +9,7 @@ import type { LucideIcon } from "lucide-react";
 import { BarChart3, Boxes, Building2, ClipboardCheck, Factory, GraduationCap, HeartPulse, Landmark, Users } from "lucide-react";
 import Image from "next/image";
 import thunderOneMark from "@/components/logo/Black.svg";
-import { Link } from "@/i18n/navigation";
+import { useTalkToUsStore } from "@/store/talkToUsStore";
 import type { CtaContent, IndustriesContent, PlatformContent, PlatformNodeItem } from "../types";
 
 const INDUSTRY_ICONS: LucideIcon[] = [Landmark, Building2, Factory, GraduationCap, HeartPulse];
@@ -45,6 +45,7 @@ type IndustriesCtaSectionProps = {
 export function IndustriesCtaSection({ industries, platform, cta }: IndustriesCtaSectionProps) {
   const [firstNode, secondNode, ...restNodes] = platform.items;
   const [thirdNode, fourthNode] = restNodes;
+  const openTalkToUs = useTalkToUsStore((s) => s.openWithTopic);
 
   return (
     <section className="px-4 py-8 sm:px-6 lg:py-10 flex justify-center">
@@ -99,12 +100,13 @@ export function IndustriesCtaSection({ industries, platform, cta }: IndustriesCt
         <div className="rounded-2xl border border-slate-200 bg-white p-3 shadow-lg w-sm">
           <h3 className="text-xl font-bold text-brand-navy">{cta.title}</h3>
           <p className="mt-2 text-slate-600">{cta.description}</p>
-          <Link
-            href="/contact"
+          <button
+            type="button"
+            onClick={() => openTalkToUs("asset-intelligence")}
             className="mt-4 inline-flex rounded-full bg-blue-700 px-6 py-3 text-sm font-semibold text-white hover:bg-brand-blue"
           >
             {cta.ctaPrimary}
-          </Link>
+          </button>
           {/* TODO: confirm copy — TH ctaNote as given in the design brief translates
               differently from the EN "No long forms"; using it as provided pending
               content team confirmation (2026-08-20). */}

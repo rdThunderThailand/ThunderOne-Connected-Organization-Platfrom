@@ -19,7 +19,7 @@ import {
   Settings,
   Share2,
 } from "lucide-react";
-import { Link } from "@/i18n/navigation";
+import { useTalkToUsStore } from "@/store/talkToUsStore";
 import type { HeroContent } from "../types";
 
 type HeroSectionProps = {
@@ -112,6 +112,8 @@ function DashboardMockup({ dashboard }: { dashboard: HeroContent["dashboard"] })
 }
 
 export function HeroSection({ content }: HeroSectionProps) {
+  const openTalkToUs = useTalkToUsStore((s) => s.openWithTopic);
+
   return (
     <section className="overflow-hidden">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 pb-20 pt-6 lg:grid-cols-2 lg:items-center lg:pb-28">
@@ -128,12 +130,13 @@ export function HeroSection({ content }: HeroSectionProps) {
           <p className="mt-2 text-2xl font-bold text-brand-blue">{content.subtitle}</p>
           <p className="mt-4 max-w-xl text-lg text-slate-600">{content.description}</p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <Link
-              href="/contact"
+            <button
+              type="button"
+              onClick={() => openTalkToUs("digital-signage")}
               className="rounded-full bg-blue-700 px-6 py-3 text-sm font-semibold text-white hover:bg-brand-blue"
             >
               {content.ctaPrimary}
-            </Link>
+            </button>
             <a
               href="#what-you-can-do"
               className="inline-flex items-center gap-2 rounded-full border border-brand-navy px-6 py-3 text-sm font-semibold text-brand-navy hover:bg-slate-50"

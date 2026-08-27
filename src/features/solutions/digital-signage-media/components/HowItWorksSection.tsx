@@ -28,11 +28,11 @@ export function HowItWorksSection({ content }: HowItWorksSectionProps) {
               return (
                 <div key={step.title} className="flex flex-1 items-start">
                   <div className="flex w-32 flex-col items-center gap-3 text-center sm:w-40">
-                    <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-brand-blue text-white shadow-md">
-                      <Icon className="h-6 w-6" />
-                      <span className="absolute -top-1.5 -right-1.5 flex h-5 w-5 items-center justify-center rounded-full border-2 border-slate-50 bg-brand-navy text-[10px] font-bold text-white">
+                    <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-white text-brand-blue shadow-md">
+                      <span className="absolute -top-1.5 -left-1.5 flex h-5 w-5 items-center justify-center rounded-full border-2 border-slate-50 bg-brand-blue text-[10px] font-bold text-white">
                         {index + 1}
                       </span>
+                      <Icon className="h-6 w-6" />
                     </span>
                     <p className="text-sm font-bold text-brand-navy">{step.title}</p>
                     <p className="text-xs text-slate-500">{step.description}</p>

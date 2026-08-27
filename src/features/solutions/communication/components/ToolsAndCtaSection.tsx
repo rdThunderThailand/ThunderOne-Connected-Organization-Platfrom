@@ -4,7 +4,7 @@
 // เครื่องมือที่เชื่อมต่อได้ด้านบน, การ์ด CTA ปิดท้าย "พร้อมยกระดับ
 // การสื่อสารหรือยัง?" ขนาดใหญ่ จัดกึ่งกลางด้านล่าง ===
 
-import { Link } from "@/i18n/navigation";
+import { useTalkToUsStore } from "@/store/talkToUsStore";
 import type { ToolsAndCtaContent } from "../types";
 
 // TODO: replace with real tool/integration logo assets
@@ -15,6 +15,8 @@ type ToolsAndCtaSectionProps = {
 };
 
 export function ToolsAndCtaSection({ content }: ToolsAndCtaSectionProps) {
+  const openTalkToUs = useTalkToUsStore((s) => s.openWithTopic);
+
   return (
     <section className="px-4 py-4 sm:px-6 lg:py-6">
       <div className="mx-auto max-w-7xl">
@@ -40,12 +42,13 @@ export function ToolsAndCtaSection({ content }: ToolsAndCtaSectionProps) {
         <div className="mx-auto max-w-2xl rounded-2xl border border-slate-200 bg-white p-3 shadow-lg sm:p-6">
           <h3 className="text-2xl font-bold text-brand-navy sm:text-2xl">{content.ctaTitle}</h3>
           <p className="mx-auto mt-4 max-w-xl text-lg text-slate-600">{content.ctaDescription}</p>
-          <Link
-            href="#/contact"
+          <button
+            type="button"
+            onClick={() => openTalkToUs("communication")}
             className="mt-3 inline-flex rounded-full bg-blue-700 px-8 py-3.5 text-sm font-semibold text-white hover:bg-brand-blue"
           >
             {content.ctaPrimary}
-          </Link>
+          </button>
           <p className="mt-3 text-xs text-slate-400">{content.ctaNote}</p>
         </div>
         </div>

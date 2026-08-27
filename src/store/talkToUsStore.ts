@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { openLineOA } from "@/components/talk-to-us/lineOA";
+import type { TopicKey } from "@/components/talk-to-us/types";
 
 export type TalkToUsStep = "topic" | "questions" | "channel" | "callback" | "confirmation";
 export type TalkToUsChannel = "line" | "callback";
@@ -16,6 +17,9 @@ type TalkToUsState = {
 
 type TalkToUsActions = {
   open: () => void;
+  // Open already scoped to a topic (per-solution "Talk to us" CTAs) —
+  // skips the topic picker and lands straight on that topic's questions.
+  openWithTopic: (topicKey: TopicKey) => void;
   close: () => void;
   reset: () => void;
   selectTopic: (topicKey: string) => void;
@@ -51,6 +55,8 @@ export const useTalkToUsStore = create<TalkToUsState & TalkToUsActions>((set, ge
   ...initialState,
 
   open: () => set({ isOpen: true }),
+  openWithTopic: (topicKey) =>
+    set({ isOpen: true, selectedTopic: topicKey, step: "questions", answers: {} }),
   close: () => set({ isOpen: false }),
   reset: () => set(initialState),
 

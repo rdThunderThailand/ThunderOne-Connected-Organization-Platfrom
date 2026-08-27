@@ -10,6 +10,7 @@ import type { LucideIcon } from "lucide-react";
 import { ArrowRight, Boxes, ClipboardCheck, Headset, Megaphone, MessageCircle } from "lucide-react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import { useTalkToUsStore } from "@/store/talkToUsStore";
 import thunderOneMark from "@/components/logo/Black.svg";
 import type { PlatformAndCtaContent, PlatformConnectedItem } from "../types";
 
@@ -42,6 +43,7 @@ function PlatformNode({ item }: { item: PlatformConnectedItem }) {
 export function PlatformAndCtaSection({ content }: PlatformAndCtaSectionProps) {
   const [first, second, ...rest] = content.connectedItems;
   const [third, fourth] = rest;
+  const openTalkToUs = useTalkToUsStore((s) => s.openWithTopic);
 
   return (
     <section className="px-4 py-16 sm:px-6 lg:py-20">
@@ -83,15 +85,16 @@ export function PlatformAndCtaSection({ content }: PlatformAndCtaSectionProps) {
           <div className="min-w-0 lg:border-l lg:border-slate-200 lg:pl-8">
             <h3 className="text-xl font-bold leading-snug text-brand-navy sm:text-2xl">{content.ctaTitle}</h3>
             <p className="mt-3 text-sm text-slate-600">{content.ctaDescription}</p>
-            <Link
-              href="/contact"
+            <button
+              type="button"
+              onClick={() => openTalkToUs("thunder-care")}
               className="mt-6 inline-flex items-center gap-2 rounded-full bg-blue-700 px-6 py-3 text-sm font-semibold text-white hover:bg-brand-blue"
             >
               {content.ctaPrimary}
               <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white/20">
                 <MessageCircle className="h-3 w-3" />
               </span>
-            </Link>
+            </button>
             <p className="mt-3 text-xs text-slate-400">{content.ctaNote}</p>
           </div>
         </div>

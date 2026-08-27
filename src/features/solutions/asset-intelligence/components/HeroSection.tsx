@@ -21,7 +21,7 @@ import {
   Truck,
   Wrench,
 } from "lucide-react";
-import { Link } from "@/i18n/navigation";
+import { useTalkToUsStore } from "@/store/talkToUsStore";
 import type { HeroContent } from "../types";
 
 type HeroSectionProps = {
@@ -208,6 +208,8 @@ function DashboardMockup({ dashboard }: { dashboard: HeroContent["dashboard"] })
 }
 
 export function HeroSection({ content, onOpenTour }: HeroSectionProps) {
+  const openTalkToUs = useTalkToUsStore((s) => s.openWithTopic);
+
   return (
     <section className="overflow-hidden">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 pb-20 pt-6 lg:grid-cols-2 lg:items-center lg:pb-28">
@@ -224,12 +226,13 @@ export function HeroSection({ content, onOpenTour }: HeroSectionProps) {
           <p className="mt-2 whitespace-pre-line text-2xl font-bold leading-snug text-brand-blue">{content.subtitle}</p>
           <p className="mt-4 max-w-xl whitespace-pre-line text-lg text-slate-600">{content.description}</p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <Link
-              href="/contact"
+            <button
+              type="button"
+              onClick={() => openTalkToUs("asset-intelligence")}
               className="rounded-full bg-blue-700 px-6 py-3 text-sm font-semibold text-white hover:bg-brand-blue"
             >
               {content.ctaPrimary}
-            </Link>
+            </button>
             <button
               type="button"
               onClick={onOpenTour}
