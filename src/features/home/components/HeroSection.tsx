@@ -19,6 +19,7 @@ import {
 import { Link } from "@/i18n/navigation";
 import { HeroOrbitDiagram, type OrbitNode } from "@/components/diagrams/HeroOrbitDiagram";
 import { PersonAvatar } from "@/features/use-cases/detail/components/illustrations/PersonAvatar";
+import { useTalkToUsStore } from "@/store/talkToUsStore";
 import type { HeroContent } from "../types";
 
 type HeroSectionProps = {
@@ -36,6 +37,8 @@ const NODE_ORDER: { key: keyof HeroContent["diagramNodes"]; icon: LucideIcon; ba
 ];
 
 export function HeroSection({ content }: HeroSectionProps) {
+  const openTalkToUs = useTalkToUsStore((s) => s.open);
+
   const nodes: OrbitNode[] = NODE_ORDER.map(({ key, icon, badgeClassName }) => ({
     key,
     icon,
@@ -60,19 +63,20 @@ export function HeroSection({ content }: HeroSectionProps) {
 
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
-              href="/platform"
+              href="#/platform"
               className="inline-flex items-center gap-2 rounded-xl bg-brand-blue px-6 py-3 text-sm font-semibold text-white hover:bg-blue-700"
             >
               {content.ctaPrimary}
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-xl border border-brand-blue border-2 px-6 py-3 text-sm font-semibold text-blue-700 hover:bg-slate-50"
+            <button
+              type="button"
+              onClick={openTalkToUs}
+              className="inline-flex items-center gap-2 rounded-xl border-2 border-brand-blue px-6 py-3 text-sm font-semibold text-blue-700 hover:bg-slate-50"
             >
-              {content.ctaSecondary} 
+              {content.ctaSecondary}
               <MessageCircle className="h-4 w-4" />
-            </Link>
+            </button>
           </div> 
           <div className="mt-8 flex items-center gap-4">
             <div className="flex shrink-0 space-x-4">

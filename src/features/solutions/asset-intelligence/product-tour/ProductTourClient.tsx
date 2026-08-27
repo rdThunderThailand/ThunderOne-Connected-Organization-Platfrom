@@ -113,40 +113,44 @@ export function ProductTourClient({ content, onClose }: ProductTourClientProps) 
   }
 
   return (
-    <div className="fixed inset-x-0 bottom-0 top-20 z-40 flex flex-col bg-slate-50">
-      <TourTopBar endTourLabel={content.endTour} onClose={onClose} />
+    // Full-viewport dim scrim; the tour panel itself is capped at max-w-7xl
+    // and centered, so on wide screens the scrim shows in the side gutters.
+    <div className="fixed inset-0 z-40">
+      <div className="fixed inset-x-0 top-20 bottom-0 mx-auto flex max-w-7xl flex-col bg-white">
+        <TourTopBar endTourLabel={content.endTour} onClose={onClose} />
 
-      <MobileTabSwitcher content={content.mobileTabs} activePanel={mobilePanel} onChange={setMobilePanel} />
+        <MobileTabSwitcher content={content.mobileTabs} activePanel={mobilePanel} onChange={setMobilePanel} />
 
-      <div className="grid flex-1 min-h-0 overflow-hidden lg:grid-cols-[280px_1fr_320px]">
-        <div
-          className={`${mobilePanel === "steps" ? "block" : "hidden"} overflow-y-auto border-slate-100 lg:block lg:border-r`}
-        >
-          <TourSidebar
-            content={content.sidebar}
-            currentStep={currentStep}
-            completedSteps={completedSteps}
-            onSelectStep={handleSelectStep}
-          />
-        </div>
-
-        <div className={`${mobilePanel === "content" ? "flex" : "hidden"} min-h-0 min-w-0 flex-col lg:flex`}>
-          <div className="min-h-0 flex-1 p-6 overflow-y-auto">
-            <TourStepHeader content={content.stepHeader} currentStep={currentStep} />
-            <div className="mt-6">{renderStepBody()}</div>
+        <div className="grid flex-1 min-h-0 overflow-hidden lg:grid-cols-[280px_1fr_320px]">
+          <div
+            className={`${mobilePanel === "steps" ? "block" : "hidden"} overflow-y-auto border-slate-100 lg:block lg:border-r`}
+          >
+            <TourSidebar
+              content={content.sidebar}
+              currentStep={currentStep}
+              completedSteps={completedSteps}
+              onSelectStep={handleSelectStep}
+            />
           </div>
-          <TourBottomBar
-            content={content.bottomBar}
-            currentStep={currentStep}
-            onBack={handleBack}
-            onNext={handleNext}
-          />
-        </div>
 
-        <div
-          className={`${mobilePanel === "summary" ? "block" : "hidden"} overflow-y-auto border-slate-100 bg-white lg:block lg:border-l`}
-        >
-          <TourSummaryPanel content={content.summaryPanel} asset={content.asset} />
+          <div className={`${mobilePanel === "content" ? "flex" : "hidden"} min-h-0 min-w-0 flex-col lg:flex`}>
+            <div className="min-h-0 flex-1 p-6 overflow-y-auto">
+              <TourStepHeader content={content.stepHeader} currentStep={currentStep} />
+              <div className="mt-6">{renderStepBody()}</div>
+            </div>
+            <TourBottomBar
+              content={content.bottomBar}
+              currentStep={currentStep}
+              onBack={handleBack}
+              onNext={handleNext}
+            />
+          </div>
+
+          <div
+            className={`${mobilePanel === "summary" ? "block" : "hidden"} overflow-y-auto border-slate-100 bg-white lg:block lg:border-l`}
+          >
+            <TourSummaryPanel content={content.summaryPanel} asset={content.asset} />
+          </div>
         </div>
       </div>
     </div>
