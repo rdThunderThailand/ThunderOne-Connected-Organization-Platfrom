@@ -97,7 +97,7 @@ export function TourSidebar({ content, currentStep, completedSteps, onSelectStep
         <p className="text-sm font-bold text-brand-navy">{content.realDataPrompt.title}</p>
         <p className="mt-1 text-xs text-slate-500">{content.realDataPrompt.description}</p>
         <Link
-          href="/contact"
+          href="#/contact"
           className="mt-3 inline-flex w-full items-center justify-center rounded-full border border-brand-navy px-4 py-2 text-xs font-semibold text-brand-navy hover:bg-white"
         >
           {content.realDataPrompt.ctaButton}
