@@ -41,7 +41,7 @@ export function CommunicationClient({
 }: CommunicationClientProps) {
   return (
     <div>
-      <div className="mx-auto max-w-7xl px-6 pt-6">
+      <div className="mx-auto max-w-7xl px-6 pb-6 pt-6">
         <Breadcrumb items={breadcrumb} />
       </div>
       <HeroSection content={hero} />

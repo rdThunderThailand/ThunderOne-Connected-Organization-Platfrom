@@ -40,7 +40,7 @@ export function SolutionsHeroSection({ content }: SolutionsHeroSectionProps) {
 
   return (
     <section className="overflow-hidden">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 pb-20 pt-8 lg:grid-cols-2 lg:items-center lg:pb-28 lg:pt-12">
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 pb-20 pt-8 lg:grid-cols-2 lg:items-start lg:pb-28 lg:pt-12">
         <div>
           <h1 className="text-4xl font-bold leading-tight text-brand-navy sm:text-5xl">
             <span className="block">{content.title1}</span>
@@ -64,7 +64,7 @@ export function SolutionsHeroSection({ content }: SolutionsHeroSectionProps) {
           </div>
         </div>
 
-        <div className="relative">
+        <div className="relative lg:self-center">
           <div className="absolute left-1/2 top-1/2 -z-10 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-blue/10 blur-3xl" />
           <HeroOrbitDiagram
             nodes={nodes}
