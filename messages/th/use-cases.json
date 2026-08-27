@@ -81,7 +81,7 @@
     }
   },
   "toolbar": {
-    "showingTemplate": "แสดง %count% จากทั้งหมด %total% ยูสเคส",
+    "showingTemplate": "แสดง %from%-%to% จากทั้งหมด %total% ยูสเคส",
     "sortByLabel": "เรียงโดย",
     "sortOptions": {
       "relevant": "ความเกี่ยวข้องมากที่สุด",
@@ -284,6 +284,10 @@
   "noResults": {
     "title": "ไม่พบยูสเคสที่ตรงกับเงื่อนไข",
     "description": "ลองปรับตัวกรองหรือคำค้นหาใหม่อีกครั้ง"
+  },
+  "pagination": {
+    "previous": "ก่อนหน้า",
+    "next": "ถัดไป"
   },
   "helpCta": {
     "title": "ไม่เจอยูสเคสที่คุณกำลังมองหา?",

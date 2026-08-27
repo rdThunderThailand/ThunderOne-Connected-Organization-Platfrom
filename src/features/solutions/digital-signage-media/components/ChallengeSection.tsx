@@ -8,7 +8,7 @@ import { BarChart3, Clock, Monitor, Settings, Users } from "lucide-react";
 import type { ChallengeContent } from "../types";
 
 const ICON_ORDER: { icon: LucideIcon; badgeClassName: string; iconClassName: string }[] = [
-  { icon: Clock, badgeClassName: "bg-blue-100", iconClassName: "text-blue-600" },
+  { icon: Clock, badgeClassName: "bg-violet-100", iconClassName: "text-violet-600" },
   { icon: Monitor, badgeClassName: "bg-sky-100", iconClassName: "text-sky-600" },
   { icon: Users, badgeClassName: "bg-purple-100", iconClassName: "text-purple-600" },
   { icon: BarChart3, badgeClassName: "bg-orange-100", iconClassName: "text-orange-600" },
@@ -21,7 +21,7 @@ type ChallengeSectionProps = {
 
 export function ChallengeSection({ content }: ChallengeSectionProps) {
   return (
-    <section className="bg-slate-50 px-4 py-16 sm:px-6 lg:py-20">
+    <section className="px-4 py-16 sm:px-6 lg:py-20">
       <div className="mx-auto max-w-5xl text-center">
         <h2 className="text-3xl font-bold text-brand-navy sm:text-4xl">{content.title}</h2>
         <p className="mt-4 text-slate-600">{content.subtitle}</p>
@@ -34,7 +34,7 @@ export function ChallengeSection({ content }: ChallengeSectionProps) {
                 <span
                   className={`flex h-14 w-14 items-center justify-center rounded-full ${badgeClassName}`}
                 >
-                  <Icon className={`h-6 w-6 ${iconClassName}`} />
+                  <Icon className={`h-8 w-8 ${iconClassName}`} />
                 </span>
                 <span className="text-sm font-semibold text-brand-navy">{label}</span>
               </div>

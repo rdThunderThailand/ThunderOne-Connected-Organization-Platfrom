@@ -4,8 +4,11 @@
   "hero": {
     "trustedBy": "Trusted by forward-thinking organizations",
     "titleLine1": "Empowered <blue>People.</blue>",
-    "titleLine2": "Connected <blue>Organization.</blue>",
-    "description": "ThunderOne connects people, work, communication, devices, services, and systems within a shared context — powered by Intelligence & Automation to cut out unnecessary work and help teams work better together.",
+    "titleLine2": " <blue>Connected</blue> Organization.",
+    "descriptionLine1": "ThunderOne connects people, work, communication,",
+    "descriptionLine2":"spaces, devices, assets, and systems within a shared context — ",
+    "descriptionLine3":"powered by Intelligence & Automation to reduce complexity,",
+    "descriptionLine4":"surface what matters, and help people work better together.",
     "ctaPrimary": "Explore ThunderOne",
     "ctaSecondary": "Talk to us",
     "diagramCaption": {
@@ -23,9 +26,9 @@
     }
   },
   "problem": {
-    "badge": "02 The problem organizations face today",
-    "titleLine1": "Your organization already has the technology,",
-    "titleLine2": "but the problem is <blue>nothing works together</blue>",
+    "badge": "02 THE ORGANIZATION PROBLEM",
+    "titleLine1": "Your organization already has technology.",
+    "titleLine2": "<blue>The problem is that it doesn't work together</blue>",
     "contextItems": {
       "people": "People",
       "work": "Work",
@@ -35,94 +38,100 @@
       "space": "Space",
       "asset": "Asset"
     },
-    "connectorLabel": "Fragmented organizational context",
-    "tagline": "ThunderOne connects every context into one"
+    "connectorLabel": "Disconnected Organizational Context",
+    "tagline": "ThunderOne connects the context"
   },
   "persona": {
     "badge": "03 How ThunderOne can help you",
     "freeMe": {
       "label": "FREE ME",
-      "title": "Get your time back",
+      "title": "Give me my time back",
       "items": [
-        "Cut unnecessary work",
-        "Reduce administrative tasks",
-        "Fewer status-check follow-ups",
-        "Cut manual reporting",
-        "Stop switching between multiple systems"
+        "Reduce unnecessary work",
+        "Reduce repetitive tasks",
+        "Reduce follow-ups",
+        "Reduce manual reporting",
+        "Reduce system switching"
       ]
     },
     "helpMe": {
       "label": "HELP ME",
-      "title": "Help you decide better",
+      "title": "Help me do better",
       "items": [
         "Understand what matters",
-        "Focus on what matters",
+        "Focus on what matters most",
         "Make better decisions",
         "Learn and grow",
-        "Have space to think and create"
+        "Create space for thinking and creativity"
       ]
     },
     "connectUs": {
       "label": "CONNECT US",
-      "title": "Keep us connected",
+      "title": "Help us stay connected",
       "items": [
         "Communicate with clarity",
         "Work better together",
-        "Recognize each other's value and wins",
-        "Connect people and teams across the organization",
-        "Move forward together"
+        "Recognize each other",
+        "Connect people across the organization",
+        "Grow together"
       ]
     }
   },
   "perspective": {
-    "title": "04 One shared context — every role sees what matters differently",
+    "title": "04 ONE ORGANIZATION. DIFFERENT PERSPECTIVES.",
     "tagline": "One organizational context, a different experience for every role",
     "executive": {
-      "role": "Executive",
-      "question": "What do you need?",
-      "items": ["Strategy", "Decisions", "Risk", "Opportunities"]
+      "role": "EXECUTIVE",
+      "question": "What deserves your attention?",
+      "items": ["Strategy", "Decisions", "Risks", "Opportunities"]
     },
     "manager": {
-      "role": "Manager",
-      "question": "Where does your team need you?",
+      "role": "MANAGER",
+      "question": "Where does your team need me?",
       "items": ["People", "Work", "Coaching", "Bottlenecks"]
     },
     "people": {
-      "role": "People",
+      "role": "PEOPLE",
       "question": "What matters to me today?",
-      "items": ["Tasks", "Work", "Collaboration", "Growth"]
+      "items": ["Mission", "Work", "Collaboration", "Growth"]
     }
   },
   "solutions": {
-    "badge": "05 Start with what matters to your organization",
-    "title": "Start with what creates value first",
-    "description": "You don't need to change everything at once. Start with the solution that matters most, then expand alongside your organization.",
+    "badge": "05 Start with what matters",
+    "title": "Start with what matters to your organization.",
+    "descriptionLine1": "You don't need to change everything at once.",
+    "descriptionLine2": "Start with the solution that creates meaningful value today.",
+    "descriptionLine3": "Then expand ThunderOne naturally as you grow.",
     "items": [
       {
         "title": "DIGITAL SIGNAGE & MEDIA",
-        "tagline": "Manage screens and media centrally",
-        "description": "Manage content for multiple screens and locations, even from different places.",
+        "tagline": "Manage every screen and content from one place",
+        "descriptionLine1": "Manage Library • Playlist",
+        "descriptionLine2": "Channels • Displays",
         "cta": "Explore solution",
         "link": "/solutions/digital-signage-media"
       },
       {
         "title": "COMMUNICATION",
-        "tagline": "Keep the whole organization informed and aligned",
-        "description": "Create channels and deliver communications to the right people through the right channel.",
+        "tagline": "Keep your organization informed, aligned, and connected",
+        "descriptionLine1": "Publication • Audience",
+        "descriptionLine2": "Channels • Response",
         "cta": "Explore solution",
         "link": "/solutions/communication"
       },
       {
         "title": "THUNDER CARE",
-        "tagline": "Keep your technology and operations always ready",
-        "description": "Connect issue reporting and devices with support and service delivery.",
+        "tagline": "Keep your technology and workplace ready",
+        "descriptionLine1": "IT Care • Service Request",
+        "descriptionLine2": "Device • Field Service",
         "cta": "Explore solution",
         "link": "/solutions/thunder-care"
       },
       {
         "title": "ASSET INTELLIGENCE",
-        "tagline": "Know what your organization has, where it is, and how to maintain it",
-        "description": "Connect assets, locations, people, services, and lifecycle so the data is actually usable.",
+        "tagline": "Know what you have, where it is, and what it needs",
+        "descriptionLine1": "Assets • Locations",
+        "descriptionLine2": "Lifecycle Service",
         "cta": "Explore solution",
         "link": "/solutions/asset-intelligence"
       }
@@ -130,9 +139,9 @@
     "cta": "See all solutions"
   },
   "showcase": {
-    "badge": "06 See ThunderOne in real work",
-    "title": "Everything you need, in the context that matters",
-    "description": "ThunderOne brings what matters to each person into one experience — no more hunting for information across multiple systems.",
+    "badge": "06 SEE THUNDERONE IN ACTION",
+    "titleLine1": "Everything you need.",
+    "titleLine2": "In the context that matters.",
     "tabs": {
       "executive": "Executive",
       "manager": "Manager",
@@ -250,17 +259,20 @@
     "aiAssistantLabel": "AI Assistant"
   },
   "integration": {
-    "badge": "07 Connect, don't replace",
-    "title": "Keep the systems that already work well",
-    "description": "ThunderOne connects the context that matters from the systems and tools your organization already uses, so everyone sees and works from the same context.",
+    "badge": "07 CONNECT, DON'T REPLACE",
+    "titleLine1": "Keep the systems",
+    "titleLine2": "that work",
+    "description": "ThunderOne connects the context that matters from your existing systems and tools.",
     "cta": "Learn more",
-    "otherSystemsLabel": "Other systems",
+    "otherSystemsLabel": "and more",
     "pillLabel": "SHARED CONTEXT + AI"
   },
   "cta": {
-    "title": "Curious how ThunderOne can help your organization?",
-    "description": "Talk to our team — no commitment, just a conversation about what's possible.",
+    "title": "What matters most to your organization today?",
+    "description": "Whether you're starting with digital signage,\ncommunication, technology care, or asset management,\nwe'll help you find the right place to begin.",
     "ctaPrimary": "Talk to us",
-    "ctaLine": "Chat with @ThunderOne"
+    "ctaCaption": "Takes about 1 minute  •  No long forms",
+    "lineLabel": "Or talk to us on LINE",
+    "lineHandle": "@thunderone"
   }
 }

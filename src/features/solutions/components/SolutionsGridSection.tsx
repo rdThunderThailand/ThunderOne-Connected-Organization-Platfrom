@@ -45,16 +45,20 @@ function SolutionCard({ item }: { item: SolutionGridItem }) {
   const Icon = style.icon;
 
   return (
-    <div className="flex h-full flex-col rounded-2xl border border-slate-200 p-6 justify-between">
+    <div className="flex h-full flex-col rounded-2xl border border-slate-200 p-8 justify-between">
       <div>
+        <div className="flex gap-5 items-center">
       <span
-        className={`inline-flex h-12 w-12 items-center justify-center rounded-full ${style.iconClassName}`}
+        className={`inline-flex h-16 w-16 items-center justify-center rounded-2xl ${style.iconClassName}`}
       >
-        <Icon className="h-6 w-6" />
+        <Icon className="h-8 w-8" />
       </span>
 
       <h3 className="mt-4 text-lg font-bold text-brand-navy">{item.title}</h3>
-      <p className="mt-2 text-sm text-slate-600">{item.description}</p>
+
+        </div>
+
+      <p className="mt-6 whitespace-pre-line text-sm text-slate-600">{item.description}</p>
 
       <ul className="mt-4 space-y-2">
         {item.checklist.map((checkItem) => (
@@ -97,11 +101,11 @@ type SolutionsGridSectionProps = {
 
 export function SolutionsGridSection({ content }: SolutionsGridSectionProps) {
   return (
-    <section id="solutions-grid" className="bg-slate-50 px-4 py-16 sm:px-6 lg:py-20">
+    <section id="solutions-grid" className="px-4 py-16 sm:px-6 lg:py-20">
       <div className="mx-auto max-w-7xl">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold text-brand-navy sm:text-4xl">{content.title}</h2>
-          <p className="mt-4 text-slate-600">{content.subtitle}</p>
+          <p className="mt-4 text-slate-600 sm:whitespace-nowrap">{content.subtitle}</p>
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

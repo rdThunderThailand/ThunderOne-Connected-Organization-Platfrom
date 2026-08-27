@@ -4,7 +4,10 @@ export type HeroContent = {
   trustedBy: string;
   titleLine1: ReactNode;
   titleLine2: ReactNode;
-  description: string;
+  descriptionLine1: string;
+  descriptionLine2: string;
+  descriptionLine3: string;
+  descriptionLine4: string;
   ctaPrimary: string;
   ctaSecondary: string;
   diagramCaption: {
@@ -69,7 +72,8 @@ export type PerspectiveContent = {
 export type SolutionItem = {
   title: string;
   tagline: string;
-  description: string;
+  descriptionLine1: string;
+  descriptionLine2: string;
   cta: string;
   link: string;
 };
@@ -77,7 +81,9 @@ export type SolutionItem = {
 export type SolutionsContent = {
   badge: string;
   title: string;
-  description: string;
+  descriptionLine1: string;
+  descriptionLine2: string;
+  descriptionLine3: string;
   items: SolutionItem[];
   cta: string;
 };
@@ -109,8 +115,8 @@ export type ShowcaseDashboard = {
 
 export type ShowcaseContent = {
   badge: string;
-  title: string;
-  description: string;
+  titleLine1: string;
+  titleLine2: string;
   tabs: Record<ShowcaseTabKey, string>;
   dashboards: Record<ShowcaseTabKey, ShowcaseDashboard>;
   nav: {
@@ -129,7 +135,8 @@ export type ShowcaseContent = {
 
 export type IntegrationContent = {
   badge: string;
-  title: string;
+  titleLine1: string;
+  titleLine2: string;
   description: string;
   cta: string;
   otherSystemsLabel: string;
@@ -140,5 +147,7 @@ export type CtaContent = {
   title: string;
   description: string;
   ctaPrimary: string;
-  ctaLine: string;
+  ctaCaption: string;
+  lineLabel: string;
+  lineHandle: string;
 };

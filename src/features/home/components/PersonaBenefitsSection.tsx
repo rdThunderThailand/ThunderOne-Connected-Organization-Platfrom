@@ -52,8 +52,8 @@ function PersonaCard({
 
     <div className=" flex gap-10 rounded-2xl p-5 text-center">
 
-      <span className={`inline-flex h-22 w-22 shrink-0 items-center justify-center rounded-full ${iconClassName}`}>
-        <Icon className="h-18 w-18 shrink-0 text-2xl" />
+      <span className={`inline-flex h-20 w-20 shrink-0 items-center justify-center rounded-full ${iconClassName}`}>
+        <Icon className="h-14 w-14 shrink-0 text-2xl" />
       </span>
 
       <div className="justify-between">
@@ -77,7 +77,7 @@ function PersonaCard({
 
 export function PersonaBenefitsSection({ content }: PersonaBenefitsSectionProps) {
   return (
-    <section className="bg-slate-50 lg:py-1">
+    <section className="lg:py-1">
       <div className="mx-auto max-w-7xl rounded-3xl border border-slate-100 bg-white py-5 shadow-lg sm:px-6 sm:py-8">
         <span className="text-sm font-semibold uppercase tracking-wide text-brand-blue">{content.badge}</span>
         <div className="flex sm:grid-cols-3 justify-around">

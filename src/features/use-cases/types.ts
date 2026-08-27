@@ -122,6 +122,11 @@ export type NoResultsCopy = {
   description: string;
 };
 
+export type PaginationCopy = {
+  previous: string;
+  next: string;
+};
+
 export type HelpCtaContent = {
   title: string;
   description: string;

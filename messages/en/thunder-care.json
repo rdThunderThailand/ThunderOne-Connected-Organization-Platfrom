@@ -9,8 +9,8 @@
   "hero": {
     "badge": "SOLUTION",
     "title": "Thunder Care",
-    "subtitle": "IT & Device care that keeps your organization running smoothly.",
-    "description": "A complete IT service and equipment care system that helps your teams work uninterrupted. Resolve issues faster, reduce downtime, and improve the employee experience.",
+    "subtitle": "IT & Device care that\nkeeps your organization\nrunning smoothly.",
+    "description": "A complete IT service and equipment care system that\nhelps your teams work uninterrupted. Resolve issues faster,\nreduce downtime, and improve the employee experience.",
     "ctaPrimary": "Talk to us",
     "ctaSecondary": "See it in action",
     "dashboard": {
@@ -44,19 +44,19 @@
   },
   "challenge": {
     "title": "The challenge",
-    "subtitle": "IT and device issues happen every day and impact productivity. Without a streamlined process, it's hard to respond and deliver a great experience.",
+    "subtitle": "IT and device issues happen every day and impact productivity.\nWithout a streamlined process, it's hard to respond and deliver a great experience.",
     "items": [
-      "Slow response and manual processes",
-      "Scattered data and limited visibility",
-      "Inconsistent service and user experience",
-      "No SLA visibility and performance insight",
-      "High cost and complexity to manage"
+      "Slow response and\nmanual processes",
+      "Scattered data and\nlimited visibility",
+      "Inconsistent service\nand user experience",
+      "No SLA visibility and\nperformance insight",
+      "High cost and complexity\nto manage"
     ]
   },
   "whatYouCanDo": {
     "label": "What Thunder Care can do",
-    "title": "Manage IT & devices in one place. Fast. Reliable. Simple.",
-    "description": "Thunder Care gives your team the tools to deliver fast support, manage assets, and keep operations running without disruption.",
+    "title": "Manage IT & devices in one\nplace. Fast. Reliable. Simple.",
+    "description": "Thunder Care gives your team the tools to deliver fast support,\nmanage assets, and keep operations running without disruption.",
     "checklist": [
       "Omnichannel ticketing (Web, Mobile, Line OA)",
       "Automated workflows and smart routing",
@@ -95,12 +95,12 @@
   "howItWorks": {
     "title": "How it works",
     "steps": [
-      { "title": "Submit", "description": "Users submit tickets via web, mobile, or Line OA" },
-      { "title": "Route", "description": "Tickets are automatically routed to the right team" },
-      { "title": "Resolve", "description": "Technicians work and update in real time" },
-      { "title": "Resolve & Close", "description": "Issue is resolved and ticket is closed" },
-      { "title": "Monitor", "description": "SLA and performance are monitored" },
-      { "title": "Analyze & Improve", "description": "Reports & analytics drive better service" }
+      { "title": "Submit", "description": "Users submit tickets via\nweb, mobile, or Line OA" },
+      { "title": "Route", "description": "Tickets are automatically\nrouted to the right team" },
+      { "title": "Resolve", "description": "Technicians work and\nupdate in real time" },
+      { "title": "Resolve & Close", "description": "Issue is resolved and\nticket is closed" },
+      { "title": "Monitor", "description": "SLA and performance\nare monitored" },
+      { "title": "Analyze & Improve", "description": "Reports & analytics drive\nbetter service" }
     ]
   },
   "capabilities": {
@@ -108,7 +108,7 @@
     "items": [
       { "title": "Ticketing & Workflow", "description": "Smart ticket management and automation" },
       { "title": "SLA Management", "description": "Define SLAs, track, and measure compliance" },
-      { "title": "Asset & Device Mgmt.", "description": "Track and manage IT assets and devices" },
+      { "title": "Asset & Device Management", "description": "Track and manage IT assets and devices" },
       { "title": "Preventive Maintenance", "description": "Plan and manage preventive maintenance" },
       { "title": "Knowledge Base", "description": "Self-service articles and how-to guides" },
       { "title": "Reports & Analytics", "description": "Insightful dashboards and custom reports" }
@@ -127,7 +127,7 @@
   },
   "platform": {
     "title": "Works seamlessly with ThunderOne Platform",
-    "description": "Thunder Care connects with communication, asset intelligence, and other modules to deliver complete operational excellence.",
+    "description": "Thunder Care connects with communication, asset intelligence,\nand other modules to deliver complete operational excellence.",
     "exploreLink": "Explore the platform",
     "centerLabel": "ThunderOne Platform",
     "connectedItems": [

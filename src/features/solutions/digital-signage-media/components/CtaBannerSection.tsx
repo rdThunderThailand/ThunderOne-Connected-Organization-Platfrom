@@ -8,7 +8,7 @@
 // available — it's a "#" placeholder for now.
 
 import { MessageCircle } from "lucide-react";
-import { Link } from "@/i18n/navigation";
+import { useTalkToUsStore } from "@/store/talkToUsStore";
 import type { CtaContent } from "../types";
 
 type CtaBannerSectionProps = {
@@ -16,6 +16,8 @@ type CtaBannerSectionProps = {
 };
 
 export function CtaBannerSection({ content }: CtaBannerSectionProps) {
+  const openTalkToUs = useTalkToUsStore((s) => s.openWithTopic);
+
   return (
     <section className="bg-brand-navy px-4 py-16 sm:px-6 lg:py-20">
       <div className="mx-auto flex max-w-7xl flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
@@ -23,12 +25,13 @@ export function CtaBannerSection({ content }: CtaBannerSectionProps) {
           <h2 className="text-2xl font-bold text-white sm:text-3xl">{content.title}</h2>
           <p className="mt-3 text-slate-300">{content.description}</p>
           <div className="mt-6 flex flex-wrap items-center gap-4">
-            <Link
-              href="/contact"
-              className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-brand-navy hover:bg-slate-100"
+            <button
+              type="button"
+              onClick={() => openTalkToUs("digital-signage")}
+              className="rounded-full bg-blue-700 px-6 py-3 text-sm font-semibold text-white hover:bg-brand-blue"
             >
               {content.ctaPrimary}
-            </Link>
+            </button>
             <span className="text-xs text-slate-400">{content.ctaNote}</span>
           </div>
         </div>

@@ -35,13 +35,27 @@ export function UseCaseDetailClient({ content }: UseCaseDetailClientProps) {
       <KeyBenefitsStrip content={content.benefits} />
       <SituationOutcomeSection content={content.situationOutcome} />
       <HowItWorksSection content={content.howItWorks} />
-      <InContextSection content={content.inContext} />
-      <StakeholdersSection content={content.stakeholders} />
-      <ConnectsDiagramSection content={content.connects} />
-      <CapabilitiesUsedSection content={content.capabilities} />
-      <BeforeAfterSection content={content.beforeAfter} />
-      <RelatedUseCasesSection content={content.related} />
-      <ReadyToStartCta content={content.readyToStart} />
+
+      {/* In Context / Who's Involved / Connects share one 3-column row,
+          stretched to a common height (default grid align-items: stretch) */}
+      <section className="px-4 py-6 sm:px-6 lg:py-8">
+        <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-3">
+          <InContextSection content={content.inContext} />
+          <StakeholdersSection content={content.stakeholders} />
+          <ConnectsDiagramSection content={content.connects} />
+        </div>
+      </section>
+
+      {/* Capabilities / Before-After / Related / CTA share one row of equal-
+          height cards on desktop; they stack below lg. */}
+      <section className="px-4 py-6 sm:px-6 lg:py-8">
+        <div className="mx-auto grid max-w-7xl items-stretch gap-6 lg:grid-cols-4">
+          <CapabilitiesUsedSection content={content.capabilities} />
+          <BeforeAfterSection content={content.beforeAfter} />
+          <RelatedUseCasesSection content={content.related} />
+          <ReadyToStartCta content={content.readyToStart} />
+        </div>
+      </section>
     </div>
   );
 }

@@ -1,10 +1,10 @@
 "use client";
 
-// === Tools & CTA Section: 2 คอลัมน์บนพื้นขาว (ไม่มีแบนเนอร์เข้ม) —
-// ฝั่งซ้ายโลโก้เครื่องมือที่เชื่อมต่อได้, ฝั่งขวาการ์ด CTA ปิดท้าย
-// "พร้อมยกระดับการสื่อสารหรือยัง?" ===
+// === Tools & CTA Section: บนพื้นขาว (ไม่มีแบนเนอร์เข้ม) — แถวโลโก้
+// เครื่องมือที่เชื่อมต่อได้ด้านบน, การ์ด CTA ปิดท้าย "พร้อมยกระดับ
+// การสื่อสารหรือยัง?" ขนาดใหญ่ จัดกึ่งกลางด้านล่าง ===
 
-import { Link } from "@/i18n/navigation";
+import { useTalkToUsStore } from "@/store/talkToUsStore";
 import type { ToolsAndCtaContent } from "../types";
 
 // TODO: replace with real tool/integration logo assets
@@ -15,10 +15,14 @@ type ToolsAndCtaSectionProps = {
 };
 
 export function ToolsAndCtaSection({ content }: ToolsAndCtaSectionProps) {
+  const openTalkToUs = useTalkToUsStore((s) => s.openWithTopic);
+
   return (
-    <section className="bg-white px-4 py-4 sm:px-6 lg:py-6">
-      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_minmax(0,420px)] lg:items-center">
-        <div>
+    <section className="px-4 py-4 sm:px-6 lg:py-6">
+      <div className="mx-auto max-w-7xl">
+
+        <div className="flex items-center">
+        <div className="">
           <h2 className="text-lg font-semibold text-brand-navy">{content.toolsTitle}</h2>
           <div className="mt-4 flex flex-wrap items-center gap-4">
             {TOOL_LOGOS.map((name) => (
@@ -35,16 +39,18 @@ export function ToolsAndCtaSection({ content }: ToolsAndCtaSectionProps) {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-lg">
-          <h3 className="text-xl font-bold text-brand-navy">{content.ctaTitle}</h3>
-          <p className="mt-3 text-slate-600">{content.ctaDescription}</p>
-          <Link
-            href="/contact"
-            className="mt-6 inline-flex rounded-full bg-brand-blue px-6 py-3 text-sm font-semibold text-white hover:bg-blue-700"
+        <div className="mx-auto max-w-2xl rounded-2xl border border-slate-200 bg-white p-3 shadow-lg sm:p-6">
+          <h3 className="text-2xl font-bold text-brand-navy sm:text-2xl">{content.ctaTitle}</h3>
+          <p className="mx-auto mt-4 max-w-xl text-lg text-slate-600">{content.ctaDescription}</p>
+          <button
+            type="button"
+            onClick={() => openTalkToUs("communication")}
+            className="mt-3 inline-flex rounded-full bg-blue-700 px-8 py-3.5 text-sm font-semibold text-white hover:bg-brand-blue"
           >
             {content.ctaPrimary}
-          </Link>
+          </button>
           <p className="mt-3 text-xs text-slate-400">{content.ctaNote}</p>
+        </div>
         </div>
       </div>
     </section>

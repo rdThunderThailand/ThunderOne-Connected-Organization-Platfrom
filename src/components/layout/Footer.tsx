@@ -1,6 +1,8 @@
 import type { SVGProps } from "react";
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import thunderOneLogo from "@/components/logo/Horizontal TextWhite.svg";
 
 function LinkedInIcon(props: SVGProps<SVGSVGElement>) {
   return (
@@ -51,31 +53,31 @@ export async function Footer() {
     {
       title: t("platform"),
       links: [
-        { label: t("platformOverview"), href: "/platform" },
-        { label: t("platformExperience"), href: "/platform/experience" },
-        { label: t("platformIntelligenceAutomation"), href: "/platform/intelligence-automation" },
-        { label: t("platformIntegrations"), href: "/platform/integrations" },
-        { label: t("platformSecurity"), href: "/platform/security" },
+        { label: t("platformOverview"), href: "#/platform" },
+        { label: t("platformExperience"), href: "#/platform/experience" },
+        { label: t("platformIntelligenceAutomation"), href: "#/platform/intelligence-automation" },
+        { label: t("platformIntegrations"), href: "#/platform/integrations" },
+        { label: t("platformSecurity"), href: "#/platform/security" },
       ],
     },
     {
       title: t("resources"),
       links: [
-        { label: t("resourcesKnowledge"), href: "/resources/knowledge" },
-        { label: t("resourcesCustomerStories"), href: "/resources/customer-stories" },
-        { label: t("resourcesDocumentation"), href: "/resources/documentation" },
-        { label: t("resourcesSupport"), href: "/resources/support" },
+        { label: t("resourcesKnowledge"), href: "#/resources/knowledge" },
+        { label: t("resourcesCustomerStories"), href: "#/resources/customer-stories" },
+        { label: t("resourcesDocumentation"), href: "#/resources/documentation" },
+        { label: t("resourcesSupport"), href: "#/resources/support" },
       ],
     },
     {
       title: t("partners"),
-      links: [{ label: t("partnersLink"), href: "/partners" }],
+      links: [{ label: t("partnersLink"), href: "#/partners" }],
     },
     {
       title: t("about"),
       links: [
-        { label: t("aboutLink"), href: "/about" },
-        { label: t("contact"), href: "/contact" },
+        { label: t("aboutLink"), href: "#/about" },
+        { label: t("contact"), href: "#/contact" },
       ],
     },
   ];
@@ -85,13 +87,8 @@ export async function Footer() {
       <div className="px-10 py-6">
         <div className="flex flex-wrap gap-x-8 gap-y-10 lg:flex-nowrap lg:gap-5">
           <div className="w-full lg:w-56 lg:shrink-0">
-            <Link href="/" className="flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-sm font-bold text-brand-navy">
-                T1
-              </span>
-              <span className="text-lg font-bold text-white">
-                Thunder<span className="text-brand-blue">One</span>
-              </span>
+            <Link href="/" className="flex items-center">
+              <Image src={thunderOneLogo} alt="ThunderOne" className="h-9 w-auto" />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">
               {t("taglineLine1")}

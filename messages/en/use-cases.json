@@ -81,7 +81,7 @@
     }
   },
   "toolbar": {
-    "showingTemplate": "Showing %count% of %total% use cases",
+    "showingTemplate": "Showing %from%-%to% of %total% use cases",
     "sortByLabel": "Sort by",
     "sortOptions": {
       "relevant": "Most Relevant",
@@ -284,6 +284,10 @@
   "noResults": {
     "title": "No use cases found",
     "description": "Try adjusting your filters or search term."
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next"
   },
   "helpCta": {
     "title": "Can't find what you're looking for?",

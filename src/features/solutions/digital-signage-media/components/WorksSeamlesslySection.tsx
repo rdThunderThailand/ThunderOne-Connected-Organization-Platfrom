@@ -25,7 +25,7 @@ export function WorksSeamlesslySection({ content }: WorksSeamlesslySectionProps)
   const [third, fourth] = rest;
 
   return (
-    <section className="bg-white px-4 py-16 sm:px-6 lg:py-20">
+    <section className="px-4 py-16 sm:px-6 lg:py-20">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(0,320px)_1fr] lg:items-center">
         <div className="min-w-0">
           <h2 className="text-3xl font-bold leading-snug text-brand-navy sm:text-4xl">{content.title}</h2>

@@ -197,13 +197,16 @@ export function ProductShowcaseSection({ content }: ProductShowcaseSectionProps)
   const dashboard = content.dashboards[activeTab];
 
   return (
-    <section className="bg-slate-50 sm:px-4 lg:py-8">
+    <section className="sm:px-4">
       <div className="mx-auto max-w-7xl rounded-3xl border border-slate-100 bg-white px-4 py-10 shadow-lg sm:px-6 sm:py-8">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,380px)_1fr] lg:items-start">
           <div className="min-w-0">
             <span className="text-sm font-semibold uppercase tracking-wide text-brand-blue">{content.badge}</span>
-            <h2 className="mt-4 text-3xl font-bold leading-snug text-brand-navy sm:text-4xl">{content.title}</h2>
-            <p className="mt-4 wrap-break-word text-slate-600">{content.description}</p>
+            <div className="">
+            <h2 className="mt-4 text-3xl font-bold leading-snug text-brand-navy sm:text-2xl">{content.titleLine1}</h2>
+            <h2 className="text-3xl font-bold leading-snug text-brand-navy sm:text-2xl">{content.titleLine2}</h2>
+            </div>
+
 
             <div className="mt-8 flex flex-wrap gap-2">
               {TAB_KEYS.map((key) => (
@@ -224,12 +227,13 @@ export function ProductShowcaseSection({ content }: ProductShowcaseSectionProps)
             </div>
           </div>
 
-          <div className="min-w-0 overflow-x-auto">
+          <div className="gap-3 ">
             <div className="flex min-w-160 items-end gap-6 lg:min-w-0">
-              <div className="min-w-0 flex-1">
+              <div className="min-w-0 flex flex-1 items-center gap-6">
                 <DashboardMockup content={content} dashboard={dashboard} />
+                <PhoneMockup content={content} />
               </div>
-              <PhoneMockup content={content} />
+              
             </div>
           </div>
         </div>

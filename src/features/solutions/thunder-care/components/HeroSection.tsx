@@ -20,7 +20,7 @@ import {
   Settings,
   Users,
 } from "lucide-react";
-import { Link } from "@/i18n/navigation";
+import { useTalkToUsStore } from "@/store/talkToUsStore";
 import type { HeroContent } from "../types";
 
 type HeroSectionProps = {
@@ -180,26 +180,31 @@ function DashboardMockup({ dashboard }: { dashboard: HeroContent["dashboard"] })
 }
 
 export function HeroSection({ content }: HeroSectionProps) {
+  const openTalkToUs = useTalkToUsStore((s) => s.openWithTopic);
+
   return (
-    <section className="overflow-hidden bg-white">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 pb-20 pt-6 lg:grid-cols-2 lg:items-center lg:pb-28">
+    <section className="overflow-hidden">
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 pt-6 lg:grid-cols-2 lg:items-center">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-lg bg-brand-blue/10 px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-brand-blue">
-            <Headset className="h-4 w-4" />
-            {content.badge}
-          </span>
-          <h1 className="mt-4 text-4xl font-bold leading-tight text-brand-navy sm:text-5xl">
+          <div className="flex items-center gap-3">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-blue text-white">
+              <Headset className="h-5 w-5" />
+            </span>
+            <span className="text-sm font-bold text-brand-navy">{content.badge}</span>
+          </div>
+          <h1 className="mt-4 text-4xl font-bold leading-tight text-brand-navy sm:text-4xl">
             {content.title}
           </h1>
-          <p className="mt-2 text-2xl font-bold leading-snug text-brand-blue">{content.subtitle}</p>
-          <p className="mt-4 max-w-xl text-lg text-slate-600">{content.description}</p>
+          <p className="mt-2 whitespace-pre-line text-2xl font-bold leading-snug text-brand-blue">{content.subtitle}</p>
+          <p className="mt-4 max-w-xl whitespace-pre-line text-lg text-slate-600">{content.description}</p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <Link
-              href="/contact"
-              className="rounded-full bg-brand-blue px-6 py-3 text-sm font-semibold text-white hover:bg-blue-700"
+            <button
+              type="button"
+              onClick={() => openTalkToUs("thunder-care")}
+              className="rounded-full bg-blue-700 px-6 py-3 text-sm font-semibold text-white hover:bg-brand-blue"
             >
               {content.ctaPrimary}
-            </Link>
+            </button>
             <a
               href="#what-you-can-do"
               className="inline-flex items-center gap-2 rounded-full border border-brand-navy px-6 py-3 text-sm font-semibold text-brand-navy hover:bg-slate-50"

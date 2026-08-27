@@ -6,8 +6,8 @@
 
 import type { LucideIcon } from "lucide-react";
 import { Box, Building2, Headset, Megaphone, Package, Users, ClipboardCheck } from "lucide-react";
-import { Link } from "@/i18n/navigation";
 import { HeroOrbitDiagram, type OrbitNode } from "@/components/diagrams/HeroOrbitDiagram";
+import { useTalkToUsStore } from "@/store/talkToUsStore";
 import type { SolutionsHeroContent } from "../types";
 
 type SolutionsHeroSectionProps = {
@@ -29,6 +29,8 @@ const NODE_ORDER: {
 ];
 
 export function SolutionsHeroSection({ content }: SolutionsHeroSectionProps) {
+  const openTalkToUs = useTalkToUsStore((s) => s.open);
+
   const nodes: OrbitNode[] = NODE_ORDER.map(({ key, icon, badgeClassName }) => ({
     key,
     icon,
@@ -37,21 +39,22 @@ export function SolutionsHeroSection({ content }: SolutionsHeroSectionProps) {
   }));
 
   return (
-    <section className="overflow-hidden bg-white">
+    <section className="overflow-hidden">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 pb-20 pt-8 lg:grid-cols-2 lg:items-center lg:pb-28 lg:pt-12">
         <div>
           <h1 className="text-4xl font-bold leading-tight text-brand-navy sm:text-5xl">
             <span className="block">{content.title1}</span>
             <span className="block text-brand-blue">{content.title2}</span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg text-slate-600">{content.description}</p>
+          <p className="mt-6 max-w-xl whitespace-pre-line text-lg text-slate-600">{content.description}</p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <Link
-              href="/contact"
-              className="rounded-full bg-brand-blue px-6 py-3 text-sm font-semibold text-white hover:bg-blue-700"
+            <button
+              type="button"
+              onClick={openTalkToUs}
+              className="rounded-full bg-blue-700 px-6 py-3 text-sm font-semibold text-white hover:bg-brand-blue"
             >
               {content.ctaPrimary}
-            </Link>
+            </button>
             <a
               href="#solutions-grid"
               className="rounded-full border border-brand-navy px-6 py-3 text-sm font-semibold text-brand-navy hover:bg-slate-50"

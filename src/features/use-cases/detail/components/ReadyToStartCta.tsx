@@ -1,13 +1,13 @@
 "use client";
 
-// === Ready to get started? Section: closing dark-navy CTA banner, modeled
-// on solutions/digital-signage-media's CtaBannerSection — title +
-// description + white pill button to /contact + two check-marked
-// reassurance lines underneath. No section number, matching the reference
-// design's plain CTA banner treatment. ===
+// === Ready to get started? CTA: an equal-height cell in the closing 4-card
+// row — SectionHeader ("10") + description + a full-width blue pill button to
+// /contact + two check-marked reassurance lines, all top-aligned to match the
+// sibling cards. ===
 
-import { Check } from "lucide-react";
+import { Check, MessageCircle } from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import { SectionHeader } from "./SectionHeader";
 import type { ReadyToStartContent } from "../types";
 
 type ReadyToStartCtaProps = {
@@ -16,27 +16,27 @@ type ReadyToStartCtaProps = {
 
 export function ReadyToStartCta({ content }: ReadyToStartCtaProps) {
   return (
-    <section className="px-4 py-16 sm:px-6 lg:py-20">
-      <div className="mx-auto max-w-7xl rounded-3xl bg-brand-navy px-6 py-12 text-center sm:px-12">
-        <h2 className="text-2xl font-bold text-white sm:text-3xl">{content.title}</h2>
-        <p className="mx-auto mt-3 max-w-xl text-slate-300">{content.description}</p>
+    <div className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6">
+      <SectionHeader number={content.number} title={content.title} />
 
-        <Link
-          href="/contact"
-          className="mt-8 inline-flex items-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-brand-navy hover:bg-slate-100"
-        >
-          {content.cta}
-        </Link>
+      <p className="mt-6 whitespace-pre-line text-xs leading-relaxed text-slate-600">{content.description}</p>
 
-        <div className="mt-6 flex flex-col items-center justify-center gap-2 sm:flex-row sm:gap-8">
-          {[content.point1, content.point2].map((point) => (
-            <span key={point} className="flex items-center gap-2 text-xs text-slate-300">
-              <Check className="h-3.5 w-3.5 text-emerald-400" />
-              {point}
-            </span>
-          ))}
-        </div>
+      <Link
+        href="/contact"
+        className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-blue-700 px-5 py-2.5 text-xs font-semibold text-white transition hover:bg-brand-blue"
+      >
+        {content.cta}
+        <MessageCircle className="h-4 w-4" />
+      </Link>
+
+      <div className="mt-5 space-y-2">
+        {[content.point1, content.point2].map((point) => (
+          <span key={point} className="flex items-center gap-2 text-[11px] text-slate-600">
+            <Check className="h-3.5 w-3.5 shrink-0 text-emerald-500" />
+            {point}
+          </span>
+        ))}
       </div>
-    </section>
+    </div>
   );
 }

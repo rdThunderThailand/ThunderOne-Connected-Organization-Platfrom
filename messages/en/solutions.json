@@ -8,7 +8,7 @@
   "hero": {
     "title1": "Solutions designed",
     "title2": "for your organization",
-    "description": "One platform that covers everything your organization needs, from communication and technology care to asset management, helping you start simple and expand naturally.",
+    "description": "ThunderOne brings people, work, communication, space,\ndevice, assets, and services together on one intelligent platform.\nStart with what matters most today, and expand naturally\nas your organization grows.",
     "ctaPrimary": "Talk to us",
     "ctaSecondary": "See all solutions",
     "diagramLabels": {
@@ -25,12 +25,12 @@
   },
   "grid": {
     "title": "Start with what matters most to your organization",
-    "subtitle": "You don't need to change everything at once. We help you start simple and expand naturally.",
+    "subtitle": "You don't need to change everything at once. We help you start simple and <blue>expand naturally.</blue>",
     "items": [
       {
         "key": "digitalSignage",
         "title": "Digital Signage & Media",
-        "description": "Manage every screen and content from one place.",
+        "description": "Manage every screen and\ncontent from one place.",
         "checklist": [
           "Media Library",
           "Playlist & Schedule",
@@ -43,7 +43,7 @@
       {
         "key": "communication",
         "title": "Communication",
-        "description": "Keep your organization informed, aligned, and connected.",
+        "description": "Keep your organization\ninformed, aligned, and\nconnected.",
         "checklist": [
           "Publication",
           "Audience",
@@ -56,7 +56,7 @@
       {
         "key": "thunderCare",
         "title": "Thunder Care",
-        "description": "Keep your technology and workplace ready to work.",
+        "description": "Keep your technology and\nworkplace ready to work.",
         "checklist": [
           "IT Care / Service Request",
           "Device Management",
