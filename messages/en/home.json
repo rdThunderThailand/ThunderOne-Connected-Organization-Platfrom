@@ -26,7 +26,7 @@
     }
   },
   "problem": {
-    "badge": "02 THE ORGANIZATION PROBLEM",
+    "badge": "THE ORGANIZATION PROBLEM",
     "titleLine1": "Your organization already has technology.",
     "titleLine2": "<blue>The problem is that it doesn't work together</blue>",
     "contextItems": {
@@ -42,7 +42,7 @@
     "tagline": "ThunderOne connects the context"
   },
   "persona": {
-    "badge": "03 How ThunderOne can help you",
+    "badge": "How ThunderOne can help you",
     "freeMe": {
       "label": "FREE ME",
       "title": "Give me my time back",
@@ -78,7 +78,7 @@
     }
   },
   "perspective": {
-    "title": "04 ONE ORGANIZATION. DIFFERENT PERSPECTIVES.",
+    "title": "ONE ORGANIZATION. DIFFERENT PERSPECTIVES.",
     "tagline": "One organizational context, a different experience for every role",
     "executive": {
       "role": "EXECUTIVE",
@@ -97,7 +97,7 @@
     }
   },
   "solutions": {
-    "badge": "05 Start with what matters",
+    "badge": "Start with what matters",
     "title": "Start with what matters to your organization.",
     "descriptionLine1": "You don't need to change everything at once.",
     "descriptionLine2": "Start with the solution that creates meaningful value today.",
@@ -139,7 +139,7 @@
     "cta": "See all solutions"
   },
   "showcase": {
-    "badge": "06 SEE THUNDERONE IN ACTION",
+    "badge": "SEE THUNDERONE IN ACTION",
     "titleLine1": "Everything you need.",
     "titleLine2": "In the context that matters.",
     "tabs": {

@@ -225,7 +225,7 @@ export function Navbar() {
           </div>
 
           <Link
-            href="#/login"
+            href="https://app.thunderone.asia"
             className="rounded-full border border-brand-navy px-5 py-2 text-sm font-semibold text-brand-navy hover:bg-slate-50"
           >
             {t("login")}
