@@ -5,6 +5,7 @@ const namespaces = [
   ["Navbar", "navbar"],
   ["Footer", "footer"],
   ["TalkToUsPanel", "talk-to-us"],
+  ["RequestDemoPage", "request-demo"],
   ["HomePage", "home"],
   ["AboutPage", "about"],
   ["PartnersPage", "partners"],
