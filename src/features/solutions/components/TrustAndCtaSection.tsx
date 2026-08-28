@@ -1,62 +1,67 @@
 "use client";
 
-// === Trust & CTA Section: 2 คอลัมน์ (มือถือ stack แนวตั้ง) — ฝั่งซ้าย
-// หัวข้อ "องค์กรที่ไว้วางใจ" + แถวโลโก้ลูกค้า, ฝั่งขวา การ์ด CTA
-// "ยังไม่แน่ใจว่าจะเริ่มจากตรงไหน?" พร้อมปุ่มพูดคุยกับเรา ===
+// === Trust & CTA Section: ฝั่งบน หัวข้อ "องค์กรที่ไว้วางใจ" + แถวโลโก้ลูกค้า,
+// ฝั่งล่าง แบนเนอร์ CTA แนวนอน "ยังไม่แน่ใจว่าจะเริ่มจากตรงไหน?" — ไอคอนแชท +
+// ข้อความ + ปุ่มพูดคุยกับเรา + จุดเด่นสั้น ๆ (ใช้เวลา ~1 นาที / ไม่ต้องกรอกฟอร์มยาว) ===
 
-import Image from "next/image";
-import { Link } from "@/i18n/navigation";
+import type { LucideIcon } from "lucide-react";
+import { CheckCircle2, Clock, MessageCircle, MessagesSquare } from "lucide-react";
+import { useTalkToUsStore } from "@/store/talkToUsStore";
 import type { TrustAndCtaContent } from "../types";
 
-const CUSTOMER_LOGOS = [
-  { name: "CPALL", src: "/images/logos/cpall.svg" },
-  { name: "Bangchak", src: "/images/logos/bangchak.svg" },
-  { name: "SCG", src: "/images/logos/scg.svg" },
-  { name: "ThaiBev", src: "/images/logos/thaibev.svg" },
-  { name: "PTT", src: "/images/logos/ptt.svg" },
-  { name: "BJC", src: "/images/logos/bjc.png" },
-];
+// cardNote รวมจุดเด่นหลายข้อไว้ในสตริงเดียว คั่นด้วย "•" — แยกออกมาเป็นชิปพร้อมไอคอน
+const NOTE_ICONS: LucideIcon[] = [Clock, CheckCircle2];
 
 type TrustAndCtaSectionProps = {
   content: TrustAndCtaContent;
 };
 
 export function TrustAndCtaSection({ content }: TrustAndCtaSectionProps) {
+  const openTalkToUs = useTalkToUsStore((s) => s.open);
+
+  const notes = content.cardNote
+    .split("•")
+    .map((note) => note.trim())
+    .filter(Boolean);
+
   return (
-    <section className="px-4 py-16 sm:px-6 lg:py-20">
-      <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-[1fr_minmax(0,420px)] lg:items-center">
-        <div>
-          <h2 className="text-lg font-semibold text-brand-navy">{content.trustedTitle}</h2>
-
-          <div className="mt-6 flex flex-wrap items-center gap-4">
-            {CUSTOMER_LOGOS.map((logo) => (
-              <span
-                key={logo.name}
-                className="flex h-12 items-center justify-center rounded-xl px-5 shadow-sm"
-              >
-                <Image
-                  src={logo.src}
-                  alt={logo.name}
-                  width={96}
-                  height={32}
-                  className="h-6 w-auto object-contain"
-                />
-              </span>
-            ))}
-            <span className="text-sm text-slate-500">{content.logosMore}</span>
+    <section className="px-4 py-16 sm:px-6 ">
+      <div className="mx-auto max-w-5xl">
+        <div className="mt-10 flex flex-col gap-6 rounded-3xl bg-indigo-50/70 px-6 py-6 sm:px-10 lg:flex-row lg:items-center lg:gap-10">
+          <div className="flex items-center gap-4">
+            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-indigo-100 text-brand-blue">
+              <MessagesSquare className="h-6 w-6" />
+            </span>
+            <div className="max-w-xs">
+              <h3 className="text-lg font-bold text-brand-navy">{content.cardTitle}</h3>
+              <p className="mt-1 text-sm text-slate-500">{content.cardDescription}</p>
+            </div>
           </div>
-        </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-lg">
-          <h3 className="text-xl font-bold text-brand-navy">{content.cardTitle}</h3>
-          <p className="mt-3 text-slate-600">{content.cardDescription}</p>
-          <Link
-            href="/contact"
-            className="mt-6 inline-flex rounded-full bg-blue-700 px-6 py-3 text-sm font-semibold text-white hover:bg-brand-blue"
-          >
-            {content.cardCta}
-          </Link>
-          <p className="mt-3 text-xs text-slate-400">{content.cardNote}</p>
+          <div className="flex flex-wrap items-center gap-x-8 gap-y-4 lg:ml-auto">
+            <button
+              type="button"
+              onClick={openTalkToUs}
+              className="inline-flex items-center gap-2 rounded-full bg-blue-700 px-6 py-3 text-sm font-semibold text-white hover:bg-brand-blue"
+            >
+              {content.cardCta}
+              <MessageCircle className="h-4 w-4" />
+            </button>
+
+            {notes.length > 0 && (
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+                {notes.map((note, index) => {
+                  const Icon = NOTE_ICONS[index % NOTE_ICONS.length];
+                  return (
+                    <span key={note} className="flex items-center gap-2 text-sm text-slate-600">
+                      <Icon className="h-4 w-4 shrink-0 text-brand-blue" />
+                      {note}
+                    </span>
+                  );
+                })}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>

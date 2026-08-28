@@ -19,7 +19,7 @@ export function CtaBannerSection({ content }: CtaBannerSectionProps) {
   const openTalkToUs = useTalkToUsStore((s) => s.open);
 
   return (
-    <section className="py-8 sm:px-6">
+    <section className="py-12 sm:px-6 lg:py-16">
       <div className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl bg-brand-navy">
 
         <div className="relative flex flex-col gap-10 px-6 py-10 sm:px-10 sm:py-12 md:flex-row md:items-center md:gap-6 lg:px-14">

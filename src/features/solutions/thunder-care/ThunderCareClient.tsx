@@ -1,6 +1,7 @@
 "use client";
 
 import { Breadcrumb, type BreadcrumbItem } from "@/components/ui/Breadcrumb";
+import { ToolsLogosSection } from "@/components/ui/ToolsLogosSection";
 import { HeroSection } from "./components/HeroSection";
 import { ChallengeSection } from "./components/ChallengeSection";
 import { WhatYouCanDoSection } from "./components/WhatYouCanDoSection";
@@ -8,7 +9,6 @@ import { HowItWorksSection } from "./components/HowItWorksSection";
 import { KeyCapabilitiesSection } from "./components/KeyCapabilitiesSection";
 import { IdealForOrganizationSection } from "./components/IdealForOrganizationSection";
 import { PlatformAndCtaSection } from "./components/PlatformAndCtaSection";
-import { ToolsLogosSection } from "./components/ToolsLogosSection";
 import type {
   ChallengeContent,
   HeroContent,
@@ -55,7 +55,10 @@ export function ThunderCareClient({
       <KeyCapabilitiesSection content={capabilities} />
       <IdealForOrganizationSection content={idealFor} />
       <PlatformAndCtaSection content={platformAndCta} />
-      <ToolsLogosSection content={tools} />
+      <ToolsLogosSection
+        content={{ title: tools.title, note: tools.logosNote }}
+        className="px-4 pb-16 sm:px-6 lg:pb-20"
+      />
     </div>
   );
 }
