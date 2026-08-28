@@ -1,0 +1,41 @@
+{
+  "metaTitle": "ขอชม ThunderOne Demo | ThunderOne",
+  "metaDescription": "กรอกข้อมูลเพื่อให้ทีม ThunderOne ติดต่อกลับและนัดชมเดโม",
+  "eyebrow": "Request a demo",
+  "heading": "ขอชม ThunderOne Demo",
+  "intro": "บอกเราสั้น ๆ ว่าคุณสนใจเรื่องไหน แล้วทีมของเราจะติดต่อกลับเพื่อนัดชมเดโม",
+  "pocNote": "หน้านี้เป็นส่วนหนึ่งของ CRM PoC #1 (ชั่วคราว) — ต่อไปจะรวมเข้ากับ Talk to us",
+  "fields": {
+    "firstName": "ชื่อ",
+    "lastName": "นามสกุล",
+    "company": "บริษัท / องค์กร",
+    "position": "ตำแหน่ง",
+    "mobile": "เบอร์มือถือ",
+    "email": "อีเมล",
+    "interest": "โซลูชันที่สนใจ",
+    "message": "ข้อความถึงเรา"
+  },
+  "messagePlaceholder": "เล่าให้เราฟังสั้น ๆ ว่าคุณกำลังมองหาอะไร",
+  "solutions": {
+    "digital-signage": "Digital Signage & Media",
+    "thunder-care": "Thunder Care",
+    "communication": "Communication",
+    "asset-intelligence": "Asset Intelligence",
+    "not-sure": "ยังไม่แน่ใจ อยากปรึกษาก่อน"
+  },
+  "consentLabel": "ฉันยินยอมให้ ThunderOne ติดต่อกลับเพื่อนำเสนอผลิตภัณฑ์และบริการ",
+  "confidentialNote": "ข้อมูลจะถูกเก็บเป็นความลับ และใช้เพื่อการติดต่อกลับเท่านั้น",
+  "submit": "ส่งคำขอ",
+  "submitting": "กำลังส่ง…",
+  "errors": {
+    "required": "จำเป็นต้องกรอก",
+    "email": "รูปแบบอีเมลไม่ถูกต้อง",
+    "interest": "เลือกอย่างน้อย 1 โซลูชัน",
+    "consent": "ต้องยินยอมก่อนจึงจะส่งคำขอได้"
+  },
+  "successTitle": "ส่งคำขอเรียบร้อย",
+  "successBody": "ทีมของเราจะติดต่อกลับโดยเร็วที่สุด",
+  "successRef": "รหัสอ้างอิง CRM",
+  "errorTitle": "ส่งคำขอไม่สำเร็จ",
+  "errorBody": "กรุณาลองใหม่อีกครั้ง หรือติดต่อเราผ่านช่องทางอื่น"
+}
