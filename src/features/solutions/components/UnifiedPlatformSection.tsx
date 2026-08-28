@@ -22,7 +22,7 @@ type UnifiedPlatformSectionProps = {
 
 export function UnifiedPlatformSection({ content }: UnifiedPlatformSectionProps) {
   return (
-    <section className="px-4 py-16 sm:px-6 lg:py-20">
+    <section className="px-4 py-14 sm:px-6 ">
       <div className="mx-auto max-w-5xl text-center">
         <h2 className="text-3xl font-bold text-brand-navy sm:text-4xl">{content.title}</h2>
         <p className="mt-4 text-slate-600 ">{content.subtitle}</p>

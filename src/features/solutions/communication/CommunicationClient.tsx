@@ -1,6 +1,7 @@
 "use client";
 
 import { Breadcrumb, type BreadcrumbItem } from "@/components/ui/Breadcrumb";
+import { ToolsLogosSection } from "@/components/ui/ToolsLogosSection";
 import { HeroSection } from "./components/HeroSection";
 import { ChallengeSection } from "./components/ChallengeSection";
 import { WhatYouCanDoSection } from "./components/WhatYouCanDoSection";
@@ -50,7 +51,14 @@ export function CommunicationClient({
       <HowItWorksSection content={howItWorks} />
       <KeyCapabilitiesSection content={capabilities} />
       <TeamsAndPlatformSection content={teamsAndPlatform} />
+      <div className="flex mx-auto max-w-7xl justify-between">
+      <ToolsLogosSection
+        content={{ title: toolsAndCta.toolsTitle, note: toolsAndCta.toolsNote }}
+        className="px-4 py-4 sm:px-6 lg:py-6"
+      />
       <ToolsAndCtaSection content={toolsAndCta} />
+      </div>
+
     </div>
   );
 }

@@ -31,7 +31,7 @@ type TeamsAndPlatformSectionProps = {
 
 export function TeamsAndPlatformSection({ content }: TeamsAndPlatformSectionProps) {
   return (
-    <section className="px-4 py-16 sm:px-6 lg:py-10 ">
+    <section className="px-4 sm:px-6 lg:py-4 ">
       <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1fr_minmax(0,480px)]">
         <div className="rounded-2xl border border-slate-200 bg-white p-8">
           <h2 className="text-center text-2xl font-bold text-brand-navy sm:text-3xl">{content.teamsTitle}</h2>
