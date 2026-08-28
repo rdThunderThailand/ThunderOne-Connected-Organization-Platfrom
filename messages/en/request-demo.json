@@ -1,0 +1,41 @@
+{
+  "metaTitle": "Request a ThunderOne Demo | ThunderOne",
+  "metaDescription": "Tell us what you need and the ThunderOne team will get back to you to schedule a demo.",
+  "eyebrow": "Request a demo",
+  "heading": "Request a ThunderOne Demo",
+  "intro": "Tell us briefly what you're interested in and our team will reach out to schedule a demo.",
+  "pocNote": "This page is part of CRM PoC #1 (temporary) — it will be folded into Talk to us.",
+  "fields": {
+    "firstName": "First name",
+    "lastName": "Last name",
+    "company": "Company / organization",
+    "position": "Job title",
+    "mobile": "Mobile number",
+    "email": "Email",
+    "interest": "Solutions you're interested in",
+    "message": "Message to us"
+  },
+  "messagePlaceholder": "Tell us briefly what you're looking for",
+  "solutions": {
+    "digital-signage": "Digital Signage & Media",
+    "thunder-care": "Thunder Care",
+    "communication": "Communication",
+    "asset-intelligence": "Asset Intelligence",
+    "not-sure": "Not sure yet — I'd like advice first"
+  },
+  "consentLabel": "I agree to let ThunderOne contact me about its products and services.",
+  "confidentialNote": "Your details are kept confidential and used only to contact you back.",
+  "submit": "Send request",
+  "submitting": "Sending…",
+  "errors": {
+    "required": "Required",
+    "email": "Invalid email format",
+    "interest": "Select at least one solution",
+    "consent": "You must agree before sending the request"
+  },
+  "successTitle": "Request sent",
+  "successBody": "Our team will get back to you as soon as possible.",
+  "successRef": "CRM reference id",
+  "errorTitle": "Couldn't send the request",
+  "errorBody": "Please try again, or reach us through another channel."
+}

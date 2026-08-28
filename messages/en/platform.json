@@ -1,0 +1,25 @@
+{
+  "metaTitle": "Platform | ThunderOne",
+  "metaDescription": "One connected platform for experience, intelligence, integrations, and security.",
+  "eyebrow": "Platform",
+  "heading": "One platform, every connection point",
+  "intro": "ThunderOne brings the experience, intelligence, integrations, and security your organization needs into a single platform.",
+  "pillars": [
+    {
+      "title": "Experience",
+      "description": "A unified, intuitive experience for every employee, on any device."
+    },
+    {
+      "title": "Intelligence & Automation",
+      "description": "Automate routine work and surface insights from across your organization."
+    },
+    {
+      "title": "Integrations",
+      "description": "Connect ThunderOne to the tools your organization already relies on."
+    },
+    {
+      "title": "Security",
+      "description": "Enterprise-grade security and access controls, built in from the ground up."
+    }
+  ]
+}

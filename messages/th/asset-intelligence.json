@@ -1,0 +1,161 @@
+{
+  "metaTitle": "Asset Intelligence | ThunderOne",
+  "metaDescription": "มองเห็นสินทรัพย์ตลอดวงจรชีวิต บริหารจัดการสินทรัพย์อย่างมีประสิทธิภาพด้วย ThunderOne Asset Intelligence",
+  "breadcrumb": {
+    "home": "หน้าแรก",
+    "solutions": "โซลูชัน",
+    "current": "Asset Intelligence"
+  },
+  "hero": {
+    "badge": "โซลูชัน",
+    "title": "Asset Intelligence",
+    "subtitle": "มองเห็นสินทรัพย์ ตลอดวงจรชีวิต\nตัดสินใจได้อย่างแม่นยำ",
+    "description": "ระบบบริหารจัดการสินทรัพย์แบบครบวงจร\nช่วยให้องค์กรติดตาม ดูแล และเพิ่มคุณค่าสินทรัพย์\nในทุกช่วงอายุการใช้งาน อย่างมีประสิทธิภาพ",
+    "ctaPrimary": "พูดคุยกับเรา",
+    "ctaSecondary": "ดูการทำงานจริง",
+    "dashboard": {
+      "productLabel": "T1 asset",
+      "panelTitle": "ภาพรวมสินทรัพย์",
+      "dateRange": "1 - 31 พฤษภาคม 2568",
+      "departmentFilter": "ทุกแผนก",
+      "nav": ["ภาพรวม", "สินทรัพย์", "งานซ่อมบำรุง", "บำรุงรักษา", "งานตรวจสอบ", "พื้นที่และไซต์", "ซัพพลายเออร์", "รายงาน", "วิเคราะห์", "ตั้งค่า"],
+      "stats": {
+        "totalAssets": { "value": "12,458", "label": "สินทรัพย์ทั้งหมด", "delta": "+12% จากเดือนก่อน" },
+        "activeAssets": { "value": "10,842", "label": "สินทรัพย์ใช้งานอยู่", "delta": "+8% จากเดือนก่อน" },
+        "assetsInMaintenance": { "value": "236", "label": "อยู่ระหว่างซ่อมบำรุง", "delta": "-6% จากเดือนก่อน" },
+        "assetValue": { "value": "1,245,890,000", "label": "มูลค่าสินทรัพย์ (บาท)", "delta": "+9% จากเดือนก่อน" }
+      },
+      "assetsByStatusTitle": "สถานะสินทรัพย์",
+      "assetsByStatus": [
+        { "label": "ใช้งาน", "percent": 69 },
+        { "label": "ซ่อมบำรุง", "percent": 15 },
+        { "label": "วางแผน", "percent": 8 },
+        { "label": "ไม่ได้ใช้งาน", "percent": 5 },
+        { "label": "จำหน่ายแล้ว", "percent": 3 }
+      ],
+      "myWorkOrdersTitle": "งานซ่อมของฉัน",
+      "myWorkOrders": [
+        { "title": "WO-2025-0512", "meta": "ระบบแอร์ - อาคาร 3", "status": "กำลังดำเนินการ" },
+        { "title": "WO-2025-0511", "meta": "ลิฟต์ - อาคาร A", "status": "มอบหมายแล้ว" },
+        { "title": "WO-2025-0510", "meta": "จอ LED - ล็อบบี้", "status": "เสร็จสิ้น" }
+      ],
+      "recentInspectionsTitle": "งานที่มีกำหนดการตรวจสอบ",
+      "recentInspections": [
+        { "title": "AC-001", "meta": "สำนักงานใหญ่", "date": "10 พ.ค. 2568" },
+        { "title": "PUMP-02", "meta": "ปั๊มน้ำ", "date": "12 พ.ค. 2568" },
+        { "title": "GEN-01", "meta": "เครื่องกำเนิดไฟฟ้า", "date": "15 พ.ค. 2568" }
+      ],
+      "viewFullReport": "ดูรายละเอียดทั้งหมด",
+      "goToWorkOrders": "ไปงานทั้งหมด",
+      "viewAll": "ดูทั้งหมด"
+    }
+  },
+  "challenge": {
+    "title": "ความท้าทายที่องค์กรกำลังเผชิญ",
+    "subtitle": "หากมองไม่เห็นและควบคุมไม่ได้ สินทรัพย์จะเสื่อมค่าและความน่าเชื่อถือลดลง",
+    "items": [
+      "ไม่รู้ว่าสินทรัพย์อยู่ที่ไหนและสถานะเป็นอย่างไร",
+      "การบำรุงรักษาไม่เป็นระบบ เกิดความเสียหายบ่อยครั้ง",
+      "ค่าใช้จ่ายในการซ่อมบำรุงสูง ควบคุมงบประมาณยาก",
+      "ข้อมูลกระจัดกระจาย ไม่พร้อมสำหรับการวิเคราะห์",
+      "ตอบสนองล่าช้า กระทบต่อการดำเนินงาน"
+    ]
+  },
+  "whatYouCanDo": {
+    "label": "สิ่งที่คุณทำได้ด้วย",
+    "title": "Asset-intelligence",
+    "checklist": [
+      "ลงทะเบียนสินทรัพย์ด้วย QR Code / RFID",
+      "ติดตามสถานะและประวัติตลอดวงจรชีวิต",
+      "วางแผนและจัดการงานบำรุงรักษาเชิงป้องกัน",
+      "สร้างและจัดการใบงาน (Work Order)",
+      "ติดตามงานตรวจสอบและมาตรฐานการปฏิบัติงาน",
+      "วิเคราะห์ข้อมูลและสร้างรายงานเชิงลึก",
+      "เชื่อมต่ออุปกรณ์ IoT เพื่อข้อมูลแบบเรียลไทม์"
+    ],
+    "assetCard": {
+      "name": "เครื่องปรับอากาศ ห้องประชุม 3",
+      "statusLabel": "ใช้งาน",
+      "subtitle": "อาคารสำนักงาน ชั้น 3",
+      "purchaseDateLabel": "วันที่ซื้อ",
+      "purchaseDateValue": "15 ม.ค. 2566",
+      "assetValueLabel": "มูลค่าทรัพย์สิน",
+      "assetValueValue": "45,000 บาท",
+      "expectedLifeLabel": "อายุการใช้งาน",
+      "expectedLifeValue": "2 ปี",
+      "warrantyUntilLabel": "รับประกันถึง",
+      "warrantyUntilValue": "15 ม.ค. 2569",
+      "scanLabel": "สแกนดูข้อมูล",
+      "tabs": ["ภาพรวม", "ประวัติบำรุงรักษา", "เอกสารแนบ", "ประวัติเคลื่อนย้าย", "ประวัติทั้งหมด"],
+      "overview": {
+        "assetIdLabel": "รหัสสินทรัพย์",
+        "assetIdValue": "AC-001",
+        "categoryLabel": "ประเภท",
+        "categoryValue": "ระบบปรับอากาศ",
+        "brandModelLabel": "ยี่ห้อ / รุ่น",
+        "brandModelValue": "Daikin / FTKC25QVM",
+        "serialNumberLabel": "หมายเลขเครื่อง",
+        "serialNumberValue": "FTKC25QVM123456",
+        "locationLabel": "ตำแหน่ง",
+        "locationValue": "ชั้น 3 ห้องประชุม 3"
+      }
+    },
+    "mobileCard": {
+      "name": "AC-001 ห้องประชุม 3",
+      "statusLabel": "ใช้งาน",
+      "purchaseDateLabel": "วันที่ซื้อ",
+      "purchaseDateValue": "15 ม.ค. 2566",
+      "assetValueLabel": "มูลค่าทรัพย์สิน",
+      "assetValueValue": "45,000 บาท",
+      "nextMaintenanceLabel": "กำหนดบำรุงรักษาถัดไป",
+      "nextMaintenanceValue": "20 พ.ค. 2568",
+      "createWorkOrderButton": "สร้างใบงานบำรุงรักษา"
+    }
+  },
+  "howItWorks": {
+    "title": "ทำงานอย่างไร",
+    "steps": [
+      { "title": "ลงทะเบียนสินทรัพย์", "description": "บันทึกข้อมูลสินทรัพย์และติดตั้ง QR Code" },
+      { "title": "วางแผนบำรุงรักษา", "description": "กำหนดแผน PM และรอบการบำรุงรักษา" },
+      { "title": "สร้างใบงาน", "description": "เมื่อถึงรอบ / แจ้งซ่อม ผ่านระบบหรือมือถือ" },
+      { "title": "ดำเนินการและบันทึกผล", "description": "ช่างทำงานและบันทึกพร้อมรูปภาพ" },
+      { "title": "ติดตามและวิเคราะห์", "description": "แสดงข้อมูลเชิงลึกและระบุปัญหา" },
+      { "title": "ปรับปรุงและต่อยอด", "description": "เพิ่มประสิทธิภาพและยืดอายุการใช้งานสินทรัพย์" }
+    ]
+  },
+  "capabilities": {
+    "title": "ความสามารถหลัก",
+    "items": [
+      { "title": "Asset Registry", "description": "ทะเบียนสินทรัพย์ครบถ้วนแม่นยำ" },
+      { "title": "Work Order Management", "description": "จัดการใบงานและติดตามสถานะ" },
+      { "title": "Preventive Maintenance", "description": "วางแผนงานบำรุงรักษาเชิงป้องกัน" },
+      { "title": "Inspection & Compliance", "description": "จัดการอะไหล่และคลังสินค้าควบคุมสินค้าคงคลัง" },
+      { "title": "Reporting & Analytics", "description": "รายงานและวิเคราะห์ข้อมูลเชิงลึก" },
+      { "title": "IoT Integration", "description": "เชื่อมต่ออุปกรณ์ IoT แบบเรียลไทม์" }
+    ]
+  },
+  "industries": {
+    "title": "เหมาะสำหรับทุกอุตสาหกรรม",
+    "items": ["หน่วยงานภาครัฐและเทศบาล", "อาคารและอสังหาริมทรัพย์", "โรงงานและอุตสาหกรรม", "สถาบันการศึกษา", "สถานพยาบาล"]
+  },
+  "platform": {
+    "title": "ทำงานร่วมกับ ThunderOne Platform ได้อย่างไร้รอยต่อ",
+    "centerLabel": "ThunderOne Platform",
+    "items": [
+      { "key": "work", "label": "บริหารงาน" },
+      { "key": "assets", "label": "สินทรัพย์" },
+      { "key": "people", "label": "บุคลากรและองค์กร" },
+      { "key": "reports", "label": "รายงานและวิเคราะห์" }
+    ]
+  },
+  "cta": {
+    "title": "พร้อมยกระดับการบริหารสินทรัพย์ของคุณหรือยัง?",
+    "description": "ให้ ThunderOne Asset Intelligence ช่วยให้องค์กรของคุณทำงานได้ดีขึ้น ลดต้นทุน และดูแลอายุการใช้งานสินทรัพย์",
+    "ctaPrimary": "พูดคุยกับเรา",
+    "ctaNote": "ใช้เวลาประมาณ 1 นาที • ไม่มีข้อผูกมัด"
+  },
+  "tools": {
+    "title": "เชื่อมต่อกับเครื่องมือที่คุณใช้อยู่",
+    "logosNote": "และอื่นๆ"
+  }
+}

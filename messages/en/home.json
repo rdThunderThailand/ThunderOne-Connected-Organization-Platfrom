@@ -1,0 +1,278 @@
+{
+  "metaTitle": "ThunderOne | Empowered People. Connected Organization.",
+  "metaDescription": "ThunderOne connects people, work, and systems in one shared context — powered by Intelligence & Automation.",
+  "hero": {
+    "trustedBy": "Trusted by forward-thinking organizations",
+    "titleLine1": "Empowered <blue>People.</blue>",
+    "titleLine2": " <blue>Connected</blue> Organization.",
+    "descriptionLine1": "ThunderOne connects people, work, communication,",
+    "descriptionLine2":"spaces, devices, assets, and systems within a shared context — ",
+    "descriptionLine3":"powered by Intelligence & Automation to reduce complexity,",
+    "descriptionLine4":"surface what matters, and help people work better together.",
+    "ctaPrimary": "Explore ThunderOne",
+    "ctaSecondary": "Talk to us",
+    "diagramCaption": {
+      "title": "Intelligence + AI",
+      "subtitle": "Reduce unnecessary work • Add value to people"
+    },
+    "diagramNodes": {
+      "people": "People",
+      "work": "Work",
+      "space": "Space",
+      "asset": "Asset",
+      "device": "Device",
+      "communication": "Communication",
+      "service": "Service"
+    }
+  },
+  "problem": {
+    "badge": "THE ORGANIZATION PROBLEM",
+    "titleLine1": "Your organization already has technology.",
+    "titleLine2": "<blue>The problem is that it doesn't work together</blue>",
+    "contextItems": {
+      "people": "People",
+      "work": "Work",
+      "data": "Data",
+      "communication": "Communication",
+      "system": "System",
+      "space": "Space",
+      "asset": "Asset"
+    },
+    "connectorLabel": "Disconnected Organizational Context",
+    "tagline": "ThunderOne connects the context"
+  },
+  "persona": {
+    "badge": "How ThunderOne can help you",
+    "freeMe": {
+      "label": "FREE ME",
+      "title": "Give me my time back",
+      "items": [
+        "Reduce unnecessary work",
+        "Reduce repetitive tasks",
+        "Reduce follow-ups",
+        "Reduce manual reporting",
+        "Reduce system switching"
+      ]
+    },
+    "helpMe": {
+      "label": "HELP ME",
+      "title": "Help me do better",
+      "items": [
+        "Understand what matters",
+        "Focus on what matters most",
+        "Make better decisions",
+        "Learn and grow",
+        "Create space for thinking and creativity"
+      ]
+    },
+    "connectUs": {
+      "label": "CONNECT US",
+      "title": "Help us stay connected",
+      "items": [
+        "Communicate with clarity",
+        "Work better together",
+        "Recognize each other",
+        "Connect people across the organization",
+        "Grow together"
+      ]
+    }
+  },
+  "perspective": {
+    "title": "ONE ORGANIZATION. DIFFERENT PERSPECTIVES.",
+    "tagline": "One organizational context, a different experience for every role",
+    "executive": {
+      "role": "EXECUTIVE",
+      "question": "What deserves your attention?",
+      "items": ["Strategy", "Decisions", "Risks", "Opportunities"]
+    },
+    "manager": {
+      "role": "MANAGER",
+      "question": "Where does your team need me?",
+      "items": ["People", "Work", "Coaching", "Bottlenecks"]
+    },
+    "people": {
+      "role": "PEOPLE",
+      "question": "What matters to me today?",
+      "items": ["Mission", "Work", "Collaboration", "Growth"]
+    }
+  },
+  "solutions": {
+    "badge": "Start with what matters",
+    "title": "Start with what matters to your organization.",
+    "descriptionLine1": "You don't need to change everything at once.",
+    "descriptionLine2": "Start with the solution that creates meaningful value today.",
+    "descriptionLine3": "Then expand ThunderOne naturally as you grow.",
+    "items": [
+      {
+        "title": "DIGITAL SIGNAGE & MEDIA",
+        "tagline": "Manage every screen and content from one place",
+        "descriptionLine1": "Manage Library • Playlist",
+        "descriptionLine2": "Channels • Displays",
+        "cta": "Explore solution",
+        "link": "/solutions/digital-signage-media"
+      },
+      {
+        "title": "COMMUNICATION",
+        "tagline": "Keep your organization informed, aligned, and connected",
+        "descriptionLine1": "Publication • Audience",
+        "descriptionLine2": "Channels • Response",
+        "cta": "Explore solution",
+        "link": "/solutions/communication"
+      },
+      {
+        "title": "THUNDER CARE",
+        "tagline": "Keep your technology and workplace ready",
+        "descriptionLine1": "IT Care • Service Request",
+        "descriptionLine2": "Device • Field Service",
+        "cta": "Explore solution",
+        "link": "/solutions/thunder-care"
+      },
+      {
+        "title": "ASSET INTELLIGENCE",
+        "tagline": "Know what you have, where it is, and what it needs",
+        "descriptionLine1": "Assets • Locations",
+        "descriptionLine2": "Lifecycle Service",
+        "cta": "Explore solution",
+        "link": "/solutions/asset-intelligence"
+      }
+    ],
+    "cta": "See all solutions"
+  },
+  "showcase": {
+    "badge": "SEE THUNDERONE IN ACTION",
+    "titleLine1": "Everything you need.",
+    "titleLine2": "In the context that matters.",
+    "tabs": {
+      "executive": "Executive",
+      "manager": "Manager",
+      "myWork": "My Work",
+      "communication": "Communication",
+      "care": "Care"
+    },
+    "dashboards": {
+      "executive": {
+        "greeting": "Good morning, Executive",
+        "subtitle": "Here's what deserves your attention today",
+        "progressLabel": "Mission progress",
+        "progressValue": "72%",
+        "metrics": [
+          { "value": "1,256", "label": "People", "sublabel": "Active people" },
+          { "value": "28", "label": "Needs attention", "sublabel": "items" },
+          { "value": "7", "label": "Risks", "sublabel": "items" }
+        ],
+        "highlightsTitle": "Key highlights",
+        "highlights": [
+          { "label": "Last month's sales missed target by -10%", "meta": "09:30" },
+          { "label": "Special document follow-up request received", "meta": "08:45" },
+          { "label": "A system anomaly has been resolved", "meta": "08:15" }
+        ],
+        "decisionsTitle": "Decisions that need action",
+        "decisions": [
+          { "label": "Approve Project A budget", "meta": "Due in 1 day" },
+          { "label": "Review new vendor contract", "meta": "Due in 3 days" }
+        ]
+      },
+      "manager": {
+        "greeting": "Good morning, Manager",
+        "subtitle": "Here's what your team needs today",
+        "progressLabel": "Team performance vs. target",
+        "progressValue": "84%",
+        "metrics": [
+          { "value": "18", "label": "People", "sublabel": "Team members" },
+          { "value": "12", "label": "Open tasks", "sublabel": "items" },
+          { "value": "3", "label": "Bottlenecks", "sublabel": "items" }
+        ],
+        "highlightsTitle": "Key highlights",
+        "highlights": [
+          { "label": "Sales team beat this week's target", "meta": "10:00" },
+          { "label": "Unusual rise in sick leave requests", "meta": "09:15" }
+        ],
+        "decisionsTitle": "Decisions that need action",
+        "decisions": [{ "label": "Approve overtime request", "meta": "Due in 1 day" }]
+      },
+      "myWork": {
+        "greeting": "Good morning",
+        "subtitle": "Here's what matters to you today",
+        "progressLabel": "My work progress",
+        "progressValue": "65%",
+        "metrics": [
+          { "value": "6", "label": "Tasks today", "sublabel": "items" },
+          { "value": "2", "label": "Due soon", "sublabel": "items" },
+          { "value": "9", "label": "New messages", "sublabel": "items" }
+        ],
+        "highlightsTitle": "Key highlights",
+        "highlights": [
+          { "label": "Client presentation moved to this afternoon", "meta": "11:00" },
+          { "label": "New task assigned by your manager", "meta": "09:40" }
+        ],
+        "decisionsTitle": "Needs your action",
+        "decisions": [{ "label": "Submit weekly report", "meta": "Due today" }]
+      },
+      "communication": {
+        "greeting": "Good morning, Comms team",
+        "subtitle": "Here's what's happening across the organization today",
+        "progressLabel": "Announcement open rate",
+        "progressValue": "91%",
+        "metrics": [
+          { "value": "5", "label": "Announcements published", "sublabel": "items" },
+          { "value": "1.2k", "label": "Reached", "sublabel": "people" },
+          { "value": "3", "label": "Awaiting approval", "sublabel": "items" }
+        ],
+        "highlightsTitle": "Key highlights",
+        "highlights": [
+          { "label": "New policy announcement got high engagement", "meta": "09:00" },
+          { "label": "Several departments have unanswered messages", "meta": "07:50" }
+        ],
+        "decisionsTitle": "Decisions that need action",
+        "decisions": [{ "label": "Approve company-wide announcement content", "meta": "Due in 1 day" }]
+      },
+      "care": {
+        "greeting": "Good morning, Care team",
+        "subtitle": "Here's what needs attention today",
+        "progressLabel": "Devices ready for use",
+        "progressValue": "97%",
+        "metrics": [
+          { "value": "14", "label": "Repair requests", "sublabel": "items" },
+          { "value": "5", "label": "Overdue tasks", "sublabel": "items" },
+          { "value": "28", "label": "Total devices", "sublabel": "locations" }
+        ],
+        "highlightsTitle": "Key highlights",
+        "highlights": [
+          { "label": "Urgent repair request from main branch", "meta": "09:10" },
+          { "label": "More devices are due for maintenance", "meta": "08:35" }
+        ],
+        "decisionsTitle": "Decisions that need action",
+        "decisions": [{ "label": "Approve purchase of spare parts", "meta": "Due in 1 day" }]
+      }
+    },
+    "nav": {
+      "home": "Home",
+      "missions": "Missions",
+      "people": "People",
+      "myWork": "My Work",
+      "communication": "Communication",
+      "care": "Care",
+      "reports": "Reports",
+      "settings": "Settings"
+    },
+    "searchPlaceholder": "Search...",
+    "aiAssistantLabel": "AI Assistant"
+  },
+  "integration": {
+    "badge": "07 CONNECT, DON'T REPLACE",
+    "titleLine1": "Keep the systems",
+    "titleLine2": "that work",
+    "description": "ThunderOne connects the context that matters from your existing systems and tools.",
+    "cta": "Learn more",
+    "otherSystemsLabel": "and more",
+    "pillLabel": "SHARED CONTEXT + AI"
+  },
+  "cta": {
+    "title": "What matters most to your organization today?",
+    "description": "Whether you're starting with digital signage,\ncommunication, technology care, or asset management,\nwe'll help you find the right place to begin.",
+    "ctaPrimary": "Talk to us",
+    "ctaCaption": "Takes about 1 minute  •  No long forms",
+    "lineLabel": "Or talk to us on LINE",
+    "lineHandle": "@thunderone"
+  }
+}

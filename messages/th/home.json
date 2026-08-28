@@ -1,0 +1,278 @@
+{
+  "metaTitle": "ThunderOne | เสริมพลังคน เชื่อมองค์กรให้เป็นหนึ่ง",
+  "metaDescription": "ThunderOne แพลตฟอร์มที่เชื่อมต่อผู้คน งาน และระบบขององค์กรไว้ในบริบทเดียวกัน ขับเคลื่อนด้วย Intelligence & Automation",
+  "hero": {
+    "trustedBy": "องค์กรชั้นนำไว้วางใจเลือกใช้\nเพื่อขับเคลื่อนองค์กรของตน",
+    "titleLine1": "เสริมพลังคน",
+    "titleLine2": "<blue>เชื่อมองค์กรให้เป็นหนึ่ง</blue>",
+    "descriptionLine1": "ThunderOne เชื่อมคน งาน การสื่อสาร พื้นที่ อุปกรณ์",
+    "descriptionLine2":"และระบบต่างๆ เข้ากับบริบทเดียวกันด้วย Intelligence & Automation",
+    "descriptionLine3":"เพื่อลดความยุ่งยาก ช่วยให้คนเห็นสิ่งที่สำคัญ และทำงานร่วมกันได้ดีขึ้น",
+    "descriptionLine4":"",
+    "ctaPrimary": "สำรวจ ThunderOne",
+    "ctaSecondary": "พูดคุยกับเรา",
+    "diagramCaption": {
+      "title": "Intelligence + AI",
+      "subtitle": "ลดงานที่ไม่จำเป็น • เพิ่มคุณค่าให้คน"
+    },
+    "diagramNodes": {
+      "people": "คน",
+      "work": "งาน",
+      "space": "พื้นที่",
+      "asset": "ทรัพย์สิน",
+      "device": "อุปกรณ์",
+      "communication": "การสื่อสาร",
+      "service": "บริการ"
+    }
+  },
+  "problem": {
+    "badge": "ปัญหาขององค์กรในปัจจุบัน",
+    "titleLine1": "องค์กรของคุณมีเทคโนโลยีอยู่แล้ว",
+    "titleLine2": "แต่ปัญหาคือ <blue>ทุกอย่างไม่ได้ทำงานร่วมกัน</blue>",
+    "contextItems": {
+      "people": "คน",
+      "work": "งาน",
+      "data": "ข้อมูล",
+      "communication": "การสื่อสาร",
+      "system": "ระบบ",
+      "space": "พื้นที่",
+      "asset": "ทรัพย์สิน"
+    },
+    "connectorLabel": "บริบทขององค์กรที่แยกส่วน",
+    "tagline": "ThunderOne เชื่อมทุกบริบทให้เป็นหนึ่ง"
+  },
+  "persona": {
+    "badge": "ThunderOne ช่วยอะไรคุณได้บ้าง",
+    "freeMe": {
+      "label": "FREE ME",
+      "title": "คืนเวลาของฉันกลับมา",
+      "items": [
+        "ลดงานที่ไม่จำเป็น",
+        "ลดงานธุรการต่าง ๆ",
+        "ลดการถามงาน",
+        "ลดการทำรายงานด้วยมือ",
+        "ลดการสลับไปมาระหว่างหลายระบบ"
+      ]
+    },
+    "helpMe": {
+      "label": "HELP ME",
+      "title": "ช่วยให้ฉันทำได้ดีขึ้น",
+      "items": [
+        "เข้าใจสิ่งที่สำคัญ",
+        "โฟกัสสิ่งที่สำคัญ",
+        "ตัดสินใจได้ดีขึ้น",
+        "เรียนรู้และพัฒนาตนเอง",
+        "มีพื้นที่สำหรับการคิดและสร้างสรรค์"
+      ]
+    },
+    "connectUs": {
+      "label": "CONNECT US",
+      "title": "ช่วยให้เราเชื่อมโยงกัน",
+      "items": [
+        "สื่อสารอย่างเข้าใจ",
+        "ทำงานร่วมกันได้ดีขึ้น",
+        "เห็นคุณค่าและความสำเร็จของกันและกัน",
+        "เชื่อมโยงคนและทีมทั่วทั้งองค์กร",
+        "เติบโตไปด้วยกัน"
+      ]
+    }
+  },
+  "perspective": {
+    "title": "บริบทเดียวกัน แต่แต่ละคนเห็นสิ่งสำคัญต่างกัน",
+    "tagline": "บริบทขององค์กรเดียวกัน ประสบการณ์ที่แตกต่างกันในแต่ละบทบาท",
+    "executive": {
+      "role": "ผู้บริหาร (Executive)",
+      "question": "สิ่งใดคู่ควรกับคุณ",
+      "items": ["กลยุทธ์", "การตัดสินใจ", "ความเสี่ยง", "โอกาส"]
+    },
+    "manager": {
+      "role": "หัวหน้างาน (Manager)",
+      "question": "ทีมของคุณต้องการ",
+      "items": ["คน", "งาน", "การโค้ช", "จุดที่ติดขัด"]
+    },
+    "people": {
+      "role": "พนักงาน (People)",
+      "question": "อะไรสำคัญกับฉัน",
+      "items": ["ภารกิจ", "งาน", "การร่วมมือกัน", "การเติบโต"]
+    }
+  },
+  "solutions": {
+    "badge": "เริ่มจากปัญหาที่สำคัญกับองค์กรของคุณ",
+    "title": "เริ่มต้นจากสิ่งที่สร้างคุณค่าได้ก่อน",
+    "descriptionLine1": "ไม่จำเป็นต้องเปลี่ยนทุกอย่างพร้อมกัน",
+    "descriptionLine2": "เริ่มจากโซลูชันที่สำคัญกับคุณก่อน",
+    "descriptionLine3": "แล้วค่อยขยายไปพร้อมกับองค์กรของคุณ",
+    "items": [
+      {
+        "title": "DIGITAL SIGNAGE & MEDIA",
+        "tagline": "บริหารจอและสื่อจากส่วนกลาง",
+        "descriptionLine1": "จัดการ Content สำหรับหลายจอ",
+        "descriptionLine2": "หลายพื้นที่ จากที่เดียว",
+        "cta": "สำรวจโซลูชัน",
+        "link": "/solutions/digital-signage-media"
+      },
+      {
+        "title": "COMMUNICATION",
+        "tagline": "สื่อสารให้ทั้งองค์กรรับรู้ตรงกัน เข้าใจตรงกัน",
+        "descriptionLine1": "สร้าง จัดการ และส่ง Communication",
+        "descriptionLine2": "ไปยังคนที่เกี่ยวข้องผ่าน Channel ที่เหมาะสม",
+        "cta": "สำรวจโซลูชัน",
+        "link": "/solutions/communication"
+      },
+      {
+        "title": "THUNDER CARE",
+        "tagline": "ดูแลเทคโนโลยีและการทำงานให้พร้อมใช้งานเสมอ",
+        "descriptionLine1": "เชื่อมการแจ้งปัญหา อุปกรณ์",
+        "descriptionLine2": "กับ Support และการให้บริการเข้าด้วยกัน",
+        "cta": "สำรวจโซลูชัน",
+        "link": "/solutions/thunder-care"
+      },
+      {
+        "title": "ASSET INTELLIGENCE",
+        "tagline": "รู้ว่าองค์กรมีอะไร อยู่ที่ไหน และต้องดูแลอย่างไร",
+        "descriptionLine1": "เชื่อม Asset, Location, People,",
+        "descriptionLine2": "Service และ Lifecycle เพื่อให้ข้อมูลนำไปใช้ได้จริง",
+        "cta": "สำรวจโซลูชัน",
+        "link": "/solutions/asset-intelligence"
+      }
+    ],
+    "cta": "ดูโซลูชันทั้งหมด"
+  },
+  "showcase": {
+    "badge": "ดู ThunderOne ในการทำงานจริง",
+    "titleLine1": "ทุกสิ่งที่คุณต้องการ",
+    "titleLine2": "ในบริบทที่สำคัญ",
+    "tabs": {
+      "executive": "Executive",
+      "manager": "Manager",
+      "myWork": "My Work",
+      "communication": "Communication",
+      "care": "Care"
+    },
+    "dashboards": {
+      "executive": {
+        "greeting": "สวัสดีตอนเช้า, Executive",
+        "subtitle": "นี่คือสิ่งที่ควรได้รับความสนใจในวันนี้",
+        "progressLabel": "ความคืบหน้าของ Mission",
+        "progressValue": "72%",
+        "metrics": [
+          { "value": "1,256", "label": "คน", "sublabel": "Active people" },
+          { "value": "28", "label": "สิ่งที่ต้องได้รับความสนใจ", "sublabel": "รายการ" },
+          { "value": "7", "label": "ความเสี่ยง", "sublabel": "รายการ" }
+        ],
+        "highlightsTitle": "ไฮไลท์สำคัญ",
+        "highlights": [
+          { "label": "ยอดขายเดือนก่อนต่ำกว่าเป้าหมาย -10%", "meta": "09:30" },
+          { "label": "มีคำขอติดตามเอกสารพิเศษ", "meta": "08:45" },
+          { "label": "เหตุการณ์ผิดปกติของระบบได้รับการแก้ไขแล้ว", "meta": "08:15" }
+        ],
+        "decisionsTitle": "การตัดสินใจที่ต้องดำเนินการ",
+        "decisions": [
+          { "label": "อนุมัติงบประมาณโครงการ A", "meta": "ครบกำหนดใน 1 วัน" },
+          { "label": "พิจารณาสัญญา Vendor ใหม่", "meta": "ครบกำหนดใน 3 วัน" }
+        ]
+      },
+      "manager": {
+        "greeting": "สวัสดีตอนเช้า, Manager",
+        "subtitle": "นี่คือสิ่งที่ทีมของคุณต้องการวันนี้",
+        "progressLabel": "ผลงานของทีมเทียบเป้าหมาย",
+        "progressValue": "84%",
+        "metrics": [
+          { "value": "18", "label": "คน", "sublabel": "สมาชิกในทีม" },
+          { "value": "12", "label": "งานที่ค้างอยู่", "sublabel": "รายการ" },
+          { "value": "3", "label": "จุดที่ติดขัด", "sublabel": "รายการ" }
+        ],
+        "highlightsTitle": "ไฮไลท์สำคัญ",
+        "highlights": [
+          { "label": "ทีมขายปิดยอดเกินเป้าหมายสัปดาห์นี้", "meta": "10:00" },
+          { "label": "มีพนักงานลาป่วยเพิ่มขึ้นผิดปกติ", "meta": "09:15" }
+        ],
+        "decisionsTitle": "การตัดสินใจที่ต้องดำเนินการ",
+        "decisions": [{ "label": "อนุมัติคำขอทำงานล่วงเวลา", "meta": "ครบกำหนดใน 1 วัน" }]
+      },
+      "myWork": {
+        "greeting": "สวัสดีตอนเช้า",
+        "subtitle": "นี่คือสิ่งที่สำคัญกับคุณวันนี้",
+        "progressLabel": "ความคืบหน้างานของฉัน",
+        "progressValue": "65%",
+        "metrics": [
+          { "value": "6", "label": "งานวันนี้", "sublabel": "รายการ" },
+          { "value": "2", "label": "ใกล้ครบกำหนด", "sublabel": "รายการ" },
+          { "value": "9", "label": "ข้อความใหม่", "sublabel": "รายการ" }
+        ],
+        "highlightsTitle": "ไฮไลท์สำคัญ",
+        "highlights": [
+          { "label": "งานนำเสนอลูกค้าเลื่อนเป็นบ่ายนี้", "meta": "11:00" },
+          { "label": "ได้รับมอบหมายงานใหม่จากหัวหน้า", "meta": "09:40" }
+        ],
+        "decisionsTitle": "สิ่งที่ต้องดำเนินการ",
+        "decisions": [{ "label": "ส่งรายงานประจำสัปดาห์", "meta": "ครบกำหนดวันนี้" }]
+      },
+      "communication": {
+        "greeting": "สวัสดีตอนเช้า, ทีมสื่อสาร",
+        "subtitle": "นี่คือสิ่งที่เกิดขึ้นทั่วองค์กรวันนี้",
+        "progressLabel": "อัตราการเปิดอ่านประกาศ",
+        "progressValue": "91%",
+        "metrics": [
+          { "value": "5", "label": "ประกาศที่เผยแพร่", "sublabel": "รายการ" },
+          { "value": "1.2k", "label": "การเข้าถึงข้อความ", "sublabel": "คน" },
+          { "value": "3", "label": "รอการอนุมัติ", "sublabel": "รายการ" }
+        ],
+        "highlightsTitle": "ไฮไลท์สำคัญ",
+        "highlights": [
+          { "label": "ประกาศนโยบายใหม่มีผู้เปิดอ่านสูง", "meta": "09:00" },
+          { "label": "มีข้อความค้างตอบจากหลายแผนก", "meta": "07:50" }
+        ],
+        "decisionsTitle": "การตัดสินใจที่ต้องดำเนินการ",
+        "decisions": [{ "label": "อนุมัติเนื้อหาประกาศทั่วองค์กร", "meta": "ครบกำหนดใน 1 วัน" }]
+      },
+      "care": {
+        "greeting": "สวัสดีตอนเช้า, ทีม Care",
+        "subtitle": "นี่คือสิ่งที่ต้องดูแลวันนี้",
+        "progressLabel": "อุปกรณ์ที่พร้อมใช้งาน",
+        "progressValue": "97%",
+        "metrics": [
+          { "value": "14", "label": "รายการแจ้งซ่อม", "sublabel": "รายการ" },
+          { "value": "5", "label": "งานที่ค้างเกินกำหนด", "sublabel": "รายการ" },
+          { "value": "28", "label": "อุปกรณ์ทั้งหมด", "sublabel": "สาขา/สถานที่" }
+        ],
+        "highlightsTitle": "ไฮไลท์สำคัญ",
+        "highlights": [
+          { "label": "แจ้งซ่อมด่วนจากสาขาใหญ่", "meta": "09:10" },
+          { "label": "อุปกรณ์ครบกำหนดบำรุงรักษาเพิ่มขึ้น", "meta": "08:35" }
+        ],
+        "decisionsTitle": "การตัดสินใจที่ต้องดำเนินการ",
+        "decisions": [{ "label": "อนุมัติจัดซื้ออะไหล่เพิ่มเติม", "meta": "ครบกำหนดใน 1 วัน" }]
+      }
+    },
+    "nav": {
+      "home": "หน้าหลัก",
+      "missions": "ภารกิจ",
+      "people": "คน",
+      "myWork": "งานของฉัน",
+      "communication": "การสื่อสาร",
+      "care": "การดูแล (Care)",
+      "reports": "รายงาน",
+      "settings": "ตั้งค่า"
+    },
+    "searchPlaceholder": "ค้นหา...",
+    "aiAssistantLabel": "AI Assistant"
+  },
+  "integration": {
+    "badge": "เชื่อมต่อ ไม่ทดแทน",
+    "titleLine1": "รักษาระบบ",
+    "titleLine2": "ที่ใช้งานได้ดีอยู่แล้ว",
+    "description": "ThunderOne เชื่อมต่อบริบทที่สำคัญจากระบบและเครื่องมือที่องค์กรใช้อยู่ เพื่อให้คนมองเห็นและทำงานบนบริบทเดียวกัน",
+    "cta": "เรียนรู้เพิ่มเติม",
+    "otherSystemsLabel": "และระบบอื่น ๆ",
+    "pillLabel": "SHARED CONTEXT + AI"
+  },
+  "cta": {
+    "title": "อะไรสำคัญกับองค์กรของคุณในวันนี้?",
+    "description": "ไม่ว่าคุณจะเริ่มจากจอ การสื่อสาร การดูแลเทคโนโลยี\nหรือการจัดการทรัพย์สิน เราช่วยคุณหาจุดเริ่มต้นที่เหมาะสมได้",
+    "ctaPrimary": "พูดคุยกับเรา",
+    "ctaCaption": "ใช้เวลาประมาณ 1 นาที  •  ไม่ต้องกรอกแบบฟอร์มยาว",
+    "lineLabel": "หรือคุยกับเราผ่าน LINE",
+    "lineHandle": "@thunderone"
+  }
+}

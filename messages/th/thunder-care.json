@@ -1,0 +1,150 @@
+{
+  "metaTitle": "Thunder Care | ThunderOne",
+  "metaDescription": "ระบบดูแล IT และอุปกรณ์ครบวงจร ช่วยให้ทีมของคุณทำงานได้อย่างไร้กังวล",
+  "breadcrumb": {
+    "home": "หน้าแรก",
+    "solutions": "โซลูชัน",
+    "current": "Thunder Care"
+  },
+  "hero": {
+    "badge": "โซลูชัน",
+    "title": "Thunder Care",
+    "subtitle": "ดูแล IT และอุปกรณ์ของคุณ ให้ทำงานได้อย่างไร้กังวล",
+    "description": "ระบบบริหารจัดการงานบริการ IT และอุปกรณ์ครบวงจร\nตั้งแต่แจ้งปัญหา ติดตามงาน ไปจนถึงซ่อมบำรุงเชิงป้องกัน\nช่วยให้ทีมของคุณทำงานได้ต่อเนื่อง และลด Downtime ให้น้อยที่สุด",
+    "ctaPrimary": "พูดคุยกับเรา",
+    "ctaSecondary": "ดูการทำงานจริง",
+    "dashboard": {
+      "productLabel": "T1 care",
+      "panelTitle": "ภาพรวมบริการ",
+      "dateRange": "10 - 16 พ.ค. 2568",
+      "nav": ["ภาพรวม", "เหตุขัดข้อง", "งานขอรับบริการ", "ปัญหา", "อุปกรณ์", "สัญญาบริการ (SLA)", "ความรู้", "ผู้ใช้งาน", "รายงาน", "ตั้งค่า"],
+      "stats": {
+        "openTickets": { "value": "128", "label": "คำขอที่เปิดอยู่", "delta": "+24% จากสัปดาห์ก่อน" },
+        "requestsToday": { "value": "45", "label": "คำขอวันนี้", "delta": "+12%" },
+        "resolvedToday": { "value": "83", "label": "แก้ไขแล้ววันนี้", "delta": "+18%" },
+        "slaAchievement": { "value": "98%", "label": "ความสำเร็จ SLA", "delta": "+5%" }
+      },
+      "recentTicketsTitle": "คำขอล่าสุด",
+      "recentTickets": [
+        { "title": "INC-2025-0512", "meta": "อินเทอร์เน็ตไม่เสถียร", "status": "กำลังดำเนินการ" },
+        { "title": "SR-2025-0511", "meta": "ติดตั้ง Microsoft 365", "status": "มอบหมายแล้ว" },
+        { "title": "INC-2025-0510", "meta": "เครื่องพิมพ์ใช้งานไม่ได้", "status": "แก้ไขแล้ว" }
+      ],
+      "ticketByCategoryTitle": "หมวดหมู่คำขอ",
+      "ticketByCategory": [
+        { "label": "IT Support", "percent": 35 },
+        { "label": "ฮาร์ดแวร์", "percent": 25 },
+        { "label": "ซอฟต์แวร์", "percent": 18 },
+        { "label": "เครือข่าย", "percent": 12 },
+        { "label": "อื่นๆ", "percent": 10 }
+      ],
+      "viewAllTickets": "ดูทั้งหมด",
+      "viewReport": "ดูรายงาน"
+    }
+  },
+  "challenge": {
+    "title": "ความท้าทายที่องค์กรกำลังเผชิญ",
+    "subtitle": "งานบริการและการดูแลอุปกรณ์ที่ไม่เป็นระบบ ส่งผลต่อเวลาและประสิทธิภาพการทำงาน",
+    "items": [
+      "แจ้งปัญหาได้หลายช่องทาง ข้อมูลกระจัดกระจาย",
+      "ติดตามสถานะงานยาก ไม่รู้ว่าใครรับผิดชอบ",
+      "ไม่มีการวัดผล SLA และประสิทธิภาพทีม",
+      "อุปกรณ์ไม่ได้รับการดูแลเชิงป้องกัน",
+      "รายงานและวิเคราะห์ข้อมูลทำได้ยาก"
+    ]
+  },
+  "whatYouCanDo": {
+    "label": "สิ่งที่คุณทำได้",
+    "title": "จัดการงานบริการได้ครบจบในที่เดียว รวดเร็ว โปร่งใส และตรวจสอบได้",
+    "description": "Thunder Care ช่วยให้ทีมของคุณมีเครื่องมือให้บริการที่รวดเร็ว จัดการอุปกรณ์ และดำเนินงานได้อย่างต่อเนื่องโดยไม่สะดุด",
+    "checklist": [
+      "แจ้งปัญหาและติดตามงานได้ทุกที่ ทุกเวลา",
+      "กำหนด SLA และแจ้งเตือนอัตโนมัติ",
+      "บริหารจัดการอุปกรณ์และสัญญาบริการ",
+      "วางแผนและบันทึกการบำรุงรักษาเชิงป้องกัน",
+      "ฐานความรู้ (Knowledge) ช่วยแก้ปัญหาด้วยตนเอง",
+      "รายงานและแดชบอร์ดเพื่อการตัดสินใจ"
+    ],
+    "createTicketCard": {
+      "title": "แจ้งปัญหาใหม่",
+      "requestTypeLabel": "ประเภทปัญหา",
+      "requestTypeValue": "IT Support",
+      "categoryLabel": "หัวข้อ",
+      "categoryValue": "เครือข่ายและอินเทอร์เน็ต",
+      "detailsValue": "อินเทอร์เน็ตใช้งานไม่ได้ในที่ทำงาน",
+      "submitButton": "ส่งข้อมูล"
+    },
+    "trackingCard": {
+      "title": "ติดตามสถานะคำขอ #INC-2025-0512",
+      "steps": [
+        { "label": "แจ้งปัญหา", "time": "10:15" },
+        { "label": "มอบหมาย", "time": "10:25" },
+        { "label": "กำลังดำเนินการ", "time": "10:40" },
+        { "label": "เสร็จสิ้น", "time": "11:30" }
+      ],
+      "assignedToLabel": "ผู้รับผิดชอบ",
+      "assignedToValue": "David Lee (Network Engineer)",
+      "dueDateLabel": "กำหนดแล้วเสร็จ",
+      "dueDateValue": "16 พ.ค. 2568 · 12:00",
+      "slaPerformanceTitle": "ผลงาน SLA (เดือนนี้)",
+      "slaPercent": 98,
+      "slaAchievedLabel": "ผ่านเกณฑ์ SLA 125/128 คำขอ",
+      "viewSlaReport": "ดูรายงานเพิ่มเติม"
+    }
+  },
+  "howItWorks": {
+    "title": "ทำงานอย่างเป็นระบบ ในทุกขั้นตอน",
+    "steps": [
+      { "title": "แจ้งปัญหา", "description": "ผู้ใช้งานแจ้งปัญหา ผ่าน Web, Mobile หรือ Line OA" },
+      { "title": "รับและจัดลำดับ", "description": "ระบบรับคำขอและจัดลำดับความสำคัญอัตโนมัติ" },
+      { "title": "มอบหมายงาน", "description": "มอบหมายให้ทีม/บุคคล ที่เหมาะสม" },
+      { "title": "ดำเนินการและติดตาม", "description": "อัปเดตความคืบหน้าแบบเรียลไทม์" },
+      { "title": "ปิดงานและประเมิน", "description": "ปิดงานและประเมินความพึงพอใจของผู้ใช้งาน" },
+      { "title": "วิเคราะห์และพัฒนา", "description": "สรุปปัญหาและปรับปรุงบริการอย่างต่อเนื่อง" }
+    ]
+  },
+  "capabilities": {
+    "title": "ความสามารถหลัก",
+    "items": [
+      { "title": "Ticketing & Workflow", "description": "จัดการงานบริการด้วยเวิร์กโฟลว์ที่ยืดหยุ่น" },
+      { "title": "SLA Management", "description": "กำหนด SLA แจ้งเตือน และติดตามผล" },
+      { "title": "Asset & Device Management", "description": "เก็บข้อมูลอุปกรณ์ครบวงจร ตลอดวงจรชีวิต" },
+      { "title": "Preventive Maintenance", "description": "วางแผนและแจ้งเตือนบำรุงรักษาเชิงป้องกัน" },
+      { "title": "Knowledge Base", "description": "ศูนย์รวมความรู้และวิธีแก้ไขทั่วไป" },
+      { "title": "Reports & Analytics", "description": "รายงานและแดชบอร์ดเพื่อการตัดสินใจ" }
+    ]
+  },
+  "idealFor": {
+    "title": "เหมาะสำหรับทุกองค์กร",
+    "items": [
+      { "title": "องค์กรธุรกิจทุกขนาด", "description": "เพิ่มประสิทธิภาพการทำงานของพนักงาน" },
+      { "title": "ธุรกิจค้าปลีกและแฟรนไชส์", "description": "สนับสนุนรวดเร็วในทุกสาขา" },
+      { "title": "โรงงานอุตสาหกรรม", "description": "รักษาสายการผลิตให้ทำงานต่อเนื่อง" },
+      { "title": "สถาบันการศึกษาทุกระดับ", "description": "สนับสนุนบุคลากรและนักเรียน" },
+      { "title": "โรงพยาบาลและสถานพยาบาล", "description": "ไอทีเชื่อถือได้สำหรับบริการวิกฤต" },
+      { "title": "หน่วยงานภาครัฐและรัฐวิสาหกิจ", "description": "ให้บริการประชาชนได้ดีขึ้น" }
+    ]
+  },
+  "platform": {
+    "title": "ทำงานร่วมกับ ThunderOne Platform ได้อย่างไร้รอยต่อ",
+    "description": "Thunder Care เชื่อมต่อกับการสื่อสาร บริหารสินทรัพย์ และโมดูลอื่นๆ เพื่อการดำเนินงานที่มีประสิทธิภาพสูงสุด",
+    "exploreLink": "ดูภาพรวมแพลตฟอร์ม",
+    "centerLabel": "ThunderOne Platform",
+    "connectedItems": [
+      { "key": "communication", "label": "Communication" },
+      { "key": "work", "label": "Work" },
+      { "key": "assetIntelligence", "label": "Asset Intelligence" },
+      { "key": "thunderCare", "label": "Thunder Care" }
+    ]
+  },
+  "cta": {
+    "title": "พร้อมเริ่มต้นดูแล IT ของคุณหรือยัง?",
+    "description": "ให้ Thunder Care ช่วยลดปัญหา IT เพื่อให้ทีมของคุณโฟกัสสิ่งที่สำคัญกว่า",
+    "ctaPrimary": "พูดคุยกับเรา",
+    "ctaNote": "ใช้เวลาประมาณ 1 นาที • ไม่ยืดยาว"
+  },
+  "tools": {
+    "title": "ทำงานร่วมกับระบบที่คุณใช้อยู่",
+    "logosNote": "และอื่นๆ"
+  }
+}
