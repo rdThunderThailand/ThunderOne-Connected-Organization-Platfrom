@@ -16,6 +16,7 @@ import {
   ClipboardList,
   LayoutDashboard,
   MapPin,
+  Megaphone,
   Play,
   Settings,
   Truck,
@@ -212,11 +213,11 @@ export function HeroSection({ content, onOpenTour }: HeroSectionProps) {
 
   return (
     <section className="overflow-hidden">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 pb-20 pt-6 lg:grid-cols-2 lg:items-center lg:pb-28">
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 pb-20 pt-6 lg:grid-cols-2 lg:items-start lg:pb-28">
         <div>
           <div className="flex items-center gap-3">
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-teal-600 text-white">
-              <Boxes className="h-5 w-5" />
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-blue text-white">
+              <Megaphone className="h-5 w-5" />
             </span>
             <span className="text-sm font-bold text-brand-navy">{content.badge}</span>
           </div>
@@ -244,7 +245,7 @@ export function HeroSection({ content, onOpenTour }: HeroSectionProps) {
           </div>
         </div>
 
-        <div className="min-w-0">
+        <div className="min-w-0 lg:self-center">
           <DashboardMockup dashboard={content.dashboard} />
         </div>
       </div>

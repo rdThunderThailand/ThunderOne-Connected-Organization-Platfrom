@@ -184,7 +184,7 @@ export function HeroSection({ content }: HeroSectionProps) {
 
   return (
     <section className="overflow-hidden">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 pt-6 lg:grid-cols-2 lg:items-center">
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 pt-6 lg:grid-cols-2 lg:items-start">
         <div>
           <div className="flex items-center gap-3">
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-blue text-white">
@@ -215,7 +215,7 @@ export function HeroSection({ content }: HeroSectionProps) {
           </div>
         </div>
 
-        <div className="min-w-0">
+        <div className="min-w-0 lg:self-center">
           <DashboardMockup dashboard={content.dashboard} />
         </div>
       </div>
