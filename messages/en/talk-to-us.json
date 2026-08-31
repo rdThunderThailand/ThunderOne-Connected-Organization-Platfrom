@@ -4,7 +4,6 @@
   "topic": {
     "title": "Talk to us",
     "subtitle": "Tell us what you're interested in",
-    "comingSoon": "Coming soon",
     "items": {
       "digital-signage": {
         "label": "Digital Signage & Media",
@@ -31,108 +30,231 @@
   "questions": {
     "confidentialNote": "Your information is kept confidential",
     "next": "Next",
+    "singleHint": "Choose one",
+    "multiHint": "Choose all that apply",
     "sets": {
       "digital-signage": {
-        "branchCount": {
-          "label": "How many branches/locations do you manage?",
+        "screenCount": {
+          "label": "How many screens are you running now?",
           "options": {
-            "1-5": "1 - 5 branches",
-            "6-20": "6 - 20 branches",
-            "21-50": "21 - 50 branches",
-            "50-plus": "50+ branches"
+            "none": "None yet (just getting started)",
+            "1-5": "1 - 5 screens",
+            "6-20": "6 - 20 screens",
+            "21-50": "21 - 50 screens",
+            "50-plus": "More than 50 screens"
           }
         },
-        "usageType": {
-          "label": "What's your main use case?",
+        "contentManagement": {
+          "label": "How do you want to manage content?",
           "options": {
-            "office": "Office / internal use",
-            "multi-branch": "Multiple branches/locations",
-            "public": "Public space / government",
-            "advertising": "Advertising network"
-          }
-        }
-      },
-      "thunder-care": {
-        "orgSize": {
-          "label": "How many branches/locations do you manage?",
-          "options": {
-            "1-5": "1 - 5 branches",
-            "6-20": "6 - 20 branches",
-            "21-50": "21 - 50 branches",
-            "50-plus": "50+ branches"
+            "central": "Fully centralised",
+            "per-branch": "Each branch / department manages its own",
+            "hybrid": "A mix of both",
+            "unsure": "Not sure yet"
           }
         },
-        "primaryGoal": {
-          "label": "What would you like help with most?",
+        "contentTypes": {
+          "label": "Main types of content you want to publish",
           "options": {
-            "assessment": "An initial needs assessment",
-            "quote": "A price quote",
-            "demo": "A product demo",
-            "other": "Something else"
+            "promotion": "Promotions / products",
+            "announcement": "News / company announcements",
+            "safety": "Safety information / guidance",
+            "schedule": "Schedules / queues",
+            "entertainment": "Entertainment media / video",
+            "other": "Other"
           }
         }
       },
       "communication": {
-        "orgSize": {
-          "label": "How many branches/locations do you manage?",
+        "audience": {
+          "label": "Who do you mainly communicate with?",
           "options": {
-            "1-5": "1 - 5 branches",
-            "6-20": "6 - 20 branches",
-            "21-50": "21 - 50 branches",
-            "50-plus": "50+ branches"
+            "employees": "Internal employees",
+            "customers": "Customers",
+            "partners": "Partners / resellers",
+            "public": "General public"
           }
         },
-        "primaryGoal": {
-          "label": "What would you like help with most?",
+        "mainProblem": {
+          "label": "Main problem you face when communicating",
           "options": {
-            "assessment": "An initial needs assessment",
-            "quote": "A price quote",
-            "demo": "A product demo",
-            "other": "Something else"
+            "not-reaching": "Messages don't reach the audience",
+            "too-slow": "Sent too slowly / not on time",
+            "no-measurement": "Can't measure opens / responses",
+            "high-cost": "High cost / too many overlapping systems",
+            "other": "Other"
+          }
+        },
+        "recipientVolume": {
+          "label": "Roughly how many recipients per send?",
+          "options": {
+            "lt-100": "Fewer than 100",
+            "100-500": "100 - 500",
+            "501-2000": "501 - 2,000",
+            "gt-2000": "More than 2,000"
+          }
+        }
+      },
+      "thunder-care": {
+        "deviceCount": {
+          "label": "How many IT devices / systems need support?",
+          "options": {
+            "lt-50": "Fewer than 50",
+            "50-200": "50 - 200",
+            "201-500": "201 - 500",
+            "gt-500": "More than 500"
+          }
+        },
+        "helpdeskSystem": {
+          "label": "Your current helpdesk / ticketing system",
+          "options": {
+            "none": "No system (phone / chat requests)",
+            "hard-to-use": "Have one but it's hard to use / incomplete",
+            "want-to-switch": "Have one but want to switch",
+            "unsure": "Not sure"
+          }
+        },
+        "serviceModel": {
+          "label": "What service model do you want?",
+          "options": {
+            "reactive": "Reactive (repair on failure) only",
+            "preventive": "Preventive maintenance too",
+            "both": "Both, end to end"
           }
         }
       },
       "asset-intelligence": {
-        "orgSize": {
-          "label": "How many branches/locations do you manage?",
+        "assetCount": {
+          "label": "Approximately how many assets?",
           "options": {
-            "1-5": "1 - 5 branches",
-            "6-20": "6 - 20 branches",
-            "21-50": "21 - 50 branches",
-            "50-plus": "50+ branches"
+            "lt-100": "Fewer than 100 items",
+            "100-500": "100 - 500 items",
+            "501-2000": "501 - 2,000 items",
+            "gt-2000": "More than 2,000 items"
           }
         },
-        "primaryGoal": {
-          "label": "What would you like help with most?",
+        "trackingMethod": {
+          "label": "How do you track assets today?",
           "options": {
-            "assessment": "An initial needs assessment",
-            "quote": "A price quote",
-            "demo": "A product demo",
-            "other": "Something else"
+            "spreadsheet": "Excel / documents",
+            "dedicated-system": "Already have a dedicated system",
+            "none": "No tracking system at all"
+          }
+        },
+        "mainProblem": {
+          "label": "Main problem you run into",
+          "options": {
+            "cant-find": "Can't locate assets / they go missing",
+            "outdated-data": "Data is outdated / inaccurate",
+            "poor-decisions": "Can't decide buy / repair / dispose accurately",
+            "slow-audit": "Asset audits take too long",
+            "missed-maintenance": "Missed preventive-maintenance cycles"
           }
         }
       },
       "not-sure": {
-        "orgSize": {
-          "label": "How many branches/locations do you manage?",
+        "currentProblems": {
+          "label": "What problems are you facing right now?",
           "options": {
-            "1-5": "1 - 5 branches",
-            "6-20": "6 - 20 branches",
-            "21-50": "21 - 50 branches",
-            "50-plus": "50+ branches"
+            "signage": "Screens / signage hard to manage across many branches",
+            "communication": "Can't reach employees / customers, can't measure results",
+            "it-support": "IT devices fail often, slow repairs, understaffed team",
+            "asset-tracking": "Can't track assets, stale data, or missed maintenance",
+            "not-analyzed": "Haven't analysed the problem seriously yet",
+            "other": "Other"
           }
         },
-        "primaryGoal": {
-          "label": "What would you like help with most?",
+        "affectedDepartments": {
+          "label": "Which departments are most affected?",
           "options": {
-            "assessment": "An initial needs assessment",
-            "quote": "A price quote",
-            "demo": "A product demo",
-            "other": "Something else"
+            "it": "IT",
+            "marketing": "Marketing / corporate communications",
+            "operations": "Operations",
+            "finance": "Accounting / finance",
+            "hr": "Human resources",
+            "executive": "Senior management"
+          }
+        },
+        "firstConversationHelp": {
+          "label": "What would help most in the first conversation?",
+          "options": {
+            "analyze": "Analyse the problem and recommend a solution",
+            "demo": "See a demo / real usage example",
+            "budget": "Estimate budget and investment plan",
+            "compare": "Compare against our current system"
           }
         }
       }
     }
+  },
+  "details": {
+    "title": "Your details",
+    "subtitle": "A few more so our team can follow up on point",
+    "firmographics": {
+      "position": {
+        "label": "Your role",
+        "options": {
+          "owner": "Owner / C-level",
+          "manager": "Department manager",
+          "it-ops": "IT / Operations",
+          "marketing": "Marketing / Corporate communications",
+          "procurement": "Procurement",
+          "other": "Other"
+        }
+      },
+      "industry": {
+        "label": "Industry",
+        "options": {
+          "retail": "Retail",
+          "manufacturing": "Factory / Manufacturing",
+          "real-estate": "Real estate / Office buildings",
+          "healthcare": "Hospital / Healthcare",
+          "education": "Education",
+          "finance": "Banking / Finance",
+          "hospitality": "Hotel / Tourism",
+          "other": "Other"
+        }
+      },
+      "orgSize": {
+        "label": "Organisation size (employees)",
+        "options": {
+          "1-50": "1 - 50",
+          "51-200": "51 - 200",
+          "201-500": "201 - 500",
+          "501-1000": "501 - 1,000",
+          "1000-plus": "More than 1,000"
+        }
+      }
+    },
+    "contact": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "companyName": "Company / organisation",
+      "email": "Email",
+      "mobile": "Phone number"
+    },
+    "preferredTime": {
+      "label": "Best time to reach you",
+      "optional": "Optional",
+      "options": {
+        "any": "Any time",
+        "morning": "Morning (9:00 - 12:00)",
+        "afternoon": "Afternoon (13:00 - 16:00)",
+        "evening": "Evening (16:00 - 18:00)"
+      }
+    },
+    "consentLabel": "I agree to let ThunderOne contact me about its products and services",
+    "confidentialNote": "Your information is kept confidential and used only to contact you back",
+    "errors": {
+      "required": "Required",
+      "email": "Invalid email format"
+    },
+    "submitError": {
+      "title": "Couldn't send your details",
+      "body": "Please try again, or reach us through another channel"
+    },
+    "submit": "Send",
+    "submitting": "Sending…"
   },
   "channel": {
     "title": "Talk to us",
@@ -150,23 +272,9 @@
     "callback": {
       "title": "Have us call you back",
       "checklist1": "Our team will call within 1 business day",
-      "checklist2": "Choose a time that works for you",
-      "cta": "Leave your number"
+      "checklist2": "At the time you picked",
+      "cta": "Have the team call me"
     }
-  },
-  "callbackForm": {
-    "title": "Leave your number",
-    "phoneLabel": "Phone number",
-    "phonePlaceholder": "0812345678",
-    "preferredTimeLabel": "Preferred time (optional)",
-    "preferredTimeOptions": {
-      "any": "Any time",
-      "morning": "Morning (9:00 - 12:00)",
-      "afternoon": "Afternoon (13:00 - 16:00)",
-      "evening": "Evening (16:00 - 18:00)"
-    },
-    "confidentialNote": "Your information is kept confidential",
-    "submit": "Confirm"
   },
   "confirmation": {
     "title": "We've got your details!",
@@ -178,7 +286,6 @@
       "line": "LINE",
       "callback": "Call back"
     },
-    "phoneLabel": "Phone number",
     "backHome": "Back to home"
   }
 }

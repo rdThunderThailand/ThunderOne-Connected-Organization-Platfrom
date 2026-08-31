@@ -4,14 +4,12 @@ import { CheckCircle2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useTalkToUsStore } from "@/store/talkToUsStore";
 import { QUESTIONS_BY_TOPIC } from "../config/questions";
-import type { TopicKey } from "../types";
 
 export function ConfirmationStep() {
   const t = useTranslations("TalkToUsPanel");
-  const selectedTopic = useTalkToUsStore((s) => s.selectedTopic) as TopicKey | null;
+  const selectedTopic = useTalkToUsStore((s) => s.selectedTopic);
   const answers = useTalkToUsStore((s) => s.answers);
   const selectedChannel = useTalkToUsStore((s) => s.selectedChannel);
-  const contactPhone = useTalkToUsStore((s) => s.contactPhone);
   const close = useTalkToUsStore((s) => s.close);
 
   const summaryRows: { label: string; value: string }[] = [];
@@ -23,11 +21,15 @@ export function ConfirmationStep() {
     });
 
     for (const question of QUESTIONS_BY_TOPIC[selectedTopic]) {
-      const value = answers[question.id];
-      if (!value) continue;
+      const picked = answers[question.id] ?? [];
+      if (picked.length === 0) continue;
       summaryRows.push({
         label: t(`questions.sets.${selectedTopic}.${question.id}.label`),
-        value: t(`questions.sets.${selectedTopic}.${question.id}.options.${value}`),
+        value: picked
+          .map((value) =>
+            t(`questions.sets.${selectedTopic}.${question.id}.options.${value}`),
+          )
+          .join(", "),
       });
     }
   }
@@ -37,10 +39,6 @@ export function ConfirmationStep() {
       label: t("confirmation.channelLabel"),
       value: t(`confirmation.channelValues.${selectedChannel}`),
     });
-  }
-
-  if (selectedChannel === "callback" && contactPhone) {
-    summaryRows.push({ label: t("confirmation.phoneLabel"), value: contactPhone });
   }
 
   return (
@@ -60,7 +58,7 @@ export function ConfirmationStep() {
         </p>
         <dl className="mt-3 flex flex-col gap-2.5">
           {summaryRows.map((row) => (
-            <div key={row.label} className="flex items-center justify-between gap-4 text-sm">
+            <div key={row.label} className="flex items-start justify-between gap-4 text-sm">
               <dt className="text-slate-500">{row.label}</dt>
               <dd className="text-right font-semibold text-brand-navy">{row.value}</dd>
             </div>

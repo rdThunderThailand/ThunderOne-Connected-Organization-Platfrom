@@ -18,8 +18,8 @@ export type TopicConfig = {
 // under `topic.items.<key>`.
 export const TOPICS: TopicConfig[] = [
   { key: "digital-signage", icon: Monitor, enabled: true },
-  { key: "thunder-care", icon: Headset, enabled: false },
-  { key: "communication", icon: Megaphone, enabled: false },
-  { key: "asset-intelligence", icon: Boxes, enabled: false },
-  { key: "not-sure", icon: HelpCircle, enabled: false },
+  { key: "thunder-care", icon: Headset, enabled: true },
+  { key: "communication", icon: Megaphone, enabled: true },
+  { key: "asset-intelligence", icon: Boxes, enabled: true },
+  { key: "not-sure", icon: HelpCircle, enabled: true },
 ];

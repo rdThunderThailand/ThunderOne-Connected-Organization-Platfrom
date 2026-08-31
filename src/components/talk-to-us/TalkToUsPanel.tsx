@@ -12,24 +12,23 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { type TalkToUsStep, useTalkToUsStore } from "@/store/talkToUsStore";
-import { CallbackStep } from "./steps/CallbackStep";
 import { ChannelStep } from "./steps/ChannelStep";
 import { ConfirmationStep } from "./steps/ConfirmationStep";
+import { DetailsStep } from "./steps/DetailsStep";
 import { QuestionsStep } from "./steps/QuestionsStep";
 import { TopicStep } from "./steps/TopicStep";
 import { ProgressDots } from "./ui/ProgressDots";
 import { useFocusTrap } from "./useFocusTrap";
 
 const ANIMATION_MS = 300;
-const PROGRESS_TOTAL = 3;
+const PROGRESS_TOTAL = 4;
 
-// Confirmation has no dots; "callback" is a sub-step of choosing a channel
-// so it stays on the same dot as "channel".
+// Confirmation has no dots.
 const PROGRESS_INDEX: Partial<Record<TalkToUsStep, number>> = {
   topic: 0,
   questions: 1,
-  channel: 2,
-  callback: 2,
+  details: 2,
+  channel: 3,
 };
 
 export function TalkToUsPanel() {
@@ -103,18 +102,24 @@ export function TalkToUsPanel() {
 
   if (!mounted) return null;
 
-  const showBack = step === "questions" || step === "channel" || step === "callback";
+  const showBack = step === "questions" || step === "details";
   const showProgress = step in PROGRESS_INDEX;
 
   const title =
     step === "questions" && selectedTopic
       ? t(`topic.items.${selectedTopic}.label`)
-      : step === "callback"
-        ? t("callbackForm.title")
+      : step === "details"
+        ? t("details.title")
         : t("topic.title");
 
   const subtitle =
-    step === "topic" ? t("topic.subtitle") : step === "channel" ? t("channel.subtitle") : null;
+    step === "topic"
+      ? t("topic.subtitle")
+      : step === "details"
+        ? t("details.subtitle")
+        : step === "channel"
+          ? t("channel.subtitle")
+          : null;
 
   return (
     <div className="fixed inset-0 z-50" aria-hidden={!isOpen}>
@@ -172,8 +177,8 @@ export function TalkToUsPanel() {
         <div className="flex-1 overflow-y-auto px-5 py-5">
           {step === "topic" && <TopicStep />}
           {step === "questions" && <QuestionsStep />}
+          {step === "details" && <DetailsStep />}
           {step === "channel" && <ChannelStep />}
-          {step === "callback" && <CallbackStep />}
           {step === "confirmation" && <ConfirmationStep />}
         </div>
       </div>
