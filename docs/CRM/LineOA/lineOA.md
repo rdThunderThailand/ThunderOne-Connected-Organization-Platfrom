@@ -87,8 +87,7 @@ LINE_CHANNEL_ACCESS_TOKEN=<issued token>
 1. PM ใส่ Webhook URL ที่ Dev ส่งให้ใน LINE Developers Console
 2. กด Verify / Enable Webhook
 3. PM ส่งข้อความ "test" จาก LINE ส่วนตัวไปยัง Thunder One OA
-4. LINE ส่ง message event ไปยัง `POST /api/line/webhook`
-5. Backend ต้องแสดงว่าได้รับ event พร้อม LINE userId และข้อความ "test"
+4. LINE ส่ง message event ไปยัง `POST /api/line/webhook`ckend ต้องแสดงว่าได้รับ event พร้อม LINE userId และข้อความ "test"
 6. Backend ตอบ HTTP 200
 
 ## 9. Definition of Done - This Step
@@ -103,6 +102,7 @@ LINE_CHANNEL_ACCESS_TOKEN=<issued token>
 
 ## 10. Out of Scope for This Step
 
+5. Ba
 - ยังไม่เชื่อม HubSpot
 - ยังไม่สร้าง Lead จาก LINE
 - ยังไม่ทำ LIFF / Website-to-LINE identity linking
