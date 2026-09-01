@@ -3,22 +3,27 @@
 // LINE's servers call this endpoint on every OA event (Add Friend, user
 // message, …). It is NOT a URL a customer opens — the "คุยผ่าน LINE"
 // button goes to the OA / LIFF in a later step
-// (docs/CRM/LineOA/lineOA.md §5).
+// (docs/CRM/LineOA/lineOA 31aug.md §5).
 //
 // Round-1 job (§3, §9): verify `x-line-signature`, read the event type +
 // LINE userId + message text, log them, return HTTP 200. No HubSpot, no
-// lead creation, no auto-reply yet (§10).
+// lead creation.
+//
+// Auto-reply is deferred by §10, so it is OFF by default and gated behind
+// the LINE_ECHO_REPLY env flag — set `LINE_ECHO_REPLY=1` to echo inbound
+// text back through the Messaging API (for testing outbound send).
 //
 // Not under `[locale]` on purpose — the i18n proxy matcher excludes
 // `/api` (src/proxy.ts). POST route handlers are not cached.
 //
-// TEMPORARY (PoC): no rate-limit / replay-id handling. The only secret in
-// play is LINE_CHANNEL_SECRET, read from the server env — never expose it
-// (or the access token) to the client (§6).
+// TEMPORARY (PoC): no rate-limit / replay-id handling. Secrets
+// (LINE_CHANNEL_SECRET, LINE_CHANNEL_ACCESS_TOKEN) are read from the
+// server env only — never expose them to the client (§6).
 
 import {
   logLineEvent,
   parseLineWebhookEvents,
+  replyLineMessages,
   verifyLineSignature,
 } from "@/features/line";
 
@@ -63,6 +68,23 @@ export async function POST(request: Request) {
     logLineEvent(event);
   }
 
+  // Opt-in echo reply (deferred by §10). Awaited before the response —
+  // returning first would let the serverless function freeze mid-request
+  // and drop the outbound call.
+  if (process.env.LINE_ECHO_REPLY === "1") {
+    for (const event of events) {
+      if (event.kind !== "message:text" || !event.replyToken) continue;
+      const result = await replyLineMessages(event.replyToken, [
+        { type: "text", text: `received: ${event.text}` },
+      ]);
+      if (!result.ok) {
+        console.error(
+          `[line:webhook] reply failed — ${result.status} ${result.detail}`,
+        );
+      }
+    }
+  }
+
   return Response.json({ ok: true, handled: events.length });
 }
 
@@ -71,3 +93,4 @@ export async function POST(request: Request) {
 export async function GET() {
   return Response.json({ ok: true, service: "line-webhook" });
 }
+

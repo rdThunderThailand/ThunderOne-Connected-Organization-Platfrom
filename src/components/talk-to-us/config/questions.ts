@@ -8,14 +8,23 @@ import type { QuestionConfig, TopicKey } from "../types";
 // Question set + option values are taken verbatim from
 // docs/CRM/question.md ขั้นที่ 2 (2026-08-31). `multi: true` marks the
 // options the doc labels "เลือกได้หลายข้อ".
+//
+// digital-signage is trimmed to the two Quick Questions that feed the
+// LINE lead summary — screen count + usage type
+// (docs/CRM/LineOA/lineOA 1sep.md §2, §4). `screen_count` drops the
+// "none" option; `usageType` replaces the old contentManagement /
+// contentTypes questions.
 export const QUESTIONS_BY_TOPIC: Record<TopicKey, QuestionConfig[]> = {
   "digital-signage": [
-    { id: "screenCount", options: ["none", "1-5", "6-20", "21-50", "50-plus"] },
-    { id: "contentManagement", options: ["central", "per-branch", "hybrid", "unsure"] },
+    { id: "screenCount", options: ["1-5", "6-20", "21-50", "50-plus"] },
     {
-      id: "contentTypes",
-      multi: true,
-      options: ["promotion", "announcement", "safety", "schedule", "entertainment", "other"],
+      id: "usageType",
+      options: [
+        "office-organization",
+        "multi-branch",
+        "public-government",
+        "advertising-network",
+      ],
     },
   ],
   communication: [
