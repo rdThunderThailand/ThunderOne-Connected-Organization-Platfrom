@@ -2,8 +2,8 @@
 //
 // LINE signs every webhook request with HMAC-SHA256 over the raw request
 // body, keyed by the channel secret, base64-encoded in the
-// `x-line-signature` header (docs/CRM/LineOA/lineOA.md §3: "Verify request
-// signature ด้วย Channel Secret ก่อนประมวลผล").
+// `x-line-signature` header (docs/CRM/LineOA/lineOA 31aug.md §3: "Verify
+// request signature ด้วย Channel Secret ก่อนประมวลผล").
 //
 // Verify BEFORE parsing the body — the signature covers the exact bytes
 // LINE sent, so it must be checked against `request.text()`, not a

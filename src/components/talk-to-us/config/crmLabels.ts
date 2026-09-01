@@ -25,8 +25,7 @@ export const CRM_SOLUTION_LABELS: Record<TopicKey, string> = {
 export const CRM_QUESTION_LABELS: Record<string, string> = {
   // digital-signage
   screenCount: "Screens in use",
-  contentManagement: "Content management model",
-  contentTypes: "Primary content types",
+  usageType: "Primary usage pattern",
   // communication
   audience: "Primary audiences",
   mainProblem: "Main problem",
@@ -47,25 +46,16 @@ export const CRM_QUESTION_LABELS: Record<string, string> = {
 /** Step-2 option slug → English, grouped by question id. */
 export const CRM_OPTION_LABELS: Record<string, Record<string, string>> = {
   screenCount: {
-    none: "None yet (just starting)",
     "1-5": "1-5",
     "6-20": "6-20",
     "21-50": "21-50",
     "50-plus": "More than 50",
   },
-  contentManagement: {
-    central: "Fully centralised",
-    "per-branch": "Each branch / department manages its own",
-    hybrid: "A mix of both",
-    unsure: "Not sure yet",
-  },
-  contentTypes: {
-    promotion: "Promotions / products",
-    announcement: "News / company announcements",
-    safety: "Safety information / guidance",
-    schedule: "Schedules / queues",
-    entertainment: "Entertainment media / video",
-    other: "Other",
+  usageType: {
+    "office-organization": "In-office / organisation",
+    "multi-branch": "Multiple branches / locations",
+    "public-government": "Public space / government",
+    "advertising-network": "Advertising network",
   },
   audience: {
     employees: "Internal employees",

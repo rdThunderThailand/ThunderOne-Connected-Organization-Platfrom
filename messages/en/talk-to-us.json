@@ -35,33 +35,21 @@
     "sets": {
       "digital-signage": {
         "screenCount": {
-          "label": "How many screens are you running now?",
+          "label": "About how many screens do you manage now?",
           "options": {
-            "none": "None yet (just getting started)",
             "1-5": "1 - 5 screens",
             "6-20": "6 - 20 screens",
             "21-50": "21 - 50 screens",
-            "50-plus": "More than 50 screens"
+            "50-plus": "50+ screens"
           }
         },
-        "contentManagement": {
-          "label": "How do you want to manage content?",
+        "usageType": {
+          "label": "How will you mainly use them?",
           "options": {
-            "central": "Fully centralised",
-            "per-branch": "Each branch / department manages its own",
-            "hybrid": "A mix of both",
-            "unsure": "Not sure yet"
-          }
-        },
-        "contentTypes": {
-          "label": "Main types of content you want to publish",
-          "options": {
-            "promotion": "Promotions / products",
-            "announcement": "News / company announcements",
-            "safety": "Safety information / guidance",
-            "schedule": "Schedules / queues",
-            "entertainment": "Entertainment media / video",
-            "other": "Other"
+            "office-organization": "In-office / organisation",
+            "multi-branch": "Multiple branches / locations",
+            "public-government": "Public space / government",
+            "advertising-network": "Advertising network"
           }
         }
       },

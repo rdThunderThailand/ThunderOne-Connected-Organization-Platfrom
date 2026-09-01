@@ -1,7 +1,7 @@
 // === LINE webhook payload → the few fields the PoC logs ===
 //
 // Round-1 scope only needs event type + LINE userId + message text +
-// timestamp (docs/CRM/LineOA/lineOA.md §3, §7). This is a LENIENT reader,
+// timestamp (docs/CRM/LineOA/lineOA 31aug.md §3, §7). This is a LENIENT reader,
 // not a validation gate: unknown keys and unknown event types pass
 // through, they just collapse to `unhandled`.
 
@@ -18,6 +18,7 @@ const lineEventSchema = z
   .object({
     type: z.string().optional(),
     timestamp: z.number().optional(),
+    replyToken: z.string().optional(),
     source: lineSourceSchema.optional(),
     message: z
       .object({
@@ -40,10 +41,16 @@ type RawLineEvent = z.infer<typeof lineEventSchema>;
 
 /** What the PoC keeps from one webhook event, ready to log. */
 export type LineEventSummary =
-  | { kind: "follow"; userId: string | null; timestamp: number | null }
+  | {
+      kind: "follow";
+      userId: string | null;
+      replyToken: string | null;
+      timestamp: number | null;
+    }
   | {
       kind: "message:text";
       userId: string | null;
+      replyToken: string | null;
       text: string;
       timestamp: number | null;
     }
@@ -57,16 +64,18 @@ export type LineEventSummary =
 
 function toSummary(event: RawLineEvent): LineEventSummary {
   const userId = event.source?.userId ?? null;
+  const replyToken = event.replyToken ?? null;
   const timestamp = event.timestamp ?? null;
 
   if (event.type === "follow") {
-    return { kind: "follow", userId, timestamp };
+    return { kind: "follow", userId, replyToken, timestamp };
   }
 
   if (event.type === "message" && event.message?.type === "text") {
     return {
       kind: "message:text",
       userId,
+      replyToken,
       text: event.message.text ?? "",
       timestamp,
     };

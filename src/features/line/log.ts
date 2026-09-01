@@ -1,6 +1,6 @@
 // === PoC audit line for a received LINE event ===
 //
-// docs/CRM/LineOA/lineOA.md §3: "Log เฉพาะข้อมูลที่จำเป็นสำหรับ PoC เช่น
+// docs/CRM/LineOA/lineOA 31aug.md §3: "Log เฉพาะข้อมูลที่จำเป็นสำหรับ PoC เช่น
 // event type, LINE userId, message text, timestamp โดยไม่ log
 // secret/token". §9 Definition of Done: prove the backend can read the
 // LINE userId and the message text.

@@ -1,0 +1,141 @@
+ThunderOne LINE OA PoC
+Step 0.12 - Website Lead <-> LINE Identity Linking
+DEV BRIEF - LINE Login + LIFF + Backend Linking
+1. Objective
+ทำให้ระบบรู้ว่า Lead ที่เพิ่งกรอก Talk to us บน Website คือ LINE user คนใด เพื่อเลิก hardcode LINE userId และสามารถส่ง Summary Message ไปหาคนที่ถูกต้องได้อัตโนมัติ.
+2. Current Status
+Item	Status
+Website Talk to us form + Canonical Payload	DONE
+LINE Messaging API	DONE
+Webhook: LINE → Backend	DONE
+Push Message: Backend → LINE User	DONE
+Step 0.11 Message Builder + Summary Push	DONE
+LINE Login Channel under Provider ThunderOne	DONE
+LIFF App configuration	IN PROGRESS
+Automatic Website Lead <-> LINE userId linking	NOT YET
+3. Target User Flow
+Talk to us Form
+      ↓
+Backend creates lead_id
+      ↓
+Backend creates short-lived lead_token
+      ↓
+User clicks "คุยผ่าน LINE"
+      ↓
+Open LIFF URL
+      ↓
+LIFF authenticates user with LINE
+      ↓
+LIFF gets ID token
+      ↓
+LIFF sends ID token + lead_token to Backend
+      ↓
+Backend verifies LINE ID token
+      ↓
+Backend resolves LINE userId
+      ↓
+Backend links:
+lead_id <-> LINE userId
+      ↓
+Backend sends Talk to us Summary
+      ↓
+LINE OA → Correct Customer
+4. Frontend / Website Requirement
+•	หลัง Submit Talk to us ให้ Backend เป็นผู้สร้าง lead_id; Frontend ไม่ generate เอง
+•	เมื่อ user เลือกช่องทาง 'คุยผ่าน LINE' ให้ Frontend ขอ/รับ lead_token จาก Backend
+•	ปุ่ม 'คุยผ่าน LINE' ต้องเปิด LIFF URL ที่ LINE ออกให้หลังสร้าง LIFF app
+•	ห้ามให้ปุ่มเปิด /api/line/webhook เพราะ webhook เป็น server endpoint ไม่ใช่ user-facing URL
+5. LIFF Endpoint URL ที่ Dev ต้องเตรียม
+ต้องมีหน้า HTTPS สำหรับ LIFF เช่นตัวอย่างด้านล่าง (ใช้ path จริงตาม codebase ของทีม):
+https://<domain>/liff/talk-to-us
+URL นี้จะถูกนำไปใส่ใน LINE Developers > LINE Login Channel > LIFF > Endpoint URL. เมื่อ user เปิด LIFF URL ของ LINE ระบบจะโหลดหน้า Endpoint URL นี้.
+6. LIFF App Settings
+Setting	Value
+LIFF app name	ThunderOne Talk to us
+Size	Full
+Endpoint URL	https://<domain>/liff/talk-to-us
+Scope	openid, profile
+chat_message.write	OFF / ไม่ต้องใช้ใน PoC นี้
+Add friend option	On (Normal)
+Scan QR	OFF
+Module mode	OFF
+7. Backend Requirement - Lead Identity
+เมื่อรับ Talk to us payload ให้ Backend สร้าง internal record ชั่วคราว/PoC เช่น:
+{
+  "lead_id": "LEAD-000123",
+  "first_name": "Somchai",
+  "email": "somchai@abc.com",
+  "interested_solution": "Digital Signage & Media",
+  "line_user_id": null
+}
+lead_id เป็น internal identifier ของระบบ PoC ไม่ใช่ HubSpot Contact ID และไม่ควรให้ user กำหนดเอง.
+8. Backend Requirement - Short-lived lead_token
+•	Backend สร้าง random lead_token ที่ผูกกับ lead_id
+•	Token ควรหมดอายุ เช่น 10-30 นาที
+•	ควรเป็น one-time token หรือ mark used หลัง link สำเร็จ
+•	ห้ามใส่ email / mobile / customer data ตรง ๆ ใน URL เพื่อใช้แทน token
+Concept:
+lead_token = xY72ab...  →  LEAD-000123
+9. LIFF Page Logic
+หน้า LIFF `/liff/talk-to-us` ควรทำหน้าที่ประมาณนี้:
+1.	Initialize LIFF
+2.	ถ้ายังไม่ได้ login ให้เปิด LINE Login
+3.	อ่าน lead_token ที่ส่งมาจาก flow ของ Website
+4.	ขอ ID token จาก LIFF
+5.	ส่ง ID token + lead_token ไป Backend
+6.	แสดง success/confirmation หลัง link สำเร็จ
+10. Suggested Backend Link Endpoint
+แนะนำให้มี backend endpoint สำหรับ identity linking โดยเฉพาะ เช่น:
+POST /api/line/link-lead
+Request concept:
+{
+  "lead_token": "xY72ab...",
+  "id_token": "<LINE_ID_TOKEN>"
+}
+Backend ต้องทำ:
+•	Validate lead_token และ expiry
+•	Verify LINE ID token ฝั่ง server
+•	อ่าน/resolve LINE userId จาก verified identity
+•	Update lead record: line_user_id = Uxxxxxxxx
+•	Mark lead_token used/consumed
+•	Trigger Step 0.11 Summary Message ไปหา LINE userId ที่ link แล้ว
+11. Result ที่ต้องได้
+{
+  "lead_id": "LEAD-000123",
+  "email": "somchai@abc.com",
+  "line_user_id": "Uxxxxxxxxxxxx",
+  "line_identity_status": "linked"
+}
+12. Security Notes
+•	อย่าเชื่อ userId ที่ client ส่งมาโดยตรง; ให้ใช้ verified LINE ID token
+•	LINE Channel Secret / Channel Access Token อยู่ฝั่ง Backend เท่านั้น
+•	lead_token ต้อง random, short-lived และ ideally one-time
+•	อย่า log secret, access token หรือ ID token แบบเต็ม
+•	ใช้ HTTPS ทุก endpoint
+13. Test Case - Step 0.12
+ID	Action	Expected
+TC-01	Submit Talk to us	Backend สร้าง lead_id + lead_token
+TC-02	กด 'คุยผ่าน LINE'	เปิด LIFF URL ได้
+TC-03	LINE Login/LIFF	ได้ verified LINE identity
+TC-04	Link Lead	lead_id ถูกผูกกับ LINE userId
+TC-05	Push Summary	Summary ถูกส่งไป LINE user ที่ link แล้ว ไม่ใช้ hardcode
+TC-06	Reuse token	token ที่ใช้แล้วถูก reject/ไม่สร้าง mapping ซ้ำ
+14. Definition of Done
+•	LIFF App สร้างสำเร็จและมี LIFF URL
+•	LIFF Endpoint URL deploy เป็น HTTPS และเปิดได้
+•	Website button เปิด LIFF flow ได้
+•	Backend verify LINE identity ได้
+•	Backend ผูก lead_id <-> LINE userId ได้
+•	Summary จาก Step 0.11 ถูกส่งไป user ที่ link แล้วโดยไม่ hardcode
+15. Out of Scope ใน Step นี้
+•	ยังไม่ทำ HubSpot mapping ใน Step 0.12
+•	ยังไม่สร้าง Company/Deal จาก LINE flow
+•	ยังไม่ทำ Customer 360
+•	ยังไม่ทำ advanced account linking / membership account
+16. Dev Output ที่ PM ต้องการกลับมา
+•	LIFF Endpoint URL ที่ deploy แล้ว
+•	LIFF URL หลังสร้าง app
+•	ชื่อ/route ของ backend linking endpoint ที่ใช้จริง
+•	ตัวอย่าง successful link log แบบไม่เปิดเผย token
+•	ผล test ว่า hardcode userId ถูกถอดออกแล้ว
+ 

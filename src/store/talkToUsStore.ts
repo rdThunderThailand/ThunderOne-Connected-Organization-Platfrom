@@ -1,6 +1,12 @@
 import { create } from "zustand";
-import { openLineOA } from "@/components/talk-to-us/lineOA";
+import {
+  isLiffConfigured,
+  liffTalkToUsUrl,
+  openDeferredTab,
+  openLineOA,
+} from "@/components/talk-to-us/lineOA";
 import { buildLeadPayload, type LeadDraft } from "@/components/talk-to-us/leadPayload";
+import { buildLeadSummaryPayload } from "@/components/talk-to-us/leadSummaryPayload";
 import type { TopicKey } from "@/components/talk-to-us/types";
 
 export type TalkToUsStep = "topic" | "questions" | "details" | "channel" | "confirmation";
@@ -64,7 +70,7 @@ type TalkToUsActions = {
   // Validate-free: DetailsStep gates required fields; this just fires the
   // POST and advances to `channel` on success, or flips to "error".
   submitLead: () => Promise<void>;
-  chooseLine: () => void;
+  chooseLine: () => void | Promise<void>;
   chooseCallback: () => void;
 };
 
@@ -176,7 +182,42 @@ export const useTalkToUsStore = create<TalkToUsState & TalkToUsActions>((set, ge
     }
   },
 
-  chooseLine: () => {
+  chooseLine: async () => {
+    const s = get();
+
+    // Step 0.12: Digital Signage → mint a one-time lead_token and hand off
+    // to the LIFF page, which links the LINE identity and pushes the §5
+    // summary to the real user (docs/CRM/LineOA/step-0.12 §3, §4). This
+    // replaces the Step 0.11 fire-and-forget /api/line/lead-summary call to
+    // a hardcoded userId. Other topics keep the placeholder behaviour.
+    //
+    // A token failure must never block the confirmation step (same rule as
+    // Step 0.11) — on any error we fall through to the placeholder path.
+    if (s.selectedTopic === "digital-signage" && isLiffConfigured) {
+      const tab = openDeferredTab();
+      try {
+        const res = await fetch("/api/line/lead-token", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(
+            buildLeadSummaryPayload({ firstName: s.firstName, answers: s.answers }),
+          ),
+        });
+        const json = (await res.json().catch(() => null)) as
+          | { ok?: boolean; lead_token?: string }
+          | null;
+
+        if (res.ok && json?.ok && json.lead_token) {
+          tab.settle(liffTalkToUsUrl(json.lead_token));
+          set({ selectedChannel: "line", step: "confirmation" });
+          return;
+        }
+      } catch {
+        // fall through
+      }
+      tab.cancel();
+    }
+
     openLineOA();
     set({ selectedChannel: "line", step: "confirmation" });
   },
