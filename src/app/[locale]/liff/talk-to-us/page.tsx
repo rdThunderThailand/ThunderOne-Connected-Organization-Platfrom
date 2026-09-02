@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import { setRequestLocale } from "next-intl/server";
 import {
   LiffTalkToUsClient,
@@ -15,11 +14,11 @@ import {
 //
 // Must live under `[locale]` — this repo has no root `app/layout.tsx` and
 // the i18n proxy (src/proxy.ts) rewrites every non-`/api` path to a locale
-// prefix, so a page outside `[locale]` would 404.
+// prefix, so a page outside `[locale]` would 404. Register only
+// `/th/liff/talk-to-us` with LINE; the `/en/...` build artifact is unused.
 //
-// PoC scope: real `liff.init()` stays dormant until NEXT_PUBLIC_LIFF_ID is
-// set (Phase 4, after the LIFF app exists in the LINE console). Deploying
-// this stub is what unblocks creating that app.
+// The client `liff.init()` is gated on NEXT_PUBLIC_LIFF_ID — without it the
+// page renders the `config-missing` state instead of throwing.
 
 export const metadata: Metadata = {
   title: "เชื่อมบัญชี LINE | ThunderOne",
@@ -29,7 +28,18 @@ export const metadata: Metadata = {
 
 // PoC copy as literals so page.tsx stays a Server Component and the client
 // receives strings as props (house rule — no useTranslations in the client).
-// Move into an i18n namespace if this page graduates past PoC.
+// TH only for the PoC — this page is a ~2s transient screen inside the LINE
+// in-app browser, not content.
+//
+// TODO (post-PoC) — localize without a second endpoint (LINE allows only one
+// LIFF Endpoint URL anyway):
+//   1. add a `LiffTalkToUs` namespace to src/i18n/messages.ts + messages/
+//      {th,en}/*.json, resolve `copy` here via getTranslations(locale).
+//   2. pick the locale from the LINE client, not the site: read
+//      `liff.getLanguage()` in the client (or thread `?lang=` from the
+//      wizard when it builds the LIFF URL) and select the string set.
+//   3. keep the single route under `[locale]`; register just `/th/liff/
+//      talk-to-us` with LINE — the `/en/...` build artifact stays unused.
 const copy: LiffTalkToUsCopy = {
   heading: "เชื่อมบัญชี LINE กับคำขอของคุณ",
   initializing: "กำลังเชื่อมต่อกับ LINE…",
@@ -51,11 +61,7 @@ export default async function LiffTalkToUsPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  // LiffTalkToUsClient reads `lead_token` via useSearchParams — wrap it so
-  // the rest of the tree can still prerender (Next: use-search-params).
-  return (
-    <Suspense fallback={null}>
-      <LiffTalkToUsClient copy={copy} />
-    </Suspense>
-  );
+  // The client reads `lead_token` from window.location.search after
+  // liff.init() (not useSearchParams) — no Suspense boundary needed.
+  return <LiffTalkToUsClient copy={copy} />;
 }

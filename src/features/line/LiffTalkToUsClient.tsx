@@ -3,19 +3,24 @@
 // === LiffTalkToUsClient — the LIFF Endpoint page UI (PoC, Step 0.12) ===
 //
 // Runs entirely in the LINE in-app browser. Flow (brief step-0.12 §9):
-//   1. read `lead_token` from the URL (put there by the website button)
-//   2. liff.init() + LINE Login if needed
+//   1. liff.init() + LINE Login if needed
+//   2. read `lead_token` from the URL (the website button put it there)
 //   3. get the LINE ID token
 //   4. POST { lead_token, id_token } → /api/line/link-lead
 //   5. show success / error
 //
+// ORDER MATTERS: `liff.init()` must run BEFORE reading the query string.
+// The LINE Login round-trip moves the original `?lead_token=…` into a
+// `liff.state` param; `liff.init()` is what restores it (it may reload the
+// page doing so, and this effect then re-runs on the clean URL). Reading
+// the token before init() sees no `lead_token` and fails with
+// `missingToken`.
+//
 // `@line/liff` is loaded with a dynamic import so it never touches the
 // server bundle. Real init is gated on NEXT_PUBLIC_LIFF_ID — until that env
-// var exists (Phase 4) the page renders the `config-missing` state instead
-// of throwing.
+// var exists the page renders the `config-missing` state instead of throwing.
 
 import { useEffect, useRef, useState } from "react";
-import { useSearchParams } from "next/navigation";
 
 export type LiffTalkToUsCopy = {
   heading: string;
@@ -43,7 +48,6 @@ type Phase =
   | "error";
 
 export function LiffTalkToUsClient({ copy }: { copy: LiffTalkToUsCopy }) {
-  const leadToken = useSearchParams().get("lead_token");
   const [phase, setPhase] = useState<Phase>(
     LIFF_ID ? "initializing" : "config-missing",
   );
@@ -51,8 +55,8 @@ export function LiffTalkToUsClient({ copy }: { copy: LiffTalkToUsCopy }) {
   const startedRef = useRef(false);
 
   useEffect(() => {
-    // React 18 runs effects twice in dev — the ref keeps the LIFF flow to
-    // one pass.
+    // React runs effects twice in dev — the ref keeps the LIFF flow to one
+    // pass per page load.
     if (!LIFF_ID || startedRef.current) return;
     startedRef.current = true;
 
@@ -64,19 +68,27 @@ export function LiffTalkToUsClient({ copy }: { copy: LiffTalkToUsCopy }) {
     };
 
     void (async () => {
-      if (!leadToken) {
-        fail(copy.missingToken);
-        return;
-      }
-
       try {
         const { default: liff } = await import("@line/liff");
+
+        // Must come first — restores the query string dropped into
+        // `liff.state` by the LINE Login redirect (see header comment).
         await liff.init({ liffId: LIFF_ID });
 
         if (!liff.isLoggedIn()) {
           if (!cancelled) setPhase("logging-in");
+          // href already carries ?lead_token=… (init restored it); LIFF
+          // re-wraps it in liff.state across the login round-trip.
           liff.login({ redirectUri: window.location.href });
           return; // browser navigates away to the LINE Login screen
+        }
+
+        const leadToken = new URLSearchParams(window.location.search).get(
+          "lead_token",
+        );
+        if (!leadToken) {
+          fail(copy.missingToken);
+          return;
         }
 
         const idToken = liff.getIDToken();
@@ -87,8 +99,6 @@ export function LiffTalkToUsClient({ copy }: { copy: LiffTalkToUsCopy }) {
 
         if (!cancelled) setPhase("linking");
 
-        // /api/line/link-lead lands in Phase 2. Until then this 404s and the
-        // page shows the error state — expected for the stub.
         const res = await fetch("/api/line/link-lead", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -96,7 +106,19 @@ export function LiffTalkToUsClient({ copy }: { copy: LiffTalkToUsCopy }) {
         });
 
         if (!res.ok) {
-          fail(`link-lead responded ${res.status}`);
+          let reason = `link-lead responded ${res.status}`;
+          try {
+            const body = (await res.json()) as {
+              error?: string;
+              reason?: string;
+            };
+            if (body?.error) {
+              reason = body.reason ? `${body.error} (${body.reason})` : body.error;
+            }
+          } catch {
+            // keep the status-code fallback
+          }
+          fail(reason);
           return;
         }
 
@@ -109,7 +131,7 @@ export function LiffTalkToUsClient({ copy }: { copy: LiffTalkToUsCopy }) {
     return () => {
       cancelled = true;
     };
-  }, [leadToken, copy.missingToken]);
+  }, [copy.missingToken]);
 
   return (
     <main className="mx-auto flex min-h-[60vh] max-w-md flex-col items-center justify-center gap-4 px-6 py-16 text-center">
