@@ -212,4 +212,5 @@ browser (a real `id_token`) — see the Step 0.12 test cases in the brief.
 | `leadToken.ts` / `link-lead/route.ts` | stateless token — one-time use is best-effort per instance | move token state to Vercel KV; add a real `identity` table + queued push |
 | `link-lead/route.ts` | no consent re-check before pushing to a real user | PDPA consent gate before any real-customer push |
 | `LiffTalkToUsClient.tsx` | inherits the site Navbar/Footer chrome from `[locale]/layout.tsx` | route group / conditional chrome for `/liff/*` |
+| `liff/talk-to-us/page.tsx` | copy is hardcoded TH literals | post-PoC: `LiffTalkToUs` i18n namespace + pick locale from `liff.getLanguage()` (or `?lang=`), keep one route/endpoint — see the TODO in `page.tsx` |
 | — | no persistence, no CRM | Step 0.12+: persist the lead, sync `line_user_id` into the CRM |
