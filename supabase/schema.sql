@@ -51,3 +51,15 @@ create index if not exists lead_link_tokens_lead_id_idx
 
 alter table line_user.leads            enable row level security;
 alter table line_user.lead_link_tokens enable row level security;
+
+-- Supabase only auto-grants on `public`. A hand-created schema needs these
+-- or PostgREST (which connects as `service_role`) returns
+-- "permission denied for schema line_user". RLS still gates anon /
+-- authenticated — service_role bypasses it.
+grant usage on schema line_user to service_role;
+grant all privileges on all tables in schema line_user to service_role;
+grant all privileges on all sequences in schema line_user to service_role;
+alter default privileges in schema line_user
+  grant all privileges on tables to service_role;
+alter default privileges in schema line_user
+  grant all privileges on sequences to service_role;
