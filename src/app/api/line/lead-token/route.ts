@@ -90,7 +90,18 @@ export async function POST(request: Request) {
   });
 }
 
-// Convenience health check.
+// Convenience health check. `env` reports only whether each var is present
+// (never its value) — used to confirm a deployment picked up the config.
 export async function GET() {
-  return Response.json({ ok: true, service: "line-lead-token" });
+  return Response.json({
+    ok: true,
+    service: "line-lead-token",
+    env: {
+      SUPABASE_URL: Boolean(process.env.SUPABASE_URL?.trim()),
+      SUPABASE_SERVICE_ROLE_KEY: Boolean(process.env.SUPABASE_SERVICE_ROLE_KEY?.trim()),
+      LINE_LOGIN_CHANNEL_ID: Boolean(process.env.LINE_LOGIN_CHANNEL_ID?.trim()),
+      LINE_CHANNEL_ACCESS_TOKEN: Boolean(process.env.LINE_CHANNEL_ACCESS_TOKEN?.trim()),
+      NEXT_PUBLIC_LIFF_ID: Boolean(process.env.NEXT_PUBLIC_LIFF_ID),
+    },
+  });
 }
