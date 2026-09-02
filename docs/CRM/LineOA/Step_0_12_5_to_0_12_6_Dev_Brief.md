@@ -62,7 +62,8 @@ No hardcoded userId
 
 ### 3.2 เตรียมหน้า LIFF Endpoint
 
-Endpoint URL ปัจจุบันตั้งไว้ที่ `https://thunder-one-connected-organization.vercel.app/th` จึงต้องรองรับ LIFF flow บนหน้า/path ที่ใช้งานจริง หรือ Dev สามารถแยก path LIFF ภายหลังได้ถ้าเหมาะกับ codebase.
+Endpoint URL ปัจจุบันตั้งไว้ที่ `https://thunder-one-connected-organization.vercel.app/th/liff/talk-to-us` << แก้ตรงนี้ 
+จึงต้องรองรับ LIFF flow บนหน้า/path ที่ใช้งานจริง หรือ Dev สามารถแยก path LIFF ภายหลังได้ถ้าเหมาะกับ codebase.
 
 - Load LINE LIFF SDK
 - ใช้ LIFF ID จาก LINE Developers

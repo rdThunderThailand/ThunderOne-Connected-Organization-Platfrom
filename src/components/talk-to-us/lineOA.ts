@@ -1,10 +1,10 @@
-// === "คุยผ่าน LINE" → LIFF Talk-to-us hand-off (Step 0.12) ===
+// === "คุยผ่าน LINE" → LIFF Talk-to-us hand-off (Step 0.12.6) ===
 //
-// For Digital Signage the wizard mints a one-time `lead_token`
-// (POST /api/line/lead-token) and sends the customer to the LIFF Endpoint
-// page with it. That page verifies the LINE identity and pushes the §5
-// summary to the real user — no hardcoded userId
-// (docs/CRM/LineOA/step-0.12 §3, §4).
+// For Digital Signage the wizard mints a one-time `lead_token` bound to the
+// persisted lead (POST /api/line/lead-token) and sends the customer to the
+// LIFF Endpoint page with it. That page verifies the LINE identity and
+// pushes the §5 summary to the real user — no hardcoded userId
+// (docs/CRM/LineOA/Step_0_12_5_to_0_12_6_Dev_Brief.md §4).
 
 const LIFF_ID = process.env.NEXT_PUBLIC_LIFF_ID;
 
