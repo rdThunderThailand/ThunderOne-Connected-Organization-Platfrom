@@ -49,6 +49,10 @@ type TalkToUsState = {
   // submit
   submitStatus: SubmitStatus;
   crmContactId: string | null; // kept for logging/debug, not shown in the UI
+  // The `line_user.leads` row id from POST /api/crm/lead (Step 0.12.6 §4.1).
+  // Threaded into POST /api/line/lead-token so the link token binds to a
+  // persisted lead. Not shown in the UI.
+  leadId: string | null;
 
   // channel
   selectedChannel: TalkToUsChannel | null;
@@ -91,6 +95,7 @@ const initialState: TalkToUsState = {
   preferredTime: "",
   submitStatus: "idle",
   crmContactId: null,
+  leadId: null,
   selectedChannel: null,
 };
 
@@ -165,13 +170,14 @@ export const useTalkToUsStore = create<TalkToUsState & TalkToUsActions>((set, ge
         body: JSON.stringify(buildLeadPayload(draft)),
       });
       const json = (await res.json().catch(() => null)) as
-        | { ok?: boolean; crmContactId?: string }
+        | { ok?: boolean; crmContactId?: string | null; lead_id?: string }
         | null;
 
       if (res.ok && json?.ok) {
         set({
           submitStatus: "idle",
           crmContactId: json.crmContactId ?? null,
+          leadId: json.lead_id ?? null,
           step: "channel",
         });
       } else {
@@ -185,23 +191,27 @@ export const useTalkToUsStore = create<TalkToUsState & TalkToUsActions>((set, ge
   chooseLine: async () => {
     const s = get();
 
-    // Step 0.12: Digital Signage → mint a one-time lead_token and hand off
-    // to the LIFF page, which links the LINE identity and pushes the §5
-    // summary to the real user (docs/CRM/LineOA/step-0.12 §3, §4). This
-    // replaces the Step 0.11 fire-and-forget /api/line/lead-summary call to
-    // a hardcoded userId. Other topics keep the placeholder behaviour.
+    // Step 0.12: Digital Signage → mint a one-time lead_token bound to the
+    // persisted lead (leadId from POST /api/crm/lead) and hand off to the
+    // LIFF page, which links the LINE identity and pushes the §5 summary to
+    // the real user (docs/CRM/LineOA/Step_0_12_5_to_0_12_6_Dev_Brief.md
+    // §4). Other topics keep the placeholder behaviour.
     //
-    // A token failure must never block the confirmation step (same rule as
-    // Step 0.11) — on any error we fall through to the placeholder path.
-    if (s.selectedTopic === "digital-signage" && isLiffConfigured) {
+    // A token failure must never block the confirmation step — on any error
+    // (including a missing leadId) we fall through to the placeholder path.
+    if (s.selectedTopic === "digital-signage" && isLiffConfigured && s.leadId) {
       const tab = openDeferredTab();
       try {
         const res = await fetch("/api/line/lead-token", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(
-            buildLeadSummaryPayload({ firstName: s.firstName, answers: s.answers }),
-          ),
+          body: JSON.stringify({
+            lead_id: s.leadId,
+            line_summary: buildLeadSummaryPayload({
+              firstName: s.firstName,
+              answers: s.answers,
+            }),
+          }),
         });
         const json = (await res.json().catch(() => null)) as
           | { ok?: boolean; lead_token?: string }

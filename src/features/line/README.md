@@ -4,7 +4,9 @@ Backend-only surface for the LINE Official Account.
 
 - Round-1 webhook brief: [`docs/CRM/LineOA/lineOA 31aug.md`](../../../docs/CRM/LineOA/lineOA%2031aug.md)
 - Step 0.11 (Talk-to-us → LINE summary) brief: [`docs/CRM/LineOA/lineOA 1sep.md`](../../../docs/CRM/LineOA/lineOA%201sep.md)
-- Step 0.12 (Website lead ↔ LINE identity linking) brief: [`docs/CRM/LineOA/step-0.12`](../../../docs/CRM/LineOA/step-0.12)
+- Step 0.12.5–0.12.6 (LIFF + Website lead ↔ LINE identity linking) brief: [`docs/CRM/LineOA/Step_0_12_5_to_0_12_6_Dev_Brief.md`](../../../docs/CRM/LineOA/Step_0_12_5_to_0_12_6_Dev_Brief.md)
+
+The lead ↔ LINE mapping is persisted in Supabase — see [`src/features/db`](../db) and [`supabase/schema.sql`](../../../supabase/schema.sql).
 
 ## Scope — round 1 webhook (31aug §3, §9)
 
@@ -20,37 +22,37 @@ identity linking, auto-reply / bot logic.
 
 ## Scope — Step 0.11: Talk-to-us → LINE summary (1sep §2)
 
-Build a Thai summary of a Digital Signage lead and push it to LINE:
+`buildLineLeadSummary(input)` — internal slugs → the §5 customer text.
+Pure; TH copy + slug→label maps live in `summaryLabels.ts`. It is now
+consumed only by `link-lead` (the standalone `/api/line/lead-summary` route
+and its hardcoded `LINE_TEST_USER_ID` were removed in Step 0.12.6).
 
-- `buildLineLeadSummary(input)` — internal slugs → the §5 customer text
-- `POST /api/line/lead-summary` — validate → build → `pushLineMessages`
-- recipient is a single hardcoded `LINE_TEST_USER_ID` (no Lead ↔ LINE
-  identity link yet — that is Step 0.12)
-- the website wizard calls it fire-and-forget after "คุยผ่าน LINE", for
-  the Digital Signage topic only
+## Scope — Step 0.12.6: Website lead ↔ LINE identity linking
 
-**Out of scope (1sep §11):** real Lead ↔ LINE userId linking, LIFF,
-HubSpot, consent gate, Flex/Rich messages, non-DS topics.
+No hardcoded userId anywhere: persist every submission, resolve the real
+LINE `sub` for the one the customer is linking, push the Step 0.11 summary
+there, and record `lead_id ↔ line_user_id`.
 
-## Scope — Step 0.12: Website lead ↔ LINE identity linking (step-0.12)
+- `POST /api/crm/lead` — writes a `line_user.leads` row (leads-first) and
+  returns `lead_id` alongside the CRM outcome (brief §4.1)
+- `POST /api/line/lead-token` — wizard button → `{ lead_id, line_summary }`
+  → mint an **opaque**, single-use, 15-min `lead_token`; its row in
+  `line_user.lead_link_tokens` holds `sha256(token)` + the summary DTO +
+  expiry (`src/features/db/leadLinkTokens.ts`)
+- LIFF page `/[locale]/liff/talk-to-us` (`LiffTalkToUsClient.tsx`) —
+  `liff.init()` → LINE Login → `liff.getIDToken()` → `POST /api/line/link-lead`
+- `POST /api/line/link-lead` — peek token → verify the ID token against LINE
+  (`verifyLineIdToken.ts`) → link `lead_id ↔ sub` (refuses to overwrite a
+  different user, §4.6) → consume the token → push the summary. Decision 5a:
+  a push failure still returns `200 { …, summary_delivered: false }` — the
+  link is committed, delivery is a separate status.
 
-Drop the hardcoded `LINE_TEST_USER_ID`: resolve the real LINE userId for a
-just-submitted lead and push the Step 0.11 summary there.
+Token state (expiry, one-time use) lives in Supabase, so one-time use is
+enforced across serverless instances (brief §4.2, TC-09).
 
-- `POST /api/line/lead-token` — wizard button → mint a signed, 15-min
-  `lead_token` carrying the summary DTO + a throwaway `lead_id` (`leadToken.ts`)
-- LIFF page `/[locale]/liff/talk-to-us` (`LiffTalkToUsClient.tsx`) — `liff.init()`
-  → LINE Login → `liff.getIDToken()` → `POST /api/line/link-lead`
-- `POST /api/line/link-lead` — verify the `lead_token` signature/expiry,
-  verify the ID token against LINE (`verifyLineIdToken.ts`), push the summary
-  to the resolved `sub`, return `{ lead_id, line_user_id, line_identity_status }`
-
-Token storage is **stateless** (the signed token IS the state) — chosen over
-Vercel KV for the PoC. Trade-off: one-time use (§8, TC-06) is best-effort
-per serverless instance only.
-
-**Out of scope (step-0.12 §15):** HubSpot mapping, Company/Deal, Customer
-360, real account linking, consent re-check, shared token storage.
+**Out of scope (brief §9):** HubSpot mapping of `line_user_id`,
+Company/Deal, Customer 360, account/membership linking, PDPA consent
+re-check, queued/retried push.
 
 ## Flow
 
@@ -74,15 +76,15 @@ LINE Platform
 | `send.ts` | Outbound Messaging API calls: `pushLineMessages(to, …)` / `replyLineMessages(replyToken, …)`. |
 | `summaryLabels.ts` | Step 0.11: TH display copy — slug → label maps + the §5 message template. |
 | `buildLeadSummary.ts` | Step 0.11: `LineLeadSummaryInput` (zod) + `buildLineLeadSummary()` (pure). |
-| `leadToken.ts` | Step 0.12: `issueLeadToken()` / `readLeadToken()` — HMAC-signed, self-contained, 15-min `lead_token`. |
-| `verifyLineIdToken.ts` | Step 0.12: `verifyLineIdToken()` — POST the LIFF ID token to LINE, return the verified `sub` (LINE userId). |
-| `LiffTalkToUsClient.tsx` | Step 0.12: `"use client"` UI for the LIFF Endpoint page (init → login → getIDToken → link). |
+| `verifyLineIdToken.ts` | Step 0.12.6: `verifyLineIdToken()` — POST the LIFF ID token to LINE, return the verified `sub` (LINE userId). |
+| `LiffTalkToUsClient.tsx` | Step 0.12.6: `"use client"` UI for the LIFF Endpoint page (init → login → getIDToken → link). |
 | `index.ts` | Public surface. |
+| `../db/*` | Step 0.12.6: Supabase persistence — `line_user.leads` + `line_user.lead_link_tokens` (`createLead`, `linkLeadToLineUser`, `issueLinkToken`, `peekLinkToken`, `consumeLinkToken`, …). |
 | `../../app/api/line/webhook/route.ts` | Inbound webhook route handler. |
-| `../../app/api/line/lead-summary/route.ts` | Step 0.11: build + push the lead summary. |
-| `../../app/api/line/lead-token/route.ts` | Step 0.12: mint a `lead_token` from the summary DTO. |
-| `../../app/api/line/link-lead/route.ts` | Step 0.12: verify token + ID token, link, push summary. |
-| `../../app/[locale]/liff/talk-to-us/page.tsx` | Step 0.12: LIFF Endpoint page (thin server wrapper). |
+| `../../app/api/crm/lead/route.ts` | Step 0.12.6: persist the lead (leads-first) + CRM upsert; returns `lead_id`. |
+| `../../app/api/line/lead-token/route.ts` | Step 0.12.6: mint an opaque one-time `lead_token` bound to `lead_id`. |
+| `../../app/api/line/link-lead/route.ts` | Step 0.12.6: peek token → verify ID token → link → consume → push. |
+| `../../app/[locale]/liff/talk-to-us/page.tsx` | Step 0.12.6: LIFF Endpoint page (thin server wrapper). |
 
 ## Env
 
@@ -94,11 +96,11 @@ Settings → Environment Variables.
 | `LINE_CHANNEL_SECRET` | LINE console → Basic settings | inbound — `x-line-signature` check |
 | `LINE_CHANNEL_ACCESS_TOKEN` | LINE console → Messaging API | outbound — `push` / `reply` (`send.ts`) |
 | `LINE_CHANNEL_ID` | LINE console → Basic settings | recorded for the identity-linking step |
-| `LINE_TEST_USER_ID` | a webhook log line (test user's `source.userId`) | Step 0.11 — the single hardcoded recipient for `/api/line/lead-summary`. Missing → the route 500s. |
 | `LINE_ECHO_REPLY` | — | set to `1` to make the webhook echo inbound text back (test outbound send). Off by default. |
-| `NEXT_PUBLIC_LIFF_ID` | LINE console → LINE Login channel → LIFF | Step 0.12 — **public**, inlined at build. The LIFF page + the `liff.line.me/<id>` URL the wizard opens. |
-| `LINE_LOGIN_CHANNEL_ID` | LINE console → LINE Login channel → Basic settings | Step 0.12 — `client_id` for verifying the LIFF ID token (`verifyLineIdToken.ts`). Different channel from `LINE_CHANNEL_ID`. |
-| `LINE_LEAD_TOKEN_SECRET` | any 32-byte random hex | Step 0.12 — HMAC key for the `lead_token` (`leadToken.ts`). Missing → `/api/line/lead-token` + `/api/line/link-lead` 500. |
+| `NEXT_PUBLIC_LIFF_ID` | LINE console → LINE Login channel → LIFF | Step 0.12.6 — **public**, inlined at build. The LIFF page + the `liff.line.me/<id>` URL the wizard opens. |
+| `LINE_LOGIN_CHANNEL_ID` | LINE console → LINE Login channel → Basic settings | Step 0.12.6 — `client_id` for verifying the LIFF ID token (`verifyLineIdToken.ts`). Different channel from `LINE_CHANNEL_ID`. |
+| `SUPABASE_URL` | Supabase → Project Settings → API | Step 0.12.6 — lead ↔ LINE store. Missing → `/api/crm/lead` + both LINE token routes 500. |
+| `SUPABASE_SERVICE_ROLE_KEY` | Supabase → Project Settings → API (`service_role`) | Step 0.12.6 — server-only, **bypasses RLS**. Never `NEXT_PUBLIC_`, never logged. |
 
 ## Outbound messages
 
@@ -141,53 +143,46 @@ curl -sS -o /dev/null -w '%{http_code}\n' localhost:3000/api/line/webhook \
 # → 401
 ```
 
-### Step 0.11 — lead summary
+### Step 0.12.6 — lead-token + link-lead
 
 ```bash
-# needs LINE_TEST_USER_ID + LINE_CHANNEL_ACCESS_TOKEN set in .env
-curl -sS localhost:3000/api/line/lead-summary \
-  -H 'content-type: application/json' -d '{
-    "first_name": "Somchai",
-    "interested_solution": "Digital Signage & Media",
-    "qualification": { "screen_count": "21-50", "usage_type": "multi-branch" },
-    "contact_preference": { "channel": "line" }
-  }'
-# → { "ok": true, "preview": "สวัสดีครับ คุณ Somchai 👋\n…" }  + the test user's LINE buzzes
+# one-time: run supabase/schema.sql in the Supabase SQL Editor, then add
+# `line_user` under Dashboard → Project Settings → API → "Exposed schemas".
+# needs SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY + LINE_LOGIN_CHANNEL_ID
+#       + LINE_CHANNEL_ACCESS_TOKEN in .env
 
-# bad body → 422 { ok:false, error:"validation_failed", issues:[…] }
-# LINE_TEST_USER_ID unset → 500 { ok:false, error:"server_misconfigured" }
-# LINE API rejects → 502 { ok:false, error:"line_push_failed", detail }
-```
+# 0. create a lead (or use the wizard) — note the returned lead_id:
+curl -sS localhost:3000/api/crm/lead -H 'content-type: application/json' -d '{ … canonical payload … }'
+# → { "ok": true, "lead_id": "<uuid>", "crmContactId": "STUB-1000", "crm_status": "ok" }
 
-### Step 0.12 — lead-token + link-lead
-
-```bash
-# needs LINE_LEAD_TOKEN_SECRET + LINE_LOGIN_CHANNEL_ID + LINE_CHANNEL_ACCESS_TOKEN
-
-# 1. mint a lead_token (same DTO shape as lead-summary):
+# 1. mint a lead_token bound to that lead:
 curl -sS localhost:3000/api/line/lead-token \
   -H 'content-type: application/json' -d '{
-    "first_name": "Somchai",
-    "interested_solution": "Digital Signage & Media",
-    "qualification": { "screen_count": "21-50", "usage_type": "multi-branch" },
-    "contact_preference": { "channel": "line" }
+    "lead_id": "<uuid from step 0>",
+    "line_summary": {
+      "first_name": "Somchai",
+      "interested_solution": "Digital Signage & Media",
+      "qualification": { "screen_count": "21-50", "usage_type": "multi-branch" },
+      "contact_preference": { "channel": "line" }
+    }
   }'
-# → { "ok": true, "lead_id": "LEAD-XXXXXXXX", "lead_token": "<b64>.<sig>", "expires_in": 900 }
+# → { "ok": true, "lead_token": "tkn_<64hex>", "expires_in": 900 }
 
 # 2. link (id_token comes from liff.getIDToken() in a real LINE client):
 curl -sS localhost:3000/api/line/link-lead \
   -H 'content-type: application/json' \
   -d '{ "lead_token": "<from step 1>", "id_token": "<real LINE ID token>" }'
-# happy path → { ok:true, lead_id, line_user_id:"U…", line_identity_status:"linked" } + LINE buzzes
-# tampered token       → 401 { ok:false, error:"invalid_lead_token", reason:"bad_signature" }
-# expired token        → 401 { ok:false, error:"invalid_lead_token", reason:"expired" }
-# bad / stale id_token → 401 { ok:false, error:"line_identity_unverified" }
-# replayed token       → 409 { ok:false, error:"lead_token_used" }   (same instance only)
-# push fails           → 502 { ok:false, error:"line_push_failed", detail }
+# happy path            → 200 { ok:true, lead_id, line_user_id:"U…", line_identity_status:"linked", summary_delivered:true } + LINE buzzes
+# unknown / bad token   → 401 { ok:false, error:"invalid_lead_token" }
+# expired token         → 410 { ok:false, error:"lead_token_expired" }
+# reused token          → 409 { ok:false, error:"lead_token_used" }
+# lead linked elsewhere → 409 { ok:false, error:"linked_to_other_user" }
+# bad / stale id_token  → 401 { ok:false, error:"line_identity_unverified" }
+# push fails            → 200 { ok:true, …, summary_delivered:false }   (decision 5a — link still committed)
 ```
 
 The full happy path can only be exercised from inside the LINE in-app
-browser (a real `id_token`) — see the Step 0.12 test cases in the brief.
+browser (a real `id_token`) — see the Step 0.12.6 test cases in the brief.
 
 ## First webhook test case (31aug §8) — with PM
 
@@ -207,10 +202,13 @@ browser (a real `id_token`) — see the Step 0.12 test cases in the brief.
 | `events.ts` | only `follow` + `message:text` mapped; everything else → `unhandled` | add event types as later steps need them |
 | `webhook/route.ts` | `LINE_ECHO_REPLY` echo is a raw test hook, not real bot logic | replace with intent-driven replies later |
 | `send.ts` | awaits the outbound call inside the request | move to a queue if latency ever matters |
-| `lead-summary/route.ts` | one hardcoded `LINE_TEST_USER_ID`; no consent re-check | superseded by `link-lead` for the wizard flow; keep for standalone curl testing |
 | `summaryLabels.ts` | fixed "ครับ" / 👋 wording straight from 1sep §5; TH only | brand-voice pass (gender-neutral); add EN if needed |
-| `leadToken.ts` / `link-lead/route.ts` | stateless token — one-time use is best-effort per instance | move token state to Vercel KV; add a real `identity` table + queued push |
+| `link-lead/route.ts` | link + token-consume are sequential calls, not one DB transaction | Postgres function / RPC if the race window ever matters |
+| `link-lead/route.ts` | a failed push is only logged — no automated retry | queue the push; a cron / worker retries `linked` rows with `summary_delivered_at is null` |
+| `lead-token/route.ts` | `line_summary` DTO comes from the client | rebuild it server-side from `leads.canonical` once the canonical payload keeps the DS qualification slugs |
 | `link-lead/route.ts` | no consent re-check before pushing to a real user | PDPA consent gate before any real-customer push |
+| `db/client.ts` | writes with the god-mode `service_role` key | scoped Postgres role with grants on `line_user.*` only, via a direct `pg` connection |
 | `LiffTalkToUsClient.tsx` | inherits the site Navbar/Footer chrome from `[locale]/layout.tsx` | route group / conditional chrome for `/liff/*` |
 | `liff/talk-to-us/page.tsx` | copy is hardcoded TH literals | post-PoC: `LiffTalkToUs` i18n namespace + pick locale from `liff.getLanguage()` (or `?lang=`), keep one route/endpoint — see the TODO in `page.tsx` |
-| — | no persistence, no CRM | Step 0.12+: persist the lead, sync `line_user_id` into the CRM |
+| `db/schema.sql` | applied by hand in the SQL Editor | convert to Supabase CLI migrations if the schema starts evolving |
+| — | `line_user_id` is not synced into the CRM | Step 0.13+: push the linked id to the HubSpot contact |

@@ -29,6 +29,9 @@ export type LiffTalkToUsCopy = {
   linking: string;
   linkedTitle: string;
   linkedBody: string;
+  // Shown instead of `linkedBody` when the link succeeded but the summary
+  // push did not (decision 5a — link and delivery are separate statuses).
+  linkedPendingBody: string;
   errorTitle: string;
   errorBody: string;
   missingToken: string;
@@ -52,6 +55,8 @@ export function LiffTalkToUsClient({ copy }: { copy: LiffTalkToUsCopy }) {
     LIFF_ID ? "initializing" : "config-missing",
   );
   const [detail, setDetail] = useState<string | null>(null);
+  // Optimistic: only flips false if the link API says the push failed.
+  const [summaryDelivered, setSummaryDelivered] = useState(true);
   const startedRef = useRef(false);
 
   useEffect(() => {
@@ -122,7 +127,18 @@ export function LiffTalkToUsClient({ copy }: { copy: LiffTalkToUsCopy }) {
           return;
         }
 
-        if (!cancelled) setPhase("linked");
+        // Link succeeded. The push is a separate status (decision 5a).
+        let delivered = true;
+        try {
+          const body = (await res.json()) as { summary_delivered?: boolean };
+          delivered = body?.summary_delivered !== false;
+        } catch {
+          // keep the optimistic default
+        }
+        if (!cancelled) {
+          setSummaryDelivered(delivered);
+          setPhase("linked");
+        }
       } catch (error) {
         fail(error instanceof Error ? error.message : String(error));
       }
@@ -149,7 +165,9 @@ export function LiffTalkToUsClient({ copy }: { copy: LiffTalkToUsCopy }) {
           <p className="text-base font-medium text-emerald-600">
             {copy.linkedTitle}
           </p>
-          <p className="text-sm text-slate-600">{copy.linkedBody}</p>
+          <p className="text-sm text-slate-600">
+            {summaryDelivered ? copy.linkedBody : copy.linkedPendingBody}
+          </p>
         </div>
       )}
 
