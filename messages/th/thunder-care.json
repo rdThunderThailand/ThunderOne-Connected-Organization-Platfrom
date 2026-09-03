@@ -14,32 +14,37 @@
     "ctaPrimary": "พูดคุยกับเรา",
     "ctaSecondary": "ดูการทำงานจริง",
     "dashboard": {
-      "productLabel": "T1 care",
-      "panelTitle": "ภาพรวมบริการ",
-      "dateRange": "10 - 16 พ.ค. 2568",
-      "nav": ["ภาพรวม", "เหตุขัดข้อง", "งานขอรับบริการ", "ปัญหา", "อุปกรณ์", "สัญญาบริการ (SLA)", "ความรู้", "ผู้ใช้งาน", "รายงาน", "ตั้งค่า"],
-      "stats": {
-        "openTickets": { "value": "128", "label": "คำขอที่เปิดอยู่", "delta": "+24% จากสัปดาห์ก่อน" },
-        "requestsToday": { "value": "45", "label": "คำขอวันนี้", "delta": "+12%" },
-        "resolvedToday": { "value": "83", "label": "แก้ไขแล้ววันนี้", "delta": "+18%" },
-        "slaAchievement": { "value": "98%", "label": "ความสำเร็จ SLA", "delta": "+5%" }
-      },
-      "recentTicketsTitle": "คำขอล่าสุด",
-      "recentTickets": [
-        { "title": "INC-2025-0512", "meta": "อินเทอร์เน็ตไม่เสถียร", "status": "กำลังดำเนินการ" },
-        { "title": "SR-2025-0511", "meta": "ติดตั้ง Microsoft 365", "status": "มอบหมายแล้ว" },
-        { "title": "INC-2025-0510", "meta": "เครื่องพิมพ์ใช้งานไม่ได้", "status": "แก้ไขแล้ว" }
+      "productLabel": "ThunderOne",
+      "productSubLabel": "ASSET WORKSPACE",
+      "greeting": "สวัสดีตอนเช้า",
+      "userName": "นักกรา ส.",
+      "greetingSubtitle": "ทุกอย่างพร้อมสำหรับการทำงานในวันนี้",
+      "searchPlaceholder": "ค้นหา (อุปกรณ์, งาน, หมายเลข Ticket...)",
+      "userRole": "พนักงาน",
+      "nav": ["หน้าหลัก", "ทรัพย์สินของฉัน", "คำขอของฉัน", "การคืนและส่งมอบ", "แจ้งปัญหา", "คลังความรู้", "ตั้งค่า"],
+      "readinessTitle": "ความพร้อมในการทำงานของคุณ",
+      "readinessPercent": 92,
+      "readinessCenterLabel": "พร้อมทำงาน",
+      "readinessItems": [
+        { "label": "อุปกรณ์", "ready": 4, "total": 4, "statusLabel": "พร้อม" },
+        { "label": "ซอฟต์แวร์และบริการ", "ready": 3, "total": 4, "statusLabel": "พร้อม" },
+        { "label": "สิทธิการใช้งาน", "ready": 5, "total": 5, "statusLabel": "พร้อม" },
+        { "label": "พื้นที่ทำงาน", "ready": 2, "total": 2, "statusLabel": "พร้อม" }
       ],
-      "ticketByCategoryTitle": "หมวดหมู่คำขอ",
-      "ticketByCategory": [
-        { "label": "IT Support", "percent": 35 },
-        { "label": "ฮาร์ดแวร์", "percent": 25 },
-        { "label": "ซอฟต์แวร์", "percent": 18 },
-        { "label": "เครือข่าย", "percent": 12 },
-        { "label": "อื่นๆ", "percent": 10 }
+      "viewAllReadiness": "ดูรายละเอียดทั้งหมด",
+      "quickActionsTitle": "ต้องการทำอะไร?",
+      "quickActions": [
+        { "title": "ขอสิทธิ์/ติดตั้ง", "description": "อุปกรณ์, ซอฟต์แวร์, สิทธิการใช้งาน" },
+        { "title": "แจ้งปัญหา", "description": "อุปกรณ์, ซอฟต์แวร์, พื้นที่ทำงาน" },
+        { "title": "ขอความช่วยเหลือ", "description": "สอบถามหรือขอคำแนะนำ" },
+        { "title": "คืนและส่งมอบ", "description": "คืนอุปกรณ์หรือส่งมอบให้พนักงาน" }
       ],
-      "viewAllTickets": "ดูทั้งหมด",
-      "viewReport": "ดูรายงาน"
+      "announcementsTitle": "ประกาศและข่าวสาร",
+      "viewAllAnnouncements": "ดูทั้งหมด",
+      "announcements": [
+        { "title": "กิจกรรม Company Townhall", "meta": "วันศุกร์ที่ 25 เม.ย. 2568 เวลา 10:00 น." },
+        { "title": "นโยบายการทำงาน Hybrid", "meta": "มีผลบังคับใช้ตั้งแต่ 20 เม.ย. 2568" }
+      ]
     }
   },
   "challenge": {
@@ -77,10 +82,22 @@
     "trackingCard": {
       "title": "ติดตามสถานะคำขอ #INC-2025-0512",
       "steps": [
-        { "label": "แจ้งปัญหา", "time": "10:15" },
-        { "label": "มอบหมาย", "time": "10:25" },
-        { "label": "กำลังดำเนินการ", "time": "10:40" },
-        { "label": "เสร็จสิ้น", "time": "11:30" }
+        {
+          "label": "แจ้งปัญหา",
+          "time": "10:15"
+        },
+        {
+          "label": "มอบหมาย",
+          "time": "10:25"
+        },
+        {
+          "label": "กำลังดำเนินการ",
+          "time": "10:40"
+        },
+        {
+          "label": "เสร็จสิ้น",
+          "time": "11:30"
+        }
       ],
       "assignedToLabel": "ผู้รับผิดชอบ",
       "assignedToValue": "David Lee (Network Engineer)",
@@ -95,34 +112,88 @@
   "howItWorks": {
     "title": "ทำงานอย่างเป็นระบบ ในทุกขั้นตอน",
     "steps": [
-      { "title": "แจ้งปัญหา", "description": "ผู้ใช้งานแจ้งปัญหา ผ่าน Web, Mobile หรือ Line OA" },
-      { "title": "รับและจัดลำดับ", "description": "ระบบรับคำขอและจัดลำดับความสำคัญอัตโนมัติ" },
-      { "title": "มอบหมายงาน", "description": "มอบหมายให้ทีม/บุคคล ที่เหมาะสม" },
-      { "title": "ดำเนินการและติดตาม", "description": "อัปเดตความคืบหน้าแบบเรียลไทม์" },
-      { "title": "ปิดงานและประเมิน", "description": "ปิดงานและประเมินความพึงพอใจของผู้ใช้งาน" },
-      { "title": "วิเคราะห์และพัฒนา", "description": "สรุปปัญหาและปรับปรุงบริการอย่างต่อเนื่อง" }
+      {
+        "title": "แจ้งปัญหา",
+        "description": "ผู้ใช้งานแจ้งปัญหา ผ่าน Web, Mobile หรือ Line OA"
+      },
+      {
+        "title": "รับและจัดลำดับ",
+        "description": "ระบบรับคำขอและจัดลำดับความสำคัญอัตโนมัติ"
+      },
+      {
+        "title": "มอบหมายงาน",
+        "description": "มอบหมายให้ทีม/บุคคล ที่เหมาะสม"
+      },
+      {
+        "title": "ดำเนินการและติดตาม",
+        "description": "อัปเดตความคืบหน้าแบบเรียลไทม์"
+      },
+      {
+        "title": "ปิดงานและประเมิน",
+        "description": "ปิดงานและประเมินความพึงพอใจของผู้ใช้งาน"
+      },
+      {
+        "title": "วิเคราะห์และพัฒนา",
+        "description": "สรุปปัญหาและปรับปรุงบริการอย่างต่อเนื่อง"
+      }
     ]
   },
   "capabilities": {
     "title": "ความสามารถหลัก",
     "items": [
-      { "title": "Ticketing & Workflow", "description": "จัดการงานบริการด้วยเวิร์กโฟลว์ที่ยืดหยุ่น" },
-      { "title": "SLA Management", "description": "กำหนด SLA แจ้งเตือน และติดตามผล" },
-      { "title": "Asset & Device Management", "description": "เก็บข้อมูลอุปกรณ์ครบวงจร ตลอดวงจรชีวิต" },
-      { "title": "Preventive Maintenance", "description": "วางแผนและแจ้งเตือนบำรุงรักษาเชิงป้องกัน" },
-      { "title": "Knowledge Base", "description": "ศูนย์รวมความรู้และวิธีแก้ไขทั่วไป" },
-      { "title": "Reports & Analytics", "description": "รายงานและแดชบอร์ดเพื่อการตัดสินใจ" }
+      {
+        "title": "Ticketing & Workflow",
+        "description": "จัดการงานบริการด้วยเวิร์กโฟลว์ที่ยืดหยุ่น"
+      },
+      {
+        "title": "SLA Management",
+        "description": "กำหนด SLA แจ้งเตือน และติดตามผล"
+      },
+      {
+        "title": "Asset & Device Management",
+        "description": "เก็บข้อมูลอุปกรณ์ครบวงจร ตลอดวงจรชีวิต"
+      },
+      {
+        "title": "Preventive Maintenance",
+        "description": "วางแผนและแจ้งเตือนบำรุงรักษาเชิงป้องกัน"
+      },
+      {
+        "title": "Knowledge Base",
+        "description": "ศูนย์รวมความรู้และวิธีแก้ไขทั่วไป"
+      },
+      {
+        "title": "Reports & Analytics",
+        "description": "รายงานและแดชบอร์ดเพื่อการตัดสินใจ"
+      }
     ]
   },
   "idealFor": {
     "title": "เหมาะสำหรับทุกองค์กร",
     "items": [
-      { "title": "องค์กรธุรกิจทุกขนาด", "description": "เพิ่มประสิทธิภาพการทำงานของพนักงาน" },
-      { "title": "ธุรกิจค้าปลีกและแฟรนไชส์", "description": "สนับสนุนรวดเร็วในทุกสาขา" },
-      { "title": "โรงงานอุตสาหกรรม", "description": "รักษาสายการผลิตให้ทำงานต่อเนื่อง" },
-      { "title": "สถาบันการศึกษาทุกระดับ", "description": "สนับสนุนบุคลากรและนักเรียน" },
-      { "title": "โรงพยาบาลและสถานพยาบาล", "description": "ไอทีเชื่อถือได้สำหรับบริการวิกฤต" },
-      { "title": "หน่วยงานภาครัฐและรัฐวิสาหกิจ", "description": "ให้บริการประชาชนได้ดีขึ้น" }
+      {
+        "title": "องค์กรธุรกิจทุกขนาด",
+        "description": "เพิ่มประสิทธิภาพการทำงานของพนักงาน"
+      },
+      {
+        "title": "ธุรกิจค้าปลีกและแฟรนไชส์",
+        "description": "สนับสนุนรวดเร็วในทุกสาขา"
+      },
+      {
+        "title": "โรงงานอุตสาหกรรม",
+        "description": "รักษาสายการผลิตให้ทำงานต่อเนื่อง"
+      },
+      {
+        "title": "สถาบันการศึกษาทุกระดับ",
+        "description": "สนับสนุนบุคลากรและนักเรียน"
+      },
+      {
+        "title": "โรงพยาบาลและสถานพยาบาล",
+        "description": "ไอทีเชื่อถือได้สำหรับบริการวิกฤต"
+      },
+      {
+        "title": "หน่วยงานภาครัฐและรัฐวิสาหกิจ",
+        "description": "ให้บริการประชาชนได้ดีขึ้น"
+      }
     ]
   },
   "platform": {
@@ -131,10 +202,22 @@
     "exploreLink": "ดูภาพรวมแพลตฟอร์ม",
     "centerLabel": "ThunderOne Platform",
     "connectedItems": [
-      { "key": "communication", "label": "Communication" },
-      { "key": "work", "label": "Work" },
-      { "key": "assetIntelligence", "label": "Asset Intelligence" },
-      { "key": "thunderCare", "label": "Thunder Care" }
+      {
+        "key": "communication",
+        "label": "Communication"
+      },
+      {
+        "key": "work",
+        "label": "Work"
+      },
+      {
+        "key": "assetIntelligence",
+        "label": "Asset Intelligence"
+      },
+      {
+        "key": "thunderCare",
+        "label": "Thunder Care"
+      }
     ]
   },
   "cta": {

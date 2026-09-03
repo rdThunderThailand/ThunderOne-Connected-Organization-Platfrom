@@ -1,39 +1,41 @@
 import type { BreadcrumbItem } from "@/components/ui/Breadcrumb";
 
-export type DashboardStat = {
-  value: string;
+export type ReadinessItem = {
   label: string;
-  delta?: string;
+  ready: number;
+  total: number;
+  statusLabel: string;
 };
 
-export type RecentTicket = {
+export type QuickAction = {
+  title: string;
+  description: string;
+};
+
+export type Announcement = {
   title: string;
   meta: string;
-  status: string;
-};
-
-export type CategorySlice = {
-  label: string;
-  percent: number;
 };
 
 export type HeroDashboardContent = {
   productLabel: string;
-  panelTitle: string;
-  dateRange: string;
+  productSubLabel: string;
+  greeting: string;
+  userName: string;
+  greetingSubtitle: string;
+  searchPlaceholder: string;
+  userRole: string;
   nav: string[];
-  stats: {
-    openTickets: DashboardStat;
-    requestsToday: DashboardStat;
-    resolvedToday: DashboardStat;
-    slaAchievement: DashboardStat;
-  };
-  recentTicketsTitle: string;
-  recentTickets: RecentTicket[];
-  ticketByCategoryTitle: string;
-  ticketByCategory: CategorySlice[];
-  viewAllTickets: string;
-  viewReport: string;
+  readinessTitle: string;
+  readinessPercent: number;
+  readinessCenterLabel: string;
+  readinessItems: ReadinessItem[];
+  viewAllReadiness: string;
+  quickActionsTitle: string;
+  quickActions: QuickAction[];
+  announcementsTitle: string;
+  viewAllAnnouncements: string;
+  announcements: Announcement[];
 };
 
 export type HeroContent = {

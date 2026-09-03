@@ -1,0 +1,314 @@
+{
+  "topBar": {
+    "productName": "ThunderOne",
+    "title": "Thunder Care — See it in action",
+    "badge": "Golden Story Demo",
+    "estimatedTime": "About 3–5 minutes",
+    "exit": "Exit demo"
+  },
+  "mobileTabs": {
+    "content": "Screen",
+    "story": "Golden Story"
+  },
+  "skeletonNote": "The screen for this step is still being built — read the storyline in the Golden Story panel on the right.",
+  "stepper": {
+    "back": "Back",
+    "next": "Next",
+    "finish": "Finish demo",
+    "items": [
+      { "name": "New employee", "tagline": "The system knows and gets ready" },
+      { "name": "Self-Onboard", "tagline": "The employee does what they can" },
+      { "name": "Ready for Day One", "tagline": "Ready to work on day one" },
+      { "name": "Business at Risk", "tagline": "An issue before a key meeting" },
+      { "name": "Thunder Care", "tagline": "We handle it until you're back to work" },
+      { "name": "Business Uptime", "tagline": "Leaders see the whole picture" }
+    ]
+  },
+  "story": {
+    "title": "Our story (Golden Story)",
+    "totalLabel": "06",
+    "steps": [
+      {
+        "number": "01",
+        "title": "New employee",
+        "description": "HR adds a new hire to ThunderOne. The system immediately knows what resources the person needs and starts preparing everything ahead of time, so they are ready to work from day one.",
+        "calloutTitle": "What happens behind the scenes",
+        "calloutItems": [
+          "Creates the person's profile and role",
+          "Defines the access rights they need",
+          "Prepares devices and software",
+          "Creates onboarding tasks automatically"
+        ]
+      },
+      {
+        "number": "02",
+        "title": "Self-Onboard",
+        "description": "May self-onboards ahead of time — filling in her details, reading policies, and doing what she can herself. The system prepares everything else before her real start date.",
+        "calloutTitle": "What May gets",
+        "calloutItems": [
+          "Correct data and access from day one",
+          "Devices and software ready to use",
+          "Meets the team and culture in advance",
+          "A smooth, confident first-day experience"
+        ]
+      },
+      {
+        "number": "03",
+        "title": "Ready for Day One",
+        "description": "Everything is prepared in advance — devices, access rights, and the information she needs are ready from day one. May starts work smoothly.",
+        "calloutTitle": "What happens behind the scenes",
+        "calloutItems": [
+          "Sources and hands over the right devices",
+          "Installs and configures them ready to use",
+          "Grants access rights by role",
+          "Sets up the work environment",
+          "Notifies and tracks readiness status"
+        ]
+      },
+      {
+        "number": "04",
+        "title": "An issue before a key meeting",
+        "description": "Right before presenting a proposal to a client, May finds she can't connect to Wi-Fi and her work is at risk. She taps Report an issue in just a few clicks. ThunderOne immediately knows what happened, to whom, and what matters for the work.",
+        "calloutTitle": "What happens behind the scenes",
+        "calloutItems": [
+          "Auto-detects the device, location, and network",
+          "Checks usage history and key appointments",
+          "Prioritises urgency automatically",
+          "Routes the case to the Thunder Care team instantly"
+        ]
+      },
+      {
+        "number": "05",
+        "title": "Thunder Care has you covered",
+        "description": "The Thunder Care team takes full ownership. We already know the person, the device, and the context of the issue, so we can fix it fast and on point. Our goal is to get you back to work as quickly as possible.",
+        "calloutTitle": "What happens behind the scenes",
+        "calloutItems": [
+          "The team receives and analyses the issue quickly",
+          "Remote support, a fix, or a replacement device",
+          "Tracks the SLA until the case is closed",
+          "Keeps you updated on progress the whole time"
+        ]
+      },
+      {
+        "number": "06",
+        "title": "Business Uptime",
+        "description": "Leaders see how ready the whole organisation is — people, technology, and support systems. Thunder Care keeps the business running every day.",
+        "calloutTitle": "What happens behind the scenes",
+        "calloutItems": [
+          "Combines readiness signals for people, devices, and support",
+          "Compares against per-area targets",
+          "Flags risks that need special attention",
+          "Estimates business impact from real data"
+        ]
+      }
+    ]
+  },
+  "steps": {
+    "step1": {
+      "appShell": {
+        "productSub": "ADMIN",
+        "nav": [
+          "Home",
+          "People",
+          "Devices & Assets",
+          "Tasks & Requests",
+          "Services (Thunder Care)",
+          "Reports & Analytics",
+          "Settings"
+        ],
+        "activeNavIndex": 1,
+        "user": { "name": "Admin HR", "role": "Human Resources", "sub": "" },
+        "bottomAction": "Sign out"
+      },
+      "breadcrumb": "People overview › New employees",
+      "pageTitle": "New employees",
+      "pageSubtitle": "Track and prepare everything before employees start",
+      "exportButton": "Export report",
+      "addButton": "Add new employee",
+      "stats": [
+        { "label": "Starting soon", "value": "12", "unit": "people", "caption": "In the next 30 days" },
+        { "label": "Already started", "value": "3", "unit": "people", "caption": "In the last 7 days" },
+        { "label": "Pending action", "value": "5", "unit": "people", "caption": "Needs action" },
+        { "label": "Starting today", "value": "2", "unit": "people", "caption": "( 25 May 2025 )" }
+      ],
+      "tableTitle": "Employees starting soon",
+      "searchPlaceholder": "Search name, role, department...",
+      "filterButton": "Filters",
+      "columns": ["Name", "Role", "Department", "Start date", "Readiness status", "Actions"],
+      "rows": [
+        {
+          "name": "May Waranya Chaiwat",
+          "badge": "Starts today",
+          "role": "Sales Executive",
+          "dept": "Sales",
+          "startDate": "25 May 2025",
+          "readinessPercent": 45,
+          "readinessLabel": "Getting ready",
+          "readinessDetail": "4 of 9 items",
+          "actionButton": "View details"
+        },
+        {
+          "name": "Pattharapong Srisombat",
+          "badge": "Starts in 3 days",
+          "role": "IT Support",
+          "dept": "IT",
+          "startDate": "28 May 2025",
+          "readinessPercent": 20,
+          "readinessLabel": "Getting ready",
+          "readinessDetail": "2 of 10 items",
+          "actionButton": "View details"
+        }
+      ],
+      "viewAll": "View all"
+    },
+    "step2": {
+      "appShell": {
+        "productSub": "EMPLOYEE",
+        "nav": [
+          "Home",
+          "My onboarding",
+          "My tasks",
+          "My resources",
+          "Policies & documents",
+          "Help & contact us"
+        ],
+        "activeNavIndex": 1,
+        "user": { "name": "May Waranya", "role": "New employee", "sub": "Sales Executive" },
+        "bottomAction": "Sign out"
+      },
+      "pageKicker": "Self-Onboard",
+      "pageTitle": "My onboarding",
+      "greeting": "Hi May 👋",
+      "greetingSub": "Please complete the items below before your official start date",
+      "progressTitle": "Overall progress",
+      "progressPercent": 55,
+      "progressDetail": "5 of 9 items done",
+      "progressEta": "Expected to finish within 2 days",
+      "tabs": ["All (9)", "To do (4)", "In progress (1)", "Done (4)"],
+      "tasks": [
+        {
+          "title": "Personal details and documents",
+          "description": "Fill in your details and upload the required documents",
+          "status": "done",
+          "statusLabel": "Done",
+          "meta": "Completed 18 May 2025"
+        },
+        {
+          "title": "Read and accept policies",
+          "description": "Read the company policies and accept the terms",
+          "status": "doing",
+          "statusLabel": "In progress",
+          "meta": "5 minutes left"
+        },
+        {
+          "title": "Security and data protection",
+          "description": "Learn the guidelines for keeping data secure",
+          "status": "todo",
+          "statusLabel": "To do",
+          "meta": "About 15 minutes"
+        },
+        {
+          "title": "My devices and software",
+          "description": "Check the devices and software you'll receive",
+          "status": "todo",
+          "statusLabel": "To do",
+          "meta": "About 10 minutes"
+        },
+        {
+          "title": "Work info and access rights",
+          "description": "Check your work info and system access rights",
+          "status": "done",
+          "statusLabel": "Done",
+          "meta": "Completed 18 May 2025"
+        },
+        {
+          "title": "Get to know your team",
+          "description": "Learn about the team and the people you'll work with",
+          "status": "done",
+          "statusLabel": "Done",
+          "meta": "Completed 17 May 2025"
+        }
+      ],
+      "helpNote": "If you need help, you can contact us any time",
+      "helpButton": "Contact HR"
+    },
+    "step3": {
+      "appShell": {
+        "productSub": "EMPLOYEE",
+        "nav": [
+          "Home",
+          "My assets",
+          "My requests",
+          "Return & handover",
+          "My workspace",
+          "Report an issue",
+          "Knowledge base"
+        ],
+        "activeNavIndex": 1,
+        "user": { "name": "May Waranya", "role": "Sales Executive", "sub": "Sales" },
+        "bottomAction": "Sign out"
+      },
+      "pageTitle": "Ready to go — your first day 🎉",
+      "pageSubtitle": "Everything is prepared. You can start work right away."
+    },
+    "step4": {
+      "appShell": {
+        "productSub": "EMPLOYEE",
+        "nav": [
+          "Home",
+          "My assets",
+          "My requests",
+          "Report an issue",
+          "Return & handover",
+          "Usage info",
+          "Knowledge base"
+        ],
+        "activeNavIndex": 3,
+        "user": { "name": "May Waranya", "role": "Sales Executive", "sub": "Sales" },
+        "bottomAction": "Sign out"
+      },
+      "pageTitle": "Report an issue",
+      "pageSubtitle": "Report an issue that affects important work, with context the system prepares automatically"
+    },
+    "step5": {
+      "appShell": {
+        "productSub": "EMPLOYEE",
+        "nav": [
+          "Home",
+          "My assets",
+          "My requests",
+          "Return & handover",
+          "Report an issue",
+          "Status & tracking",
+          "Fixes & how-tos",
+          "Contact us"
+        ],
+        "activeNavIndex": 5,
+        "user": { "name": "May Waranya", "role": "Sales Executive", "sub": "Sales" },
+        "bottomAction": "Sign out"
+      },
+      "pageTitle": "Taking care of your issue",
+      "pageSubtitle": "The Thunder Care team is on it — track the status in real time"
+    },
+    "step6": {
+      "appShell": {
+        "productSub": "EXECUTIVE",
+        "nav": [
+          "Executive home",
+          "Organisation overview",
+          "People & technology readiness",
+          "Services & support",
+          "Risk & prevention",
+          "Assets & spend",
+          "Reports & insights",
+          "Settings"
+        ],
+        "activeNavIndex": 0,
+        "user": { "name": "Nicha Wongsombat", "role": "Chief Executive Officer", "sub": "Thunder Group" },
+        "bottomAction": "Sign out"
+      },
+      "pageTitle": "Business Uptime.",
+      "pageSubtitle": "You focus on the work, we keep it running"
+    }
+  }
+}

@@ -15,6 +15,7 @@ const namespaces = [
   ["DigitalSignageMediaPage", "digital-signage-media"],
   ["CommunicationPage", "communication"],
   ["ThunderCarePage", "thunder-care"],
+  ["ThunderCareDemo", "thunder-care-demo"],
   ["AssetIntelligencePage", "asset-intelligence"],
   ["AssetIntelligenceProductTour", "asset-intelligence-product-tour"],
   ["UseCasesPage", "use-cases"],
