@@ -128,7 +128,7 @@ function DashboardMockup({ dashboard }: { dashboard: Dashboard }) {
       </div>
 
       <div className="flex">
-        <div className="hidden w-44 shrink-0 flex-col gap-0.5 border-r border-slate-100 p-3 sm:flex">
+        <div className="hidden w-36 shrink-0 flex-col gap-0.5 border-r border-slate-100 p-3 sm:flex">
           {dashboard.nav.map((label, index) => {
             const Icon = navIcons[index % navIcons.length];
             return (
@@ -145,6 +145,7 @@ function DashboardMockup({ dashboard }: { dashboard: Dashboard }) {
           })}
         </div>
 
+        
         <div className="min-w-0 flex-1 space-y-3 bg-slate-50/60 p-4">
           <div className="md:hidden">
             <p className="text-xs font-bold text-brand-navy">
@@ -153,8 +154,9 @@ function DashboardMockup({ dashboard }: { dashboard: Dashboard }) {
             <p className="text-[10px] text-slate-400">{dashboard.greetingSubtitle}</p>
           </div>
 
-          <div className="space-y-3">
-            <div className="rounded-xl border border-slate-100 bg-white p-4">
+          <div className="">
+          <div className="flex items-start gap-3">
+            <div className="rounded-xl border border-slate-100 bg-white p-4 max-w-[300px]">
               <p className="text-xs font-bold text-brand-navy">{dashboard.readinessTitle}</p>
               <div className="mt-3 flex items-center gap-4">
                 <ReadinessDonut
@@ -194,7 +196,8 @@ function DashboardMockup({ dashboard }: { dashboard: Dashboard }) {
               </a>
             </div>
 
-            <div className="rounded-xl border border-slate-100 bg-white p-4">
+          <div className="min-w-0 flex-1 space-y-3">
+          <div className="rounded-xl border border-slate-100 bg-white p-4">
               <p className="text-xs font-bold text-brand-navy">{dashboard.quickActionsTitle}</p>
               <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
                 {dashboard.quickActions.map((action, index) => {
@@ -246,7 +249,13 @@ function DashboardMockup({ dashboard }: { dashboard: Dashboard }) {
                 })}
               </ul>
             </div>
+              
+            </div>
           </div>
+          </div>
+
+
+
 
           <div className="flex items-center justify-center gap-1.5 pt-1">
             {["a", "b", "c", "d", "e", "f"].map((dot, index) => (
@@ -269,10 +278,10 @@ export function HeroSection({ content, onOpenDemo }: HeroSectionProps) {
 
   return (
     <section className="overflow-hidden">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 pt-6 xl:grid-cols-2 xl:items-start">
-        <div>
-          <div className="flex items-center gap-3">
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-blue text-white">
+      <div className="mx-auto grid max-w-7xl gap-6 px-6 pt-6 xl:grid-cols-[1fr_1.5fr] xl:items-start">
+        <div className="w-fit">
+          <div className="flex gap-3">
+            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-blue text-white">
               <Headset className="h-5 w-5" />
             </span>
             <span className="text-sm font-bold text-brand-navy">{content.badge}</span>
