@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ThunderCareClient } from "@/features/solutions/thunder-care/ThunderCareClient";
+import type { ThunderCareDemoContent } from "@/features/solutions/thunder-care/demo/types";
 import type {
-  CategorySlice,
+  Announcement,
   FeatureItem,
   HowItWorksStep,
   PlatformConnectedItem,
-  RecentTicket,
+  QuickAction,
+  ReadinessItem,
   TrackingStep,
 } from "@/features/solutions/thunder-care/types";
 
@@ -33,9 +35,27 @@ export default async function ThunderCarePage({
   setRequestLocale(locale);
 
   const t = await getTranslations("ThunderCarePage");
+  const demoT = await getTranslations("ThunderCareDemo");
+
+  const demo: ThunderCareDemoContent = {
+    topBar: demoT.raw("topBar"),
+    mobileTabs: demoT.raw("mobileTabs"),
+    skeletonNote: demoT("skeletonNote"),
+    stepper: demoT.raw("stepper"),
+    story: demoT.raw("story"),
+    steps: {
+      step1: demoT.raw("steps.step1"),
+      step2: demoT.raw("steps.step2"),
+      step3: demoT.raw("steps.step3"),
+      step4: demoT.raw("steps.step4"),
+      step5: demoT.raw("steps.step5"),
+      step6: demoT.raw("steps.step6"),
+    },
+  };
 
   return (
     <ThunderCareClient
+      demo={demo}
       breadcrumb={[
         { label: t("breadcrumb.home"), href: "/" },
         { label: t("breadcrumb.solutions"), href: "/solutions" },
@@ -50,21 +70,23 @@ export default async function ThunderCarePage({
         ctaSecondary: t("hero.ctaSecondary"),
         dashboard: {
           productLabel: t("hero.dashboard.productLabel"),
-          panelTitle: t("hero.dashboard.panelTitle"),
-          dateRange: t("hero.dashboard.dateRange"),
+          productSubLabel: t("hero.dashboard.productSubLabel"),
+          greeting: t("hero.dashboard.greeting"),
+          userName: t("hero.dashboard.userName"),
+          greetingSubtitle: t("hero.dashboard.greetingSubtitle"),
+          searchPlaceholder: t("hero.dashboard.searchPlaceholder"),
+          userRole: t("hero.dashboard.userRole"),
           nav: t.raw("hero.dashboard.nav") as string[],
-          stats: {
-            openTickets: t.raw("hero.dashboard.stats.openTickets"),
-            requestsToday: t.raw("hero.dashboard.stats.requestsToday"),
-            resolvedToday: t.raw("hero.dashboard.stats.resolvedToday"),
-            slaAchievement: t.raw("hero.dashboard.stats.slaAchievement"),
-          },
-          recentTicketsTitle: t("hero.dashboard.recentTicketsTitle"),
-          recentTickets: t.raw("hero.dashboard.recentTickets") as RecentTicket[],
-          ticketByCategoryTitle: t("hero.dashboard.ticketByCategoryTitle"),
-          ticketByCategory: t.raw("hero.dashboard.ticketByCategory") as CategorySlice[],
-          viewAllTickets: t("hero.dashboard.viewAllTickets"),
-          viewReport: t("hero.dashboard.viewReport"),
+          readinessTitle: t("hero.dashboard.readinessTitle"),
+          readinessPercent: t.raw("hero.dashboard.readinessPercent") as number,
+          readinessCenterLabel: t("hero.dashboard.readinessCenterLabel"),
+          readinessItems: t.raw("hero.dashboard.readinessItems") as ReadinessItem[],
+          viewAllReadiness: t("hero.dashboard.viewAllReadiness"),
+          quickActionsTitle: t("hero.dashboard.quickActionsTitle"),
+          quickActions: t.raw("hero.dashboard.quickActions") as QuickAction[],
+          announcementsTitle: t("hero.dashboard.announcementsTitle"),
+          viewAllAnnouncements: t("hero.dashboard.viewAllAnnouncements"),
+          announcements: t.raw("hero.dashboard.announcements") as Announcement[],
         },
       }}
       challenge={{

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Breadcrumb, type BreadcrumbItem } from "@/components/ui/Breadcrumb";
 import { ToolsLogosSection } from "@/components/ui/ToolsLogosSection";
 import { HeroSection } from "./components/HeroSection";
@@ -9,6 +10,8 @@ import { HowItWorksSection } from "./components/HowItWorksSection";
 import { KeyCapabilitiesSection } from "./components/KeyCapabilitiesSection";
 import { IdealForOrganizationSection } from "./components/IdealForOrganizationSection";
 import { PlatformAndCtaSection } from "./components/PlatformAndCtaSection";
+import { ThunderCareDemoClient } from "./demo/ThunderCareDemoClient";
+import type { ThunderCareDemoContent } from "./demo/types";
 import type {
   ChallengeContent,
   HeroContent,
@@ -30,6 +33,7 @@ type ThunderCareClientProps = {
   idealFor: IdealForContent;
   platformAndCta: PlatformAndCtaContent;
   tools: ToolsContent;
+  demo: ThunderCareDemoContent;
 };
 
 export function ThunderCareClient({
@@ -42,13 +46,16 @@ export function ThunderCareClient({
   idealFor,
   platformAndCta,
   tools,
+  demo,
 }: ThunderCareClientProps) {
+  const [isDemoOpen, setIsDemoOpen] = useState(false);
+
   return (
     <div>
       <div className="mx-auto max-w-7xl px-6 pb-6 pt-6">
         <Breadcrumb items={breadcrumb} />
       </div>
-      <HeroSection content={hero} />
+      <HeroSection content={hero} onOpenDemo={() => setIsDemoOpen(true)} />
       <ChallengeSection content={challenge} />
       <WhatYouCanDoSection content={whatYouCanDo} />
       <HowItWorksSection content={howItWorks} />
@@ -59,6 +66,10 @@ export function ThunderCareClient({
         content={{ title: tools.title, note: tools.logosNote }}
         className="px-4 pb-16 sm:px-6 lg:pb-20"
       />
+
+      {isDemoOpen && (
+        <ThunderCareDemoClient content={demo} onClose={() => setIsDemoOpen(false)} />
+      )}
     </div>
   );
 }

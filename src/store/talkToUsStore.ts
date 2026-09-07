@@ -107,6 +107,18 @@ const PREVIOUS_STEP: Partial<Record<TalkToUsStep, TalkToUsStep>> = {
   details: "questions",
 };
 
+// Fire-and-forget: record the chosen channel on the CRM contact via the
+// second write (PATCH /api/crm/lead — the channel is picked after submit,
+// see src/features/crm §15.7). Must never block or fail the wizard.
+function postChannel(leadId: string | null, channel: TalkToUsChannel): void {
+  if (!leadId) return;
+  void fetch("/api/crm/lead", {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ lead_id: leadId, channel }),
+  }).catch(() => {});
+}
+
 export const useTalkToUsStore = create<TalkToUsState & TalkToUsActions>((set, get) => ({
   ...initialState,
 
@@ -191,6 +203,9 @@ export const useTalkToUsStore = create<TalkToUsState & TalkToUsActions>((set, ge
   chooseLine: async () => {
     const s = get();
 
+    // Second write: stamp preferred_contact_channel on the CRM contact.
+    postChannel(s.leadId, "line");
+
     // Step 0.12: Digital Signage → mint a one-time lead_token bound to the
     // persisted lead (leadId from POST /api/crm/lead) and hand off to the
     // LIFF page, which links the LINE identity and pushes the §5 summary to
@@ -232,5 +247,8 @@ export const useTalkToUsStore = create<TalkToUsState & TalkToUsActions>((set, ge
     set({ selectedChannel: "line", step: "confirmation" });
   },
 
-  chooseCallback: () => set({ selectedChannel: "callback", step: "confirmation" }),
+  chooseCallback: () => {
+    postChannel(get().leadId, "callback");
+    set({ selectedChannel: "callback", step: "confirmation" });
+  },
 }));

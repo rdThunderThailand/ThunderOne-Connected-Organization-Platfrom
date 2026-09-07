@@ -106,6 +106,11 @@ function readAcquisition(): CanonicalLeadPayload["acquisition"] {
 }
 
 export function buildLeadPayload(draft: LeadDraft): CanonicalLeadPayload {
+  // Only the digital-signage topic asks screen-count / usage-type; other
+  // topics leave these null (their answers still land in inquiry_message).
+  const dsAnswers =
+    draft.selectedTopic === "digital-signage" ? draft.answers : undefined;
+
   return {
     first_name: draft.firstName.trim(),
     last_name: draft.lastName.trim(),
@@ -117,6 +122,10 @@ export function buildLeadPayload(draft: LeadDraft): CanonicalLeadPayload {
     // Screener is single-select; canonical still takes an array (D-01).
     interested_solutions: [draft.selectedTopic],
     inquiry_message: buildInquiryMessage(draft),
+    qualification: {
+      screen_count: dsAnswers?.screenCount?.[0] ?? null,
+      usage_type: dsAnswers?.usageType?.[0] ?? null,
+    },
     consent: {
       status: draft.consent ? "granted" : "denied",
       purpose: "sales_contact",

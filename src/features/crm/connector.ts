@@ -45,4 +45,14 @@ export interface CrmConnector {
     existing: FoundContact,
     lead: CanonicalLeadPayload,
   ): Promise<CrmContactRef>;
+
+  /**
+   * Patch just the preferred contact channel on an existing contact. A
+   * SECOND write, made after the wizard's channel step — the channel is
+   * chosen after createContact and the LINE-link flow needs the lead
+   * persisted before that step, so it can't ride the first write
+   * (Step 3.2 §15.7). `channel` is a canonical value ("line" | "callback");
+   * a value the CRM has no option for is a no-op.
+   */
+  updateContactChannel(contactId: string, channel: string): Promise<void>;
 }
