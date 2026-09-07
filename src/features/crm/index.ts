@@ -2,9 +2,9 @@
 //
 // Selects the active connector from the CRM_CONNECTOR env var.
 //
-// TEMPORARY (Phase 0): defaults to "stub" because PM has not created the
-// HubSpot test account yet. Switch to CRM_CONNECTOR=hubspot in Phase 1
-// once HUBSPOT_PRIVATE_APP_TOKEN is set (D-08).
+// TEMPORARY (Phase 0): defaults to "stub". Switch to CRM_CONNECTOR=hubspot
+// once HUBSPOT_SERVICE_KEY is set and the portal setup in the Step 3.2 Dev
+// Brief §15 is done (D-08).
 
 import type { CrmConnector } from "./connector";
 import { HubSpotConnector } from "./hubspot/connector";
@@ -23,7 +23,7 @@ export function getCrmConnector(): CrmConnector {
 
   switch (which) {
     case "hubspot":
-      return new HubSpotConnector(process.env.HUBSPOT_PRIVATE_APP_TOKEN ?? "");
+      return new HubSpotConnector(process.env.HUBSPOT_SERVICE_KEY ?? "");
     case "stub":
       return new StubConnector();
     default:

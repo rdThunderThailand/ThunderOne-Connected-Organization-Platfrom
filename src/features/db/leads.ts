@@ -45,6 +45,21 @@ export async function setLeadCrmContactId(
   if (error) throw new Error(`setLeadCrmContactId: ${error.message}`);
 }
 
+/**
+ * Read back the CRM contact id bound to a lead. `null` when the row exists
+ * but the CRM upsert had failed, or when the lead is unknown. Used by the
+ * channel patch (PATCH /api/crm/lead) after the wizard's channel step.
+ */
+export async function getLeadCrmContactId(leadId: string): Promise<string | null> {
+  const { data, error } = await getSupabaseAdmin()
+    .from("leads")
+    .select("crm_contact_id")
+    .eq("id", leadId)
+    .maybeSingle();
+  if (error) throw new Error(`getLeadCrmContactId: ${error.message}`);
+  return (data as { crm_contact_id: string | null } | null)?.crm_contact_id ?? null;
+}
+
 export type LinkLeadResult =
   | { ok: true; alreadyLinked: boolean }
   | { ok: false; reason: "lead_not_found" | "linked_to_other_user" };

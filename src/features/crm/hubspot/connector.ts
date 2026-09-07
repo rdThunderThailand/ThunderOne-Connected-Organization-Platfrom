@@ -1,21 +1,28 @@
 // === HubSpot CRM connector (PoC #1) ===
 //
 // Talks to the HubSpot CRM v3 API. Server-only. Auth is a Private App
-// access token from HUBSPOT_PRIVATE_APP_TOKEN (D-08).
-//
-// TEMPORARY: not exercised against the real API until Phase 1 — PM has not
-// created the HubSpot test account yet, so the factory in ../index.ts
-// selects the StubConnector by default.
+// access token from HUBSPOT_SERVICE_KEY (brief §2 / D-08).
 //
 // TEMPORARY (D-12): no retry / backoff / rate-limit handling yet. Add in
 // Phase 1 against the live API (retry only 429 / 5xx, honor Retry-After).
 
 import type { CanonicalLeadPayload } from "../canonical";
 import type { CrmConnector, CrmContactRef, FoundContact } from "../connector";
-import { mapLeadToHubSpotProperties, mergeHubSpotProperties } from "./mapper";
+import {
+  filterToPortalProperties,
+  mapLeadToHubSpotProperties,
+  mergeHubSpotProperties,
+} from "./mapper";
+import { getPortalContactProperties } from "./properties";
 
 const HUBSPOT_API_BASE = "https://api.hubapi.com";
 const PROVIDER = "hubspot";
+
+/** canonical channel value → `preferred_contact_channel` dropdown option (§15.4). */
+const CHANNEL_OPTIONS: Record<string, string> = {
+  line: "line",
+  callback: "callback",
+};
 
 // Read these back on lookup so the merge policy (D-01 / D-04) has the
 // current CRM values to work from.
@@ -23,7 +30,7 @@ const READ_PROPERTIES = [
   "email",
   "interested_solution",
   "thunder_lead_source",
-  "thunder_medium",
+  "thunder_acquisition_medium",
   "thunder_campaign",
   "thunder_utm_source",
   "thunder_utm_medium",
@@ -41,7 +48,7 @@ export class HubSpotConnector implements CrmConnector {
 
   constructor(private readonly token: string) {
     if (!token) {
-      throw new Error("HubSpotConnector: missing HUBSPOT_PRIVATE_APP_TOKEN");
+      throw new Error("HubSpotConnector: missing HUBSPOT_SERVICE_KEY");
     }
   }
 
@@ -59,6 +66,13 @@ export class HubSpotConnector implements CrmConnector {
       // CRM writes must never be cached.
       cache: "no-store",
     });
+
+    if (res.status === 401 || res.status === 403) {
+      throw new Error(
+        `HubSpot auth failed (HTTP ${res.status}) — check HUBSPOT_SERVICE_KEY ` +
+          `and the Private App scopes (needs crm.objects.contacts read + write)`,
+      );
+    }
 
     const text = await res.text();
     const body = (text ? JSON.parse(text) : undefined) as T;
@@ -91,7 +105,10 @@ export class HubSpotConnector implements CrmConnector {
   }
 
   async createContact(lead: CanonicalLeadPayload): Promise<CrmContactRef> {
-    const properties = mapLeadToHubSpotProperties(lead);
+    const properties = filterToPortalProperties(
+      mapLeadToHubSpotProperties(lead),
+      await getPortalContactProperties(this.token),
+    );
     const { status, body } = await this.request<{ id?: string }>(
       "/crm/v3/objects/contacts",
       { method: "POST", body: JSON.stringify({ properties }) },
@@ -117,9 +134,12 @@ export class HubSpotConnector implements CrmConnector {
     existing: FoundContact,
     lead: CanonicalLeadPayload,
   ): Promise<CrmContactRef> {
-    const properties = mergeHubSpotProperties(
-      existing.properties,
-      mapLeadToHubSpotProperties(lead),
+    const properties = filterToPortalProperties(
+      mergeHubSpotProperties(
+        existing.properties,
+        mapLeadToHubSpotProperties(lead),
+      ),
+      await getPortalContactProperties(this.token),
     );
     const { status, body } = await this.request<{ id?: string }>(
       `/crm/v3/objects/contacts/${existing.id}`,
@@ -130,5 +150,26 @@ export class HubSpotConnector implements CrmConnector {
     throw new Error(
       `HubSpot updateContact failed: HTTP ${status} ${JSON.stringify(body)}`,
     );
+  }
+
+  async updateContactChannel(contactId: string, channel: string): Promise<void> {
+    const value = CHANNEL_OPTIONS[channel];
+    if (!value) return; // unknown channel — nothing the CRM can store
+
+    const properties = filterToPortalProperties(
+      { preferred_contact_channel: value },
+      await getPortalContactProperties(this.token),
+    );
+    if (Object.keys(properties).length === 0) return; // portal has no such field
+
+    const { status, body } = await this.request<{ id?: string }>(
+      `/crm/v3/objects/contacts/${contactId}`,
+      { method: "PATCH", body: JSON.stringify({ properties }) },
+    );
+    if (status !== 200) {
+      throw new Error(
+        `HubSpot updateContactChannel failed: HTTP ${status} ${JSON.stringify(body)}`,
+      );
+    }
   }
 }

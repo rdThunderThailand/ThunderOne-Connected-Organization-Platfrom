@@ -10,16 +10,13 @@
 // Keys mirror ./questions.ts and ./details.ts verbatim. If a value is
 // missing here the serializer falls back to the raw slug (loud but safe).
 
-import type { TopicKey } from "../types";
-
-/** question.md ขั้น 1 — screener → HubSpot `interested_solution` (also the slug). */
-export const CRM_SOLUTION_LABELS: Record<TopicKey, string> = {
-  "digital-signage": "Digital Signage & Media",
-  communication: "Communication",
-  "thunder-care": "Thunder Care",
-  "asset-intelligence": "Asset Intelligence",
-  "not-sure": "Not sure yet — wants to talk it through",
-};
+/**
+ * question.md ขั้น 1 — screener → HubSpot `interested_solution`.
+ *
+ * Single source of truth is `src/features/crm/solutions.ts` (the HubSpot
+ * mapper consumes it); re-exported here so wizard code has one import.
+ */
+export { SOLUTION_LABELS as CRM_SOLUTION_LABELS } from "@/features/crm/solutions";
 
 /** Step-2 question id → English field label used in the inquiry_message block. */
 export const CRM_QUESTION_LABELS: Record<string, string> = {

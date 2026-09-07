@@ -59,4 +59,13 @@ export class StubConnector implements CrmConnector {
     log("updateContact", { id: existing.id, canonical: lead, mergedProperties: merged });
     return { id: existing.id, provider: PROVIDER };
   }
+
+  async updateContactChannel(contactId: string, channel: string): Promise<void> {
+    for (const contact of store.values()) {
+      if (contact.id === contactId) {
+        contact.properties.preferred_contact_channel = channel;
+      }
+    }
+    log("updateContactChannel", { contactId, channel });
+  }
 }

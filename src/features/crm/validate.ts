@@ -42,6 +42,15 @@ export const canonicalLeadSchema = z.object({
   email: z.string().trim().toLowerCase().email().max(254),
   interested_solutions: z.array(z.enum(INTERESTED_SOLUTIONS)).min(1),
   inquiry_message: z.string().trim().max(2000).default(""),
+  // Digital-signage screener answers (brief §5). Optional — other topics
+  // and older payloads omit it. Values are wizard slugs; the mapper maps
+  // them to the portal's dropdown option codes.
+  qualification: z
+    .object({
+      screen_count: z.string().trim().max(50).nullable().default(null),
+      usage_type: z.string().trim().max(50).nullable().default(null),
+    })
+    .default({ screen_count: null, usage_type: null }),
   consent: z.object({
     status: z.enum(["granted", "denied"]),
     purpose: nonEmpty.max(100),

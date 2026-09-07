@@ -19,7 +19,12 @@
 // publicly (docs §15).
 
 import { getCrmConnector, parseCanonicalLead, upsertLead } from "@/features/crm";
-import { createLead, isSupabaseConfigured, setLeadCrmContactId } from "@/features/db";
+import {
+  createLead,
+  getLeadCrmContactId,
+  isSupabaseConfigured,
+  setLeadCrmContactId,
+} from "@/features/db";
 
 export const runtime = "nodejs";
 
@@ -99,4 +104,67 @@ export async function POST(request: Request) {
     action,
     crm_status: crmContactId ? "ok" : "failed",
   });
+}
+
+// === PATCH /api/crm/lead — record the chosen contact channel ===
+//
+// The wizard picks a channel (LINE / callback) on the step AFTER submit, so
+// `preferred_contact_channel` can't ride the create/update write. This is
+// the second write (Step 3.2 §15.7). Best-effort: a CRM failure still
+// returns ok:true so the wizard reaches its confirmation step. `lead_id`
+// comes from the earlier POST response.
+export async function PATCH(request: Request) {
+  if (!isSupabaseConfigured()) {
+    console.error(`${TAG} SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY is not set`);
+    return Response.json(
+      { ok: false, error: "server_misconfigured" },
+      { status: 500 },
+    );
+  }
+
+  let raw: unknown;
+  try {
+    raw = await request.json();
+  } catch {
+    return Response.json({ ok: false, error: "invalid_json" }, { status: 400 });
+  }
+
+  const body = raw as { lead_id?: unknown; channel?: unknown };
+  const leadId = typeof body.lead_id === "string" ? body.lead_id : "";
+  const channel =
+    body.channel === "line" || body.channel === "callback" ? body.channel : "";
+  if (!leadId || !channel) {
+    return Response.json(
+      { ok: false, error: "validation_failed" },
+      { status: 422 },
+    );
+  }
+
+  let crmContactId: string | null;
+  try {
+    crmContactId = await getLeadCrmContactId(leadId);
+  } catch (error) {
+    console.error(
+      `${TAG} channel: lead lookup failed — ${error instanceof Error ? error.message : String(error)}`,
+    );
+    return Response.json({ ok: false, error: "lead_lookup_failed" }, { status: 502 });
+  }
+
+  // No contact id means the initial CRM upsert had failed — nothing to patch.
+  if (!crmContactId) {
+    return Response.json({ ok: true, crm_status: "skipped" });
+  }
+
+  try {
+    await getCrmConnector().updateContactChannel(crmContactId, channel);
+    console.info(
+      `${TAG} channel ok — leadId=${leadId} channel=${channel} crmContactId=${crmContactId}`,
+    );
+    return Response.json({ ok: true, crm_status: "ok" });
+  } catch (error) {
+    console.error(
+      `${TAG} channel patch failed (lead ${leadId}) — ${error instanceof Error ? error.message : String(error)}`,
+    );
+    return Response.json({ ok: true, crm_status: "failed" });
+  }
 }

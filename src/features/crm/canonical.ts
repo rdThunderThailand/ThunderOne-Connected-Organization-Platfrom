@@ -44,6 +44,23 @@ export type CanonicalConsent = {
   timestamp: string;
 };
 
+/**
+ * Screener answers that map to their own HubSpot properties (brief §5).
+ * Only the `digital-signage` topic asks these — every other topic leaves
+ * both `null` (the answers, when present for other topics, still go into
+ * `inquiry_message`).
+ *
+ * Values are the wizard's option slugs (src/components/talk-to-us/config/
+ * questions.ts); the HubSpot mapper translates them to the portal's
+ * dropdown option codes.
+ */
+export type CanonicalQualification = {
+  /** e.g. "21-50" | null */
+  screen_count: string | null;
+  /** e.g. "multi-branch" | null */
+  usage_type: string | null;
+};
+
 export type CanonicalAcquisition = {
   /** e.g. "website" */
   source: string | null;
@@ -72,6 +89,7 @@ export type CanonicalLeadPayload = {
    */
   interested_solutions: InterestedSolution[];
   inquiry_message: string;
+  qualification: CanonicalQualification;
   consent: CanonicalConsent;
   acquisition: CanonicalAcquisition;
 };

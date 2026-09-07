@@ -12,6 +12,7 @@ export { getSupabaseAdmin, isSupabaseConfigured } from "./client";
 export {
   createLead,
   setLeadCrmContactId,
+  getLeadCrmContactId,
   linkLeadToLineUser,
   markSummaryDelivered,
   type LeadRow,
